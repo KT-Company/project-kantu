@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <Card>
+  <Card>
       <div class="flex justify-between">
         <div>
-          <swiper :options="swiperOptionP1" style="width: 600px; height: 650px">
+          <swiper :options="swiperOptionP1" style="width: 60vh; height: 80vh">
             <swiper-slide v-for="item in swiperDataP1" :key="item.index">
               <div class="display-box fadeInUp">
                 <div style="color: rgba(153, 153, 153, 1)">
@@ -24,7 +23,6 @@
         <div class="canvas"></div>
       </div>
     </Card>
-  </div>
 </template>
 <script>
 import Card from "@/components/base/Card.vue";

@@ -5,7 +5,7 @@
 </template>
 <style>
 .card {
-  /* padding: 150px; */
+  padding: 4rem 8rem;
 }
 </style>
 <script>

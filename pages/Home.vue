@@ -8,6 +8,7 @@
 <style>
 .header{
   position: fixed;
+  width: 100%;
   z-index: 9;
 }
 </style>
