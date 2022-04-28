@@ -4,7 +4,7 @@
       <div>
         <div class="fadeInUp" style="width: 60vh; height: 80vh">
           <div class="text-3xl md:h-40 sm:h-20">数据可视化</div>
-          <div class="h-40">
+          <div class="h-20">
             <span class="color-subtext">
               根据项目可视化数据展示：<br />
               园区管理后台系统(OA、ERP、 MIS、
@@ -12,14 +12,29 @@
               以及项目中的设备后台系统（ems、数据采集等）提供设备数据来源，以多时态、多维度、多层面的方式展示。
             </span>
           </div>
-          <div>
-            <div><i class="el-icon-d-arrow-right"></i></div>
+          <div class="text-two">
+            <div>
+              <i class="el-icon-arrow-right"></i>
+              <i class="el-icon-arrow-right" style="margin-left:-12px"></i>
+              <i class="el-icon-arrow-right" style="margin-left:-12px"></i>
+            </div>
             <div class="mb-2">大数据图表可视化</div>
             <div class="mb-2">图形分析化能力</div>
             <div class="mb-2">交互式观察数据改变</div>
             <div class="mb-2">一键集成方便部署</div>
           </div>
         </div>
+      </div>
+      <div class="echarts">
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
+        <div class="echart">Echart</div>
       </div>
       <!-- <div class="canvas grid grid-flow-row auto-rows-max">
         <div class="grid grid-flow-col auto-cols-max">
@@ -51,6 +66,28 @@
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   grid-template-rows: repeat(3, 33.33%);
+}
+.echarts {
+  width: 950px;
+  height: 806px;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: #fff; */
+  /* justify-content: space-between; */
+  justify-content: space-around;
+  align-items: stretch;
+}
+.echart {
+  width: 304px;
+  height: 256px;
+  background-color: #4d4d4d;
+  color: #1a1a1a;
+  font-size: 30px;
+  text-align: center;
+  line-height: 256px;
+}
+.text-two {
+  margin-top: 250px;
 }
 </style>
 <script>

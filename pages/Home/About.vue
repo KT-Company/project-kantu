@@ -1,12 +1,162 @@
 <template>
-  <div>
-    关于瞰图
-    
-  </div>
+  <Card>
+    <div style="color: #808080; font-size: 13px; margin-top: 116px">
+      你的位置：首页 > <span style="color: #fff">了解瞰图</span>
+    </div>
+    <div class="mian">
+      <div class="mian-left">
+        <div style="font-size: 86px">About</div>
+        <div style="font-size: 30px">重庆瞰图科技有限公司</div>
+        <div class="text" style="font-size: 14px">
+          <div>
+            重庆瞰图科技有限公司是一家数字孪生平台公司，致力于可视化系统设计、三维虚拟仿真开发。
+          </div>
+          <div>
+            公司坚持以人才和技术为核心；以质量重庆瞰图科技有限公司涉及可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。
+          </div>
+          <div>
+            其中，代表案例有智慧园区、工业制造、智慧能源、航空航天等。公司坚持以人才和技术为核心；以质量和服务为准则；为客户开发专业、优质、满意、适用的互联网产品。
+          </div>
+        </div>
+        <el-button class="btn-normal" style="margin-top: 105px"
+          ><i class="el-icon-d-arrow-right mr-6"></i>联系我们</el-button
+        >
+      </div>
+      <div class="mian-right"></div>
+    </div>
+    <div class="mian-bottom">
+      <div style="height: 148px">
+        <div style="font-size: 50px">使命愿景</div>
+        <div style="font-size: 25px; color: #808080">
+          致力可视化系统设计 三维虚拟仿真开发
+        </div>
+      </div>
+      <div class="mian-data">
+        <div class="data">
+          <div class="data-icon"></div>
+          <div class="data-text">
+            <div style="font-size: 30px; color: #ffffff">企业愿景</div>
+            <div style="font-size: 14px; color: #4d4d4d">Enterprise vision</div>
+            <div style="margin-top: 34px">运用专业的可视化系统</div>
+            <div>为人们实现传统拍摄无法实现</div>
+            <div>的相应场景和事件</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon"></div>
+          <div class="data-text">
+            <div style="font-size: 30px; color: #ffffff">企业使命</div>
+            <div style="font-size: 14px; color: #4d4d4d">
+              Enterprise mission
+            </div>
+            <div style="margin-top: 34px">以技术实力为支撑</div>
+            <div>以用户需求为导向</div>
+            <div>以技术创新为根本</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon"></div>
+          <div class="data-text">
+            <div style="font-size: 30px; color: #ffffff">核心价值</div>
+            <div style="font-size: 14px; color: #4d4d4d">Core value</div>
+            <div style="margin-top: 46px">做正直守信的人</div>
+            <div>做对社会有价值的事</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon"></div>
+          <div class="data-text">
+            <div style="font-size: 30px; color: #ffffff">战略定位</div>
+            <div style="font-size: 14px; color: #4d4d4d">Strategic positioning </div>
+            <div style="margin-top: 46px">致力可视化系统设计</div>
+            <div>三维虚拟仿真开发</div>
+          </div>
+        </div>
+      </div>
+      <div class="mian-img">
+        <div class="img"></div>
+        <div class="img"></div>
+      </div>
+    </div>
+  </Card>
 </template>
-
+<style scoped lang="less">
+.mian {
+  width: 101.25rem;
+  height: 39rem;
+  /* background-color: azure; */
+  margin-top: 5.5625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.text {
+  width: 37.6875rem;
+  height: 12.1875rem;
+  margin-top: 6.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mian-right {
+  width: 47.8125rem;
+  height: 36.875rem;
+  background-color: #fff;
+}
+.mian-bottom {
+  width: 101.25rem;
+  height: 71rem;
+  // background-color: seagreen;
+  margin-top: 6.5625rem;
+  text-align: center;
+}
+.mian-data {
+  width: 82.6875rem;
+  height: 17.3125rem;
+  /* background-color: seagreen; */
+  margin: auto;
+  margin-top: 116px;
+  display: flex;
+  justify-content: space-between;
+}
+.data {
+  width: 15.25rem;
+  height: 17.1875rem;
+  /* background-color: sienna; */
+}
+.data-icon {
+  width: 4.0625rem;
+  height: 4.0625rem;
+  background-color: #ffffff;
+  margin: auto;
+}
+.data-text {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  color: #808080;
+}
+.mian-img{
+  width: 101.25rem;
+  height: 26.9375rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10.25rem;
+  // background-color: sienna;
+}
+.img{
+      height:26.9375rem;
+    width: 695px;
+    background-color: #fff;
+}
+</style>
 <script>
+import Card from "@/components/base/Card.vue";
 export default {
-    name:"About"
+  name: "About",
+  components: {
+    Card,
+  },
 };
 </script>
+
+ 

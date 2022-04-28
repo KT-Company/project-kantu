@@ -1,11 +1,14 @@
 <template>
-  <div class="">
+  <div class="mian">
     <Header v-if="showHeader" class="header" />
     <nuxt-child />
     <Footer v-if="!showHeader" />
   </div>
 </template>
 <style>
+.mian{
+  overflow: hidden;
+}
 .header{
   position: fixed;
   width: 100%;
@@ -20,7 +23,7 @@ export default {
     };
   },
   created() {
- 
+
   },
 };
 </script>

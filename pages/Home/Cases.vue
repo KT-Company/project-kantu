@@ -1,6 +1,6 @@
 <template>
   <div>
-    瞰图案例
+    <!-- 瞰图案例 -->
     <Page1 />
   </div>
 </template>

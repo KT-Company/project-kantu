@@ -16,7 +16,7 @@
             瞰图科技在“数字孪生”制作上，具备成熟的开发管理流程；拥有完善的产品设计、多精度的模型标准、个性化的交互效果、精准的数据引入。运用更多前沿技术完成数字映射，建立更全面的孪生场景。
           </div>
           <div class="box-page2-display mt-20">
-            <div class="item" v-for="item in dataDisplay">
+            <div class="item" v-for="item in dataDisplay" :key="item">
               <div class="icon-box">
                 <!-- <img src="@/assets/images/main/icon-design.png" alt="" srcset="" /> -->
                 <img v-if="item.iconUrl" :src="item.iconUrl" alt="" srcset="" />
