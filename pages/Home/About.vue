@@ -85,18 +85,22 @@
   width: 101.25rem;
   height: 39rem;
   /* background-color: azure; */
+  margin: auto;
   margin-top: 5.5625rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 .text {
-  width: 37.6875rem;
+  // width: 37.6875rem;
   height: 12.1875rem;
   margin-top: 6.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.mian-left{
+  width: 37.6875rem;
 }
 .mian-right {
   width: 47.8125rem;
@@ -107,6 +111,7 @@
   width: 101.25rem;
   height: 71rem;
   // background-color: seagreen;
+  margin: auto;
   margin-top: 6.5625rem;
   text-align: center;
 }

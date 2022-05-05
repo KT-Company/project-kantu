@@ -1,17 +1,274 @@
 <template>
-  <div>
-    <!-- 瞰图案例 -->
-    <Page1 />
-  </div>
+  <Card>
+    <div class="top">
+      <div class="top1">
+        <div class="top-num">50</div>
+        <div class="top-text">名企合作中</div>
+        <div class="topjia">+</div>
+      </div>
+      <div class="top2"></div>
+      <div class="top3">
+        <div class="top-num">100</div>
+        <div class="top-text">已提供专业解决方案</div>
+        <div class="topjia2">+</div>
+      </div>
+      <div class="top2"></div>
+      <div class="top5">
+        <div class="top-num">30</div>
+        <div class="top-text">涉及领域</div>
+        <div class="topjia">+</div>
+      </div>
+    </div>
+    <div class="nav">
+      <div style="color: #808080; font-size: 13px">
+        你的位置：首页 > <span style="color: #fff">多元案例</span>
+      </div>
+      <ul>
+        <li
+          v-for="(item, index) in navlist"
+          :key="index"
+          :class="navli === index ? 'active' : ''"
+          @click="handlenav(index)"
+        >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    <div class="mian">
+      <div class="mian-data">
+        <div class="data-left">
+          <div class="left-title">福州软件园</div>
+          <div class="left-text">
+            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+          </div>
+          <div class="left-more">MORE</div>
+        </div>
+        <div class="data-right"></div>
+      </div>
+      <div class="mian-data">
+        <div class="data-left">
+          <div class="left-title">福州软件园</div>
+          <div class="left-text">
+            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+          </div>
+          <div class="left-more">MORE</div>
+        </div>
+        <div class="data-right"></div>
+      </div>
+      <div class="mian-data">
+        <div class="data-left">
+          <div class="left-title">福州软件园</div>
+          <div class="left-text">
+            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+          </div>
+          <div class="left-more">MORE</div>
+        </div>
+        <div class="data-right"></div>
+      </div>
+      <div class="mian-data">
+        <div class="data-left">
+          <div class="left-title">福州软件园</div>
+          <div class="left-text">
+            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+          </div>
+          <div class="left-more">MORE</div>
+        </div>
+        <div class="data-right"></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <el-pagination background layout="pager" :total="30" style="margin-left:-18px"> </el-pagination>
+    </div>
+  </Card>
 </template>
-
+<style lang="less" scoped>
+.top {
+  width: 78.125rem;
+  height: 12.5rem;
+  background-color: #1a1a1a;
+  margin: auto;
+  margin-top: 7.25rem;
+  // border: 1px solid #cccccc;
+  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .top1 {
+    width: 94px;
+    // height: 81px;
+    text-align: center;
+    position: relative;
+  }
+  .top2 {
+    width: 1px;
+    height: 70px;
+    background: #4d4d4d;
+  }
+  .top3 {
+    width: 165px;
+    text-align: center;
+    // height: 81px;
+    position: relative;
+  }
+  .top5 {
+    width: 94px;
+    text-align: center;
+    // height: 81px;
+    position: relative;
+  }
+}
+.top-num {
+  font-size: 50px;
+  font-family: Source Han Sans SC;
+  font-weight: 800;
+  color: #ffffff;
+}
+.top-text {
+  font-size: 18px;
+  font-family: Source Han Sans SC;
+  font-weight: 400;
+  color: #b3b3b3;
+}
+.topjia {
+  width: 16px;
+  height: 16px;
+  font-size: 30px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: -0.625rem;
+  right: 0;
+}
+.topjia2 {
+  width: 16px;
+  height: 16px;
+  font-size: 30px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: -0.625rem;
+  right: 1.0625rem;
+}
+.nav {
+  width: 1251px;
+  height: 15px;
+  margin: auto;
+  margin-top: 9.25rem;
+  display: flex;
+  justify-content: space-between;
+  ul {
+    width: 476px;
+    height: 14px;
+    font-size: 13px;
+    font-family: Source Han Sans SC;
+    font-weight: 500;
+    color: #808080;
+    line-height: 23px;
+    display: flex;
+    justify-content: space-between;
+    .active {
+      color: #fff;
+    }
+  }
+}
+.mian {
+  width: 1251px;
+  height: 1698px;
+  margin: auto;
+  margin-top: 7.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .mian-data {
+    width: 1251px;
+    height: 335px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .data-left {
+      width: 383px;
+      height: 241px;
+      .left-title {
+        font-size: 30px;
+        font-family: Source Han Sans SC;
+        font-weight: 400;
+        color: #ffffff;
+      }
+      .left-text {
+        font-size: 14px;
+        font-family: Source Han Sans SC;
+        font-weight: 400;
+        color: #b2b2b2;
+        margin-top: 19px;
+      }
+      .left-more {
+        font-size: 14px;
+        font-family: Source Han Sans SC;
+        font-weight: bold;
+        color: #ffffff;
+        margin-top: 50px;
+      }
+    }
+    .data-right {
+      width: 600px;
+      height: 335px;
+      background: #4d4d4d;
+    }
+  }
+}
+.bottom{
+  margin: auto;
+  margin-top: 7.5rem;
+  width: 78.125rem;
+}
+/deep/ .number {
+  width: 3.125rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  border-radius: 0;
+  background-color: #333333;
+}
+::v-deep {
+  .el-pagination.is-background .el-pager li:not(.disabled) {
+    background-color: #333333; // 进行修改未选中背景和字体
+    border-radius: 0;
+    // color: #fff;
+  }
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #4d4d4d; // 进行修改选中项背景和字体
+    color: #fff;
+  }
+}
+</style>
 <script>
 import Page1 from "@/components/Main/Page1.vue";
-
+import Card from "@/components/base/Card.vue";
 export default {
   name: "Cases",
   components: {
     Page1,
+    Card,
+  },
+  data() {
+    return {
+      navlist: [
+        "智慧园区",
+        "工业制造",
+        "智慧工地",
+        "智慧能源",
+        "航天航空",
+        "其他",
+      ],
+      navli: 0,
+    };
+  },
+  methods: {
+    handlenav(index) {
+      this.navli = index;
+      console.log(index);
+    },
   },
 };
 </script>

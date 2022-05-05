@@ -59,8 +59,10 @@
         <div class="data-time">03-01</div>
       </div>
     </div>
-    <el-pagination background layout="pager" :total="30">
+    <div class="bottom">
+    <el-pagination background layout="pager" :total="30" style="margin-left:-18px">
     </el-pagination>
+    </div>
   </Card>
 </template>
 <style lang="less" scoped>
@@ -102,6 +104,11 @@
 // /deep/.btn-prev{
 //   display: none;
 // }
+.bottom{
+    margin: auto;
+  margin-top: 7.5rem;
+  width: 78.125rem;
+}
 /deep/ .number{
   width: 3.125rem;
   height: 3.125rem;
