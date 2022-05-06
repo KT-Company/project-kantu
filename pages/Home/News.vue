@@ -4,64 +4,81 @@
       你的位置：首页 > <span style="color: #fff">瞰图资讯</span>
     </div>
     <div class="mian">
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
-      <div class="mian-data">
-        <div style="font-size: 16px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+      <div class="mian-mian">
+        <div class="mian-data">
+          <div class="mian-title">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="mian-text">
+            Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
+          </div>
+          <div class="data-time">03-01</div>
         </div>
-        <div style="font-size: 14px; color: #808080; margin-top: 27px">
-          Ares Capital Corporation和我们将高级直接贷款计划扩大至64亿美元
-        </div>
-        <div class="data-time">03-01</div>
       </div>
     </div>
     <div class="bottom">
-    <el-pagination background layout="pager" :total="30" style="margin-left:-18px">
-    </el-pagination>
+      <el-pagination
+        background
+        layout="pager"
+        :total="30"
+        style="margin-left: -18px"
+      >
+      </el-pagination>
     </div>
   </Card>
 </template>
@@ -82,11 +99,42 @@
   // align-items: flex-end;
   //  align-self: flex-end;
 }
+.mian-mian {
+  width: 35.9375rem;
+  height: 18.75rem;
+  // transition: all 0.36s;
+}
 .mian-data {
   width: 35.9375rem;
   height: 18.75rem;
   border: 1px solid #999999;
   padding: 29px 24px;
+  // position: relative;
+  overflow: hidden;
+  transition: all ease 0.6s;
+}
+.mian-mian:hover .mian-data {
+  border: 0;
+  background-color: coral;
+  transform: scale(0.9);
+  background: url("~/assets/images/main/微信图片png.png") no-repeat;
+}
+.mian-title {
+  font-size: 1rem;
+  transition: all ease 0.6s;
+}
+.mian-data:hover .mian-title {
+  transform: translateY(12.5rem);
+}
+.mian-text {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 27px;
+  transition: all ease 0.5s;
+}
+.mian-data:hover .mian-text {
+  transform: translateY(14rem);
+  display: none;
 }
 .data-time {
   width: 494px;
@@ -97,6 +145,12 @@
   color: #ffffff;
   text-align: right;
   margin-top: 7.125rem;
+  transition: all ease 0.6s;
+}
+.mian-data:hover .data-time {
+  transform: translateY(-12.5rem);
+  // margin-top:-12.5rem;
+  display: none;
 }
 // /deep/ .btn-next{
 //   display: none;
@@ -104,12 +158,12 @@
 // /deep/.btn-prev{
 //   display: none;
 // }
-.bottom{
-    margin: auto;
+.bottom {
+  margin: auto;
   margin-top: 7.5rem;
   width: 78.125rem;
 }
-/deep/ .number{
+/deep/ .number {
   width: 3.125rem;
   height: 3.125rem;
   line-height: 3.125rem;
@@ -123,11 +177,10 @@
     // color: #fff;
   }
   .el-pagination.is-background .el-pager li:not(.disabled).active {
-    background-color: #4D4D4D; // 进行修改选中项背景和字体
+    background-color: #4d4d4d; // 进行修改选中项背景和字体
     color: #fff;
   }
 }
-
 </style>
 <script>
 import Card from "@/components/base/Card.vue";

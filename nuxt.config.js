@@ -25,7 +25,10 @@ export default {
     // { src: 'wowjs/css/libs/animate.css', lang: 'css' },
     "element-ui/lib/theme-chalk/index.css",
   ],
-
+  server: {
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "~/plugins/element-ui.js", ssr: true },

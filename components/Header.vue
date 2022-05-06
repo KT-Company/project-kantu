@@ -4,7 +4,7 @@
       <div class="text-2xl p-4">
         <img src="~/assets/images/logo.png" alt="" srcset="" />
       </div>
-      <nav class>
+      <nav class="nav">
         <el-menu
           :default-active="activeIndex"
           mode="horizontal"
@@ -52,6 +52,12 @@
 .el-menu::after,
 .el-menu::before {
   content: none;
+}
+.p-4{
+  margin-left: 9.375rem;
+}
+.nav{
+  margin-right:9.375rem;
 }
 </style>
 <script>

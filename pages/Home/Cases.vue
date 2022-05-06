@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <div class="top">
+    <div class="top fadeInUp">
       <div class="top1">
         <div class="top-num">50</div>
         <div class="top-text">名企合作中</div>
@@ -34,13 +34,25 @@
         </li>
       </ul>
     </div>
-    <div class="mian">
-      <div class="mian-data">
+    <div class="mian fadeInUp">
+      <div class="mian-data fadeInUp">
         <div class="data-left">
           <div class="left-title">福州软件园</div>
           <div class="left-text">
             瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
           </div>
+          <div class="xian"></div>
+          <div class="left-more">MORE</div>
+        </div>
+        <div class="data-right"></div>
+      </div>
+      <div class="mian-data fadeInUp">
+        <div class="data-left">
+          <div class="left-title">福州软件园</div>
+          <div class="left-text">
+            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+          </div>
+          <div class="xian"></div>
           <div class="left-more">MORE</div>
         </div>
         <div class="data-right"></div>
@@ -51,6 +63,7 @@
           <div class="left-text">
             瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
           </div>
+          <div class="xian"></div>
           <div class="left-more">MORE</div>
         </div>
         <div class="data-right"></div>
@@ -61,23 +74,20 @@
           <div class="left-text">
             瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
           </div>
-          <div class="left-more">MORE</div>
-        </div>
-        <div class="data-right"></div>
-      </div>
-      <div class="mian-data">
-        <div class="data-left">
-          <div class="left-title">福州软件园</div>
-          <div class="left-text">
-            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
-          </div>
+          <div class="xian"></div>
           <div class="left-more">MORE</div>
         </div>
         <div class="data-right"></div>
       </div>
     </div>
     <div class="bottom">
-      <el-pagination background layout="pager" :total="30" style="margin-left:-18px"> </el-pagination>
+      <el-pagination
+        background
+        layout="pager"
+        :total="30"
+        style="margin-left: -18px"
+      >
+      </el-pagination>
     </div>
   </Card>
 </template>
@@ -187,6 +197,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: width 1s height 1s;
     .data-left {
       width: 383px;
       height: 241px;
@@ -195,6 +206,7 @@
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #ffffff;
+        transition: all .36s;
       }
       .left-text {
         font-size: 14px;
@@ -202,23 +214,54 @@
         font-weight: 400;
         color: #b2b2b2;
         margin-top: 19px;
+        transition: all .36s;
+      }
+      .xian {
+        width: 0px;
+        height: 0.125rem;
+        background-color: #fff;
+        margin-top: 2.375rem;
+        transition:  width 0.36s ease;
       }
       .left-more {
         font-size: 14px;
         font-family: Source Han Sans SC;
         font-weight: bold;
         color: #ffffff;
-        margin-top: 50px;
+        margin-top: 10px;
+        transition: all .36s;
       }
     }
     .data-right {
       width: 600px;
       height: 335px;
       background: #4d4d4d;
+      transition: all .36s;
     }
   }
+  .mian-data:hover .xian {
+    width: 38.75rem;
+  }
+  .mian-data:hover .data-right {
+    width: 561px;
+    height: 313px;
+    background: #4d4d4d;
+  }
+  .mian-data:hover .left-title{
+    transform: translateY(5px);
+  }
+  .mian-data:hover .left-text{
+    transform: translateY(-5px);
+  }
+  .mian-data:hover .left-more{
+    transform: translateY(15px);
+  }
+  // .mian-data:hover {
+  //   width: 1231px;
+  //   height: 313px;
+  // }
 }
-.bottom{
+.bottom {
   margin: auto;
   margin-top: 7.5rem;
   width: 78.125rem;
