@@ -20,12 +20,16 @@
             <div class="swiper-button-next swiper-button-p1" slot="button-next"></div>
           </swiper>
         </div>
-        <div class="canvas"></div>
+        <div class="canvas">
+          <canvas id="view1" class="canvasBox"></canvas>
+        </div>
       </div>
     </Card>
 </template>
 <script>
 import Card from "@/components/base/Card.vue";
+import { pageOnload } from "../../3d/index.js"
+
 export default {
   name: "Page1",
   data() {
@@ -75,7 +79,12 @@ export default {
   components: {
     Card,
   },
-  mounted() {},
+  mounted() {
+    let view1 = document.getElementById("view1");
+    pageOnload(view1, () => {
+      console.log("done");
+    });
+  },
   methods: {},
 };
 </script>
