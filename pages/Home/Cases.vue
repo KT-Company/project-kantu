@@ -34,19 +34,26 @@
         </li>
       </ul>
     </div>
-    <div class="mian fadeInUp">
-      <div class="mian-data fadeInUp">
+    <div class="mian fadeInUp2">
+      <div
+        class="mian-data fadeInUp"
+        v-for="(item, index) in mianlist.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        )"
+        :key="index"
+      >
         <div class="data-left">
-          <div class="left-title">福州软件园</div>
+          <div class="left-title">{{ item.title }}</div>
           <div class="left-text">
-            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
+            {{ item.text }}
           </div>
           <div class="xian"></div>
           <div class="left-more">MORE</div>
         </div>
         <div class="data-right"></div>
       </div>
-      <div class="mian-data fadeInUp">
+      <!-- <div class="mian-data fadeInUp">
         <div class="data-left">
           <div class="left-title">福州软件园</div>
           <div class="left-text">
@@ -78,13 +85,18 @@
           <div class="left-more">MORE</div>
         </div>
         <div class="data-right"></div>
-      </div>
+      </div> -->
     </div>
     <div class="bottom">
       <el-pagination
         background
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[1, 2, 3, 4]"
+        :page-size="pageSize"
         layout="pager"
-        :total="30"
+        :total="mianlist.length"
         style="margin-left: -18px"
       >
       </el-pagination>
@@ -191,6 +203,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: auto;
   .mian-data {
     width: 1251px;
     height: 335px;
@@ -201,12 +214,13 @@
     .data-left {
       width: 383px;
       height: 241px;
+      text-align: left;
       .left-title {
         font-size: 30px;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #ffffff;
-        transition: all .36s;
+        transition: all 0.36s;
       }
       .left-text {
         font-size: 14px;
@@ -214,14 +228,15 @@
         font-weight: 400;
         color: #b2b2b2;
         margin-top: 19px;
-        transition: all .36s;
+        transition: all 0.36s;
       }
       .xian {
         width: 0px;
         height: 0.125rem;
         background-color: #fff;
+        margin-left: 0;
         margin-top: 2.375rem;
-        transition:  width 0.36s ease;
+        transition: width 0.36s ease;
       }
       .left-more {
         font-size: 14px;
@@ -229,14 +244,14 @@
         font-weight: bold;
         color: #ffffff;
         margin-top: 10px;
-        transition: all .36s;
+        transition: all 0.36s;
       }
     }
     .data-right {
       width: 600px;
       height: 335px;
       background: #4d4d4d;
-      transition: all .36s;
+      transition: all 0.36s;
     }
   }
   .mian-data:hover .xian {
@@ -247,13 +262,13 @@
     height: 313px;
     background: #4d4d4d;
   }
-  .mian-data:hover .left-title{
+  .mian-data:hover .left-title {
     transform: translateY(5px);
   }
-  .mian-data:hover .left-text{
+  .mian-data:hover .left-text {
     transform: translateY(-5px);
   }
-  .mian-data:hover .left-more{
+  .mian-data:hover .left-more {
     transform: translateY(15px);
   }
   // .mian-data:hover {
@@ -288,8 +303,10 @@
 <script>
 import Page1 from "@/components/Main/Page1.vue";
 import Card from "@/components/base/Card.vue";
+import animateMix from "@/mixin/animateMix.js";
 export default {
   name: "Cases",
+  mixins: [animateMix],
   components: {
     Page1,
     Card,
@@ -304,13 +321,81 @@ export default {
         "航天航空",
         "其他",
       ],
+      mianlist: [
+        {
+          title: "福州软件园1",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园2",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园3",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园4",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园5",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园6",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园7",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园8",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园9",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园10",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+        {
+          title: "福州软件园11",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+                {
+          title: "福州软件园12",
+          text: " 瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态",
+        },
+      ],
+      mianlsit2: [],
       navli: 0,
+      currentPage4: 1,
+      currentPage: 1, // 当前页码
+      total: 20, // 总条数
+      pageSize: 4, // 每页的数据条数
     };
+  },
+  created() {
+    this.mianlist2 = this.mianlist.slice(3);
   },
   methods: {
     handlenav(index) {
       this.navli = index;
       console.log(index);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+      this.currentPage = 1;
+      this.pageSize = val;
+    },
+    //当前页改变时触发 跳转其他页
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+      this.currentPage = val;
     },
   },
 };

@@ -3,7 +3,7 @@
     <div style="color: #808080; font-size: 13px; margin-top: 116px">
       你的位置：首页 > <span style="color: #fff">瞰图资讯</span>
     </div>
-    <div class="mian">
+    <div class="mian fadeInUp">
       <div class="mian-mian">
         <div class="mian-data">
           <div class="mian-title">
@@ -184,8 +184,10 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
+import animateMix from "@/mixin/animateMix.js";
 export default {
   name: "News",
+  mixins: [animateMix],
   components: {
     Card,
   },

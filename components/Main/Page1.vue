@@ -81,9 +81,9 @@ export default {
   },
   mounted() {
     let view1 = document.getElementById("view1");
-    pageOnload(view1, () => {
-      console.log("done");
-    });
+    // pageOnload(view1, () => {
+    //   console.log("done");
+    // });
   },
   methods: {},
 };

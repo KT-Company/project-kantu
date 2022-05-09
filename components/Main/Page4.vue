@@ -5,9 +5,20 @@
         <div class="fadeInUp" style="height: 80vh">
           <div class="text-3xl h-40">三维可视化</div>
           <div class="flex">
-            <img src="~assets/images/main/p4-mobile.png" class="mr-20" alt="" srcset="" />
+            <img
+              src="~assets/images/main/p4-mobile.png"
+              class="mr-20"
+              alt=""
+              srcset=""
+            />
             <div>
-              <div class="rounded-xl p-4 mb-20" style=" background: #262626; box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1); ">
+              <div
+                class="rounded-xl p-4 mb-20"
+                style="
+                  background: #262626;
+                  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+                "
+              >
                 <span>数据模型采集 </span>
                 <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
                 <span>模型制作</span>
@@ -25,8 +36,8 @@
               </div>
             </div>
           </div>
-          <div class="mt-20">
-            <el-timeline>
+          <div class="mt-20 xian">
+            <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
                 :key="index"
@@ -38,8 +49,20 @@
                   <p>王小虎 提交于 2018/4/12 20:46</p>
                 </el-card>
               </el-timeline-item>
-            </el-timeline>
+            </el-timeline> -->
             <!-- <Timeline /> -->
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
+            <div class="one"></div>
           </div>
         </div>
       </div>
@@ -47,7 +70,25 @@
   </Card>
 </template>
 <style>
-
+.xian {
+  width: 1330px;
+  height: 1px;
+  background: #4d4d4d;
+  margin: auto;
+  margin-top: 12.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.one {
+  width: 9px;
+  height: 9px;
+  background: #4d4d4d;
+  border-radius: 50%;
+  transform: translateY(-4.5px);
+}
+.one:hover{
+  background-color: #fff;
+}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
@@ -57,20 +98,20 @@ export default {
 
   data() {
     return {
-      activities: [
-        {
-          content: "活动按期开始",
-          timestamp: "2018-04-15",
-        },
-        {
-          content: "通过审核",
-          timestamp: "2018-04-13",
-        },
-        {
-          content: "创建成功",
-          timestamp: "2018-04-11",
-        },
-      ],
+      // activities: [
+      //   {
+      //     content: "活动按期开始",
+      //     timestamp: "2018-04-15",
+      //   },
+      //   {
+      //     content: "通过审核",
+      //     timestamp: "2018-04-13",
+      //   },
+      //   {
+      //     content: "创建成功",
+      //     timestamp: "2018-04-11",
+      //   },
+      // ],
     };
   },
   components: {
