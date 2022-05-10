@@ -36,7 +36,13 @@
               </div>
             </div>
           </div>
-          <div class="mt-20 xian">
+          <ul class="mt-20 xian">
+            <li class="item" v-for="item in 11" :key="item">
+              <div class="message-dialog-wrapper">
+                <h3 class="m-d-title"></h3>
+                <p class="m-d-content"></p>
+              </div>
+            </li>
             <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
@@ -51,19 +57,8 @@
               </el-timeline-item>
             </el-timeline> -->
             <!-- <Timeline /> -->
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-            <div class="one"></div>
-          </div>
+            <!-- <div class="one"></div> -->
+          </ul>
         </div>
       </div>
     </div>
@@ -71,14 +66,74 @@
 </template>
 <style>
 .xian {
-  width: 1330px;
-  height: 1px;
-  background: #4d4d4d;
+  width: 1350px;
+  height: 9px;
+  background: linear-gradient(#4d4d4d 0%, #4d4d4d 100%) center center/calc(100% - 20px) 1px
+    no-repeat;
   margin: auto;
   margin-top: 12.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+.item {
+  box-sizing: content-box;
+  position: relative;
+  height: 9px;
+  width: 9px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #4d4d4d;
+  background-clip: content-box;
+  cursor: pointer;
+}
+.item:hover {
+  transition: all 0.25s;
+  background-color: #fff;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: all .25s ease-in;
+  transform: translate(-50%,-50%);
+}
+.item:hover:after {
+  width: 29px;
+  height: 29px;
+  opacity: 1;
+  border: 1px solid #FFF;
+}
+
+.item:hover>.message-dialog-wrapper{
+  opacity: 1;
+  pointer-events: auto;
+}
+.message-dialog-wrapper{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  width: 229px;
+  height: 159px;
+  transform: translate(-50%,-100%);
+  transition: all .25s ease-in;
+  background: url('@/assets/images/main/dialog.png');
+}
+.item:nth-child(even)>.message-dialog-wrapper{
+  background: red;
+  transform: translateX(-50%);
+
+}
+
+
 .one {
   width: 9px;
   height: 9px;
@@ -86,7 +141,7 @@
   border-radius: 50%;
   transform: translateY(-4.5px);
 }
-.one:hover{
+.one:hover {
   background-color: #fff;
 }
 </style>

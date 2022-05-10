@@ -4,7 +4,7 @@
       <div class="title">重庆瞰图科技有限公司</div>
       <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
       <div class="data">
-        <div class="data-mian">
+        <div class="data-mian" @wheel.stop>
           <div class="data-img"></div>
           <div class="data-text">绵阳高新区</div>
         </div>

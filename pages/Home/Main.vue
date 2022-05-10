@@ -15,11 +15,6 @@
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
           </swiper-slide>
-          <!-- <swiper-slide>
-            <div class="back-card">
-              <Footer />
-            </div>
-          </swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </article>

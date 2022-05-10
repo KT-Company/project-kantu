@@ -77,7 +77,15 @@
       </div>
       <div class="mian-img">
         <div class="img"></div>
-        <div class="img"></div>
+        <div class="img-data">
+          <div class="data-title">欢迎咨询我们</div>
+          <div class="data-2wm"></div>
+          <div class="data-phone">
+            电话：189 8392 0157 <br />
+            微信：158 2628 9334 <br />
+            重庆市渝中区
+          </div>
+        </div>
       </div>
     </div>
   </Card>
@@ -177,6 +185,33 @@
   height: 26.9375rem;
   width: 695px;
   background-color: #fff;
+}
+.img-data {
+  width: 695px;
+  height: 431px;
+  background: #262626;
+  border: 5px solid #4d4d4d;
+  padding: 2.5rem;
+  text-align: left;
+  .data-title {
+    font-size: 30px;
+    font-family: Source Han Sans SC;
+    font-weight: bold;
+    color: #fff;
+  }
+  .data-2wm {
+    width: 120px;
+    height: 120px;
+    background: #333333;
+    margin-top: 3.125rem;
+  }
+  .data-phone{
+    // text-align: .9375rem;
+    margin-top: 3.125rem;
+    line-height: 1.875rem;
+    color: #808080;
+    font-size: .875rem;
+  }
 }
 </style>
 <script>

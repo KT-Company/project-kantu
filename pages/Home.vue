@@ -18,15 +18,20 @@
   z-index: 9;
   /* background-color: #fff; */
 }
-.hdactive{
+.hdactive {
   background-color: #1a1a1a;
   box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+}
+* {
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 </style>
 <script>
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       showHeader: true,
@@ -42,7 +47,7 @@ export default {
       // console.log(window.pageYOffset+"px");
       if (window.pageYOffset > 80) {
         this.ba = true;
-      }else if(window.pageYOffset < 80){
+      } else if (window.pageYOffset < 80) {
         this.ba = false;
       }
     },

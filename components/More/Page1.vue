@@ -3,7 +3,7 @@
     <div style="color: #808080; font-size: 13px; margin-top: 52px">
       你的位置：首页 > <span style="color: #fff">产品业务</span>
     </div>
-    <div class="flex justify-between ">
+    <div class="flex justify-between">
       <div class="mian-left">
         <div class="title">瞰图编辑器<span>(方便，快捷，高效)</span></div>
         <ul>
@@ -77,7 +77,7 @@ ul {
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
-  margin-top: 7.5rem;
+  margin-top: 6.25rem;
 }
 .button:hover {
   background-color: #fff;
