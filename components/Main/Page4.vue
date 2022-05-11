@@ -5,9 +5,20 @@
         <div class="fadeInUp" style="height: 80vh">
           <div class="text-3xl h-40">三维可视化</div>
           <div class="flex">
-            <img src="~assets/images/main/p4-mobile.png" class="mr-20" alt="" srcset="" />
+            <img
+              src="~assets/images/main/p4-mobile.png"
+              class="mr-20"
+              alt=""
+              srcset=""
+            />
             <div>
-              <div class="rounded-xl p-4 mb-20" style=" background: #262626; box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1); ">
+              <div
+                class="rounded-xl p-4 mb-20"
+                style="
+                  background: #262626;
+                  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+                "
+              >
                 <span>数据模型采集 </span>
                 <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
                 <span>模型制作</span>
@@ -25,8 +36,14 @@
               </div>
             </div>
           </div>
-          <div class="mt-20">
-            <el-timeline>
+          <ul class="mt-20 xian">
+            <li class="item" v-for="item in 11" :key="item">
+              <div class="message-dialog-wrapper">
+                <h3 class="m-d-title"></h3>
+                <p class="m-d-content"></p>
+              </div>
+            </li>
+            <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
                 :key="index"
@@ -38,16 +55,95 @@
                   <p>王小虎 提交于 2018/4/12 20:46</p>
                 </el-card>
               </el-timeline-item>
-            </el-timeline>
+            </el-timeline> -->
             <!-- <Timeline /> -->
-          </div>
+            <!-- <div class="one"></div> -->
+          </ul>
         </div>
       </div>
     </div>
   </Card>
 </template>
 <style>
+.xian {
+  width: 1350px;
+  height: 9px;
+  background: linear-gradient(#4d4d4d 0%, #4d4d4d 100%) center center/calc(100% - 20px) 1px
+    no-repeat;
+  margin: auto;
+  margin-top: 12.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item {
+  box-sizing: content-box;
+  position: relative;
+  height: 9px;
+  width: 9px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #4d4d4d;
+  background-clip: content-box;
+  cursor: pointer;
+}
+.item:hover {
+  transition: all 0.25s;
+  background-color: #fff;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: all .25s ease-in;
+  transform: translate(-50%,-50%);
+}
+.item:hover:after {
+  width: 29px;
+  height: 29px;
+  opacity: 1;
+  border: 1px solid #FFF;
+}
 
+.item:hover>.message-dialog-wrapper{
+  opacity: 1;
+  pointer-events: auto;
+}
+.message-dialog-wrapper{
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  width: 229px;
+  height: 159px;
+  transform: translate(-50%,-100%);
+  transition: all .25s ease-in;
+  background: url('@/assets/images/main/dialog.png');
+}
+.item:nth-child(even)>.message-dialog-wrapper{
+  background: red;
+  transform: translateX(-50%);
+
+}
+
+
+.one {
+  width: 9px;
+  height: 9px;
+  background: #4d4d4d;
+  border-radius: 50%;
+  transform: translateY(-4.5px);
+}
+.one:hover {
+  background-color: #fff;
+}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
@@ -57,20 +153,20 @@ export default {
 
   data() {
     return {
-      activities: [
-        {
-          content: "活动按期开始",
-          timestamp: "2018-04-15",
-        },
-        {
-          content: "通过审核",
-          timestamp: "2018-04-13",
-        },
-        {
-          content: "创建成功",
-          timestamp: "2018-04-11",
-        },
-      ],
+      // activities: [
+      //   {
+      //     content: "活动按期开始",
+      //     timestamp: "2018-04-15",
+      //   },
+      //   {
+      //     content: "通过审核",
+      //     timestamp: "2018-04-13",
+      //   },
+      //   {
+      //     content: "创建成功",
+      //     timestamp: "2018-04-11",
+      //   },
+      // ],
     };
   },
   components: {

@@ -1,24 +1,46 @@
 <template>
   <div class="flex justify-between">
-      <div class="canvas flex1" style="height: calc(100vh - 4rem)"></div>
-      <Card>
-        <div class="fadeInUp" style="width: 60vh; height: 80vh">
-          <div class="text-3xl h-40">GIS</div>
-          <div class="h-20">
-            <span class="text-2xl">GIS - 地理信息系统</span>
-          </div>
-          <div class="color-subtext h-60 fadeInUp2">
-            GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
-          </div>
-          <div>
-            <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button>
+    <div class="canvas flex1" style="height: calc(100vh - 4rem)"></div>
+    <Card>
+      <div class="fadeInUp" style="width: 60vh; height: 80vh">
+        <div class="text-3xl h-40">GIS</div>
+        <div class="h-20">
+          <span class="text-2xl">GIS - 地理信息系统</span>
+        </div>
+        <div class="color-subtext h-60 fadeInUp2">
+          GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
+        </div>
+        <div>
+          <!-- <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button> -->
+          <div class="button">
+            <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
           </div>
         </div>
-      </Card>
-    </div>
+      </div>
+    </Card>
+  </div>
 </template>
 <style>
-
+.button {
+  width: 210px;
+  height: 50px;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  transition: all .36s;
+}
+.button:hover{
+  background-color: #fff;
+  color: #1a1a1a;
+  /* box-shadow:none; */
+  transform: translateY(-.3125rem);
+}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";

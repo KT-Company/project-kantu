@@ -15,6 +15,11 @@
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
           </swiper-slide>
+          <!-- <swiper-slide>
+            <div class="back-card">
+              <Footer />
+            </div>
+          </swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </article>
@@ -29,7 +34,7 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
-import { Page1, Page2, Page3, Page4, Page5, Page6 } from "@/components/Main";
+import { Page1, Page2,} from "@/components/More";
 import Footer from "@/components/Footer.vue";
 import animateMix from "@/mixin/animateMix.js";
 export default {
@@ -78,11 +83,11 @@ export default {
       },
       fadeUpIn: null,
       fadeUpIn2: null,
-      swiperPages: ["Page1", "Page2", "Page3", "Page4", "Page5", "Page6"],
+      swiperPages: ["Page1", "Page2",],
       pageHeight: 960,
     };
   },
-  components: { Card, Page1, Page2, Page3, Page4, Page5, Page6, Footer },
+  components: { Card, Page1, Page2, Footer },
   mounted() {
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;

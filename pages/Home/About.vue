@@ -3,7 +3,7 @@
     <div style="color: #808080; font-size: 13px; margin-top: 116px">
       你的位置：首页 > <span style="color: #fff">了解瞰图</span>
     </div>
-    <div class="mian">
+    <div class="mian fadeInUp">
       <div class="mian-left">
         <div style="font-size: 86px">About</div>
         <div style="font-size: 30px">重庆瞰图科技有限公司</div>
@@ -18,13 +18,13 @@
             其中，代表案例有智慧园区、工业制造、智慧能源、航空航天等。公司坚持以人才和技术为核心；以质量和服务为准则；为客户开发专业、优质、满意、适用的互联网产品。
           </div>
         </div>
-        <el-button class="btn-normal" style="margin-top: 105px"
-          ><i class="el-icon-d-arrow-right mr-6"></i>联系我们</el-button
-        >
+        <div class="button">
+          <i class="el-icon-d-arrow-left mr-6"></i>联系我们获取案例
+        </div>
       </div>
       <div class="mian-right"></div>
     </div>
-    <div class="mian-bottom">
+    <div class="mian-bottom fadeInUp2">
       <div style="height: 148px">
         <div style="font-size: 50px">使命愿景</div>
         <div style="font-size: 25px; color: #808080">
@@ -67,7 +67,9 @@
           <div class="data-icon"></div>
           <div class="data-text">
             <div style="font-size: 30px; color: #ffffff">战略定位</div>
-            <div style="font-size: 14px; color: #4d4d4d">Strategic positioning </div>
+            <div style="font-size: 14px; color: #4d4d4d">
+              Strategic positioning
+            </div>
             <div style="margin-top: 46px">致力可视化系统设计</div>
             <div>三维虚拟仿真开发</div>
           </div>
@@ -75,12 +77,42 @@
       </div>
       <div class="mian-img">
         <div class="img"></div>
-        <div class="img"></div>
+        <div class="img-data">
+          <div class="data-title">欢迎咨询我们</div>
+          <div class="data-2wm"></div>
+          <div class="data-phone">
+            电话：189 8392 0157 <br />
+            微信：158 2628 9334 <br />
+            重庆市渝中区
+          </div>
+        </div>
       </div>
     </div>
   </Card>
 </template>
 <style scoped lang="less">
+.button {
+  width: 210px;
+  height: 50px;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  transition: all 0.36s;
+  // margin-top: 96px;
+  margin-left: 1.25rem;
+}
+.button:hover {
+  background-color: #fff;
+  color: #1a1a1a;
+  /* box-shadow:none; */
+  transform: translateY(-0.3125rem);
+}
 .mian {
   width: 101.25rem;
   height: 39rem;
@@ -99,8 +131,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.mian-left{
+.mian-left {
   width: 37.6875rem;
+  height: 100%;
 }
 .mian-right {
   width: 47.8125rem;
@@ -140,7 +173,7 @@
   font-size: 1.125rem;
   color: #808080;
 }
-.mian-img{
+.mian-img {
   width: 101.25rem;
   height: 26.9375rem;
   display: flex;
@@ -148,16 +181,45 @@
   margin-top: 10.25rem;
   // background-color: sienna;
 }
-.img{
-      height:26.9375rem;
-    width: 695px;
-    background-color: #fff;
+.img {
+  height: 26.9375rem;
+  width: 695px;
+  background-color: #fff;
+}
+.img-data {
+  width: 695px;
+  height: 431px;
+  background: #262626;
+  border: 5px solid #4d4d4d;
+  padding: 2.5rem;
+  text-align: left;
+  .data-title {
+    font-size: 30px;
+    font-family: Source Han Sans SC;
+    font-weight: bold;
+    color: #fff;
+  }
+  .data-2wm {
+    width: 120px;
+    height: 120px;
+    background: #333333;
+    margin-top: 3.125rem;
+  }
+  .data-phone{
+    // text-align: .9375rem;
+    margin-top: 3.125rem;
+    line-height: 1.875rem;
+    color: #808080;
+    font-size: .875rem;
+  }
 }
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
+import animateMix from "@/mixin/animateMix.js";
 export default {
   name: "About",
+  mixins: [animateMix],
   components: {
     Card,
   },

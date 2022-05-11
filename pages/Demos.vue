@@ -4,7 +4,7 @@
       <div class="title">重庆瞰图科技有限公司</div>
       <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
       <div class="data">
-        <div class="data-mian">
+        <div class="data-mian" @wheel.stop>
           <div class="data-img"></div>
           <div class="data-text">绵阳高新区</div>
         </div>
@@ -13,14 +13,35 @@
           <div class="data-text">绵阳高新区</div>
         </div>
       </div>
-      <el-button class="btn-normal" style="margin-top: 100px"
-        ><nuxt-link to="/home/main">返回首页</nuxt-link></el-button
-      >
+      <div class="button">
+        <nuxt-link to="/home/main">返回首页</nuxt-link>
+      </div>
     </div>
     <div class="right"></div>
   </div>
 </template>
 <style lang="less" scoped>
+.button {
+  width: 210px;
+  height: 50px;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  transition: all .36s;
+  margin-top:4rem;
+}
+.button:hover{
+  background-color: #fff;
+  color: #1a1a1a;
+  /* box-shadow:none; */
+  transform: translateY(-.3125rem);
+}
 .mian {
   width: 100%;
   height: 100%;
