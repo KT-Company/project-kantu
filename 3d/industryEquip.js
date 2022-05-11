@@ -57,7 +57,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             },
             ambientLight: {
                 color: 0xffffff,
-                intensity: 1.0,
+                intensity: 0.4,
             },
         },
         dof: {
@@ -111,7 +111,8 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             item.position.y = -15
             item.traverse(child => {
                 if (child.isMesh) {
-                    child.material.roughness = 0.05
+                    child.material.roughness = 0.05;
+                    child.material.envMapIntensity = 1
                 }
             })
         },

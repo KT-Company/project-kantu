@@ -56729,17 +56729,19 @@ class UnrealBloomPass extends Pass {
 					vec2 invSize = 1.0 / texSize;
 					float fSigma = float(SIGMA);
 					float weightSum = gaussianPdf(0.0, fSigma);
+					float alphaSum = 0.0;
 					vec3 diffuseSum = texture2D( colorTexture, vUv).rgb * weightSum;
 					for( int i = 1; i < KERNEL_RADIUS; i ++ ) {
 						float x = float(i);
 						float w = gaussianPdf(x, fSigma);
 						vec2 uvOffset = direction * invSize * x;
-						vec3 sample1 = texture2D( colorTexture, vUv + uvOffset).rgb;
-						vec3 sample2 = texture2D( colorTexture, vUv - uvOffset).rgb;
-						diffuseSum += (sample1 + sample2) * w;
+						vec4 sample1 = texture2D( colorTexture, vUv + uvOffset);
+						vec4 sample2 = texture2D( colorTexture, vUv - uvOffset);
+						diffuseSum += (sample1.rgb + sample2.rgb) * w;
+						alphaSum += (sample1.a + sample2.a) * w;
 						weightSum += 2.0 * w;
 					}
-					gl_FragColor = vec4(diffuseSum/weightSum, 1.0);
+					gl_FragColor = vec4(diffuseSum/weightSum, alphaSum/weightSum);
 				}`
 		});
 
@@ -56827,9 +56829,7 @@ uniform sampler2D bloomTexture;
 varying vec2 vUv;
 
 void main() {
-
-    gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
-
+	gl_FragColor = texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv );
 }
 
 `;
@@ -71412,7 +71412,7 @@ class Container {
 			fragmentShader: bloomFragShader
 		}), 'baseTexture');
 		this.finalbloomPass.needsSwap = true;
-		// this.sceneComposer.addPass(this.finalbloomPass);
+		this.sceneComposer.addPass(this.finalbloomPass);
 		// *** BLOOM FINAL PASS end ***
 		// *** DOF PASS start***
 		let dof = {
@@ -71444,8 +71444,8 @@ class Container {
 		this.outlinePass.pulsePeriod = outlineParams.pulsePeriod;
 		this.outlinePass.visibleEdgeColor.set(outlineParams.visibleEdgeColor);
 		this.outlinePass.hiddenEdgeColor.set(outlineParams.hiddenEdgeColor);
-		// if (attrs && attrs.outline)
-			// this.sceneComposer.addPass(this.outlinePass);
+		if (attrs && attrs.outline)
+			this.sceneComposer.addPass(this.outlinePass);
 		// *** OUTLINE PASS end ***
 		if (this.viewState == 'orbit') {
 			this.renderPass.camera = this.orbitCamera;
