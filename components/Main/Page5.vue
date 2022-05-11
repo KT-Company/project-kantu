@@ -25,16 +25,16 @@
           </div>
         </div>
       </div>
-      <div class="echarts">
+      <div class="echarts fadeInUp">
+        <div class="echart fadeInUp2" v-for="item in 9" :key="item">Echart</div>
+        <!-- <div class="echart">Echart</div>
         <div class="echart">Echart</div>
         <div class="echart">Echart</div>
         <div class="echart">Echart</div>
         <div class="echart">Echart</div>
         <div class="echart">Echart</div>
         <div class="echart">Echart</div>
-        <div class="echart">Echart</div>
-        <div class="echart">Echart</div>
-        <div class="echart">Echart</div>
+        <div class="echart">Echart</div> -->
       </div>
       <!-- <div class="canvas grid grid-flow-row auto-rows-max">
         <div class="grid grid-flow-col auto-cols-max">

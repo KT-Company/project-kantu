@@ -37,11 +37,32 @@
           </div>
         </div>
       </div>
-      <div class="canvas"></div>
+      <!-- <div class="canvas"></div> -->
+      <div class="imgs">
+        <div class="imgs-top fadeInUp">
+          <img src="@/assets/images/main/西安电子科技.png" alt="" />
+          <img src="@/assets/images/main/小米.png" alt="" />
+          <img src="@/assets/images/main/中国南飞.png" alt="" />
+          <img src="@/assets/images/main/硅湖.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/武汉钢铁.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/中船重工.png" alt="" style="margin-top:20px"/>
+        </div>
+        <div class="imgs-bottom fadeInUp2">
+            <img src="@/assets/images/main/中电.png" alt="" />
+          <img src="@/assets/images/main/长江证券.png" alt="" />
+          <img src="@/assets/images/main/本溪钢铁.png" alt="" />
+          <img src="@/assets/images/main/京东方.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/江苏.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/中冶赛迪.png" alt="" style="margin-top:20px"/>
+        </div>
+      </div>
     </div>
   </Card>
 </template>
-<style>
+<style lang="less">
+.flex{
+  align-items: center;
+}
 .button {
   width: 210px;
   height: 50px;
@@ -54,14 +75,39 @@
   font-size: 14px;
   font-family: Source Han Sans SC;
   font-weight: bold;
-  transition: all .36s;
+  transition: all 0.36s;
   margin-top: 4rem;
 }
-.button:hover{
+.button:hover {
   background-color: #fff;
   color: #1a1a1a;
   /* box-shadow:none; */
-  transform: translateY(-.3125rem);
+  transform: translateY(-0.3125rem);
+}
+.imgs-top {
+  width: 47.25rem;
+  height: 12.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  img {
+    height: 90px;
+    width: 220px;
+  }
+}
+.imgs-bottom{
+  margin-top: 146px;
+  width: 47.25rem;
+  height: 12.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  img {
+    height: 90px;
+    width: 220px;
+  }
 }
 </style>
 <script>
