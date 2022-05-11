@@ -29,7 +29,9 @@
           </div>
         </div>
       </div>
-      <div class="canvas"></div>
+      <div class="canvas">
+        <canvas id="view2" class="canvasBox"></canvas>
+      </div>
     </div>
   </Card>
 </template>
@@ -96,6 +98,8 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
+import { pageOnloadBuild } from "../../3d/index.js"
+
 export default {
   name: "Page2",
 
@@ -129,7 +133,12 @@ export default {
   components: {
     Card,
   },
-  mounted() {},
+  mounted() {
+    let view1 = document.getElementById("view2");
+    pageOnloadBuild(view1, () => {
+      console.log("done");
+    });
+  },
   methods: {},
 };
 </script>
