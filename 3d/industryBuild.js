@@ -14,6 +14,8 @@ var container,
     windowHalfX,
     windowHalfY;
 
+var modelarr;
+
 // 初始化整个场景
 export const pageOnloadBuild_3d = (baseUrl, canvas, fun) =>
     sceneOnLoad({
@@ -120,7 +122,8 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         },
         stats: false,
         onProgress: (item) => {
-            item.position.y = -100
+            modelarr = item;
+            item.position.y = -100;
             item.traverse(child => {
                 if (child.isMesh) {
                     child.material.envMapIntensity = 0.3
@@ -229,29 +232,38 @@ const render = () => {
     // if (dt > 1) return false;
     // time.value += dt;
 
+    // if (mouseX >= 0) {
+    //     if (container.orbitCamera.position.x > -278) {
+    //         container.orbitCamera.position.x -= mouseX * 0.0003;
+    //     }
+    //     if (container.orbitCamera.position.z > -11) {
+    //         container.orbitCamera.position.z -= mouseX * 0.0015;
+    //     }
+    // } else {
+    //     if (container.orbitCamera.position.x < -96) {
+    //         container.orbitCamera.position.x += -mouseX * 0.0003;
+    //     }
+    //     if (container.orbitCamera.position.z < 260) {
+    //         container.orbitCamera.position.z += -mouseX * 0.0015;
+    //     }
+    // }
     if (mouseX >= 0) {
-        if (container.orbitCamera.position.x > -278) {
-            container.orbitCamera.position.x -= mouseX * 0.0003;
-        }
-        if (container.orbitCamera.position.z > -11) {
-            container.orbitCamera.position.z -= mouseX * 0.0015;
+        if (modelarr.rotation.y > -0.38) {
+            modelarr.rotation.y -= mouseX * 0.00001;
         }
     } else {
-        if (container.orbitCamera.position.x < -96) {
-            container.orbitCamera.position.x += -mouseX * 0.0003;
-        }
-        if (container.orbitCamera.position.z < 260) {
-            container.orbitCamera.position.z += -mouseX * 0.0015;
+        if (modelarr.rotation.y < 0.38) {
+            modelarr.rotation.y += -mouseX * 0.00001;
         }
     }
 
     if (mouseY >= 0) {
         if (container.orbitCamera.position.y < 100) {
-            container.orbitCamera.position.y += mouseY * 0.0015;
+            container.orbitCamera.position.y += mouseY * 0.003;
         }
     } else {
         if (container.orbitCamera.position.y > -60) {
-            container.orbitCamera.position.y -= -mouseY * 0.0015;
+            container.orbitCamera.position.y -= -mouseY * 0.003;
         }
     }
 
