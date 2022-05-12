@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <main>
-      <article>
+      <article >
         <swiper
           :options="swiperOptionMain"
           @swiper="onSwiper"
@@ -9,8 +9,9 @@
           @reachEnd="reachEnd"
           :style="{ height: pageHeight + 'px' }"
           ref="swiper-main"
+          @wheel.stop
         >
-          <swiper-slide v-for="(item, index) in swiperPages" :key="index">
+          <swiper-slide v-for="(item, index) in swiperPages" :key="index" >
             <div class="back-card">
               <component :is="swiperPages[index]" ref="child"></component>
             </div>

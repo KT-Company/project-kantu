@@ -65,7 +65,7 @@
     </div>
   </Card>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 .xian {
   width: 1350px;
   height: 10px;

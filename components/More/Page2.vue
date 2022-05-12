@@ -2,17 +2,28 @@
   <Card>
     <div class="flex justify-between main">
       <div class="swiper-box">
-        <swiper :options="swiperMain" :style="{ height: pageHeight2 + 'px' }">
-          <swiper-slide v-for="(item, index) in 2" :key="index">
-            <div class="back-card">
-              {{ item }}
-            </div>
-          </swiper-slide>
-          <div class="swiper-pagination2" slot="pagination"></div>
-        </swiper>
+        <div class="wrapper">
+          <div
+            class="slider"
+            :class="{ action: index === wpli }"
+            v-for="(item, index) in 5"
+            :key="item"
+          >
+            {{ item }}
+          </div>
+        </div>
+        <ul class="swiper-bottom">
+          <li
+            v-for="(item, index) in 5"
+            :key="index"
+            @click="handleli(index)"
+            :class="wpli === index ? 'active' : ''"
+          ></li>
+        </ul>
+        <div class="swiper-title">{{titlelist[wpli]}}</div>
       </div>
-      <div ref="swiper" class="swiper-main" @wheel.stop @scroll="scrollsp">
-        <div class="main-data">
+      <div class="swiper-main" @wheel.stop @scroll="scrollsp" ref="sm">
+        <div class="main-data" ref="data">
           <div class="data-title">
             智慧园区<span>(各类园区三维场景与园区各业态系统结合)</span>
           </div>
@@ -116,40 +127,142 @@ export default {
   },
   data() {
     return {
-      swiperMain: {
-        speed: 1500,
-        height: 960,
-        direction: "vertical",
-        origin: "left bottom",
-        // // 设置分页器
-        pagination: {
-          el: ".swiper-pagination2",
-          // 设置点击可切换
-          clickable: true,
-        },
-      },
-      pageHeight2: 636,
+      wpli: 0,
+      titlelist:["智慧园区","智慧园区1","智慧园区2","智慧园区3","智慧园区4"]
     };
   },
-  mounted() {
-    // console.log(this.$refs.swiper.body.scrollTop);
-  },
+  mounted() {},
   methods: {
+    getCss(el, css) {
+      return el && window.getComputedStyle(el)[css];
+    },
     scrollsp(e) {
       console.log(e.target.scrollTop);
+      let dataheight = parseInt(this.getCss(this.$refs.data, "height"));
+      // console.log(dataheight);
+      if (e.target.scrollTop >= 0 && e.target.scrollTop <= dataheight) {
+        this.wpli = 0;
+      } else if (e.target.scrollTop <= dataheight * 2&& e.target.scrollTop > dataheight) {
+        this.wpli = 1;
+      } else if (e.target.scrollTop <= dataheight * 3&& e.target.scrollTop > dataheight*2) {
+        this.wpli = 2;
+      } else if (e.target.scrollTop <= dataheight * 4&& e.target.scrollTop > dataheight*3) {
+        this.wpli = 3;
+      } else if (e.target.scrollTop <= dataheight * 5&& e.target.scrollTop > dataheight*4) {
+        this.wpli = 4;
+      }
+    },
+    handleli(idx) {
+      this.wpli = idx;
+      let dataheight = parseInt(this.getCss(this.$refs.data, "height"));
+      if (idx == 0) {
+        this.$refs.sm.scrollTo({top: 0, behavior: 'smooth'})
+      } else {
+        // this.$refs.sm.scrollTop = (dataheight * idx)+58*idx;
+        this.$refs.sm.scrollTo({top: (dataheight * idx)+58*idx, behavior: 'smooth'})
+      }
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.flex{
-  height:100vh;
+// .swiper {
+//   width: 100%;
+//   height: 604px;
+//   background-color: tomato;
+//   border-radius: 20px;
+//   display: none;
+// }
+.mian{
+  margin-top: 58px;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 604px;
+  border-radius: 20px;
+}
+.slider {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #4D4D4D;
+  opacity: 0;
+  transition: all 1s ease;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 636px;
+}
+.slider.action {
+  opacity: 1;
+}
+// .slider:nth-child(odd) {
+//   background: red;
+// }
+
+.swiper-bottom {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 18px;
+  align-items: center;
+}
+li {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  // box-sizing: content-box;
+  // padding:8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: all 0.25s ease-in;
+}
+.active {
+  width: 12px;
+  height: 12px;
+  background-color: #1a1a1a;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+.swiper-title {
+  width: 141px;
+  height: 48px;
+  font-size: 25px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  color: #808080;
+  padding-bottom: 10px;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  border-bottom: 2px solid #808080;
+}
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 18px;
+  opacity: 0.75;
+  line-height: 300px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+.flex {
+  height: 100vh;
+  align-items: flex-start;
 }
 .swiper-box {
   width: 922px;
   height: 636px;
-  background: #4d4d4d;
+  // background: #4d4d4d;
   border-radius: 20px;
   // overflow: auto;
 }
@@ -158,12 +271,14 @@ export default {
   height: 100%;
   // background-color: brown;
   overflow: auto;
+  transition: all 0.25s ease-in;
 }
 .main-data {
   width: 35.875rem;
   // height: 39.75rem;
   height: 100%;
   text-align: right;
+  transition: all 0.25s ease-in;
   .data-title {
     margin-top: 58px;
     font-size: 30px;

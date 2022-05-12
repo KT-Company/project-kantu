@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <div class="flex justify-between">
+    <div class="flex justify-between flexmain">
       <div>
         <div class="fadeInUp" style="width: 60vh">
           <div class="text-3xl sm:h-20 md:h-40">数字孪生</div>
@@ -36,6 +36,9 @@
   </Card>
 </template>
 <style lang="less" scoped>
+.flexmain{
+  align-items:  flex-start;
+}
 .box-page2-display {
   display: flex;
   .item {
@@ -135,9 +138,9 @@ export default {
   },
   mounted() {
     let view1 = document.getElementById("view2");
-    pageOnloadBuild(view1, () => {
-      console.log("done");
-    });
+    // pageOnloadBuild(view1, () => {
+    //   console.log("done");
+    // });
   },
   methods: {},
 };

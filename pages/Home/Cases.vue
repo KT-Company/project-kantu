@@ -203,6 +203,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: transparent;
   overflow: auto;
   .mian-data {
     width: 1251px;
@@ -210,6 +211,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
     transition: width 1s height 1s;
     .data-left {
       width: 383px;
