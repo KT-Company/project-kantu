@@ -35,7 +35,7 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
-import { Page1, Page2,} from "@/components/More";
+import { MPage1, MPage2,} from "@/components/More";
 import Footer from "@/components/Footer.vue";
 import animateMix from "@/mixin/animateMix.js";
 export default {
@@ -84,11 +84,11 @@ export default {
       },
       fadeUpIn: null,
       fadeUpIn2: null,
-      swiperPages: ["Page1", "Page2",],
+      swiperPages: ["MPage1", "MPage2",],
       pageHeight: 960,
     };
   },
-  components: { Card, Page1, Page2, Footer },
+  components: { Card, MPage1, MPage2, Footer },
   mounted() {
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;

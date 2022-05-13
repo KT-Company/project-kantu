@@ -1,7 +1,7 @@
 <template>
   <Card>
     <div class="flex justify-between main">
-      <div class="swiper-box">
+      <div class="swiper-box fadeInUp2">
         <div class="wrapper">
           <div
             class="slider"
@@ -20,9 +20,9 @@
             :class="wpli === index ? 'active' : ''"
           ></li>
         </ul>
-        <div class="swiper-title">{{titlelist[wpli]}}</div>
+        <div class="swiper-title">{{ titlelist[wpli] }}</div>
       </div>
-      <div class="swiper-main" @wheel.stop @scroll="scrollsp" ref="sm">
+      <div class="swiper-main fadeInUp" @wheel.stop @scroll="scrollsp" ref="sm">
         <div class="main-data" ref="data">
           <div class="data-title">
             智慧园区<span>(各类园区三维场景与园区各业态系统结合)</span>
@@ -119,9 +119,9 @@
 
 <script>
 import Card from "@/components/base/Card.vue";
-import animateMix from "@/mixin/animateMix.js";
+// import animateMix from "@/mixin/animateMix.js";
 export default {
-  mixins: [animateMix],
+  // mixins: [animateMix],
   components: {
     Card,
   },
@@ -139,26 +139,15 @@ export default {
     scrollsp(e) {
       console.log(e.target.scrollTop);
       let dataheight = parseInt(this.getCss(this.$refs.data, "height"));
-      // console.log(dataheight);
-      if (e.target.scrollTop >= 0 && e.target.scrollTop <= dataheight) {
-        this.wpli = 0;
-      } else if (e.target.scrollTop <= dataheight * 2&& e.target.scrollTop > dataheight) {
-        this.wpli = 1;
-      } else if (e.target.scrollTop <= dataheight * 3&& e.target.scrollTop > dataheight*2) {
-        this.wpli = 2;
-      } else if (e.target.scrollTop <= dataheight * 4&& e.target.scrollTop > dataheight*3) {
-        this.wpli = 3;
-      } else if (e.target.scrollTop <= dataheight * 5&& e.target.scrollTop > dataheight*4) {
-        this.wpli = 4;
+      if(e.target.scrollTop){
+      this.wpli=parseInt(e.target.scrollTop/dataheight)
       }
     },
     handleli(idx) {
-      this.wpli = idx;
       let dataheight = parseInt(this.getCss(this.$refs.data, "height"));
       if (idx == 0) {
         this.$refs.sm.scrollTo({top: 0, behavior: 'smooth'})
       } else {
-        // this.$refs.sm.scrollTop = (dataheight * idx)+58*idx;
         this.$refs.sm.scrollTo({top: (dataheight * idx)+58*idx, behavior: 'smooth'})
       }
     },
@@ -174,7 +163,7 @@ export default {
 //   border-radius: 20px;
 //   display: none;
 // }
-.mian{
+.mian {
   margin-top: 58px;
 }
 .wrapper {
@@ -187,7 +176,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: #4D4D4D;
+  background: #4d4d4d;
   opacity: 0;
   transition: all 1s ease;
   border-radius: 20px;

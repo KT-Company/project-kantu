@@ -1,27 +1,29 @@
 <template>
   <Card>
-    <div style="color: #808080; font-size: 13px; margin-top: 52px">
-      你的位置：首页 > <span style="color: #fff">产品业务</span>
-    </div>
-    <div class="flex justify-between">
-      <div class="mian-left">
-        <div class="title">瞰图编辑器<span>(方便，快捷，高效)</span></div>
-        <ul>
-          <li>支持三维场景中修改设备点位、属性数据等信息。</li>
-          <li>支持数据看板层面，根据数据类型选择各形态的图表展示。</li>
-          <li>支持模型、看板数据业务绑定。</li>
-        </ul>
-        <div class="fc">
-          <div>多格式导入</div>
-          <div>多图表选择</div>
-          <div>样式修改</div>
-        </div>
-        <div class="button">
-          <i class="el-icon-d-arrow-left mr-6"></i>
-          获取体验
-        </div>
+    <div>
+      <div style="color: #808080; font-size: 13px; margin-top: 52px">
+        你的位置：首页 > <span style="color: #fff">产品业务</span>
       </div>
-      <div class="mian-right"></div>
+      <div class="flex justify-between">
+        <div class="mian-left fadeInUp">
+          <div class="title">瞰图编辑器<span>(方便，快捷，高效)</span></div>
+          <ul>
+            <li>支持三维场景中修改设备点位、属性数据等信息。</li>
+            <li>支持数据看板层面，根据数据类型选择各形态的图表展示。</li>
+            <li>支持模型、看板数据业务绑定。</li>
+          </ul>
+          <div class="fc">
+            <div>多格式导入</div>
+            <div>多图表选择</div>
+            <div>样式修改</div>
+          </div>
+          <div class="button">
+            <i class="el-icon-d-arrow-left mr-6"></i>
+            获取体验
+          </div>
+        </div>
+        <div class="mian-right fadeInUp2"></div>
+      </div>
     </div>
   </Card>
 </template>
@@ -95,9 +97,9 @@ ul {
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
-import animateMix from "@/mixin/animateMix.js";
+// import animateMix from "@/mixin/animateMix.js";
 export default {
-  mixins: [animateMix],
+  // mixins: [animateMix],
   components: {
     Card,
   },

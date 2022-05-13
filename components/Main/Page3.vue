@@ -34,6 +34,7 @@
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all .36s;
+   cursor:pointer;
 }
 .button:hover{
   background-color: #fff;

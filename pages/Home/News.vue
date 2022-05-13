@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom">
+    <!-- <div class="bottom">
       <el-pagination
         background
         layout="pager"
@@ -79,7 +79,7 @@
         style="margin-left: -18px"
       >
       </el-pagination>
-    </div>
+    </div> -->
   </Card>
 </template>
 <style lang="less" scoped>

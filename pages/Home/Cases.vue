@@ -190,6 +190,7 @@
     line-height: 23px;
     display: flex;
     justify-content: space-between;
+    cursor:pointer;
     .active {
       color: #fff;
     }
@@ -306,6 +307,7 @@
 import Page1 from "@/components/Main/Page1.vue";
 import Card from "@/components/base/Card.vue";
 import animateMix from "@/mixin/animateMix.js";
+import {getdemo} from '~/api/index.js'
 export default {
   name: "Cases",
   mixins: [animateMix],
@@ -384,6 +386,9 @@ export default {
   created() {
     this.mianlist2 = this.mianlist.slice(3);
   },
+  mounted () {
+    this.getdemolist();
+  },
   methods: {
     handlenav(index) {
       this.navli = index;
@@ -399,6 +404,11 @@ export default {
       console.log(`当前页: ${val}`);
       this.currentPage = val;
     },
+    getdemolist(){
+      getdemo().then(res=>{
+        console.log(res)
+      })
+    }
   },
 };
 </script>
