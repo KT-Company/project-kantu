@@ -37,12 +37,13 @@
             </div>
           </div>
           <ul class="mt-20 xian">
-            <li class="item" v-for="item in 11" :key="item">
+            <li class="item" v-for="(item, index) in activelist" :key="index" @mouseover="overnum(index)" @mouseout="outnum">
               <div class="message-dialog-wrapper">
-                <h3 class="m-d-title"></h3>
-                <p class="m-d-content"></p>
+                <h3 class="m-d-title">{{ item.title }}</h3>
+                <p class="m-d-content">{{ item.content }}</p>
               </div>
             </li>
+            <div class="num">{{listnum}}</div>
             <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
@@ -64,23 +65,34 @@
     </div>
   </Card>
 </template>
-<style>
+<style lang="less" scoped>
 .xian {
   width: 1350px;
-  height: 9px;
-  background: linear-gradient(#4d4d4d 0%, #4d4d4d 100%) center center/calc(100% - 20px) 1px
-    no-repeat;
+  height: 10px;
+  background: linear-gradient(#4d4d4d 0%, #4d4d4d 100%) center
+    center/calc(100% - 20px) 1px no-repeat;
   margin: auto;
   margin-top: 12.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  .num {
+    position: absolute;
+    left: 46.4%;
+    font-size: 80px;
+    font-family: Source Han Sans SC;
+    font-weight: 800;
+    color: #4d4d4d;
+    line-height: 76px;
+    opacity: .8;
+  }
 }
 .item {
   box-sizing: content-box;
   position: relative;
-  height: 9px;
-  width: 9px;
+  height: 10px;
+  width: 10px;
   padding: 10px;
   border-radius: 100px;
   background-color: #4d4d4d;
@@ -102,44 +114,60 @@
   opacity: 0;
   width: 0;
   height: 0;
-  transition: all .25s ease-in;
-  transform: translate(-50%,-50%);
+  transition: all 0.25s ease-in;
+  transform: translate(-50%, -50%);
 }
 .item:hover:after {
-  width: 29px;
-  height: 29px;
+  width: 30px;
+  height: 30px;
   opacity: 1;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
 }
 
-.item:hover>.message-dialog-wrapper{
+.item:hover > .message-dialog-wrapper {
   opacity: 1;
   pointer-events: auto;
 }
-.message-dialog-wrapper{
+.message-dialog-wrapper {
   opacity: 0;
   pointer-events: none;
   position: absolute;
   left: 50%;
   width: 229px;
   height: 159px;
-  transform: translate(-50%,-100%);
-  transition: all .25s ease-in;
-  background: url('@/assets/images/main/dialog.png');
+  transform: translate(-50%, -100%);
+  transition: all 0.25s ease-in;
+  background: url("@/assets/images/main/dialog.png") no-repeat;
+  padding: 24px;
+  text-align: center;
 }
-.item:nth-child(even)>.message-dialog-wrapper{
+.m-d-title {
+  font-size: 18px;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  color: #ffffff;
+}
+.m-d-content {
+  font-size: 14px;
+  font-family: Source Han Sans SC;
+  font-weight: 400;
+  color: #cccccc;
+  line-height: 20px;
+  margin-top: 18px;
+}
+.item:nth-child(even) > .message-dialog-wrapper {
   background: red;
-  transform: translateX(-50%);
-
+  transform: translate(-50%, 10px);
+  background: url("@/assets/images/main/dialog2.png") no-repeat;
+  padding: 58px 17px 0 17px;
 }
-
 
 .one {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   background: #4d4d4d;
   border-radius: 50%;
-  transform: translateY(-4.5px);
+  transform: translateY(-5px);
 }
 .one:hover {
   background-color: #fff;
@@ -167,6 +195,57 @@ export default {
       //     timestamp: "2018-04-11",
       //   },
       // ],
+      activelist: [
+        {
+          title: "实时光影变化",
+          content: "随着太阳走向产生不同明暗",
+        },
+        {
+          title: "景深效果",
+          content: "可调节景深参数",
+        },
+        {
+          title: "天气变化",
+          content: "可模拟物理场景不同天气变化",
+        },
+        {
+          title: "勾边泛光效果",
+          content: "模型发光高亮显示",
+        },
+        {
+          title: "镜头控制器",
+          content: "可设置相机位置及鼠标事件",
+        },
+        {
+          title: "流光效果",
+          content: "三维灯光特效",
+        },
+        {
+          title: "风格切换",
+          content: "可一键切换三维场景建筑风格",
+        },
+        {
+          title: "镜头聚焦",
+          content: "对具体模型进行距离特写",
+        },
+        {
+          title: "自动巡检",
+          content: "根据镜头预设点位进行巡检移动",
+        },
+        {
+          title: "天空球变化",
+          content: "可切换多种天空状态",
+        },
+        {
+          title: "高度面积计算",
+          content: "通过鼠标框选可计算真实场景大小",
+        },
+        {
+          title: "小地图功能",
+          content: "实时定位当前位置",
+        },
+      ],
+      listnum:""
     };
   },
   components: {
@@ -174,6 +253,19 @@ export default {
     Timeline,
   },
   mounted() {},
-  methods: {},
+  methods: {
+  overnum(index) {
+    // console.log(index)
+    let idx = index+1
+    if(idx<10){
+      this.listnum="0"+idx
+    }else{
+      this.listnum=idx
+    }
+  },
+  outnum(){
+    this.listnum=""
+  }
+},
 };
 </script>

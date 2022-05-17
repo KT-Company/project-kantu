@@ -67,4 +67,20 @@ export default {
   //     })
   //   }
   // }
+
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  axios: {
+    proxy: true,
+  },
+  proxy: {
+    '/api': {
+      target: 'https://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  }
 };

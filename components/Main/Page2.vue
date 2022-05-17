@@ -1,6 +1,6 @@
 <template>
   <Card>
-    <div class="flex justify-between">
+    <div class="flex justify-between flexmain">
       <div>
         <div class="fadeInUp" style="width: 60vh">
           <div class="text-3xl sm:h-20 md:h-40">数字孪生</div>
@@ -16,7 +16,7 @@
             瞰图科技在“数字孪生”制作上，具备成熟的开发管理流程；拥有完善的产品设计、多精度的模型标准、个性化的交互效果、精准的数据引入。运用更多前沿技术完成数字映射，建立更全面的孪生场景。
           </div>
           <div class="box-page2-display mt-20">
-            <div class="item" v-for="item in dataDisplay" :key="item">
+            <div class="item" v-for="(item,index) in dataDisplay" :key="index">
               <div class="icon-box">
                 <!-- <img src="@/assets/images/main/icon-design.png" alt="" srcset="" /> -->
                 <img v-if="item.iconUrl" :src="item.iconUrl" alt="" srcset="" />
@@ -36,6 +36,9 @@
   </Card>
 </template>
 <style lang="less" scoped>
+.flexmain{
+  align-items:  flex-start;
+}
 .box-page2-display {
   display: flex;
   .item {
@@ -135,9 +138,9 @@ export default {
   },
   mounted() {
     let view1 = document.getElementById("view2");
-    pageOnloadBuild(view1, () => {
-      console.log("done");
-    });
+    // pageOnloadBuild(view1, () => {
+    //   console.log("done");
+    // });
   },
   methods: {},
 };

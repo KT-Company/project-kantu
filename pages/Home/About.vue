@@ -138,7 +138,7 @@
 .mian-right {
   width: 47.8125rem;
   height: 36.875rem;
-  background-color: #fff;
+  background-color: #4d4d4d;
 }
 .mian-bottom {
   width: 101.25rem;
@@ -165,7 +165,7 @@
 .data-icon {
   width: 4.0625rem;
   height: 4.0625rem;
-  background-color: #ffffff;
+  background-color: #4d4d4d;
   margin: auto;
 }
 .data-text {
@@ -184,7 +184,7 @@
 .img {
   height: 26.9375rem;
   width: 695px;
-  background-color: #fff;
+  background-color: #4d4d4d;
 }
 .img-data {
   width: 695px;

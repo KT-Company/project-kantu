@@ -5,7 +5,7 @@
       :class="['header', ba === false ? '' : 'hdactive']"
     />
     <nuxt-child />
-    <Footer v-if="!showHeader" />
+    <Footer v-if="showHeader" />
   </div>
 </template>
 <style>

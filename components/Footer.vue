@@ -1,5 +1,5 @@
 <template>
-  <footer class="fadeInUp">
+  <footer>
     <div class="text-5xl">contact</div>
     <div class="coll">联 系 我 们</div>
     <div class="mian">

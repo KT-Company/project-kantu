@@ -116,6 +116,7 @@ export default {
     onSwiper() {},
     onSlideChange() {
       let index = this.$refs["swiper-main"].$swiper.activeIndex;
+      console.log(index)
       this.$nextTick(() => {
         if (this.$refs.child[index]?.handleSlideChange)
           this.$refs.child[index].handleSlideChange();
