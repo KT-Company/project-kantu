@@ -144,12 +144,13 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
                         } else {
                             child.renderOrder = 50
                         }
-                    } else if (child.name == "LOGO_1" || child.name == "LOGO_2") {
-                        container.addBloom(child)
-                        child.material.lightMap = new Bol3D.TextureLoader().load(
-                            PRO_ENV + "/textures/1.png"
-                        );
-                        child.material.lightMapIntensity = -1.5;
+                    } else if (child.name == "LOGO") {
+                        child.material = new Bol3D.MeshBasicMaterial({color:0xffffff})
+                        // container.addBloom(child)
+                        // child.material.lightMap = new Bol3D.TextureLoader().load(
+                        //     PRO_ENV + "/textures/1.png"
+                        // );
+                        // child.material.lightMapIntensity = 1.0;
                     } else if (child.name == "Door") {
                         child.material.roughness = 1.0;
                         child.material.envMapIntensity = 15;
@@ -228,44 +229,25 @@ const render = () => {
 
     flexMesh.material.map.offset.y += 0.001;
 
-    // let dt = clock.getDelta();
-    // if (dt > 1) return false;
-    // time.value += dt;
-
     // if (mouseX >= 0) {
-    //     if (container.orbitCamera.position.x > -278) {
-    //         container.orbitCamera.position.x -= mouseX * 0.0003;
-    //     }
-    //     if (container.orbitCamera.position.z > -11) {
-    //         container.orbitCamera.position.z -= mouseX * 0.0015;
+    //     if (modelarr.rotation.y > -0.38) {
+    //         modelarr.rotation.y -= mouseX * 0.00001;
     //     }
     // } else {
-    //     if (container.orbitCamera.position.x < -96) {
-    //         container.orbitCamera.position.x += -mouseX * 0.0003;
-    //     }
-    //     if (container.orbitCamera.position.z < 260) {
-    //         container.orbitCamera.position.z += -mouseX * 0.0015;
+    //     if (modelarr.rotation.y < 0.38) {
+    //         modelarr.rotation.y += -mouseX * 0.00001;
     //     }
     // }
-    if (mouseX >= 0) {
-        if (modelarr.rotation.y > -0.38) {
-            modelarr.rotation.y -= mouseX * 0.00001;
-        }
-    } else {
-        if (modelarr.rotation.y < 0.38) {
-            modelarr.rotation.y += -mouseX * 0.00001;
-        }
-    }
 
-    if (mouseY >= 0) {
-        if (container.orbitCamera.position.y < 100) {
-            container.orbitCamera.position.y += mouseY * 0.003;
-        }
-    } else {
-        if (container.orbitCamera.position.y > -60) {
-            container.orbitCamera.position.y -= -mouseY * 0.003;
-        }
-    }
+    // if (mouseY >= 0) {
+    //     if (container.orbitCamera.position.y < 100) {
+    //         container.orbitCamera.position.y += mouseY * 0.003;
+    //     }
+    // } else {
+    //     if (container.orbitCamera.position.y > -60) {
+    //         container.orbitCamera.position.y -= -mouseY * 0.003;
+    //     }
+    // }
 
     // outViewPoint()
 };
