@@ -16,7 +16,7 @@
             瞰图科技在“数字孪生”制作上，具备成熟的开发管理流程；拥有完善的产品设计、多精度的模型标准、个性化的交互效果、精准的数据引入。运用更多前沿技术完成数字映射，建立更全面的孪生场景。
           </div>
           <div class="box-page2-display mt-20">
-            <div class="item" v-for="(item,index) in dataDisplay" :key="index">
+            <div class="item" v-for="(item, index) in dataDisplay" :key="index">
               <div class="icon-box">
                 <!-- <img src="@/assets/images/main/icon-design.png" alt="" srcset="" /> -->
                 <img v-if="item.iconUrl" :src="item.iconUrl" alt="" srcset="" />
@@ -36,8 +36,8 @@
   </Card>
 </template>
 <style lang="less" scoped>
-.flexmain{
-  align-items:  flex-start;
+.flexmain {
+  align-items: flex-start;
 }
 .box-page2-display {
   display: flex;
@@ -101,7 +101,7 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
-import { pageOnloadBuild } from "../../3d/index.js"
+import { pageOnloadOil } from "../../3d/index.js";
 
 export default {
   name: "Page2",
@@ -137,8 +137,8 @@ export default {
     Card,
   },
   mounted() {
-    let view1 = document.getElementById("view2");
-    // pageOnloadBuild(view1, () => {
+    let view2 = document.getElementById("view2");
+    // pageOnloadOil(view2, () => {
     //   console.log("done");
     // });
   },

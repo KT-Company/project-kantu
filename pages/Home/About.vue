@@ -22,7 +22,9 @@
           <i class="el-icon-d-arrow-left mr-6"></i>联系我们获取案例
         </div>
       </div>
-      <div class="mian-right"></div>
+      <div class="mian-right">
+        <canvas id="view3" class="canvasBox"></canvas>
+      </div>
     </div>
     <div class="mian-bottom fadeInUp2">
       <div style="height: 148px">
@@ -148,7 +150,7 @@
 .mian-right {
   width: 47.8125rem;
   height: 36.875rem;
-  background-color: #4d4d4d;
+  // background-color: #4d4d4d;
 }
 .mian-bottom {
   width: 101.25rem;
@@ -235,13 +237,18 @@
 <script>
 import Card from "@/components/base/Card.vue";
 import animateMix from "@/mixin/animateMix.js";
+import { pageOnloadBuild } from "../../3d/index.js";
 export default {
   name: "About",
   mixins: [animateMix],
   components: {
     Card,
   },
+  mounted() {
+    let view3 = document.getElementById("view3");
+    // pageOnloadBuild(view3, () => {
+    //   console.log("done");
+    // });
+  },
 };
 </script>
-
- 
