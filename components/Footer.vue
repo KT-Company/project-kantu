@@ -7,11 +7,15 @@
         <div class="left-title">重庆瞰图科技有限公司</div>
         <div class="qr-code">
           <div class="code-left">
-            <div class="code-img"></div>
+            <div class="code-img">
+              <img src="@/assets/images/main/二维码.png" alt="" />
+            </div>
             <div class="code-title">工程师帮助</div>
           </div>
           <div class="code-right">
-            <div class="code-img"></div>
+            <div class="code-img">
+              <img src="@/assets/images/main/二维码.png" alt="" />
+            </div>
             <div class="code-title">微信咨询</div>
           </div>
         </div>
@@ -32,9 +36,7 @@
             <el-input v-model="user.phone" placeholder="电话"></el-input>
           </el-form-item>
         </el-form>
-        <div class="button" @click="onSubmit">
-          提交
-        </div>
+        <div class="button" @click="onSubmit">提交</div>
       </div>
     </div>
   </footer>
@@ -46,7 +48,7 @@ footer {
   height: 30.625rem;
   padding: 4.875rem 9.375rem 0 9.375rem;
   background: #1a1a1a;
-  border-top: 1px solid #cccc;
+  border-top: 1px solid #262626;
   .coll {
     font-size: 30px;
     font-family: Source Han Sans SC;
@@ -80,7 +82,11 @@ footer {
         .code-img {
           width: 80px;
           height: 80px;
-          background: #4d4d4d;
+          // background: #4d4d4d;
+          img{
+            width: 100%;
+            height: 100%;
+          }
         }
         .code-title {
           font-size: 16px;

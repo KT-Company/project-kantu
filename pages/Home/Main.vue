@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div class="home" @wheel="homeWheel">
     <main>
       <article>
         <swiper
           :options="swiperOptionMain"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
-          @reachEnd="reachEnd"
+          @transitionEnd="transitionEnd"
           :style="{ height: pageHeight + 'px' }"
           ref="swiper-main"
         >
@@ -37,6 +37,8 @@ export default {
   mixins: [animateMix],
   data() {
     return {
+      isPageEnd: false,
+      idx: 0,
       swiperOptionMain: {
         speed: 1500,
         height: 960,
@@ -67,7 +69,7 @@ export default {
         // loop: true,
         allowTouchMove: false,
         mousewheel: {
-          // invert: true,
+          //   invert: true,
           releaseOnEdges: true,
         },
         on: {
@@ -83,6 +85,15 @@ export default {
     };
   },
   components: { Card, Page1, Page2, Page3, Page4, Page5, Page6, Footer },
+  watch: {
+    idx(newValue, oldValue) {
+      console.log(newValue);
+      if (newValue <5) {
+        this.isPageEnd=false
+        console.log(this.isPageEnd)
+      }
+    },
+  },
   mounted() {
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;
@@ -114,9 +125,10 @@ export default {
   },
   methods: {
     onSwiper() {},
-    onSlideChange() {
+    onSlideChange(...args) {
+      console.log("change args: ", args);
       let index = this.$refs["swiper-main"].$swiper.activeIndex;
-      console.log(index)
+      this.idx = index;
       this.$nextTick(() => {
         if (this.$refs.child[index]?.handleSlideChange)
           this.$refs.child[index].handleSlideChange();
@@ -127,7 +139,18 @@ export default {
     testChange(e) {
       return e;
     },
-    reachEnd() {},
+    transitionEnd(...args) {
+      if (this.idx === 5) {
+        this.isPageEnd = true;
+        console.log("transitionend args: ", args);
+      }
+    },
+    homeWheel(ev) {
+      if (!this.isPageEnd) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+    },
   },
 };
 </script>

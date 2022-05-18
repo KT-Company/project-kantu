@@ -33,7 +33,9 @@
       </div>
       <div class="mian-data">
         <div class="data">
-          <div class="data-icon"></div>
+          <div class="data-icon">
+            <img src="@/assets/images/main/企业愿景.png" alt="" />
+          </div>
           <div class="data-text">
             <div style="font-size: 30px; color: #ffffff">企业愿景</div>
             <div style="font-size: 14px; color: #4d4d4d">Enterprise vision</div>
@@ -43,7 +45,9 @@
           </div>
         </div>
         <div class="data">
-          <div class="data-icon"></div>
+          <div class="data-icon">
+            <img src="@/assets/images/main/企业使命.png" alt="" />
+          </div>
           <div class="data-text">
             <div style="font-size: 30px; color: #ffffff">企业使命</div>
             <div style="font-size: 14px; color: #4d4d4d">
@@ -55,7 +59,9 @@
           </div>
         </div>
         <div class="data">
-          <div class="data-icon"></div>
+          <div class="data-icon">
+            <img src="@/assets/images/main/核心.png" alt="" />
+          </div>
           <div class="data-text">
             <div style="font-size: 30px; color: #ffffff">核心价值</div>
             <div style="font-size: 14px; color: #4d4d4d">Core value</div>
@@ -64,7 +70,9 @@
           </div>
         </div>
         <div class="data">
-          <div class="data-icon"></div>
+          <div class="data-icon">
+            <img src="@/assets/images/main/定位.png" alt="" />
+          </div>
           <div class="data-text">
             <div style="font-size: 30px; color: #ffffff">战略定位</div>
             <div style="font-size: 14px; color: #4d4d4d">
@@ -79,7 +87,9 @@
         <div class="img"></div>
         <div class="img-data">
           <div class="data-title">欢迎咨询我们</div>
-          <div class="data-2wm"></div>
+          <div class="data-2wm">
+            <img src="@/assets/images/main/二维码.png" alt="" />
+          </div>
           <div class="data-phone">
             电话：189 8392 0157 <br />
             微信：158 2628 9334 <br />
@@ -165,8 +175,12 @@
 .data-icon {
   width: 4.0625rem;
   height: 4.0625rem;
-  background-color: #4d4d4d;
+  // background-color: #4d4d4d;
   margin: auto;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .data-text {
   margin-top: 1.25rem;
@@ -204,13 +218,17 @@
     height: 120px;
     background: #333333;
     margin-top: 3.125rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  .data-phone{
+  .data-phone {
     // text-align: .9375rem;
     margin-top: 3.125rem;
     line-height: 1.875rem;
     color: #808080;
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }
 </style>

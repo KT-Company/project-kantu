@@ -6,6 +6,7 @@
 <style>
 .card {
   padding: 4rem 8rem;
+  /* height: 100vh; */
 }
 </style>
 <script>

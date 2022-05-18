@@ -1,17 +1,18 @@
 <template>
-  <div class="home">
+  <div class="home" @wheel="homeWheel">
     <main>
-      <article >
+      <article>
         <swiper
           :options="swiperOptionMain"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
           @reachEnd="reachEnd"
+          @transitionEnd="transitionEnd"
           :style="{ height: pageHeight + 'px' }"
           ref="swiper-main"
           @wheel.stop
         >
-          <swiper-slide v-for="(item, index) in swiperPages" :key="index" >
+          <swiper-slide v-for="(item, index) in swiperPages" :key="index">
             <div class="back-card">
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
@@ -35,7 +36,7 @@
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
-import { MPage1, MPage2,} from "@/components/More";
+import { MPage1, MPage2 } from "@/components/More";
 import Footer from "@/components/Footer.vue";
 import animateMix from "@/mixin/animateMix.js";
 export default {
@@ -43,6 +44,8 @@ export default {
   mixins: [animateMix],
   data() {
     return {
+      isPageEnd: false,
+      idx: 0,
       swiperOptionMain: {
         speed: 1500,
         height: 960,
@@ -84,11 +87,20 @@ export default {
       },
       fadeUpIn: null,
       fadeUpIn2: null,
-      swiperPages: ["MPage1", "MPage2",],
+      swiperPages: ["MPage1", "MPage2"],
       pageHeight: 960,
     };
   },
   components: { Card, MPage1, MPage2, Footer },
+  watch: {
+    idx(newValue, oldValue) {
+      console.log(newValue);
+      if (newValue < 1) {
+        this.isPageEnd = false;
+        console.log(this.isPageEnd);
+      }
+    },
+  },
   mounted() {
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;
@@ -122,6 +134,8 @@ export default {
     onSwiper() {},
     onSlideChange() {
       let index = this.$refs["swiper-main"].$swiper.activeIndex;
+      console.log(index)
+      this.idx = index;
       this.$nextTick(() => {
         if (this.$refs.child[index]?.handleSlideChange)
           this.$refs.child[index].handleSlideChange();
@@ -133,6 +147,18 @@ export default {
       return e;
     },
     reachEnd() {},
+    transitionEnd(...args) {
+      if (this.idx === 1) {
+        this.isPageEnd = true;
+        console.log("transitionend args: ", args);
+      }
+    },
+    homeWheel(ev) {
+      if (!this.isPageEnd) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+    },
   },
 };
 </script>

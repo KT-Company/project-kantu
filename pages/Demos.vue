@@ -21,9 +21,6 @@
         <nuxt-link to="/home/main">返回首页</nuxt-link>
       </div>
     </div>
-    <div class="right">
-      <img :src="demo.desc_img" alt="" />
-    </div>
   </div>
 </template>
 <style lang="less" scoped>
@@ -51,13 +48,15 @@
 .mian {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // position: relative;
+  background-color: #808080;
 }
 .left {
-  width: 582px;
-  height: 1080px;
+  // position: absolute;
+  // left: 0;
+  // top:0 ;
+  width: 36.375rem;
+  height: 67.5rem;
   background: #1a1a1a;
   box-shadow: 0px 0px 29px 2px rgba(0, 0, 0, 0.7);
   padding: 74px 0 0 150px;
@@ -108,15 +107,6 @@
   }
   .data::-webkit-scrollbar {
     display: none;
-  }
-}
-.right {
-  width: 1372px;
-  height: 1080px;
-  background: #808080;
-  img{
-    width: 100%;
-    height: 100%;
   }
 }
 </style>

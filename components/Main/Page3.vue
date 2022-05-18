@@ -1,8 +1,10 @@
 <template>
   <div class="flex justify-between">
-    <div class="canvas flex1" style="height: calc(100vh - 4rem)"></div>
-    <Card>
-      <div class="fadeInUp" style="width: 60vh; height: 80vh">
+  <div class="canvas flex1" style="height: calc(100vh - 4rem)">
+    <img src="" alt="">
+  </div>
+  <Card>
+      <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
         <div class="text-3xl h-40">GIS</div>
         <div class="h-20">
           <span class="text-2xl">GIS - 地理信息系统</span>
@@ -12,16 +14,16 @@
         </div>
         <div>
           <!-- <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button> -->
-          <div class="button">
+          <div class="button-right">
             <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
           </div>
         </div>
       </div>
-    </Card>
+  </Card>
   </div>
 </template>
 <style>
-.button {
+.button-right {
   width: 210px;
   height: 50px;
   background: #1a1a1a;
@@ -33,14 +35,24 @@
   font-size: 14px;
   font-family: Source Han Sans SC;
   font-weight: bold;
-  transition: all .36s;
-   cursor:pointer;
+  transition: all 0.36s;
+  cursor: pointer;
+  margin-left: 350px;
 }
-.button:hover{
+.button-right:hover {
   background-color: #fff;
   color: #1a1a1a;
   /* box-shadow:none; */
-  transform: translateY(-.3125rem);
+  transform: translateY(-0.3125rem);
+}
+.main3 {
+  text-align: right;
+  padding-top: 150px;
+  /* background-color: #fff; */
+}
+.flex1{
+  width: 70rem;
+  background-color: #808080;
 }
 </style>
 <script>

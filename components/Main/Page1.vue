@@ -1,34 +1,40 @@
 <template>
   <Card>
-      <div class="flex justify-between">
-        <div>
-          <swiper :options="swiperOptionP1" style="width: 60vh; height: 80vh">
-            <swiper-slide v-for="item in swiperDataP1" :key="item.index">
-              <div class="display-box fadeInUp">
-                <div style="color: rgba(153, 153, 153, 1)">
-                  {{ item.slogenEn }}
-                </div>
-                <div class="text-4xl h-60">
-                  {{ item.slogen }}
-                </div>
-                <div>{{ item.detail }}</div>
-                <div class="absolute bottom-16">{{ item.time }}</div>
+    <div class="flex justify-between">
+      <div>
+        <swiper :options="swiperOptionP1" style="width: 60vh; height: 80vh">
+          <swiper-slide v-for="item in swiperDataP1" :key="item.index">
+            <div class="display-box fadeInUp">
+              <div style="color: rgba(153, 153, 153, 1)">
+                {{ item.slogenEn }}
               </div>
-            </swiper-slide>
-            <!-- <div class="swiper-pagination swiper-pagination-p1" slot="pagination"></div> -->
-            <div class="swiper-button-prev swiper-button-p1" slot="button-prev"></div>
-            <div class="swiper-button-next swiper-button-p1" slot="button-next"></div>
-          </swiper>
-        </div>
-        <div class="canvas">
-          <canvas id="view1" class="canvasBox"></canvas>
-        </div>
+              <div class="text-4xl h-60">
+                {{ item.slogen }}
+              </div>
+              <div>{{ item.detail }}</div>
+              <div class="absolute bottom-16">{{ item.time }}</div>
+            </div>
+          </swiper-slide>
+          <!-- <div class="swiper-pagination swiper-pagination-p1" slot="pagination"></div> -->
+          <div
+            class="swiper-button-prev swiper-button-p1"
+            slot="button-prev"
+          ></div>
+          <div
+            class="swiper-button-next swiper-button-p1"
+            slot="button-next"
+          ></div>
+        </swiper>
       </div>
-    </Card>
+      <div class="canvas">
+        <canvas id="view1" class="canvasBox"></canvas>
+      </div>
+    </div>
+  </Card>
 </template>
 <script>
 import Card from "@/components/base/Card.vue";
-import { pageOnload } from "../../3d/index.js"
+import { pageOnload } from "../../3d/index.js";
 
 export default {
   name: "Page1",
@@ -44,15 +50,27 @@ export default {
         },
         {
           index: "2002",
-          slogen: "slogen2",
-          slogenEn: "slogen2",
-          time: "01/03",
+          slogen: "瞰图科技\n3D可视化平台开发",
+          slogenEn: "Technology changes life\nDigital makes the future",
+          detail:
+            "可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。",
+          time: "01/04",
         },
         {
-          index: "3002",
-          slogen: "slogen3",
-          slogenEn: "slogen3",
-          time: "01/02",
+          index: "2003",
+          slogen: "自主研发编辑器",
+          slogenEn: "Technology changes life\nDigital makes the future",
+          detail:
+            "基于自研引擎的数字孪生可视化编辑器；数据看板可方便、快捷自定",
+          time: "01/04",
+        },
+        {
+          index: "2004",
+          slogen: "项目主要涉及领域",
+          slogenEn: "Technology changes life\nDigital makes the future",
+          detail:
+            "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。义，支持多格式三维模型文件导入，并编辑模型等。",
+          time: "01/04",
         },
       ],
       swiperOptionP1: {
