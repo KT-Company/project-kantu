@@ -5,7 +5,7 @@
   </div>
   <Card>
       <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
-        <div class="text-3xl h-40">GIS</div>
+        <div class="text-3xl h-40">GIS <i class="el-icon-location-outline"></i></div>
         <div class="h-20">
           <span class="text-2xl">GIS - 地理信息系统</span>
         </div>
@@ -52,7 +52,7 @@
 }
 .flex1{
   width: 70rem;
-  background-color: #808080;
+  background: url("@/assets/images/main/图.png") no-repeat;
 }
 </style>
 <script>

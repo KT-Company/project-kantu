@@ -2,17 +2,19 @@
   <Card>
     <div class="flex justify-between">
       <div>
-        <swiper :options="swiperOptionP1" style="width: 60vh; height: 80vh">
+        <swiper :options="swiperOptionP1" style="width: 70vh; height: 80vh">
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
             <div class="display-box fadeInUp">
-              <div style="color: rgba(153, 153, 153, 1)">
+              <div style="color: rgba(153, 153, 153, 1)" >
                 {{ item.slogenEn }}
               </div>
-              <div class="text-4xl h-60">
+              <div class="text-4xl h-60 title">
                 {{ item.slogen }}
               </div>
-              <div>{{ item.detail }}</div>
-              <div class="absolute bottom-16">{{ item.time }}</div>
+              <div class="text">{{ item.detail }}</div>
+              <div class="absolute bottom-16 ye">
+                <span>{{ item.index }}</span> / 04
+              </div>
             </div>
           </swiper-slide>
           <!-- <div class="swiper-pagination swiper-pagination-p1" slot="pagination"></div> -->
@@ -32,6 +34,33 @@
     </div>
   </Card>
 </template>
+<style lang="less" scoped>
+@font-face {
+  font-family: Mypang;
+  src: url(@/assets/style/font/庞门正道标题体2.0增强版_0.TTF);
+}
+.title {
+  font-family: Mypang;
+  font-size: 72px;
+  line-height: 72px;
+}
+.text{
+  margin-top: 9.9375rem;
+}
+.ye {
+  font-size: 15px;
+  font-family: Mypang;
+  font-weight: 400;
+  color: #b3b3b3;
+  line-height: 30px;
+  span {
+    font-size: 30px;
+    font-family: Mypang;
+    font-weight: 400;
+    color: #fffefe;
+  }
+}
+</style>
 <script>
 import Card from "@/components/base/Card.vue";
 import { pageOnload } from "../../3d/index.js";
@@ -42,14 +71,13 @@ export default {
     return {
       swiperDataP1: [
         {
-          index: "1001",
+          index: "01",
           slogen: "科技改变生活\n数字成就未来",
           slogenEn: "Technology changes life\nDigital makes the future",
           detail: "数字孪生平台公司\n致力于可视化系统设计、三维虚拟仿真开发等",
-          time: "01/04",
         },
         {
-          index: "2002",
+          index: "02",
           slogen: "瞰图科技\n3D可视化平台开发",
           slogenEn: "Technology changes life\nDigital makes the future",
           detail:
@@ -57,19 +85,19 @@ export default {
           time: "01/04",
         },
         {
-          index: "2003",
+          index: "03",
           slogen: "自主研发编辑器",
           slogenEn: "Technology changes life\nDigital makes the future",
           detail:
-            "基于自研引擎的数字孪生可视化编辑器；数据看板可方便、快捷自定",
+            "基于自研引擎的数字孪生可视化编辑器；数据看板可方便、快捷自定义，支持多格式三维模型文件导入，并编辑模型等",
           time: "01/04",
         },
         {
-          index: "2004",
+          index: "04",
           slogen: "项目主要涉及领域",
           slogenEn: "Technology changes life\nDigital makes the future",
           detail:
-            "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。义，支持多格式三维模型文件导入，并编辑模型等。",
+            "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。",
           time: "01/04",
         },
       ],

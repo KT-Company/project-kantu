@@ -36,22 +36,34 @@
     </div>
     <div class="mian fadeInUp2">
       <div
-        class="mian-data fadeInUp"
-        v-for="(item, index) in mianlist.slice(
+        class="mian-data fadeInUp2"
+        v-for="(item, index) in mianlist2.slice(
           (currentPage - 1) * pageSize,
           currentPage * pageSize
         )"
         :key="index"
       >
         <div class="data-left">
-          <div class="left-title">{{ item.name }}</div>
+          <div class="left-title">{{ item.title }}</div>
           <div class="left-text">
-            {{ item.desc }}
+            {{ item.content }}
           </div>
           <div class="xian"></div>
-          <div class="left-more">MORE</div>
+          <!-- <div class="left-more">MORE</div> -->
+          <a :href="item.porjectAddress" class="left-more">MORE</a>
         </div>
-        <div class="data-right"></div>
+        <div class="data-right">
+          <div class="video_wrapper">
+            <!-- <img
+              v-if="!isPlay"
+              class="play_video"
+              @click="playVideo"
+              src="@/assets/images/main/播放.png"
+              alt=""
+            /> -->
+            <video class="video" ref="video" controls :src="item.spurl"></video>
+          </div>
+        </div>
       </div>
       <!-- <div class="mian-data fadeInUp">
         <div class="data-left">
@@ -181,7 +193,7 @@
   display: flex;
   justify-content: space-between;
   ul {
-    width: 476px;
+    width: 120px;
     height: 14px;
     font-size: 13px;
     font-family: Source Han Sans SC;
@@ -190,6 +202,7 @@
     line-height: 23px;
     display: flex;
     justify-content: space-between;
+    // justify-content: flex-end;
     cursor: pointer;
     .active {
       color: #fff;
@@ -198,15 +211,16 @@
 }
 .mian {
   width: 1251px;
-  height: 1698px;
+  // height: 1698px;
   margin: auto;
   margin-top: 7.625rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   background-color: transparent;
   overflow: auto;
   .mian-data {
+    margin-top: 120px;
     width: 1251px;
     height: 335px;
     display: flex;
@@ -253,8 +267,9 @@
     .data-right {
       width: 600px;
       height: 335px;
-      background: #4d4d4d;
+      // background: #4d4d4d;
       transition: all 0.36s;
+      position: relative;
     }
   }
   .mian-data:hover .xian {
@@ -283,6 +298,32 @@
   margin: auto;
   margin-top: 7.5rem;
   width: 78.125rem;
+}
+.video_wrapper {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // width: 3.9125rem;
+  // height: 2.2625rem;
+  width: 100%;
+  height: 100%;
+  // background: #0a3e6d;
+  .video {
+    width: 100%;
+    height: 100%;
+  }
+  .play_video {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+  }
 }
 /deep/ .number {
   width: 3.125rem;
@@ -317,30 +358,56 @@ export default {
   },
   data() {
     return {
-      navlist: [
-        "智慧园区",
-        "工业制造",
-        "智慧工地",
-        "智慧能源",
-        "航天航空",
-        "其他",
-      ],
+      navlist: ["经典案例", "更多"],
+      isPlay: false,
       mianlist: [],
+      mianlist2: [],
       navli: 0,
       currentPage4: 1,
       currentPage: 1, // 当前页码
-      total: 20, // 总条数
+      // total: 20, // 总条数
       pageSize: 4, // 每页的数据条数
     };
   },
-  created() {},
+  created() {
+    this.handlenav(this.navli);
+  },
   mounted() {
     this.getdemolist();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    // this.handlenav(this.navli)
+    // this.$nextTick(() => {
+    //   this.$refs.video.onpause = () => {
+    //     this.isPlay = false;
+    //   };
+    //   this.$refs.video.onplay = () => {
+    //     this.isPlay = true;
+    //   };
+    // });
   },
   methods: {
+    // playVideo() {
+    //   this.$refs.video.play();
+    // },
     handlenav(index) {
       this.navli = index;
       console.log(index);
+      if (index == 0) {
+        this.mianlist.forEach((item) => {
+          if (item.type == 1) {
+            this.mianlist2 = [];
+            this.mianlist2.push(item);
+          }
+        });
+      } else if (index == 1) {
+        this.mianlist.forEach((item) => {
+          if (item.type == 6) {
+            console.log(6);
+            this.mianlist2 = [];
+            this.mianlist2.push(item);
+          }
+        });
+      }
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
@@ -354,12 +421,16 @@ export default {
     },
     async getdemolist() {
       let data = await request.get({
-        url: "/example",
+        url: "/getDyal",
       });
-      console.log(data.data);
-      data.data.forEach((element) => {
-          this.mianlist.push(element);
+      console.log(data.data.data);
+      data.data.data.forEach((item) => {
+        if (item.type == 1) {
+          this.mianlist2 = [];
+          this.mianlist2.push(item);
+        }
       });
+      this.mianlist = data.data.data;
     },
   },
 };

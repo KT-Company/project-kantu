@@ -13,7 +13,7 @@
             />
             <div>
               <div
-                class="rounded-xl p-4 mb-20"
+                class="rounded-xl p-4 mb-20 tiao"
                 style="
                   background: #262626;
                   box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
@@ -37,13 +37,19 @@
             </div>
           </div>
           <ul class="mt-20 xian">
-            <li class="item" v-for="(item, index) in activelist" :key="index" @mouseover="overnum(index)" @mouseout="outnum">
+            <li
+              class="item"
+              v-for="(item, index) in activelist"
+              :key="index"
+              @mouseover="overnum(index)"
+              @mouseout="outnum"
+            >
               <div class="message-dialog-wrapper">
                 <h3 class="m-d-title">{{ item.title }}</h3>
                 <p class="m-d-content">{{ item.content }}</p>
               </div>
             </li>
-            <div class="num">{{listnum}}</div>
+            <div class="num">{{ listnum }}</div>
             <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
@@ -66,6 +72,16 @@
   </Card>
 </template>
 <style lang="less" scoped>
+.tiao {
+  width: 846px;
+  height: 58px;
+  padding: 0;
+  padding-left: 15px;
+  background: #262626;
+  border-radius: 10px;
+  font-size: 25px;
+  line-height: 58px;
+}
 .xian {
   width: 1350px;
   height: 10px;
@@ -85,7 +101,7 @@
     font-weight: 800;
     color: #4d4d4d;
     line-height: 76px;
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 .item {
@@ -245,7 +261,7 @@ export default {
           content: "实时定位当前位置",
         },
       ],
-      listnum:""
+      listnum: "",
     };
   },
   components: {
@@ -254,18 +270,18 @@ export default {
   },
   mounted() {},
   methods: {
-  overnum(index) {
-    // console.log(index)
-    let idx = index+1
-    if(idx<10){
-      this.listnum="0"+idx
-    }else{
-      this.listnum=idx
-    }
+    overnum(index) {
+      // console.log(index)
+      let idx = index + 1;
+      if (idx < 10) {
+        this.listnum = "0" + idx;
+      } else {
+        this.listnum = idx;
+      }
+    },
+    outnum() {
+      this.listnum = "";
+    },
   },
-  outnum(){
-    this.listnum=""
-  }
-},
 };
 </script>

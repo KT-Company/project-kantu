@@ -13,7 +13,7 @@ export default new class {
 function request(config) {
   return Axios({
     ...config,
-    baseURL: 'https://kantu3d.com/api',
+    baseURL: 'http://139.9.231.12:9008/kt',
     transformResponse(data) {
       data = JSON.parse(data)
       return data

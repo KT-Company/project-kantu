@@ -3,14 +3,20 @@
     <div class="flex justify-between main fadeInUp">
       <div class="swiper-box">
         <div class="wrapper">
-          <div
+          <!-- <div
             class="slider"
             :class="{ action: index === wpli }"
             v-for="(item, index) in 5"
             :key="item"
           >
-            {{ item }}
-          </div>
+          </div> -->
+          <img
+            class="slider"
+            :class="{ action: index === wpli }"
+            v-for="(item, index) in imglist"
+            :key="index"
+            :src="item"
+          />
         </div>
         <ul class="swiper-bottom">
           <li
@@ -25,88 +31,104 @@
       <div class="swiper-main" @wheel.stop @scroll="scrollsp" ref="sm">
         <div class="main-data" ref="data">
           <div class="data-title">
-            智慧园区<span>运用大数据、物联网、信息管理等技术，打造智慧互联的园区。</span>
+            智慧园区<span
+              >运用大数据、物联网、信息管理等技术，打造智慧互联的园区。</span
+            >
           </div>
           <div class="data-text">
-           重庆瞰图科技有限公司 数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。
+            重庆瞰图科技有限公司
+            数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。
           </div>
           <div class="fc">
-            <div class="div1">绵阳高新区</div>
-            <div class="div2">绵阳高新区</div>
-            <div class="div3">绵阳新兴投资控股智慧园区领导驾驶舱</div>
+            <div class="div1">
+              <img src="@/assets/images/main/连接.png" alt="" />绵阳高新区
+            </div>
+            <div class="div2">
+              <img src="@/assets/images/main/连接.png" alt="" />绵阳高新区
+            </div>
+            <div class="div3">
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />绵阳新兴投资控股智慧园区领导驾驶舱
+            </div>
           </div>
-          <div class="button">
+          <!-- <div class="button">
             体验智慧园区
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-          </div>
+          </div> -->
         </div>
         <div class="main-data">
           <div class="data-title">
-            工业制造<span>("实现在同一平台管理及掌握工厂全面状况，形象的在现厂区内的多样化资产")</span>
+            工业制造<span>(监测工厂产线，展示mes信息； 提高产能效益)</span>
           </div>
           <div class="data-text">
-            重庆瞰图科技有限公司 智慧工厂致力于打造数字孪生综合管理智慧平台。基于AES全要素场景与智慧互联，对工厂进行全要素数字孪生，助力制造业可持续数字升级，实现绿色“智”造。
+            工业制造是现代工厂信息化发展晋级的阶段性成果，是建立在数字化工厂的基础上的升级，利用物联网和设备监控等技术加强信息管理和服务能力，集智能化设备、技术、系统为一体，实现高效、高控生产，减少人工干预，合理规划/优化生产进度等环节，构建智能高效、节能环保的智慧工厂
           </div>
           <div class="fc">
-            <div class="div1">绵阳高新区</div>
-            <div class="div2">绵阳高新区</div>
-            <div class="div3">绵阳新兴投资控股智慧园区领导驾驶舱</div>
+            <div class="div1">
+              <img src="@/assets/images/main/连接.png" alt="" />BYD生产车间
+            </div>
           </div>
-          <div class="button">
+          <!-- <div class="button">
             体验工业制造
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-          </div>
+          </div> -->
         </div>
         <div class="main-data">
           <div class="data-title">
-            智慧工地<span>(各类园区三维场景与园区各业态系统结合)</span>
+            智慧工地<span>(协同工地建设管理，集成物联网技术监管)</span>
           </div>
           <div class="data-text">
-            重庆瞰图科技有限公司 数字孪生能源综管平台，为电力、矿山、油气等能源行业提供数字化升级，实现能源管理全生命周期覆盖，为能源输送稳定运行保驾护航。
+            以工地大模型 、工地大数据 、工地大协同
+            、应用碎片化为标准，积极布局钢筋翻样、精细管理、材料管理等成熟领域，开拓三维工地、模架产品、劳务验收、云资料等孵化产品，并延伸到智能安全帽、工地平板等施工业务硬件领域。实现工地联合监管。
           </div>
           <div class="fc">
-            <div class="div1">绵阳高新区</div>
-            <div class="div2">绵阳高新区</div>
-            <div class="div3">绵阳新兴投资控股智慧园区领导驾驶舱</div>
+            <div class="div3">
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />中科院科学城智慧工地
+            </div>
           </div>
-          <div class="button">
+          <!-- <div class="button">
             体验智慧工地
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-          </div>
+          </div> -->
         </div>
         <div class="main-data">
           <div class="data-title">
-            智慧能源<span>(智慧管理系统利用了IPV6、云计算、大数据等互联网数据，在互联网+的时代实现能源产业)</span>
+            智慧能源<span>(从原料到成品全链展示，提升 各环节安全系数)</span>
           </div>
           <div class="data-text">
-            智慧园区可视化系统基于数字孪生的三维技术为基础，将人工智能、物联网(IOT)、大数据分析等新一代信息技术进行整合；将园区运营、楼宇、安防、业务、能耗等，通过可视化管理方式，实时、动态、直观的对园区内建筑设备从宏观到微观进行全方位管理。
+            智慧能源基于云计算、移动互联网、大数据等先进技术,通过采集各类能耗监测点的用能数据,经过专业的数据分析处理形成对能耗的分类、分项、分时、分区域的统计分析,并通过三维可视化技术,让企业实现对能源使用的全面数字化和可视化,直观发现用能改进优化点,进而帮助企业优化能源使用,降低企业综合能耗,达到节能增效的目的。
           </div>
           <div class="fc">
-            <div class="div1">绵阳高新区</div>
-            <div class="div2">绵阳高新区</div>
-            <div class="div3">绵阳新兴投资控股智慧园区领导驾驶舱</div>
+            <div class="div1">
+              <img src="@/assets/images/main/连接.png" alt="" />火电厂
+            </div>
           </div>
-          <div class="button">
+          <!-- <div class="button">
             体验智慧能源
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-          </div>
+          </div> -->
         </div>
         <div class="main-data">
           <div class="data-title">
-            航天航空<span>(基于三维地理信息，系统利用三维视图结合虚拟现实技术，将包括机场航路、站坪、建筑物、机动目标、管线设施等在内的机场全景进行完整、鲜活的呈现。)</span>
+            航天航空<span>(同步机场业态信息，有序管控 航班流量)</span>
           </div>
           <div class="data-text">
-            重庆瞰图科技有限公司 数字孪生智慧平台，通过融合生产运营各类数据，实现全生命周期运营管理的智慧生产，提高行业竞争力，为加速实现智慧航空大生态圈模式。
+            通过数字孪生还原机场业态，虚拟规划、仿真航班出入境流量状态。通过IOT设备查看实时工作画面，指挥中心高效、有序管理。
           </div>
           <div class="fc">
-            <div class="div1">绵阳高新区</div>
-            <div class="div2">绵阳高新区</div>
-            <div class="div3">绵阳新兴投资控股智慧园区领导驾驶舱</div>
+            <div class="div1">
+              <img src="@/assets/images/main/连接.png" alt="" />南京航空系统
+            </div>
           </div>
-          <div class="button">
+          <!-- <div class="button">
             体验航天航空
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-          </div>
+          </div> -->
         </div>
         <!-- <div class="main-data">2</div>
         <div class="main-data">3</div>
@@ -128,63 +150,14 @@ export default {
   data() {
     return {
       wpli: 0,
+      imglist: [
+        require("@/assets/images/main/zhyq.png"),
+        require("@/assets/images/main/gyzz.png"),
+        require("@/assets/images/main/zhgd.jpg"),
+        require("@/assets/images/main/zhny.png"),
+        require("@/assets/images/main/hthk.png"),
+      ],
       titlelist: ["智慧园区", "工业制造", "智慧工地", "智慧能源", "航天航空"],
-      // datalist: [
-      //   {
-      //     title: "智慧园区",
-      //     title2: "运用大数据、物联网、信息管理等技术，打造智慧互联的园区。",
-      //     text: "重庆瞰图科技有限公司 数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。",
-      //     morelist: [
-      //       "全要素表达",
-      //       "全数据融合展示",
-      //       "全生命周期覆盖",
-      //       "全态势物联感知",
-      //     ],
-      //   },
-      //   {
-      //     title: "工业制造",
-      //     title2:
-      //       "实现在同一平台管理及掌握工厂全面状况，形象的在现厂区内的多样化资产",
-      //     text: "重庆瞰图科技有限公司 智慧工厂致力于打造数字孪生综合管理智慧平台。基于AES全要素场景与智慧互联，对工厂进行全要素数字孪生，助力制造业可持续数字升级，实现绿色“智”造。",
-      //     morelist: ["安防监控", "故障排查", "耗能运筹", "多方协同"],
-      //   },
-      //   {
-      //     title: "智慧工地",
-      //     title2:
-      //       "智慧管理系统利用了IPV6、云计算、大数据等互联网数据，在互联网+的时代实现能源产业",
-      //     text: "重庆瞰图科技有限公司 数字孪生能源综管平台，为电力、矿山、油气等能源行业提供数字化升级，实现能源管理全生命周期覆盖，为能源输送稳定运行保驾护航。",
-      //     morelist: [
-      //       "实现业务闭环",
-      //       "告警瞬间响应",
-      //       "场景真实映射",
-      //       "实时运营管理",
-      //     ],
-      //   },
-      //   {
-      //     title: "智慧能源",
-      //     title2:
-      //       "智慧管理系统利用了IPV6、云计算、大数据等互联网数据，在互联网+的时代实现能源产业",
-      //     text: "重庆瞰图科技有限公司 数字孪生能源综管平台，为电力、矿山、油气等能源行业提供数字化升级，实现能源管理全生命周期覆盖，为能源输送稳定运行保驾护航。",
-      //     morelist: [
-      //       "实现业务闭环",
-      //       "告警瞬间响应",
-      //       "场景真实映射",
-      //       "实时运营管理",
-      //     ],
-      //   },
-      //   {
-      //     title: "航空航天",
-      //     title2:
-      //       "基于三维地理信息，系统利用三维视图结合虚拟现实技术，将包括机场航路、站坪、建筑物、机动目标、管线设施等在内的机场全景进行完整、鲜活的呈现。",
-      //     text: "重庆瞰图科技有限公司 数字孪生智慧平台，通过融合生产运营各类数据，实现全生命周期运营管理的智慧生产，提高行业竞争力，为加速实现智慧航空大生态圈模式。",
-      //     morelist: [
-      //       "实现业务闭环",
-      //       "告警瞬间响应",
-      //       "场景真实映射",
-      //       "实时运营管理",
-      //     ],
-      //   },
-      // ],
     };
   },
   mounted() {},
@@ -193,7 +166,7 @@ export default {
       return el && window.getComputedStyle(el)[css];
     },
     scrollsp(e) {
-      console.log(e.target.scrollTop);
+      console.log(e.target);
       let dataheight = parseInt(this.getCss(this.$refs.data, "height"));
       if (e.target.scrollTop) {
         this.wpli = parseInt(e.target.scrollTop / dataheight);
@@ -223,13 +196,16 @@ export default {
 //   border-radius: 20px;
 //   display: none;
 // }
+.main{
+  margin-top: 108px;
+}
 .mian {
   margin-top: 58px;
 }
 .wrapper {
   position: relative;
   width: 100%;
-  height: 604px;
+  height:519px;
   border-radius: 20px;
 }
 .slider {
@@ -242,6 +218,10 @@ export default {
   border-radius: 20px;
   text-align: center;
   line-height: 636px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .slider.action {
   opacity: 1;
@@ -287,7 +267,8 @@ li {
   text-align: center;
   margin: auto;
   margin-top: 30px;
-  border-bottom: 2px solid #808080;
+  transition: all 0.01s ease-in;
+  // border-bottom: 2px solid #808080;
 }
 .el-carousel__item h3 {
   color: #475669;
@@ -326,7 +307,7 @@ li {
   width: 35.875rem;
   // height: 39.75rem;
   height: 100%;
-  text-align: right;
+  text-align: left;
   transition: all 0.25s ease-in;
   .data-title {
     margin-top: 58px;
@@ -349,26 +330,34 @@ li {
     margin-top: 3.625rem;
   }
   .fc {
-    width: 18.75rem;
+    width: 19rem;
     height: 6.75rem;
     margin-top: 9.375rem;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    margin-left: 266px;
+    // margin-left: 266px;;
 
     .div1,
     .div2 {
-      width: 140px;
+      // width: 150px;
       height: 44px;
       background: #4d4d4d;
       border-radius: 22px;
       text-align: center;
       line-height: 2.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      img {
+        width: 19px;
+        height: 23px;
+      }
     }
     .div3 {
-      width: 308px;
+      // width: 308px;
       height: 44px;
       background: #4d4d4d;
       border-radius: 22px;
@@ -376,8 +365,14 @@ li {
       font-family: Source Han Sans SC;
       font-weight: bold;
       color: #ffffff;
-      text-align: center;
-      line-height: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      img {
+        width: 19px;
+        height: 23px;
+      }
     }
   }
   .button {
@@ -394,7 +389,7 @@ li {
     font-weight: bold;
     transition: all 0.36s;
     margin-top: 5.5rem;
-    margin-left: 365px;
+    margin-left: 18px;
   }
   .button:hover {
     background-color: #fff;

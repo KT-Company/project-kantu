@@ -41,7 +41,7 @@ export default {
       idx: 0,
       swiperOptionMain: {
         speed: 1500,
-        height: 960,
+        height: 1080,
         direction: "vertical",
         origin: "left bottom",
         // // 设置分页器
@@ -81,20 +81,29 @@ export default {
       fadeUpIn: null,
       fadeUpIn2: null,
       swiperPages: ["Page1", "Page2", "Page3", "Page4", "Page5", "Page6"],
-      pageHeight: 960,
+      pageHeight: 1080,
     };
   },
   components: { Card, Page1, Page2, Page3, Page4, Page5, Page6, Footer },
+  created() {
+
+  },
   watch: {
     idx(newValue, oldValue) {
       console.log(newValue);
-      if (newValue <5) {
-        this.isPageEnd=false
-        console.log(this.isPageEnd)
+      if (newValue < 5) {
+        this.isPageEnd = false;
+        console.log(this.isPageEnd);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       }
     },
   },
   mounted() {
+        if (this.idx < 5) {
+      this.isPageEnd = false;
+      console.log(this.isPageEnd);
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;
     //   this.swiperOptionMain = {

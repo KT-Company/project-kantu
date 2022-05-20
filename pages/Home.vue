@@ -38,8 +38,11 @@ export default {
       ba: false,
     };
   },
-  created() {},
+  created() {
+    this.$router.push("/home/main")
+  },
   mounted() {
+    
     window.addEventListener("scroll", this.rollingheight, true);
   },
   methods: {

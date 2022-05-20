@@ -86,7 +86,16 @@
         </div>
       </div>
       <div class="mian-img">
-        <div class="img"></div>
+        <div class="img">
+          <iframe
+            id="inlineFrameExample"
+            title="Inline Frame Example"
+            width="300"
+            height="200"
+            src="https://ditu.amap.com/place/B00170A0MQ"
+          >
+          </iframe>
+        </div>
         <div class="img-data">
           <div class="data-title">欢迎咨询我们</div>
           <div class="data-2wm">
@@ -103,6 +112,10 @@
   </Card>
 </template>
 <style scoped lang="less">
+iframe{
+    height: 26.9375rem;
+  width: 695px;
+}
 .button {
   width: 210px;
   height: 50px;
@@ -245,6 +258,7 @@ export default {
     Card,
   },
   mounted() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     let view3 = document.getElementById("view3");
     // pageOnloadBuild(view3, () => {
     //   console.log("done");

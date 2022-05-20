@@ -1,29 +1,50 @@
 <template>
   <div class="mian">
-    <div class="left">
-      <div class="title">重庆瞰图科技有限公司</div>
-      <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
-      <div class="data">
-        <div
-          class="data-mian"
-          @wheel.stop
-          v-for="(item, index) in demolist"
-          :key="index"
-          @click="handledemo(index)"
-        >
-          <div class="data-img">
-            <img :src="item.desc_img" alt="" />
+    <div class="box">
+      <div class="left" @wheel.stop>
+        <div class="title">重庆瞰图科技有限公司</div>
+        <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
+        <div class="data">
+          <div
+            class="data-mian"
+            @wheel.stop
+            v-for="(item, index) in demolist"
+            :key="index"
+            @click="handledemo(item.projectAddress)"
+          >
+            <div class="data-img">
+              <img :src="item.imgurl" alt="" />
+            </div>
+            <div class="data-text">{{ item.title }}</div>
           </div>
-          <div class="data-text">{{ item.name }}</div>
         </div>
-      </div>
-      <div class="button">
-        <nuxt-link to="/home/main">返回首页</nuxt-link>
+        <nuxt-link to="/home/main">
+          <div class="button">返回首页</div>
+        </nuxt-link>
       </div>
     </div>
+    <iframe
+      id="inlineFrameExample"
+      title="Inline Frame Example"
+      width="300"
+      height="200"
+      :src="demodz"
+    >
+    </iframe>
   </div>
 </template>
 <style lang="less" scoped>
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.output {
+  background: #eee;
+}
 .button {
   width: 210px;
   height: 50px;
@@ -37,7 +58,7 @@
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .button:hover {
   background-color: #fff;
@@ -48,18 +69,28 @@
 .mian {
   width: 100%;
   height: 100%;
-  // position: relative;
-  background-color: #808080;
+  position: relative;
+}
+.box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 37.5rem;
+  height: 100vh;
+  transform: translateX(-36.375rem);
+  transition: all 0.36s;
+  z-index: 3;
+  background-color: #1a1a1a;
+}
+.box:hover {
+  transform: translateX(0);
 }
 .left {
-  // position: absolute;
-  // left: 0;
-  // top:0 ;
   width: 36.375rem;
   height: 67.5rem;
   background: #1a1a1a;
   box-shadow: 0px 0px 29px 2px rgba(0, 0, 0, 0.7);
-  padding: 74px 0 0 150px;
+  padding: 0 0 0 150px;
   .title {
     font-size: 30px;
     font-family: Source Han Sans SC;
@@ -80,7 +111,7 @@
     width: 22.5rem;
     height: 34.5rem;
     // background-color: cornflowerblue;
-    margin-top: 5.625rem;
+    margin-top: 5rem;
     overflow: auto;
     .data-mian {
       width: 22.5rem;
@@ -117,8 +148,18 @@ export default {
   data() {
     return {
       demolist: [],
-      demo: {},
+      demodz: "",
     };
+  },
+  created() {
+    request
+      .get({
+        url: "/getDemo",
+      })
+      .then((res) => {
+        console.log(res.data.data[0].projectAddress);
+        this.demodz = res.data.data[0].projectAddress;
+      });
   },
   mounted() {
     this.getdemolist();
@@ -126,25 +167,14 @@ export default {
   methods: {
     async getdemolist() {
       let data = await request.get({
-        url: "/example",
+        url: "/getDemo",
       });
-      data.data.forEach((element) => {
-        this.demolist.push(element);
-      });
+      console.log(data.data.data);
+      this.demolist = data.data.data;
     },
     handledemo(idx) {
-      request
-        .get({
-          url: "/example",
-        })
-        .then((res) => {
-          res.data.forEach((element) => {
-            if (element.id == idx+1) {
-              this.demo = element;
-              console.log(this.demo);
-            }
-          });
-        });
+      console.log(idx);
+      this.demodz = idx;
     },
   },
 };

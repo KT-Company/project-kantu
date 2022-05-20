@@ -48,7 +48,7 @@ export default {
       idx: 0,
       swiperOptionMain: {
         speed: 1500,
-        height: 960,
+        height: 1080,
         direction: "vertical",
         origin: "left bottom",
         // // 设置分页器
@@ -88,7 +88,7 @@ export default {
       fadeUpIn: null,
       fadeUpIn2: null,
       swiperPages: ["MPage1", "MPage2"],
-      pageHeight: 960,
+      pageHeight: 1080,
     };
   },
   components: { Card, MPage1, MPage2, Footer },
@@ -98,10 +98,12 @@ export default {
       if (newValue < 1) {
         this.isPageEnd = false;
         console.log(this.isPageEnd);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       }
     },
   },
   mounted() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     // if (process.browser) {
     //   this.pageHeight = window.innerHeight;
     //   this.swiperOptionMain = {

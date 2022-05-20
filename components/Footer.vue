@@ -1,45 +1,62 @@
 <template>
-  <footer>
-    <div class="text-5xl">contact</div>
-    <div class="coll">联 系 我 们</div>
-    <div class="mian">
-      <div class="mian-left">
-        <div class="left-title">重庆瞰图科技有限公司</div>
-        <div class="qr-code">
-          <div class="code-left">
-            <div class="code-img">
-              <img src="@/assets/images/main/二维码.png" alt="" />
+  <div>
+    <footer>
+      <div class="text-5xl">contact</div>
+      <div class="coll">联 系 我 们</div>
+      <div class="mian">
+        <div class="mian-left">
+          <div class="left-title">重庆瞰图科技有限公司</div>
+          <div class="qr-code">
+            <div class="code-left">
+              <div class="code-img">
+                <img src="@/assets/images/main/二维码.png" alt="" />
+              </div>
+              <div class="code-title">工程师帮助</div>
             </div>
-            <div class="code-title">工程师帮助</div>
+            <div class="code-right">
+              <div class="code-img">
+                <img src="@/assets/images/main/二维码.png" alt="" />
+              </div>
+              <div class="code-title">微信咨询</div>
+            </div>
           </div>
-          <div class="code-right">
-            <div class="code-img">
-              <img src="@/assets/images/main/二维码.png" alt="" />
-            </div>
-            <div class="code-title">微信咨询</div>
+        </div>
+        <div class="mian-conter">
+          地址：重庆市渝中区中山三路161号广发大厦10楼<br />微信：158 2608
+          9334<br />电话：189 8392 0157
+        </div>
+        <div class="mian-right">
+          <el-form
+            :inline="true"
+            :model="user"
+            :rules="rules"
+            ref="ruleForm"
+            class="demo-form-inline"
+          >
+            <el-form-item prop="name">
+              <el-input v-model="user.name" placeholder="姓名"></el-input>
+            </el-form-item>
+            <el-form-item prop="email">
+              <el-input v-model="user.email" placeholder="邮箱"></el-input>
+            </el-form-item>
+            <el-form-item prop="phone">
+              <el-input v-model="user.phone" placeholder="电话"></el-input>
+            </el-form-item>
+          </el-form>
+          <div class="button" @click="submitForm('ruleForm')">提交</div>
+          <div class="button button-two" @click="resetForm('ruleForm')">
+            重置
           </div>
         </div>
       </div>
-      <div class="mian-conter">
-        地址：重庆市渝中区中山三路161号广发大厦10楼<br />微信：158 2608 9334<br />电话：189
-        8392 0157
-      </div>
-      <div class="mian-right">
-        <el-form :inline="true" :model="user" class="demo-form-inline">
-          <el-form-item>
-            <el-input v-model="user.name" placeholder="姓名"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-input v-model="user.emit" placeholder="邮箱"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-input v-model="user.phone" placeholder="电话"></el-input>
-          </el-form-item>
-        </el-form>
-        <div class="button" @click="onSubmit">提交</div>
-      </div>
+    </footer>
+    <div class="beian">
+      重庆瞰图科技有限公司 © 版权所有 kantu3d.com All Rights Reserved
+      <a href="https://beian.miit.gov.cn/#/Integrated/index">
+        工信部备案：渝ICP 备 2021009290 号</a
+      >
     </div>
-  </footer>
+  </div>
 </template>
 <style lang="less" scoped>
 footer {
@@ -48,7 +65,8 @@ footer {
   height: 30.625rem;
   padding: 4.875rem 9.375rem 0 9.375rem;
   background: #1a1a1a;
-  border-top: 1px solid #262626;
+  border-top: 2px solid #262626;
+  border-bottom: 2px solid #262626;
   .coll {
     font-size: 30px;
     font-family: Source Han Sans SC;
@@ -83,7 +101,7 @@ footer {
           width: 80px;
           height: 80px;
           // background: #4d4d4d;
-          img{
+          img {
             width: 100%;
             height: 100%;
           }
@@ -109,9 +127,22 @@ footer {
     .mian-right {
       width: 41.875rem;
       height: 7.8125rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       // background-color: springgreen;
     }
   }
+}
+.beian {
+  width: 100%;
+  height: 6.25rem;
+  text-align: center;
+  line-height: 6.25rem;
+  font-size: 14px;
+  font-family: Source Han Sans SC;
+  font-weight: 300;
+  color: #cccccc;
 }
 .button {
   width: 210px;
@@ -127,6 +158,10 @@ footer {
   font-weight: bold;
   transition: all 0.36s;
   margin-top: 1.25rem;
+  cursor: pointer;
+}
+.button-two {
+  margin-right: 14rem;
 }
 .button:hover {
   background-color: #fff;
@@ -142,20 +177,79 @@ footer {
 }
 </style>
 <script>
+import request from "@/util/request";
 export default {
   name: "Header",
   data() {
     return {
       user: {
         name: "",
-        emit: "",
+        email: "",
         phone: "",
+      },
+      rules: {
+        email: [
+          { required: true, message: "请输入邮箱地址", trigger: "blur" },
+          {
+            type: "email",
+            message: "请输入正确的邮箱地址",
+            trigger: ["blur", "change"],
+          },
+        ],
+        name: [{ required: true, message: "请输入姓名", trigger: "blur" }],
+        phone: [
+          { required: true, message: "电话不能为空" },
+          {
+            pattern: /^1[3456789]\d{9}$/,
+            message: "手机号码格式不正确",
+            trigger: "blur",
+          },
+        ],
       },
     };
   },
+  created() {},
   methods: {
-    onSubmit() {
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          request
+            .post({
+              url: "/addPeople ",
+              data: this.user,
+            })
+            .then((res) => {
+              console.log(res.data.code);
+              if (res.data.code == 500) {
+                this.$notify({
+                  title: "警告",
+                  message: "已提交,待反馈，请忽反复提交",
+                  type: "warning",
+                });
+              } else if (res.data.code == 200) {
+                this.$notify({
+                  title: "成功",
+                  message: "提交成功,等待反馈",
+                  type: "success",
+                });
+                this.user = {};
+              }
+            });
+        } else {
+          this.$notify.error({
+            title: "错误",
+            message: "输入有误",
+          });
+          return false;
+        }
+      });
       console.log(this.user);
+    },
+    resetForm(formName) {
+      this.$nextTick(() => {
+        this.$refs[formName].resetFields();
+        this.$refs[formName].clearValidate();
+      });
     },
   },
 };
