@@ -38,8 +38,8 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
                 target: [0, 0, 0],
                 minDistance: 20,
                 maxDistance: 2000,
-                maxPolarAngle: Math.PI * 0.7,
-                minPolarAngle: Math.PI * 0.2,
+                maxPolarAngle: Math.PI * 0.26,
+                minPolarAngle: Math.PI * 0.26,
                 enableDamping: false,
                 dampingFactor: 0.05,
             },
@@ -195,6 +195,6 @@ const outViewPoint = () => {
 // 场景鼠标事件
 const mouseLockToggle = (bool) => {
     container.orbitControls.enablePan = bool;
-    container.orbitControls.enableRotate = bool;
+    // container.orbitControls.enableRotate = bool;
     container.orbitControls.enableZoom = bool;
 };
