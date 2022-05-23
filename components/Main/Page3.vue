@@ -14,7 +14,7 @@
         </div>
         <div>
           <!-- <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button> -->
-          <div class="button-right">
+          <div class="button-right" @click="handlemore">
             <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
           </div>
         </div>
@@ -104,6 +104,9 @@ export default {
   mounted() {},
   methods: {
     handleSlideChange() {},
+    handlemore(){
+     document.documentElement.scrollTop =document.body.clientHeight
+    }
   },
 };
 </script>

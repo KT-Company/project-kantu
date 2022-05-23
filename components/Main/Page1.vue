@@ -5,7 +5,7 @@
         <swiper :options="swiperOptionP1" style="width: 70vh; height: 80vh">
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
             <div class="display-box fadeInUp">
-              <div style="color: rgba(153, 153, 153, 1)" >
+              <div style="color: rgba(153, 153, 153, 1)">
                 {{ item.slogenEn }}
               </div>
               <div class="text-4xl h-60 title">
@@ -29,7 +29,7 @@
         </swiper>
       </div>
       <div class="canvas">
-        <canvas id="view1" class="canvasBox"></canvas>
+        <canvas id="view1" ref="view1" class="canvasBox"></canvas>
       </div>
     </div>
   </Card>
@@ -44,7 +44,7 @@
   font-size: 72px;
   line-height: 72px;
 }
-.text{
+.text {
   margin-top: 9.9375rem;
 }
 .ye {
@@ -59,6 +59,9 @@
     font-weight: 400;
     color: #fffefe;
   }
+}
+.canvas{
+  flex: 1;
 }
 </style>
 <script>
@@ -96,8 +99,7 @@ export default {
           index: "04",
           slogen: "项目主要涉及领域",
           slogenEn: "Technology changes life\nDigital makes the future",
-          detail:
-            "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。",
+          detail: "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。",
           time: "01/04",
         },
       ],
@@ -126,11 +128,29 @@ export default {
     Card,
   },
   mounted() {
-    let view1 = document.getElementById("view1");
+    // let view1 = document.getElementById("view1");
     // pageOnload(view1, () => {
     //   console.log("done");
     // });
+     this.getmx();
   },
-  methods: {},
+  created () {
+  },
+  methods: {
+    getmx() {
+      const loading = this.$loading({
+        lock: false, //lock的修改符--默认是false
+        text: "模型加载中", //显示在加载图标下方的加载文案
+        spinner: "el-icon-loading", //自定义加载图标类名
+        background: "rgba(0, 0, 0, 0.7)", //遮罩层颜色
+        target:  document.querySelector('#view1'), //loadin覆盖的dom元素节点
+      });
+      let view1 = document.getElementById("view1");
+      pageOnload(view1, () => {
+        console.log("done");
+        loading.close();
+      });
+    },
+  },
 };
 </script>

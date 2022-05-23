@@ -98,6 +98,9 @@
     }
   }
 }
+.canvas{
+  flex: 1;
+}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
@@ -137,7 +140,7 @@ export default {
     Card,
   },
   mounted() {
-    let view2 = document.getElementById("view2");
+    // let view2 = document.getElementById("view2");
     // pageOnloadOil(view2, () => {
     //   console.log("done");
     // });

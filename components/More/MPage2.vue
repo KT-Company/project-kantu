@@ -32,7 +32,7 @@
         <div class="main-data" ref="data">
           <div class="data-title">
             智慧园区<span
-              >运用大数据、物联网、信息管理等技术，打造智慧互联的园区。</span
+              >(运用大数据、物联网、信息管理等技术，打造智慧互联的园区。)</span
             >
           </div>
           <div class="data-text">
