@@ -38,7 +38,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         bgColor: 0xfff000,
         cameras: {
             orbitCamera: {
-                position: [-222, 19, 166],
+                position: [-152, 18, 167],
                 near: 1,
                 far: 100000,
                 fov: 75,
@@ -145,7 +145,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
                             child.renderOrder = 50
                         }
                     } else if (child.name == "LOGO") {
-                        child.material = new Bol3D.MeshBasicMaterial({color:0xffffff})
+                        child.material = new Bol3D.MeshBasicMaterial({ color: 0xffffff })
                         // container.addBloom(child)
                         // child.material.lightMap = new Bol3D.TextureLoader().load(
                         //     PRO_ENV + "/textures/1.png"
@@ -266,20 +266,6 @@ const tweenMoveView = (point, look, times, td) => {
     orbitTween = new Bol3D.TWEEN.Tween(container.orbitControls)
         .to({ target: new Bol3D.Vector3(...point) }, times)
         .start();
-};
-
-// 实时获取位置
-const outViewPoint = () => {
-    const point = container.orbitControls.target;
-    const camera = container.orbitCamera.position;
-    console.log(
-        "point:",
-        point.x.toFixed(0) + "," + point.y.toFixed(0) + "," + point.z.toFixed(0)
-    );
-    console.log(
-        "camera:",
-        camera.x.toFixed(0) + "," + camera.y.toFixed(0) + "," + camera.z.toFixed(0)
-    );
 };
 
 // 场景鼠标事件
@@ -516,13 +502,27 @@ const forMaterial = (materials, callback) => {
 };
 
 if (process.browser) {
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
+    // windowHalfX = window.innerWidth / 2;
+    // windowHalfY = window.innerHeight / 2;
 
-    document.addEventListener('mousemove', onDocumentMouseMove);
+    // document.addEventListener('mousemove', onDocumentMouseMove);
 
-    function onDocumentMouseMove(event) {
-        mouseX = (event.clientX - windowHalfX);
-        mouseY = (event.clientY - windowHalfY);
-    }
+    // function onDocumentMouseMove(event) {
+    //     mouseX = (event.clientX - windowHalfX);
+    //     mouseY = (event.clientY - windowHalfY);
+    // }
+
+    // 实时获取位置
+    // window.outViewPoint = () => {
+    //     const point = container.orbitControls.target;
+    //     const camera = container.orbitCamera.position;
+    //     console.log(
+    //         "point:",
+    //         point.x.toFixed(0) + "," + point.y.toFixed(0) + "," + point.z.toFixed(0)
+    //     );
+    //     console.log(
+    //         "camera:",
+    //         camera.x.toFixed(0) + "," + camera.y.toFixed(0) + "," + camera.z.toFixed(0)
+    //     );
+    // };
 }

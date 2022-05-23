@@ -25,7 +25,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         bgColor: 0xfff000,
         cameras: {
             orbitCamera: {
-                position: [-81, 117, 103],
+                position: [-106, 103, 29],
                 near: 1,
                 far: 100000,
                 fov: 45,

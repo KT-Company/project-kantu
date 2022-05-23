@@ -27,7 +27,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         bgColor: 0xfff000,
         cameras: {
             orbitCamera: {
-                position: [0, 9, 22],
+                position: [-1, 8, 17],
                 near: 1,
                 far: 100000,
                 fov: 75,
@@ -37,7 +37,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             orbitControls: {
                 autoRotate: false,
                 autoRotateSpeed: 2,
-                target: [-20, -0, -11],
+                target: [-19, 0, -4],
                 minDistance: 0,
                 maxDistance: 2000,
                 maxPolarAngle: Math.PI * 0.7,
@@ -136,7 +136,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         },
     });
 
-    mouseLockToggle(false);
+    // mouseLockToggle(false);
 
     // const events = new Bol3D.Events(container);
     // events.onhover = (e) => {
@@ -189,19 +189,6 @@ const tweenMoveView = (point, look, times, td) => {
         .start();
 };
 
-// 实时获取位置
-const outViewPoint = () => {
-    const point = container.orbitControls.target;
-    const camera = container.orbitCamera.position;
-    console.log(
-        "point:",
-        point.x.toFixed(0) + "," + point.y.toFixed(0) + "," + point.z.toFixed(0)
-    );
-    console.log(
-        "camera:",
-        camera.x.toFixed(0) + "," + camera.y.toFixed(0) + "," + camera.z.toFixed(0)
-    );
-};
 
 // 场景鼠标事件
 const mouseLockToggle = (bool) => {
@@ -211,4 +198,17 @@ const mouseLockToggle = (bool) => {
 };
 
 if (process.browser) {
+    // // 实时获取位置
+    // window.outViewPoint = () => {
+    //     const point = container.orbitControls.target;
+    //     const camera = container.orbitCamera.position;
+    //     console.log(
+    //         "point:",
+    //         point.x.toFixed(0) + "," + point.y.toFixed(0) + "," + point.z.toFixed(0)
+    //     );
+    //     console.log(
+    //         "camera:",
+    //         camera.x.toFixed(0) + "," + camera.y.toFixed(0) + "," + camera.z.toFixed(0)
+    //     );
+    // };
 }
