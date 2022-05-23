@@ -31,7 +31,7 @@
               武钢股份拥有当今世界先进水平的炼铁、炼钢、轧钢等完整的钢铁生产工艺流程，钢材产品共计7大类、500多个品种。与我司合作了武钢铁产线、武钢热轧产厂等项目。
             </div>
             <!-- <el-button class="btn-normal" style="margin-top:56px"><i class="el-icon-d-arrow-right mr-6"></i>联系我们获取案例</el-button> -->
-            <div class="button">
+            <div class="button" @click="handlemore">
               <i class="el-icon-d-arrow-left mr-6"></i>联系我们获取案例
             </div>
           </div>
@@ -75,6 +75,7 @@
   font-size: 14px;
   font-family: Source Han Sans SC;
   font-weight: bold;
+  cursor: pointer;
   transition: all 0.36s;
   margin-top: 4rem;
 }
@@ -122,6 +123,10 @@ export default {
     Card,
   },
   mounted() {},
-  methods: {},
+  methods: {
+    handlemore(){
+      document.documentElement.scrollTop =document.body.clientHeight
+    }
+  },
 };
 </script>

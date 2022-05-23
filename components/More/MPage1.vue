@@ -17,7 +17,7 @@
             <div><img src="@/assets/images/main/图层 647.png" alt="">多图表选择</div>
             <div><img src="@/assets/images/main/基础样式.png" alt="">样式修改  </div>
           </div>
-          <div class="button">
+          <div class="button" @click="handlemore">
             <i class="el-icon-d-arrow-left mr-6"></i>
             获取体验
           </div>
@@ -143,6 +143,11 @@ export default {
   data() {
     return {
     };
+  },
+  methods: {
+    handlemore() {
+      document.documentElement.scrollTop =document.body.clientHeight
+    }
   },
 };
 </script>

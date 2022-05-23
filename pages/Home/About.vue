@@ -18,7 +18,7 @@
             其中，代表案例有智慧园区、工业制造、智慧能源、航空航天等。公司坚持以人才和技术为核心；以质量和服务为准则；为客户开发专业、优质、满意、适用的互联网产品。
           </div>
         </div>
-        <div class="button">
+        <div class="button" @click="handlemore">
           <i class="el-icon-d-arrow-left mr-6"></i>联系我们获取案例
         </div>
       </div>
@@ -26,7 +26,7 @@
         <canvas id="view3" class="canvasBox"></canvas>
       </div>
     </div>
-    <div class="mian-bottom fadeInUp2">
+    <div class="mian-bottom fadeInUp">
       <div style="height: 148px">
         <div style="font-size: 50px">使命愿景</div>
         <div style="font-size: 25px; color: #808080">
@@ -89,9 +89,7 @@
         <div class="img">
           <iframe
             id="inlineFrameExample"
-            title="Inline Frame Example"
-            width="300"
-            height="200"
+            title="地图 "
             src="https://ditu.amap.com/place/B00170A0MQ"
           >
           </iframe>
@@ -161,9 +159,10 @@ iframe{
   height: 100%;
 }
 .mian-right {
-  width: 47.8125rem;
-  height: 36.875rem;
-  // background-color: #4d4d4d;
+  flex: 1;
+  // width: 47.8125rem;
+  height:100%;
+  // // background-color: #4d4d4d;
 }
 .mian-bottom {
   width: 101.25rem;
@@ -257,12 +256,20 @@ export default {
   components: {
     Card,
   },
+  created () {
+  },
   mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
-    let view3 = document.getElementById("view3");
+    console.log(document.documentElement.scrollTop)
+    // let view3 = document.getElementById("view3");
     // pageOnloadBuild(view3, () => {
     //   console.log("done");
     // });
+  },
+  methods: {
+    handlemore() {
+      document.documentElement.scrollTop =document.body.clientHeight
+    }
   },
 };
 </script>
