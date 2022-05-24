@@ -136,7 +136,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         },
     });
 
-    // mouseLockToggle(false);
+    mouseLockToggle(false);
 
     // const events = new Bol3D.Events(container);
     // events.onhover = (e) => {
