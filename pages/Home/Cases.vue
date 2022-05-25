@@ -1,121 +1,118 @@
 <template>
   <Card>
-    <div class="top fadeInUp">
-      <div class="top1">
-        <div class="top-num">50</div>
-        <div class="top-text">名企合作中</div>
-        <div class="topjia">+</div>
-      </div>
-      <div class="top2"></div>
-      <div class="top3">
-        <div class="top-num">100</div>
-        <div class="top-text">已提供专业解决方案</div>
-        <div class="topjia2">+</div>
-      </div>
-      <div class="top2"></div>
-      <div class="top5">
-        <div class="top-num">30</div>
-        <div class="top-text">涉及领域</div>
-        <div class="topjia">+</div>
-      </div>
-    </div>
-    <div class="nav">
-      <div style="color: #808080; font-size: 13px">
-        你的位置：首页 > <span style="color: #fff">多元案例</span>
-      </div>
-      <ul>
-        <li
-          v-for="(item, index) in navlist"
-          :key="index"
-          :class="navli === index ? 'active' : ''"
-          @click="handlenav(index)"
-        >
-          {{ item }}
-        </li>
-      </ul>
-    </div>
-    <div class="mian fadeInUp2">
-      <div
-        class="mian-data fadeInUp2"
-        v-for="(item, index) in mianlist2.slice(
-          (currentPage - 1) * pageSize,
-          currentPage * pageSize
-        )"
-        :key="index"
-      >
-        <div class="data-left">
-          <div class="left-title">{{ item.title }}</div>
-          <div class="left-text">
-            {{ item.content }}
-          </div>
-          <div class="xian"></div>
-          <!-- <div class="left-more">MORE</div> -->
-          <a :href="item.porjectAddress" class="left-more">MORE</a>
+    <div class="box">
+      <div class="top fadeInUp">
+        <div class="top1">
+          <div class="top-num">50</div>
+          <div class="top-text">名企合作中</div>
+          <div class="topjia">+</div>
         </div>
-        <div class="data-right">
-          <div class="video_wrapper">
-            <!-- <img
+        <div class="top2"></div>
+        <div class="top3">
+          <div class="top-num">100</div>
+          <div class="top-text">已提供专业解决方案</div>
+          <div class="topjia2">+</div>
+        </div>
+        <div class="top2"></div>
+        <div class="top5">
+          <div class="top-num">30</div>
+          <div class="top-text">涉及领域</div>
+          <div class="topjia">+</div>
+        </div>
+      </div>
+      <div class="nav">
+        <div style="color: #808080; font-size: 13px">
+          你的位置：首页 > <span style="color: #fff">多元案例</span>
+        </div>
+        <ul>
+          <li
+            v-for="(item, index) in navlist"
+            :key="index"
+            :class="navli === index ? 'active' : ''"
+            @click="handlenav(index)"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <div :class="['mian','fadeInUp2',isdata?'':'main']" ref="mian">
+        <div
+          class="mian-data fadeInUp2"
+          v-show="isdata"
+          v-for="(item, index) in mianlist2.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )"
+          :key="index"
+        >
+          <div class="data-left">
+            <div class="left-title">{{ item.title }}</div>
+            <div class="left-text">
+              {{ item.content }}
+            </div>
+            <div class="xian"></div>
+            <!-- <div class="left-more">MORE</div> -->
+            <a :href="item.porjectAddress" class="left-more">MORE</a>
+          </div>
+          <div class="data-right">
+            <div class="video_wrapper">
+              <!-- <img
               v-if="!isPlay"
               class="play_video"
               @click="playVideo"
               src="@/assets/images/main/播放.png"
               alt=""
             /> -->
-            <video class="video" ref="video" controls :src="item.spurl"></video>
+              <video
+                class="video"
+                ref="video"
+                controls
+                :src="item.spurl"
+              ></video>
+            </div>
           </div>
+        </div>
+        <div
+          class="main-data"
+          v-show="!isdata"
+          v-for="(item,index) in mianlist2.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )"
+          :key="index"
+        >
+          <div class="video_wrapper-two">
+            <video
+              class="video-two"
+              ref="video-two"
+              controls
+              :src="item.spurl"
+            ></video>
+          </div>
+          <div class="title-two">{{ item.title }}</div>
         </div>
       </div>
-      <!-- <div class="mian-data fadeInUp">
-        <div class="data-left">
-          <div class="left-title">福州软件园</div>
-          <div class="left-text">
-            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
-          </div>
-          <div class="xian"></div>
-          <div class="left-more">MORE</div>
-        </div>
-        <div class="data-right"></div>
+      <div class="bottom">
+        <el-pagination
+          background
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage4"
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="pageSize"
+          layout="pager"
+          :total="mianlist.length"
+          style="margin-left: -18px"
+        >
+        </el-pagination>
       </div>
-      <div class="mian-data">
-        <div class="data-left">
-          <div class="left-title">福州软件园</div>
-          <div class="left-text">
-            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
-          </div>
-          <div class="xian"></div>
-          <div class="left-more">MORE</div>
-        </div>
-        <div class="data-right"></div>
-      </div>
-      <div class="mian-data">
-        <div class="data-left">
-          <div class="left-title">福州软件园</div>
-          <div class="left-text">
-            瞰图科技作为数字孪生可视化管理软件领域的开创者，为福州软件园提供智慧园区解决方案，建成集电控、水控、消控、车控、监控、人控为一体，结合网格化管理系统和统一告警系统形成了新一代智慧园区综合管理平台，助力园区全面迈向数字化、智能化、可视化管理服务新形态。
-          </div>
-          <div class="xian"></div>
-          <div class="left-more">MORE</div>
-        </div>
-        <div class="data-right"></div>
-      </div> -->
-    </div>
-    <div class="bottom">
-      <el-pagination
-        background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage4"
-        :page-sizes="[1, 2, 3, 4]"
-        :page-size="pageSize"
-        layout="pager"
-        :total="mianlist.length"
-        style="margin-left: -18px"
-      >
-      </el-pagination>
     </div>
   </Card>
 </template>
 <style lang="less" scoped>
+.box {
+  background: url("@/assets/images/main/背景.png");
+}
 .top {
   width: 78.125rem;
   height: 12.5rem;
@@ -209,6 +206,19 @@
     }
   }
 }
+.main {
+  width: 1251px;
+  // height: 1698px;
+  margin: auto;
+  margin-top: 7.625rem;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  background-color: transparent;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+}
 .mian {
   width: 1251px;
   // height: 1698px;
@@ -289,10 +299,26 @@
   .mian-data:hover .left-more {
     transform: translateY(15px);
   }
-  // .mian-data:hover {
-  //   width: 1231px;
-  //   height: 313px;
-  // }
+  .main-data {
+    width: 600px;
+    height: 388px;
+    .video_wrapper-two {
+      width: 600px;
+      height: 338px;
+      .video-two {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .title-two {
+      margin-top: 20px;
+      line-height: 28px;
+      font-size: 30px;
+      font-family: Source Han Sans SC;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
 }
 .bottom {
   margin: auto;
@@ -359,6 +385,7 @@ export default {
   data() {
     return {
       navlist: ["经典案例", "更多"],
+      isdata: true,
       isPlay: false,
       mianlist: [],
       mianlist2: [],
@@ -370,7 +397,7 @@ export default {
     };
   },
   created() {
-    this.handlenav(this.navli);
+    // this.handlenav(this.navli);
   },
   mounted() {
     this.getdemolist();
@@ -391,8 +418,8 @@ export default {
     // },
     handlenav(index) {
       this.navli = index;
-      console.log(index);
       if (index == 0) {
+        this.isdata = true;
         this.mianlist.forEach((item) => {
           if (item.type == 1) {
             this.mianlist2 = [];
@@ -400,9 +427,9 @@ export default {
           }
         });
       } else if (index == 1) {
+        this.isdata = false;
         this.mianlist.forEach((item) => {
           if (item.type == 6) {
-            console.log(6);
             this.mianlist2 = [];
             this.mianlist2.push(item);
           }

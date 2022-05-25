@@ -60,7 +60,7 @@
     color: #fffefe;
   }
 }
-.canvas{
+.canvas {
   flex: 1;
 }
 </style>
@@ -132,24 +132,26 @@ export default {
     // pageOnload(view1, () => {
     //   console.log("done");
     // });
-     this.getmx();
+    this.getmx();
   },
-  created () {
+  created() {
+    // this.getmx();
   },
   methods: {
     getmx() {
+      let view1 = document.getElementById("view1");
       const loading = this.$loading({
-        lock: false, //lock的修改符--默认是false
+        lock: true, //lock的修改符--默认是false
         text: "模型加载中", //显示在加载图标下方的加载文案
         spinner: "el-icon-loading", //自定义加载图标类名
         background: "rgba(0, 0, 0, 0.7)", //遮罩层颜色
-        target:  document.querySelector('#view1'), //loadin覆盖的dom元素节点
+        target: view1, //loadin覆盖的dom元素节点
       });
-      let view1 = document.getElementById("view1");
-      pageOnload(view1, () => {
-        console.log("done");
-        loading.close();
-      });
+      // let view1 = document.getElementById("view1");
+      // pageOnload(view1, () => {
+      //   console.log("done");
+      //   loading.close();
+      // });
     },
   },
 };

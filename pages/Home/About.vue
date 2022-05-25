@@ -1,5 +1,6 @@
 <template>
   <Card>
+    <div class="box">
     <div style="color: #808080; font-size: 13px; margin-top: 116px">
       你的位置：首页 > <span style="color: #fff">了解瞰图</span>
     </div>
@@ -90,7 +91,7 @@
           <iframe
             id="inlineFrameExample"
             title="地图 "
-            src="https://ditu.amap.com/place/B00170A0MQ"
+            src="https://ditu.amap.com/place/B0FFHRRF7T"
           >
           </iframe>
         </div>
@@ -100,16 +101,20 @@
             <img src="@/assets/images/main/二维码.png" alt="" />
           </div>
           <div class="data-phone">
-            电话：189 8392 0157 <br />
+            电话：158 2628 9334 <br />
             微信：158 2628 9334 <br />
             重庆市渝中区
           </div>
         </div>
       </div>
     </div>
+    </div>
   </Card>
 </template>
 <style scoped lang="less">
+.box{
+  background: url("@/assets/images/main/背景.png") ;
+}
 iframe{
     height: 26.9375rem;
   width: 695px;

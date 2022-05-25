@@ -23,7 +23,7 @@
         </div>
         <div class="mian-conter">
           地址：重庆市渝中区中山三路161号广发大厦10楼<br />微信：158 2608
-          9334<br />电话：189 8392 0157
+          9334<br />电话：158 2628 9334
         </div>
         <div class="mian-right">
           <el-form
@@ -52,7 +52,7 @@
     </footer>
     <div class="beian">
       重庆瞰图科技有限公司 © 版权所有 kantu3d.com All Rights Reserved
-      <a href="https://beian.miit.gov.cn/#/Integrated/index">
+      <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer">
         工信部备案：渝ICP 备 2021009290 号</a
       >
     </div>

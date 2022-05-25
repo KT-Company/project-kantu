@@ -1,11 +1,17 @@
 <template>
-  <div class="flex justify-between">
-  <div class="canvas flex1" style="height: calc(100vh - 4rem)">
+  <!-- <div class="flex justify-between">
+  <div class="canvas flex1" style="height: calc(80vh - 4rem)">
     <img src="" alt="">
-  </div>
+  </div> -->
   <Card>
+    <div class="flex justify-between">
+      <div class="canvas flex1" style="height: calc(70vh - 4rem)">
+        <img src="" alt="" />
+      </div>
       <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
-        <div class="text-3xl h-40">GIS <i class="el-icon-location-outline"></i></div>
+        <div class="text-3xl h-40">
+          GIS <i class="el-icon-location-outline"></i>
+        </div>
         <div class="h-20">
           <span class="text-2xl">GIS - 地理信息系统</span>
         </div>
@@ -19,8 +25,8 @@
           </div>
         </div>
       </div>
+    </div>
   </Card>
-  </div>
 </template>
 <style>
 .button-right {
@@ -50,8 +56,9 @@
   padding-top: 150px;
   /* background-color: #fff; */
 }
-.flex1{
-  width: 70rem;
+.flex1 {
+  width: 60rem;
+  height: 50vh;
   background: url("@/assets/images/main/图.png") no-repeat;
 }
 </style>
@@ -104,9 +111,9 @@ export default {
   mounted() {},
   methods: {
     handleSlideChange() {},
-    handlemore(){
-     document.documentElement.scrollTop =document.body.clientHeight
-    }
+    handlemore() {
+      document.documentElement.scrollTop = document.body.clientHeight;
+    },
   },
 };
 </script>
