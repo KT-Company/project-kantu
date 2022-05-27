@@ -40,18 +40,28 @@
             数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。
           </div>
           <div class="fc">
-            <div class="div1">
-              <img src="@/assets/images/main/连接.png" alt="" />绵阳高新区
-            </div>
-            <div class="div2">
-              <img src="@/assets/images/main/连接.png" alt="" />绵阳高新区
-            </div>
-            <div class="div3">
+            <a
+              href="https://www.kantu3d.com/preview/sichuanPark/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div1"
+            >
+              <img src="@/assets/images/main/连接.png" alt="" />绵阳新兴投资控股智慧园区
+            </a>
+            <a
+              href="https://www.kantu3d.com/demo/2205/tuowei/dist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div2"
+            >
+              <img src="@/assets/images/main/连接.png" alt="" />拓维园区大数据平台
+            </a>
+            <!-- <div class="div3">
               <img
                 src="@/assets/images/main/连接.png"
                 alt=""
               />绵阳新兴投资控股智慧园区领导驾驶舱
-            </div>
+            </div> -->
           </div>
           <!-- <div class="button">
             体验智慧园区
@@ -66,9 +76,17 @@
             工业制造是现代工厂信息化发展晋级的阶段性成果，是建立在数字化工厂的基础上的升级，利用物联网和设备监控等技术加强信息管理和服务能力，集智能化设备、技术、系统为一体，实现高效、高控生产，减少人工干预，合理规划/优化生产进度等环节，构建智能高效、节能环保的智慧工厂
           </div>
           <div class="fc">
-            <div class="div1">
-              <img src="@/assets/images/main/连接.png" alt="" />BYD生产车间
-            </div>
+            <a
+              href="https://www.kantu3d.com/demo/2205/BYD/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div1"
+            >
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />比亚迪产线数据可视化中心
+            </a>
           </div>
           <!-- <div class="button">
             体验工业制造
@@ -84,12 +102,17 @@
             、应用碎片化为标准，积极布局钢筋翻样、精细管理、材料管理等成熟领域，开拓三维工地、模架产品、劳务验收、云资料等孵化产品，并延伸到智能安全帽、工地平板等施工业务硬件领域。实现工地联合监管。
           </div>
           <div class="fc">
-            <div class="div3">
+            <a
+              href="https://www.kantu3d.com/preview/cisdiScreen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div3"
+            >
               <img
                 src="@/assets/images/main/连接.png"
                 alt=""
-              />中科院科学城智慧工地
-            </div>
+              />中科院·科学中心一期工程
+            </a>
           </div>
           <!-- <div class="button">
             体验智慧工地
@@ -104,9 +127,28 @@
             智慧能源基于云计算、移动互联网、大数据等先进技术,通过采集各类能耗监测点的用能数据,经过专业的数据分析处理形成对能耗的分类、分项、分时、分区域的统计分析,并通过三维可视化技术,让企业实现对能源使用的全面数字化和可视化,直观发现用能改进优化点,进而帮助企业优化能源使用,降低企业综合能耗,达到节能增效的目的。
           </div>
           <div class="fc">
-            <div class="div1">
-              <img src="@/assets/images/main/连接.png" alt="" />火电厂
-            </div>
+            <a
+              href="https://www.kantu3d.com/demo/aerospaceDemo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div1"
+            >
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />天然气站大数据平台
+            </a>
+            <a
+              href="https://www.kantu3d.com/demo/2201/dx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="div1"
+            >
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />北京大兴油库可视化平台
+            </a>
           </div>
           <!-- <div class="button">
             体验智慧能源
@@ -120,11 +162,19 @@
           <div class="data-text">
             通过数字孪生还原机场业态，虚拟规划、仿真航班出入境流量状态。通过IOT设备查看实时工作画面，指挥中心高效、有序管理。
           </div>
-          <div class="fc">
+          <a
+            href="https://www.kantu3d.com/demo/aerospaceDemo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fc"
+          >
             <div class="div1">
-              <img src="@/assets/images/main/连接.png" alt="" />南京航空系统
+              <img
+                src="@/assets/images/main/连接.png"
+                alt=""
+              />智慧航空可视化数据平台
             </div>
-          </div>
+          </a>
           <!-- <div class="button">
             体验航天航空
             <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
@@ -196,7 +246,7 @@ export default {
 //   border-radius: 20px;
 //   display: none;
 // }
-.main{
+.main {
   margin-top: 108px;
 }
 .mian {
@@ -205,7 +255,7 @@ export default {
 .wrapper {
   position: relative;
   width: 100%;
-  height:519px;
+  height: 519px;
   border-radius: 20px;
 }
 .slider {

@@ -28,7 +28,7 @@
           </el-menu-item>
           <el-menu-item index="4">
             <nuxt-link to="/home/news"
-              ><div class="link">瞰图咨询</div></nuxt-link
+              ><div class="link">瞰图资讯</div></nuxt-link
             >
           </el-menu-item>
           <el-menu-item index="5">

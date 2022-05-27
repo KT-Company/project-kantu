@@ -239,13 +239,13 @@
   // flex-wrap: wrap;
   .main-data {
     display: inline-block;
-    width: 300px;
+    width: 210px;
     height: 200px;
     border-radius: 10px;
-    margin-right: 17px;
+    margin-right: 50px;
     margin-bottom: 17px;
     .video_wrapper-two {
-      width: 300px;
+      width: 210px;
       height: 168px;
     }
     .title-two {
@@ -257,7 +257,7 @@
       color: #ffffff;
     }
   }
-  .main-data:nth-child(5n) {
+  .main-data:nth-child(6n) {
     margin-right: 0;
   }
   // &::after {

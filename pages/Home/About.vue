@@ -90,12 +90,13 @@
         </div>
         <div class="mian-img">
           <div class="img">
-            <iframe
+            <!-- <iframe
               id="inlineFrameExample"
               title="地图 "
               src="https://ditu.amap.com/search?query=%E6%B8%9D%E9%AB%98%E5%A4%A7%E5%8E%A6F%E5%BA%A7&city=500107&id=B0FFHRRF7T&query_type=IDQ"
             >
-            </iframe>
+            </iframe> -->
+            <img src="@/assets/images/main/公司地图.png" alt="">
           </div>
           <div class="img-data">
             <div class="data-title">欢迎咨询我们</div>
@@ -221,6 +222,9 @@ iframe {
   height: 26.9375rem;
   width: 695px;
   background-color: #4d4d4d;
+  img{
+    height: 100%;
+  }
 }
 .img-data {
   width: 695px;

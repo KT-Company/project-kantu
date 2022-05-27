@@ -40,27 +40,33 @@
       <!-- <div class="canvas"></div> -->
       <div class="imgs">
         <div class="imgs-top fadeInUp">
-          <img src="@/assets/images/main/西安电子科技.png" alt="" />
+          <div class="images" v-for="(item, index) in imgs" :key="index">
+            <img :src="item" alt="" />
+          </div>
+          <!-- <img src="@/assets/images/main/西安电子科技.png" alt="" />
           <img src="@/assets/images/main/小米.png" alt="" />
           <img src="@/assets/images/main/中国南飞.png" alt="" />
           <img src="@/assets/images/main/硅湖.png" alt="" style="margin-top:20px"/>
           <img src="@/assets/images/main/武汉钢铁.png" alt="" style="margin-top:20px"/>
-          <img src="@/assets/images/main/中船重工.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/中船重工.png" alt="" style="margin-top:20px"/> -->
         </div>
         <div class="imgs-bottom fadeInUp2">
-            <img src="@/assets/images/main/中电.png" alt="" />
+          <div class="images" v-for="(item, index) in imgs2" :key="index">
+            <img :src="item" alt="" />
+          </div>
+          <!-- <img src="@/assets/images/main/中电.png" alt="" />
           <img src="@/assets/images/main/长江证券.png" alt="" />
           <img src="@/assets/images/main/本溪钢铁.png" alt="" />
           <img src="@/assets/images/main/京东方.png" alt="" style="margin-top:20px"/>
           <img src="@/assets/images/main/江苏.png" alt="" style="margin-top:20px"/>
-          <img src="@/assets/images/main/中冶赛迪.png" alt="" style="margin-top:20px"/>
+          <img src="@/assets/images/main/中冶赛迪.png" alt="" style="margin-top:20px"/> -->
         </div>
       </div>
     </div>
   </Card>
 </template>
 <style lang="less">
-.flex{
+.flex {
   align-items: center;
 }
 .button {
@@ -92,12 +98,21 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: stretch;
-  img {
+  .images {
     height: 90px;
     width: 220px;
+    background-color: rgba(77, 77, 77, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      vertical-align: middle;
+    }
   }
 }
-.imgs-bottom{
+.imgs-bottom {
   margin-top: 146px;
   width: 47.25rem;
   height: 12.5rem;
@@ -105,9 +120,18 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: stretch;
-  img {
+  .images {
     height: 90px;
     width: 220px;
+    background-color: rgba(77, 77, 77, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      vertical-align: middle;
+    }
   }
 }
 </style>
@@ -117,16 +141,33 @@ export default {
   name: "Page6",
 
   data() {
-    return {};
+    return {
+      imgs: [
+        require("@/assets/images/main/下載.png"),
+        require("@/assets/images/main/下載 (2).png"),
+        require("@/assets/images/main/下載 (3).png"),
+        require("@/assets/images/main/下載 (4).png"),
+        require("@/assets/images/main/下載 (5).png"),
+        require("@/assets/images/main/下載 (6).png"),
+      ],
+      imgs2: [
+        require("@/assets/images/main/下載 (7).png"),
+        require("@/assets/images/main/下載 (8).png"),
+        require("@/assets/images/main/下載 (9).png"),
+        require("@/assets/images/main/下載 (10).png"),
+        require("@/assets/images/main/下載 (11).png"),
+        require("@/assets/images/main/下載 (12).png"),
+      ],
+    };
   },
   components: {
     Card,
   },
   mounted() {},
   methods: {
-    handlemore(){
-      document.documentElement.scrollTop =document.body.clientHeight
-    }
+    handlemore() {
+      document.documentElement.scrollTop = document.body.clientHeight;
+    },
   },
 };
 </script>
