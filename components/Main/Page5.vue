@@ -83,13 +83,13 @@
 .echart {
   width: 304px;
   height: 256px;
-  margin-top: 130px;
+  margin-top: 100px;
   /* background-color: #4d4d4d; */
 }
 .echart2 {
   width: 620px;
   height: 256px;
-  margin-top: 130px;
+  margin-top: 100px;
   /* background-color: #4d4d4d; */
   color: #1a1a1a;
   font-size: 30px;
@@ -100,6 +100,7 @@
   margin-top: 250px;
 }
 </style>
+
 <script>
 import Card from "@/components/base/Card.vue";
 // import * as echart from "@/components/echarts/echart.vue";
@@ -125,7 +126,7 @@ export default {
             x: "center",
             top: "55%",
             textStyle: {
-              color: "#FFFFFF",
+              color: "rgba(225,225,225,0.3)",
               fontSize: 16,
               fontWeight: "100",
             },
@@ -136,7 +137,7 @@ export default {
             y: "center",
             textStyle: {
               fontSize: "30",
-              color: "#FFFFFF",
+              color: "rgba(225,225,225,0.3)",
               fontFamily: "DINAlternate-Bold, DINAlternate",
               foontWeight: "600",
             },
@@ -195,7 +196,7 @@ export default {
             name: "",
             type: "pie",
             startAngle: 80,
-            radius: ["78%"],
+            radius: ["82%"],
             hoverAnimation: false,
             center: ["50%", "50%"],
             itemStyle: {
@@ -209,13 +210,13 @@ export default {
             name: "",
             type: "pie",
             startAngle: 80,
-            radius: ["40%"],
+            radius: ["42%"],
             hoverAnimation: false,
             center: ["50%", "50%"],
             itemStyle: {
               color: "rgba(66, 66, 66, .1)",
               borderWidth: 1,
-              borderColor: "#fff",
+              borderColor: "#1a1a1a",
             },
             data: [100],
           },
@@ -265,9 +266,9 @@ export default {
           },
         },
         grid: {
-          top: "5%",
-          left: "5%",
-          right: "5%",
+          top: "10%",
+          left: "10%",
+          right: "10%",
           bottom: "10%",
           // containLabel: true
         },
@@ -279,13 +280,13 @@ export default {
             },
             splitArea: {
               // show: true,
-              color: "#fff",
+              color: "rgba(66, 66, 66, .3)",
               lineStyle: {
-                color: "#f00",
+                color: "rgba(66, 66, 66, .3)",
               },
             },
             axisLabel: {
-              color: "#fff",
+              color: "rgba(225,225,225,0.3)",
             },
             splitLine: {
               show: true,
@@ -321,14 +322,14 @@ export default {
             splitLine: {
               show: true,
               lineStyle: {
-                // color: 'rgba(255,255,255,0.1)'
+                color: 'rgba(66, 66, 66, .3)'
               },
             },
             axisLine: {
               show: true,
             },
             axisLabel: {
-              color: "#fff",
+              color: "rgba(225,225,225,0.3)",
             },
             axisTick: {
               show: true,
@@ -346,8 +347,8 @@ export default {
             symbolSize: 6,
             lineStyle: {
               normal: {
-                color: "#fff",
-                shadowColor: "#ffff",
+                color: "rgba(66, 66, 66, .3)",
+                shadowColor: "rgba(225,225,225,0.3)",
                 // shadowBlur: 0,
                 // shadowOffsetY: 5,
                 // shadowOffsetX: 5,
@@ -363,8 +364,8 @@ export default {
             // },
 
             itemStyle: {
-              color: "#1a1a1a",
-              borderColor: "#fff",
+              color: "#005792",
+              borderColor: "#6b778d",
               borderWidth: 3,
               // shadowColor: 'rgba(0, 0, 0, .3)',
               // shadowBlur: 0,
@@ -384,11 +385,11 @@ export default {
                   [
                     {
                       offset: 0,
-                      color: "#ffff",
+                      color: "#17223b",
                     },
                     {
                       offset: 1,
-                      color: "#1a1a1a",
+                      color: "#263859",
                     },
                   ],
                   false
@@ -441,26 +442,26 @@ export default {
       }
       let option = {
         // backgroundColor: "#081A2F",
-        color: ["#ccc"],
+        color: ["rgba(225,225,225,0.3)"],
         radar: {
           center: ["50%", "50%"],
-          radius: "70%",
+          radius: "60%",
           triggerEvent: true,
           splitNumber: 6,
           name: {
             rich: {
               a: {
-                color: "#fff",
+                color: "rgba(225,225,225,0.3)",
                 fontSize: 12,
                 lineHeight: 20,
               },
               b: {
-                color: "#FFF",
+                color:"rgba(225,225,225,0.3)",
                 fontSize: 12,
-                align: "right"
+                align: "right",
               },
               d: {
-                color: "#fff",
+                color:"rgba(225,225,225,0.3)",
                 fontSize: 12,
                 align: "right",
               },
@@ -494,7 +495,7 @@ export default {
           axisLine: {
             //指向外圈文本的分隔线样式
             lineStyle: {
-              color: "#FFFFFF",
+              color: "#263859",
               width: 2,
             },
           },
@@ -502,7 +503,7 @@ export default {
             lineStyle: {
               width: 1,
               // color: "RGBA(24, 67, 101, 1)",
-              color:'#ccc'
+              color: "rgba(225,225,225,0.3)",
             },
           },
         },
@@ -521,11 +522,11 @@ export default {
                 [
                   {
                     offset: 0,
-                    color: "#1a1a1a",
+                    color: "rgba(225,225,225,0.3)",
                   },
                   {
                     offset: 1,
-                    color: "#fffFFF",
+                    color: "rgba(225,225,225,0.3)",
                   },
                 ],
                 false
@@ -533,7 +534,7 @@ export default {
               width: 2,
             },
             itemStyle: {
-              color: "#fff ",
+              color: "#20366b",
               borderColor: new echarts.graphic.LinearGradient(
                 0,
                 0,
@@ -542,11 +543,11 @@ export default {
                 [
                   {
                     offset: 0,
-                    color: "#1a1a1a",
+                    color: "rgba(225,225,225,0.3)",
                   },
                   {
                     offset: 1,
-                    color: "#FFFFFF",
+                    color: "rgba(225,225,225,0.3)",
                   },
                 ],
                 false
@@ -569,7 +570,7 @@ export default {
                 },
                 areaStyle: {
                   normal: {
-                    color: "#fff",
+                    color: "#20366b",
                   },
                 },
               },
@@ -659,10 +660,9 @@ export default {
           },
         },
         grid: {
-          left: 38,
-          // right: 40,
-          right: 10,
-          // bottom: 100,
+          left: 78,
+          right: 50,
+          bottom: 70,
           top: 20,
           // containLabel: true,
         },
@@ -672,7 +672,7 @@ export default {
           axisLine: {
             show: true,
             lineStyle: {
-              color: "white",
+              color: "rgba(225,225,225,0.3)",
             },
           },
           offset: 25,
@@ -697,7 +697,7 @@ export default {
           axisLine: {
             show: false,
             lineStyle: {
-              color: "white",
+              color: "rgba(225,225,225,0.3)",
             },
           },
           splitLine: {
@@ -849,7 +849,7 @@ export default {
               color: "transparent",
             },
             tooltip: {},
-            data: MAX,
+            // data: MAX,
           },
         ],
       };

@@ -11,6 +11,7 @@
 <style>
 .mian {
   overflow: hidden;
+  /* background: url("@/assets/images/main/背景.png") 100% no-repeat;  */
 }
 .header {
   position: fixed;

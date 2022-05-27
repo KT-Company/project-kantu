@@ -1,6 +1,7 @@
 <template>
+<div class="box">
   <Card>
-    <div class="box">
+    
     <div style="color: #808080; font-size: 13px; margin-top: 116px">
       你的位置：首页 > <span style="color: #fff">瞰图资讯</span>
     </div>
@@ -39,8 +40,9 @@
       >
       </el-pagination>
     </div>
-    </div>
+    
   </Card>
+  </div>
 </template>
 <style lang="less" scoped>
 @font-face {
@@ -48,7 +50,7 @@
   src: url(@/assets/style/font/庞门正道标题体2.0增强版_0.TTF);
 }
 .box{
-  background: url("@/assets/images/main/背景.png") ;
+  background: url("@/assets/images/main/背景.png") 100% no-repeat;
 }
 .mian {
   width: 78.125rem;

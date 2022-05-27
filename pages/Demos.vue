@@ -1,6 +1,6 @@
 <template>
   <div class="mian">
-    <div class="box">
+    <div class="box" ref="box" @mouseover="boxover" @mouseout="boxout">
       <div class="left" @wheel.stop>
         <div class="title">重庆瞰图科技有限公司</div>
         <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
@@ -18,19 +18,19 @@
             <div class="data-text">{{ item.title }}</div>
           </div>
         </div>
-        <nuxt-link to="/home/main">
+        <!-- <nuxt-link to="/home/main">
           <div class="button">返回首页</div>
-        </nuxt-link>
+        </nuxt-link> -->
       </div>
     </div>
-    <iframe
+    <!-- <iframe
       id="inlineFrameExample"
       title="Inline Frame Example"
       width="300"
       height="200"
       :src="demodz"
     >
-    </iframe>
+    </iframe> -->
   </div>
 </template>
 <style lang="less" scoped>
@@ -77,7 +77,7 @@ iframe {
   top: 0;
   width: 37.5rem;
   height: 100vh;
-  transform: translateX(-36.375rem);
+  // transform: translateX(-36.375rem);
   transition: all 0.36s;
   z-index: 3;
   background-color: #1a1a1a;
@@ -152,17 +152,19 @@ export default {
     };
   },
   created() {
-    request
-      .get({
-        url: "/getDemo",
-      })
-      .then((res) => {
-        console.log(res.data.data[0].projectAddress);
-        this.demodz = res.data.data[0].projectAddress;
-      });
+    // request
+    //   .get({
+    //     url: "/getDemo",
+    //   })
+    //   .then((res) => {
+    //     console.log(res.data.data[0].projectAddress);
+    //     this.demodz = res.data.data[0].projectAddress;
+    //   });
   },
   mounted() {
     this.getdemolist();
+    setTimeout(this.navtf, 3000);
+    this.getxm();
   },
   methods: {
     async getdemolist() {
@@ -175,6 +177,25 @@ export default {
     handledemo(idx) {
       console.log(idx);
       this.demodz = idx;
+    },
+    navtf() {
+      this.$refs.box.style.transform = "translateX(-36.375rem)";
+    },
+    boxover() {
+      this.$refs.box.style.transform = "translateX(0)";
+    },
+    boxout() {
+      this.$refs.box.style.transform = "translateX(-36.375rem)";
+    },
+    getxm() {
+      const loading = this.$loading({
+        lock: true, //lock的修改符--默认是false
+        text: "项目加载中", //显示在加载图标下方的加载文案
+        spinner: "el-icon-loading", //自定义加载图标类名
+        background: "rgba(0, 0, 0, 0.1)", //遮罩层颜色
+        target: document.querySelector("#inlineFrameExample"), //loadin覆盖的dom元素节点
+      });
+      setTimeout(()=>{loading.close()},3000);
     },
   },
 };

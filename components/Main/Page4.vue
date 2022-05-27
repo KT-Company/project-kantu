@@ -44,7 +44,7 @@
               @mouseover="overnum(index)"
               @mouseout="outnum"
             >
-              <div class="message-dialog-wrapper">
+              <div class="message-dialog-wrapper" ref="textkuang">
                 <h3 class="m-d-title">{{ item.title }}</h3>
                 <p class="m-d-content">{{ item.content }}</p>
               </div>
@@ -177,17 +177,6 @@
   background: url("@/assets/images/main/dialog2.png") no-repeat;
   padding: 58px 17px 0 17px;
 }
-
-.one {
-  width: 10px;
-  height: 10px;
-  background: #4d4d4d;
-  border-radius: 50%;
-  transform: translateY(-5px);
-}
-.one:hover {
-  background-color: #fff;
-}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
@@ -268,7 +257,9 @@ export default {
     Card,
     Timeline,
   },
-  mounted() {},
+  mounted() {
+    setTimeout(this.textk,3000);
+  },
   methods: {
     overnum(index) {
       // console.log(index)
@@ -281,6 +272,8 @@ export default {
     },
     outnum() {
       this.listnum = "";
+    },
+    textk() {
     },
   },
 };

@@ -98,7 +98,7 @@
     }
   }
 }
-.canvas{
+.canvas {
   flex: 1;
 }
 </style>
@@ -140,10 +140,10 @@ export default {
     Card,
   },
   mounted() {
-    // let view2 = document.getElementById("view2");
-    // pageOnloadOil(view2, () => {
-    //   console.log("done");
-    // });
+    let view2 = document.getElementById("view2");
+    pageOnloadOil(view2, () => {
+      console.log("done");
+    });
   },
   methods: {},
 };

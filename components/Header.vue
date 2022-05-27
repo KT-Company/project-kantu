@@ -41,9 +41,7 @@
           <!-- </el-menu-item> -->
         </el-menu>
         <div class="demo">
-          <nuxt-link to="/demos">
-            <img src="@/assets/images/main/3.png" alt="" />
-          </nuxt-link>
+          <a href="http://172.16.16.30:3000/demos" target="_blank" rel="noopener noreferrer"><img src="@/assets/images/main/3.png" alt="" /></a>
         </div>
         <div class="line"></div>
       </nav>

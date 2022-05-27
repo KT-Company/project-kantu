@@ -15,7 +15,7 @@
           <div class="fc">
             <div><img src="@/assets/images/main/格式.png" alt=""> 多格式导入</div>
             <div><img src="@/assets/images/main/图层 647.png" alt="">多图表选择</div>
-            <div><img src="@/assets/images/main/基础样式.png" alt="">样式修改  </div>
+            <div><img src="@/assets/images/main/基础样式.png" alt="">多样式修改  </div>
           </div>
           <div class="button" @click="handlemore">
             <i class="el-icon-d-arrow-left mr-6"></i>

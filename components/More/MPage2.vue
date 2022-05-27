@@ -350,10 +350,13 @@ li {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-weight: bold;
       padding: 0 15px;
+      font-size: 14px;
       img {
         width: 19px;
         height: 23px;
+        margin-right: 15px;
       }
     }
     .div3 {
@@ -372,6 +375,7 @@ li {
       img {
         width: 19px;
         height: 23px;
+        margin-right: 15px;
       }
     }
   }

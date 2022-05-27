@@ -85,9 +85,7 @@ export default {
     };
   },
   components: { Card, Page1, Page2, Page3, Page4, Page5, Page6, Footer },
-  created() {
-
-  },
+  created() {},
   watch: {
     idx(newValue, oldValue) {
       console.log(newValue);
@@ -99,7 +97,7 @@ export default {
     },
   },
   mounted() {
-        if (this.idx < 5) {
+    if (this.idx < 5) {
       this.isPageEnd = false;
       console.log(this.isPageEnd);
       document.body.scrollTop = document.documentElement.scrollTop = 0;

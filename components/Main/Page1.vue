@@ -117,6 +117,7 @@ export default {
           prevEl: ".swiper-button-prev.swiper-button-p1",
         },
       },
+      loading: true,
     };
   },
   props: {
@@ -134,24 +135,21 @@ export default {
     // });
     this.getmx();
   },
-  created() {
-    // this.getmx();
-  },
+  created() {},
   methods: {
     getmx() {
-      let view1 = document.getElementById("view1");
       const loading = this.$loading({
         lock: true, //lock的修改符--默认是false
         text: "模型加载中", //显示在加载图标下方的加载文案
         spinner: "el-icon-loading", //自定义加载图标类名
-        background: "rgba(0, 0, 0, 0.7)", //遮罩层颜色
-        target: view1, //loadin覆盖的dom元素节点
+        background: "rgba(0, 0, 0, 0.1)", //遮罩层颜色
+        target: document.querySelector(".canvas"), //loadin覆盖的dom元素节点
       });
-      // let view1 = document.getElementById("view1");
-      // pageOnload(view1, () => {
-      //   console.log("done");
-      //   loading.close();
-      // });
+      let view1 = document.getElementById("view1");
+      pageOnload(view1, () => {
+        console.log("done");
+        loading.close();
+      });
     },
   },
 };

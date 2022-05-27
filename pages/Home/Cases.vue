@@ -1,6 +1,6 @@
 <template>
-  <Card>
-    <div class="box">
+  <div class="box">
+    <Card>
       <div class="top fadeInUp">
         <div class="top1">
           <div class="top-num">50</div>
@@ -35,9 +35,9 @@
           </li>
         </ul>
       </div>
-      <div :class="['mian','fadeInUp2',isdata?'':'main']" ref="mian">
+      <div :class="['mian', isdata ? '' : 'main']" ref="mian">
         <div
-          class="mian-data fadeInUp2"
+          class="mian-data"
           v-show="isdata"
           v-for="(item, index) in mianlist2.slice(
             (currentPage - 1) * pageSize,
@@ -52,32 +52,49 @@
             </div>
             <div class="xian"></div>
             <!-- <div class="left-more">MORE</div> -->
-            <a :href="item.porjectAddress" class="left-more">MORE</a>
+            <a
+              :href="item.projectAddress"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="left-more"
+            >
+              <img src="@/assets/images/main/连接.png" alt="" />查看项目</a
+            >
           </div>
           <div class="data-right">
             <div class="video_wrapper">
-              <!-- <img
-              v-if="!isPlay"
-              class="play_video"
-              @click="playVideo"
-              src="@/assets/images/main/播放.png"
-              alt=""
-            /> -->
               <video
                 class="video"
                 ref="video"
                 controls
                 :src="item.spurl"
+                @play="handlePlay(index)"
+                style="width: 100%; height: 100%; object-fit: fill"
               ></video>
             </div>
           </div>
         </div>
+        <div class="bottom">
+          <el-pagination
+            v-show="isdata"
+            background
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage4"
+            :page-sizes="[1, 2, 3, 4]"
+            :page-size="pageSize"
+            layout="pager"
+            :total="mianlist2.length"
+            style="margin-left: -18px"
+          >
+          </el-pagination>
+        </div>
         <div
           class="main-data"
           v-show="!isdata"
-          v-for="(item,index) in mianlist2.slice(
-            (currentPage - 1) * pageSize,
-            currentPage * pageSize
+          v-for="(item, index) in mianlist3.slice(
+            (currentPage - 1) * pageSize2,
+            currentPage * pageSize2
           )"
           :key="index"
         >
@@ -87,31 +104,35 @@
               ref="video-two"
               controls
               :src="item.spurl"
+              @play="handlePlay(index)"
+              style="width: 100%; height: 100%; object-fit: fill"
             ></video>
           </div>
           <div class="title-two">{{ item.title }}</div>
         </div>
+        <div class="bottom">
+          <el-pagination
+            v-show="!isdata"
+            background
+            @size-change="handleSizeChange2"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage4"
+            :page-sizes="[1, 2, 3, 4]"
+            :page-size="pageSize2"
+            layout="pager"
+            :total="mianlist3.length"
+            style="margin-left: -18px"
+          >
+          </el-pagination>
+        </div>
       </div>
-      <div class="bottom">
-        <el-pagination
-          background
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[1, 2, 3, 4]"
-          :page-size="pageSize"
-          layout="pager"
-          :total="mianlist.length"
-          style="margin-left: -18px"
-        >
-        </el-pagination>
-      </div>
-    </div>
-  </Card>
+    </Card>
+  </div>
 </template>
 <style lang="less" scoped>
 .box {
-  background: url("@/assets/images/main/背景.png");
+  width: 100vw;
+  background: url("@/assets/images/main/背景.png") 100%;
 }
 .top {
   width: 78.125rem;
@@ -208,25 +229,46 @@
 }
 .main {
   width: 1251px;
-  // height: 1698px;
   margin: auto;
   margin-top: 7.625rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   background-color: transparent;
   overflow: auto;
-  display: flex;
-  justify-content: space-between;
+
+  // display: flex;
+  // justify-content: space-between;
+  // flex-wrap: wrap;
+  .main-data {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 17px;
+    margin-bottom: 17px;
+    .video_wrapper-two {
+      width: 300px;
+      height: 168px;
+    }
+    .title-two {
+      line-height: 32px;
+      padding-left: 6px;
+      font-size: 16px;
+      font-family: Source Han Sans SC;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+  .main-data:nth-child(5n) {
+    margin-right: 0;
+  }
+  // &::after {
+  //   content: "";
+  //   width: 300px; /*伪元素的宽度与子元素的宽度一致*/
+  // }
 }
 .mian {
   width: 1251px;
-  // height: 1698px;
   margin: auto;
   margin-top: 7.625rem;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   background-color: transparent;
   overflow: auto;
   .mian-data {
@@ -266,12 +308,23 @@
         transition: width 0.36s ease;
       }
       .left-more {
+        display: flex;
+        width: 100px;
+        height: 30px;
         font-size: 14px;
         font-family: Source Han Sans SC;
         font-weight: bold;
         color: #ffffff;
         margin-top: 10px;
+        padding: 0 8px;
         transition: all 0.36s;
+        background-color: #4d4d4d;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 15px;
+        img {
+          height: 60%;
+        }
       }
     }
     .data-right {
@@ -288,7 +341,7 @@
   .mian-data:hover .data-right {
     width: 561px;
     height: 313px;
-    background: #4d4d4d;
+    // background: #4d4d4d;
   }
   .mian-data:hover .left-title {
     transform: translateY(5px);
@@ -299,30 +352,11 @@
   .mian-data:hover .left-more {
     transform: translateY(15px);
   }
-  .main-data {
-    width: 600px;
-    height: 388px;
-    .video_wrapper-two {
-      width: 600px;
-      height: 338px;
-      .video-two {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .title-two {
-      margin-top: 20px;
-      line-height: 28px;
-      font-size: 30px;
-      font-family: Source Han Sans SC;
-      font-weight: 400;
-      color: #ffffff;
-    }
-  }
 }
 .bottom {
   margin: auto;
   margin-top: 7.5rem;
+  margin-left: 1rem;
   width: 78.125rem;
 }
 .video_wrapper {
@@ -336,10 +370,6 @@
   width: 100%;
   height: 100%;
   // background: #0a3e6d;
-  .video {
-    width: 100%;
-    height: 100%;
-  }
   .play_video {
     width: 32px;
     height: 32px;
@@ -389,40 +419,48 @@ export default {
       isPlay: false,
       mianlist: [],
       mianlist2: [],
+      mianlist3: [],
       navli: 0,
+      videoElement: [], // 创建视频数组
       currentPage4: 1,
       currentPage: 1, // 当前页码
       // total: 20, // 总条数
       pageSize: 4, // 每页的数据条数
+      pageSize2: 20, // 每页的数据条数
     };
   },
   created() {
     // this.handlenav(this.navli);
+    this.getdemolist();
   },
   mounted() {
-    this.getdemolist();
+    this.videoElement = document.getElementsByTagName("video"); // 获取页面上所有的video对象
+
+    console.log(this.mianlist2);
     document.body.scrollTop = document.documentElement.scrollTop = 0;
-    // this.handlenav(this.navli)
-    // this.$nextTick(() => {
-    //   this.$refs.video.onpause = () => {
-    //     this.isPlay = false;
-    //   };
-    //   this.$refs.video.onplay = () => {
-    //     this.isPlay = true;
-    //   };
-    // });
   },
   methods: {
-    // playVideo() {
-    //   this.$refs.video.play();
-    // },
+    handlePlay(index) {
+      const videoElement = this.videoElement;
+      if (videoElement && videoElement.length > 0) {
+        for (let i = 0; i < videoElement.length; i++) {
+          if (i === index) {
+            this.videoElement[i].play();
+          } else {
+            this.videoElement[i].pause();
+          }
+        }
+      }
+    },
+
     handlenav(index) {
       this.navli = index;
+      this.mianlist2 = [];
+      this.mianlist3 = [];
       if (index == 0) {
         this.isdata = true;
         this.mianlist.forEach((item) => {
           if (item.type == 1) {
-            this.mianlist2 = [];
             this.mianlist2.push(item);
           }
         });
@@ -430,8 +468,7 @@ export default {
         this.isdata = false;
         this.mianlist.forEach((item) => {
           if (item.type == 6) {
-            this.mianlist2 = [];
-            this.mianlist2.push(item);
+            this.mianlist3.push(item);
           }
         });
       }
@@ -440,6 +477,11 @@ export default {
       console.log(`每页 ${val} 条`);
       this.currentPage = 1;
       this.pageSize = val;
+    },
+    handleSizeChange2(val) {
+      console.log(`每页 ${val} 条`);
+      this.currentPage = 1;
+      this.pageSize2 = val;
     },
     //当前页改变时触发 跳转其他页
     handleCurrentChange(val) {
@@ -450,13 +492,13 @@ export default {
       let data = await request.get({
         url: "/getDyal",
       });
-      console.log(data.data.data);
+      // console.log(data.data.data);
       data.data.data.forEach((item) => {
         if (item.type == 1) {
-          this.mianlist2 = [];
           this.mianlist2.push(item);
         }
       });
+      console.log(this.mianlist2);
       this.mianlist = data.data.data;
     },
   },
