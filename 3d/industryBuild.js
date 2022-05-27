@@ -38,10 +38,10 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         bgColor: 0xfff000,
         cameras: {
             orbitCamera: {
-                position: [-152, 18, 167],
+                position: [-184, 3, 228],
                 near: 1,
                 far: 100000,
-                fov: 75,
+                fov: 60,
             },
         },
         controls: {
@@ -512,7 +512,7 @@ if (process.browser) {
     //     mouseY = (event.clientY - windowHalfY);
     // }
 
-    // 实时获取位置
+    // // 实时获取位置
     // window.outViewPoint = () => {
     //     const point = container.orbitControls.target;
     //     const camera = container.orbitCamera.position;

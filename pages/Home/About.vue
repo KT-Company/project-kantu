@@ -266,10 +266,10 @@ export default {
   mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     console.log(document.documentElement.scrollTop)
-    // let view3 = document.getElementById("view3");
-    // pageOnloadBuild(view3, () => {
-    //   console.log("done");
-    // });
+    let view3 = document.getElementById("view3");
+    pageOnloadBuild(view3, () => {
+      console.log("done");
+    });
   },
   methods: {
     handlemore() {

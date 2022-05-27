@@ -117,11 +117,11 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             })
         },
         onLoad: () => {
-            render();
-
             container.mixerActions.forEach((item) => {
                 item.paused = false
             });
+
+            render()
 
             callback && callback()
         },
