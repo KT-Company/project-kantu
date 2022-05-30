@@ -1,7 +1,7 @@
 import { resolve } from "path";
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
+  target: "server",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -75,9 +75,14 @@ export default {
   axios: {
     proxy: true,
   },
+  router: {
+    routes: [
+      { name: 'index', path: '/', component: 'pages/Home/Main.vue' }
+    ]
+  },
   proxy: {
     '/api': {
-      target: 'https://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
+      target: 'http://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
       pathRewrite: {
         '^/api': '/'
       }

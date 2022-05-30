@@ -152,14 +152,14 @@ export default {
     };
   },
   created() {
-    // request
-    //   .get({
-    //     url: "/getDemo",
-    //   })
-    //   .then((res) => {
-    //     console.log(res.data.data[0].projectAddress);
-    //     this.demodz = res.data.data[0].projectAddress;
-    //   });
+    request
+      .get({
+        url: "/getDemo",
+      })
+      .then((res) => {
+        console.log(res.data.data[0].projectAddress);
+        this.demodz = res.data.data[0].projectAddress;
+      });
   },
   mounted() {
     this.getdemolist();

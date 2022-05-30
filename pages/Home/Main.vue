@@ -40,7 +40,7 @@ export default {
       isPageEnd: false,
       idx: 0,
       swiperOptionMain: {
-        speed: 1500,
+        speed: 1000,
         height: 1080,
         direction: "vertical",
         origin: "left bottom",
