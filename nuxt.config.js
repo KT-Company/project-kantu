@@ -27,6 +27,7 @@ export default {
   ],
   server: {
     host: '0.0.0.0', // default: localhost,
+    port:8000,
     timing: false
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -82,7 +83,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
+      target: 'https://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
       pathRewrite: {
         '^/api': '/'
       }
