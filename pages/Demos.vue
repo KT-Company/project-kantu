@@ -10,7 +10,7 @@
             @wheel.stop
             v-for="(item, index) in demolist"
             :key="index"
-            @click="handledemo(item.projectAddress)"
+            @click="handledemo(item.projectAddress,index)"
           >
             <div :class="['data-img',item.projectAddress == demodz ? 'active' : '']">
               <img :src="item.imgurl" alt="" />
@@ -115,6 +115,7 @@ iframe {
     // background-color: cornflowerblue;
     margin-top: 3rem;
     overflow: auto;
+    position: relative;
     .data-mian {
       width: 100%;
       height: 15.625rem;
@@ -187,12 +188,25 @@ export default {
       let data = await request.get({
         url: "/getDemo",
       });
-      console.log(data.data.data);
       this.demolist = data.data.data;
     },
-    handledemo(idx) {
-      console.log(idx);
+    handledemo(idx,i) {
       this.demodz = idx;
+      const dom = document.querySelectorAll('.data-mian')[i];
+      const top = dom.offsetTop - 10;
+      const parent = dom.parentNode;
+      parent.scrollTop = top
+      // clearInterval(this.timer)
+      // this.timer = setInterval(() => {
+      // let speed = (top - parent.scrollTop) / 5;
+      //   speed = speed>0?Math.ceil(speed):Math.floor(speed)
+      //   parent.scrollTop = parent.scrollTop + speed;
+      //   // 滚动条是否已经到底: 盒子被卷去的高度+盒子可见区域的高度 = 盒子正文的总高度
+      //   let isBottom = (parent.scrollTop + parent.clientHeight >=  parent.scrollHeight)
+      //   if(speed==0 || isBottom){
+      //     clearInterval(this.timer)
+      //   }
+      // },30)
     },
     getxm() {
       const loading = this.$loading({
