@@ -27,7 +27,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
         bgColor: 0xfff000,
         cameras: {
             orbitCamera: {
-                position: [-1, 8, 17],
+                position: [-6, 8, 30],
                 near: 1,
                 far: 100000,
                 fov: 75,
@@ -37,7 +37,7 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             orbitControls: {
                 autoRotate: false,
                 autoRotateSpeed: 2,
-                target: [-19, 0, -4],
+                target: [-15, -0, 8],
                 minDistance: 0,
                 maxDistance: 2000,
                 maxPolarAngle: Math.PI * 0.7,
@@ -113,16 +113,16 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
             item.scale.set(10, 10, 10);
             item.traverse(child => {
                 if (child.isMesh) {
-                    if (child.name == "tou-1") {
+                    if (child.name == "tou-1" || child.name == "Line048_2") {
                         child.material.opacity = 0.15;
                         child.renderOrder = 100
-                    } else if (child.name == "Line064" || child.name == "Line055" || child.name == "Line067" || child.name == "Line065" || child.name == "Line066") {
+                    } else if (child.name == "Line064" || child.name == "Line055" || child.name == "Line067" || child.name == "Line065" || child.name == "Line066" || child.name == "Line057" || child.name == "lvxian") {
                         moveingObj.push(child);
                     }
                 }
 
                 if (child.type == "Group") {
-                    if (child.name == "dong-1" || child.name == "dong-2" || child.name == "dong-3") {
+                    if (child.name == "dong-1" || child.name == "dong-2" || child.name == "dong-3" || child.name == "dong-7" || child.name == "dong-5" || child.name == "dong-6" || child.name == "dong-4" || child.name == "dong-004") {
                         // child.userData.oldPosition = child.position.clone();
                         jumpObj.push(child)
                     }
