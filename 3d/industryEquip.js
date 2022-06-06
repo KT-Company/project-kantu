@@ -1,7 +1,9 @@
 import * as Bol3D from "./main.js";
 
 var container,
-    PRO_ENV;
+    PRO_ENV,
+    roooo = [],
+    roooog = [];
 
 // 初始化整个场景
 export const pageOnload_3d = (baseUrl, canvas, fun) =>
@@ -113,13 +115,18 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
                 if (child.isMesh) {
                     child.material.roughness = 0.05;
                     child.material.envMapIntensity = 1
+                    if (child.name == "07" || child.name == "WaiKe_04") {
+                        roooo.push(child)
+                    } else if (child.name == "FengShan001_2" || child.name == "FengShan001_1" || child.name == "08" || child.name == "Z02_01" || child.name == "Z02_02") {
+                        roooog.push(child)
+                    }
                 }
             })
         },
         onLoad: () => {
-            container.mixerActions.forEach((item) => {
-                item.paused = false
-            });
+            // container.mixerActions.forEach((item) => {
+            //     item.paused = false
+            // });
 
             render()
 
@@ -137,14 +144,14 @@ var sceneOnLoad = ({ baseUrl, domElement, callback }) => {
     // events.onclick = (e) => {
     //     // e.objects[0].point.y.toFixed(2)
     //     // let y = 12;
-    //     console.log(
-    //         "中心点： " +
-    //         e.objects[0].point.x.toFixed(2) +
-    //         "," +
-    //         e.objects[0].point.y.toFixed(2) +
-    //         "," +
-    //         e.objects[0].point.z.toFixed(2)
-    //     );
+    //     // console.log(
+    //     //     "中心点： " +
+    //     //     e.objects[0].point.x.toFixed(2) +
+    //     //     "," +
+    //     //     e.objects[0].point.y.toFixed(2) +
+    //     //     "," +
+    //     //     e.objects[0].point.z.toFixed(2)
+    //     // );
     //     console.log(e.objects[0].object);
     // };
 
@@ -160,6 +167,14 @@ const render = () => {
     // container.orbitControls.autoRotate = true;
     // }
     // outViewPoint()
+
+    roooo && roooo.forEach(item => {
+        item.rotateOnAxis(item.position.clone().set(0, 1, 0), 0.01)
+    })
+    roooog && roooog.forEach(item => {
+        item.rotateOnAxis(item.position.clone().set(1, 0, 0), 0.01)
+    })
+
 };
 
 ////////////////////////////////////////////////////
