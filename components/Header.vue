@@ -107,7 +107,25 @@ export default {
     };
   },
   created() {
-    this.activeIndex = "1";
+    console.log(this.$route)
+    switch(this.$route.path) {
+      case '/home/main':
+        this.activeIndex = "1";
+        break;
+      case '/home/more':
+        this.activeIndex = "2";
+        break;
+      case '/home/cases':
+        this.activeIndex = "3";
+        break;
+      case '/home/news':
+        this.activeIndex = "4";
+        break;
+      case '/home/about':
+        this.activeIndex = "5";
+        break;
+    }
+    
   },
   methods: {
     handleSelect(key, keyPath) {},

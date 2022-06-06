@@ -11,14 +11,6 @@
           </swiper-slide>
           <div class="swiper-pagination swiper-pagination-wrapper" slot="pagination"></div>
         </swiper>
-        <!-- <ul class="swiper-bottom">
-          <li
-            v-for="(item, index) in 5"
-            :key="index"
-            @click="handleli(index)"
-            :class="wpli === index ? 'active' : ''"
-          ></li>
-        </ul> -->
         <div class="swiper-title">{{ titlelist[wpli] }}</div>
       </div>
       <div @mousewheel.stop="">
@@ -57,17 +49,7 @@
                     alt=""
                   />拓维园区大数据平台
                 </a>
-                <!-- <div class="div3">
-                      <img
-                        src="@/assets/images/main/连接.png"
-                        alt=""
-                      />绵阳新兴投资控股智慧园区领导驾驶舱
-                    </div> -->
               </div>
-              <!-- <div class="button">
-                    体验智慧园区
-                    <i class="el-icon-d-arrow-left mr-6" style="margin-left: 38px"></i>
-                  </div> -->
             </div>
           </swiper-slide>
           <swiper-slide>
@@ -200,7 +182,6 @@ export default {
       ],
       titlelist: ["智慧园区", "工业制造", "智慧工地", "智慧能源", "航天航空"],
       swiperOption: {
-        loop: true,
         autoplay: true,
         effect: 'fade',
         pagination: {
@@ -212,9 +193,7 @@ export default {
       },
       swiperOption2: {
         direction: 'vertical',
-        loop: true,
         mousewheel: true,
-        // noSwiping: true,
       },
       controlledSwiper: null
     };

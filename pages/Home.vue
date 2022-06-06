@@ -40,8 +40,9 @@ export default {
     };
   },
   created() {
+    console.log(111)
     // debugger
-    this.$router.push("/home/main")
+    // this.$router.push("/home/main")
   },
   mounted() {
     

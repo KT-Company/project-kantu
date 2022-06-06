@@ -21,10 +21,10 @@ export default {
     Footer,
     Card
   },
-  mounted() {
-    // this.$router.push({
-    //   path: `home/main`,
-    // });
-  },
+  created() {
+    this.$router.push({
+      path: `home/main`,
+    });
+  }
 };
 </script>
