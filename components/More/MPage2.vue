@@ -176,7 +176,7 @@ export default {
       imglist: [
         require("@/assets/images/main/zhyq.png"),
         require("@/assets/images/main/gyzz.png"),
-        require("@/assets/images/main/zhgd.jpg"),
+        require("@/assets/images/main/zhgd.png"),
         require("@/assets/images/main/zhny.png"),
         require("@/assets/images/main/hthk.png"),
       ],
