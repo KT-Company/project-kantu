@@ -25,13 +25,13 @@
         <div class="mian-right fadeInUp">
           <el-carousel indicator-position="outside" height="610px">
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq1.png" alt=""  class="bjq"/>
+              <img src="@/assets/images/main/bjq1.jpg" alt=""  class="bjq"/>
             </el-carousel-item>
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq2.png" alt="" class="bjq"/>
+              <img src="@/assets/images/main/bjq2.jpg" alt="" class="bjq"/>
             </el-carousel-item>
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq3.png" alt="" class="bjq"/>
+              <img src="@/assets/images/main/bjq3.jpg" alt="" class="bjq"/>
             </el-carousel-item>
           </el-carousel>
         </div>

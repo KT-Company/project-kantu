@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瞰图科技案例演示页面</title>
+    <!-- Style -->
+    <style>
+        body,
+        html {
+            margin: 0;
+        }
+
+        h1{
+            color: #409eff;
+        }
+        .pl-20 {
+            padding-left: 20px;
+        }
+
+        .link-btn {
+            font-size: 14px;
+            padding: 12px 20px;
+            background-color: #ecf5ff;
+            outline: none;
+            border: 1px solid #b3d8ff;
+            border-radius: 4px;
+            color: #409eff;
+            cursor: pointer;
+        }
+
+        .link-btn:hover {
+            background: #409eff;
+            border-color: #409eff;
+            color: #fff;
+        }
+
+        .block {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .link-box-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 40px;
+        }
+
+        .link-wrap {
+            padding: 0 20px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="pl-20">瞰图科技案例列表</h1>
+
+    <ul class="link-box-list">
+    </ul>
+
+
+    <!-- JS -->
+    <script>
+        const linkBox = document.querySelector('.link-box-list')
+        fetch(`https://kantu3d.com/api/example?type=0&page=1&limit=100`, {
+            method: 'get',
+            header: {
+                'content-type': 'application/json'
+            }
+        }).then(res => {
+            return res.json()
+        }).then(data => {
+            let htmlData = data.map(item => {
+	if(item.is_demo == 1){
+              return `<li class="link-wrap">
+                    <a class="block" href="${item.link}" target='__blank'>
+                        <button class="link-btn">${item.name}</button>
+                    </a>
+                </li>`
+            }}).join('')
+                console.log(htmlData)
+            linkBox.innerHTML = htmlData
+        })
+    </script>
+</body>
+
+</html>

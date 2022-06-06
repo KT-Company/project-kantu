@@ -174,11 +174,11 @@ export default {
     return {
       wpli: 0,
       imglist: [
-        require("@/assets/images/main/zhyq.png"),
-        require("@/assets/images/main/gyzz.png"),
-        require("@/assets/images/main/zhgd.png"),
-        require("@/assets/images/main/zhny.png"),
-        require("@/assets/images/main/hthk.png"),
+        require("@/assets/images/main/zhyq.jpg"),
+        require("@/assets/images/main/gyzz.jpg"),
+        require("@/assets/images/main/zhgd.jpg"),
+        require("@/assets/images/main/zhny.jpg"),
+        require("@/assets/images/main/hthk.jpg"),
       ],
       titlelist: ["智慧园区", "工业制造", "智慧工地", "智慧能源", "航天航空"],
       swiperOption: {

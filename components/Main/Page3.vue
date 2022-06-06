@@ -6,7 +6,7 @@
   <Card>
     <div class="flex justify-between">
       <div class="canvas flex1" style="height: calc(70vh - 4rem);">
-        <img class="img" src="@/assets/images/main/图.png" alt="" />
+        <img class="img" src="@/assets/images/main/图.jpg" alt="" />
       </div>
       <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
         <div class="text-3xl h-40">

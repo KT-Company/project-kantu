@@ -90,7 +90,7 @@
 .mian-mian:hover .mian-data {
   border: 0;
   // background-color: coral;
-  // background: url("~/assets/images/main/微信图片png.png") no-repeat;
+  // background: url("~/assets/images/main/微信图片png.jpg") no-repeat;
 }
 .mian-mian:hover {
   background: rgba(0,0,0,.5);
