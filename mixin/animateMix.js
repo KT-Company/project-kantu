@@ -16,12 +16,12 @@ export default {
     // }
     this.fadeUpIn = gsap.from(".fadeInUp", {
       marginTop: 200,
-      duration: 2,
+      duration: 1,
       opacity: 0,
     });
     this.fadeUpIn2 = gsap.from(".fadeInUp2", {
       marginTop: 200,
-      duration: 2,
+      duration: 1,
       opacity: 0,
       delay: 1.2,
     });

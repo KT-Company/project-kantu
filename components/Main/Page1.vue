@@ -1,23 +1,19 @@
 <template>
   <Card>
     <div class="flex justify-between">
-      <div>
-        <swiper :options="swiperOptionP1" style="width: 70vh; height: 80vh">
+      <div style="position: relative;">
+        <swiper :options="swiperOptionP1" style="width: 70vh; height: 80vh;" >
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
-            <div class="display-box fadeInUp">
+            <div class="display-box fadeInUp fast">
               <div style="color: rgba(153, 153, 153, 1)">
                 {{ item.slogenEn }}
               </div>
               <div class="text-4xl h-60 title">
                 {{ item.slogen }}
               </div>
-              <div class="text">{{ item.detail }}</div>
-              <div class="absolute bottom-16 ye">
-                <span>{{ item.index }}</span> / 04
-              </div>
+              <div class="text line-height-1-5">{{ item.detail }}</div>
             </div>
           </swiper-slide>
-          <!-- <div class="swiper-pagination swiper-pagination-p1" slot="pagination"></div> -->
           <div
             class="swiper-button-prev swiper-button-p1"
             slot="button-prev"
@@ -27,6 +23,9 @@
             slot="button-next"
           ></div>
         </swiper>
+          <div class="absolute bottom-16 ye">
+            <span>{{ swiperIndex + 1 }}</span> / {{swiperDataP1.length < 10 ? '0' + swiperDataP1.length : swiperDataP1.length}}
+          </div>
       </div>
       <div class="canvas">
         <canvas id="view1" ref="view1" class="canvasBox"></canvas>
@@ -103,7 +102,9 @@ export default {
           time: "01/04",
         },
       ],
-      swiperOptionP1: {
+      swiperOptionP1: (() => {
+        const _this = this;
+        return {
         // 设置分页器
         pagination: {
           el: ".swiper-pagination.swiper-pagination-p1",
@@ -116,14 +117,16 @@ export default {
           nextEl: ".swiper-button-next.swiper-button-p1",
           prevEl: ".swiper-button-prev.swiper-button-p1",
         },
-      },
+        on: {
+          slideChangeTransitionStart() {
+            _this.swiperIndex = this.activeIndex;
+          }
+        }
+      }
+      })(),
+      swiperIndex: 0, // 当前选中index
       loading: true,
     };
-  },
-  props: {
-    onSlideChange: {
-      type: Function,
-    },
   },
   components: {
     Card,
@@ -151,6 +154,9 @@ export default {
         loading.close();
       });
     },
+    // onSlideChange(index) {
+    //   console.log(index)
+    // }
   },
 };
 </script>

@@ -8,7 +8,7 @@
         <div class="mian-left">
           <div style="font-size: 86px">About</div>
           <div style="font-size: 30px">重庆瞰图科技有限公司</div>
-          <div class="text" style="font-size: 14px">
+          <div class="text line-height-1-5" style="font-size: 14px">
             <div>
               重庆瞰图科技有限公司是一家数字孪生平台公司，国产自主研发三维引擎的技术领先者；致力于可视化系统设计、三维虚拟仿真开发，完善国产化自主研发三维引擎，打破国外3A工业设计软件的垄断。
             </div>
@@ -106,7 +106,7 @@
             <div class="data-phone">
               电话(微信同号)：158 2628 9334 <br />
               <!-- 微信：158 2628 9334 <br /> -->
-              重庆市九龙坡区石桥铺科园一路73号
+              重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707
             </div>
           </div>
         </div>
@@ -157,8 +157,7 @@ iframe {
 }
 .text {
   // width: 37.6875rem;
-  height: 12.1875rem;
-  margin-top: 6.75rem;
+  margin-top: 5.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

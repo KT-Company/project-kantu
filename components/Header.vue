@@ -41,7 +41,7 @@
           <!-- </el-menu-item> -->
         </el-menu>
         <div class="demo">
-          <a href="http://172.16.16.30:3000/demos" target="_blank" rel="noopener noreferrer"><img src="@/assets/images/main/demo.png" alt="" /></a>
+          <a href="/demos" target="_blank" rel="noopener noreferrer"><img src="@/assets/images/main/demo.png" alt="" /></a>
         </div>
         <div class="line"></div>
       </nav>

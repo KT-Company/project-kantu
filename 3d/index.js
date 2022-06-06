@@ -8,8 +8,8 @@ import {
     pageOnloadOil_3d,
 } from "./industryOil";
 
-// var baseUrl = "https://www.kantu3d.com";
-var baseUrl = "../3dModel"
+var baseUrl = "https://www.kantu3d.com/3dModel";
+// var baseUrl = "../3dModel"
 
 // 初始化整个场景
 export const pageOnload = (canvas, fun) => {

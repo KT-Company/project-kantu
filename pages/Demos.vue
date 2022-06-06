@@ -1,6 +1,6 @@
 <template>
   <div class="mian">
-    <div class="box" ref="box" @mouseover="boxover" @mouseout="boxout">
+    <div :class="{box: true,hover: showMune}" ref="box">
       <div class="left" @wheel.stop>
         <div class="title">重庆瞰图科技有限公司</div>
         <div class="text">致力可视化系统设计<br />三维虚拟仿真开发</div>
@@ -12,10 +12,10 @@
             :key="index"
             @click="handledemo(item.projectAddress)"
           >
-            <div class="data-img">
+            <div :class="['data-img',item.projectAddress == demodz ? 'active' : '']">
               <img :src="item.imgurl" alt="" />
             </div>
-            <div class="data-text">{{ item.title }}</div>
+            <div :class="['data-text',item.projectAddress == demodz ? 'active' : '']">{{ item.title }}</div>
           </div>
         </div>
         <!-- <nuxt-link to="/home/main">
@@ -23,14 +23,14 @@
         </nuxt-link> -->
       </div>
     </div>
-    <!-- <iframe
+    <iframe
       id="inlineFrameExample"
       title="Inline Frame Example"
       width="300"
       height="200"
       :src="demodz"
     >
-    </iframe> -->
+    </iframe>
   </div>
 </template>
 <style lang="less" scoped>
@@ -75,22 +75,23 @@ iframe {
   position: fixed;
   left: 0;
   top: 0;
-  width: 37.5rem;
   height: 100vh;
-  // transform: translateX(-36.375rem);
   transition: all 0.36s;
+  padding-right: 10px;
   z-index: 3;
-  background-color: #1a1a1a;
+  transform: translateX(calc(-100% + 10px));
 }
-.box:hover {
+.box:hover,
+.box.hover {
   transform: translateX(0);
 }
 .left {
-  width: 36.375rem;
-  height: 67.5rem;
+  height: 100%;
   background: #1a1a1a;
   box-shadow: 0px 0px 29px 2px rgba(0, 0, 0, 0.7);
-  padding: 0 0 0 150px;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
   .title {
     font-size: 30px;
     font-family: Source Han Sans SC;
@@ -100,7 +101,6 @@ iframe {
   }
   .text {
     width: 180px;
-    height: 54px;
     font-size: 20px;
     font-family: Source Han Sans SC;
     font-weight: 400;
@@ -109,30 +109,43 @@ iframe {
   }
   .data {
     width: 22.5rem;
-    height: 34.5rem;
+    flex: 1;
+    padding: 10px;
+    box-sizing: content-box;
     // background-color: cornflowerblue;
-    margin-top: 5rem;
+    margin-top: 3rem;
     overflow: auto;
     .data-mian {
-      width: 22.5rem;
+      width: 100%;
       height: 15.625rem;
       // background-color: #fff;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
+      cursor: pointer;
       .data-img {
         width: 360px;
         height: 210px;
         background: #4d4d4d;
+        opacity: .8;
+        &.active {
+          // border: 3px solid #01adf2;
+          box-shadow: 0px 0px 10px #fff;
+          opacity: 1;
+        }
         img {
           width: 100%;
           height: 100%;
         }
       }
       .data-text {
-        font-size: 20px;
+        font-size: 18px;
         font-family: Source Han Sans SC;
         font-weight: 400;
-        color: #ffffff;
+        margin-top: 10px;
+        color: #595959;
         line-height: 35px;
+        &.active {
+          color: #fff;
+        }
       }
     }
   }
@@ -149,6 +162,7 @@ export default {
     return {
       demolist: [],
       demodz: "",
+      showMune: true
     };
   },
   created() {
@@ -163,7 +177,9 @@ export default {
   },
   mounted() {
     this.getdemolist();
-    setTimeout(this.navtf, 3000);
+    setTimeout(() => {
+      this.showMune = false
+    }, 3000);
     this.getxm();
   },
   methods: {
@@ -177,15 +193,6 @@ export default {
     handledemo(idx) {
       console.log(idx);
       this.demodz = idx;
-    },
-    navtf() {
-      this.$refs.box.style.transform = "translateX(-36.375rem)";
-    },
-    boxover() {
-      this.$refs.box.style.transform = "translateX(0)";
-    },
-    boxout() {
-      this.$refs.box.style.transform = "translateX(-36.375rem)";
     },
     getxm() {
       const loading = this.$loading({

@@ -2,17 +2,17 @@
   <Card>
     <div class="flex justify-between flexmain">
       <div>
-        <div class="fadeInUp" style="width: 60vh">
-          <div class="text-3xl sm:h-20 md:h-40">数字孪生</div>
-          <div class="h-20">
+        <div style="width: 60vh">
+          <div class="text-3xl sm:h-20 md:h-40 fadeInUp">数字孪生</div>
+          <div class="h-20 fadeInUp">
             <span class="text-2xl">四要素</span>
             <span class="color-subtext">(设计、模型、交互、数据)</span>
             <div class="text-xs color-subtext">Four elements</div>
           </div>
-          <div class="color-subtext fadeInUp2">
+          <div class="color-subtext fadeInUp2 line-height-1-5">
             3D园区数字孪生充分利用物理模型、传感器更新、运行历史等数据，集成多学科、多物理量、多尺度、多概率的仿真过程，通过物联网技术在虚拟空间中完成映射，从而反映相对应的实体装备的全生命周期过程。
           </div>
-          <div class="color-subtext fadeInUp2">
+          <div class="color-subtext fadeInUp2 line-height-1-5">
             瞰图科技在“数字孪生”制作上，具备成熟的开发管理流程；拥有完善的产品设计、多精度的模型标准、个性化的交互效果、精准的数据引入。运用更多前沿技术完成数字映射，建立更全面的孪生场景。
           </div>
           <div class="box-page2-display mt-20">
@@ -84,8 +84,8 @@
         display: block;
         line-height: 1rem;
         position: relative;
-        animation: fadeIn 1s;
-        -webkit-animation: fadeIn 1s;
+        animation: fadeIn .3s;
+        -webkit-animation: fadeIn .3s;
         &::after {
           display: inline-block;
         }

@@ -5,8 +5,8 @@
   </div> -->
   <Card>
     <div class="flex justify-between">
-      <div class="canvas flex1" style="height: calc(70vh - 4rem)">
-        <img src="" alt="" />
+      <div class="canvas flex1" style="height: calc(70vh - 4rem);">
+        <img class="img" src="@/assets/images/main/图.png" alt="" />
       </div>
       <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
         <div class="text-3xl h-40">
@@ -15,7 +15,7 @@
         <div class="h-20">
           <span class="text-2xl">GIS - 地理信息系统</span>
         </div>
-        <div class="color-subtext h-60 fadeInUp2">
+        <div class="color-subtext h-60 fadeInUp2 line-height-1-5">
           GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
         </div>
         <div>
@@ -59,8 +59,20 @@
 .flex1 {
   width: 55rem;
   height: 50vh;
-  background: url("@/assets/images/main/图.png") no-repeat;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
 }
+
+.flex1 .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: none;
+  height: 100%;
+  display: block;
+  border-radius: 10px;
+  }
 </style>
 <script>
 import Card from "@/components/base/Card.vue";

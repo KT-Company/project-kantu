@@ -27,7 +27,7 @@
                 <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
                 <span>大数据集成</span>
               </div>
-              <div class="color-subtext fadeInUp2">
+              <div class="color-subtext fadeInUp2 line-height-1-5">
                 制作三维可视化平台过程共分为4个步骤流程，随着每一个步骤制作，系统整体真实可视化性也逐步实现。
                 全要素场景是瞰图科技的核心价值，其包含来自现实世界的城市、道路、建筑、植被、设施、产线等场景，同时兼具视觉真实、地理信息、物理模拟及自由交互等要素。
                 三维模型工程师将多种格式的模型文件打包，前端工程师将渲染后的模型于web端呈现。同时工程师对模型的场景、光照、交互、等属性进行编辑；使模型具备更逼真的效果。
@@ -38,7 +38,7 @@
           </div>
           <ul class="mt-20 xian">
             <li
-              class="item"
+              :class="['item',listnum == index ? 'hover' : '']"
               v-for="(item, index) in activelist"
               :key="index"
               @mouseover="overnum(index)"
@@ -49,7 +49,7 @@
                 <p class="m-d-content">{{ item.content }}</p>
               </div>
             </li>
-            <div class="num">{{ listnum }}</div>
+            <div class="num">{{ listnum+1 > 9 ? listnum+1 : '0' + (listnum+1) }}</div>
             <!-- <el-timeline>
               <el-timeline-item
                 v-for="(activity, index) in activities"
@@ -115,7 +115,7 @@
   background-clip: content-box;
   cursor: pointer;
 }
-.item:hover {
+.item.hover {
   transition: all 0.25s;
   background-color: #fff;
 }
@@ -133,14 +133,14 @@
   transition: all 0.25s ease-in;
   transform: translate(-50%, -50%);
 }
-.item:hover:after {
+.item.hover:after {
   width: 30px;
   height: 30px;
   opacity: 1;
   border: 1px solid #fff;
 }
 
-.item:hover > .message-dialog-wrapper {
+.item.hover > .message-dialog-wrapper {
   opacity: 1;
   pointer-events: auto;
 }
@@ -250,7 +250,7 @@ export default {
           content: "实时定位当前位置",
         },
       ],
-      listnum: "",
+      listnum: 0,
     };
   },
   components: {
@@ -258,20 +258,26 @@ export default {
     Timeline,
   },
   mounted() {
+    this.initInterval()
   },
   methods: {
     overnum(index) {
       // console.log(index)
-      let idx = index + 1;
-      if (idx < 10) {
-        this.listnum = "0" + idx;
-      } else {
-        this.listnum = idx;
-      }
+       this.listnum = index;
+       clearInterval(this.timer)
     },
     outnum() {
-      this.listnum = "";
+      this.initInterval()
     },
+    initInterval() {
+      this.timer = setInterval(() => {
+        if(this.listnum < this.activelist.length - 1) {
+          this.listnum ++;
+        } else {
+          this.listnum = 0;
+        }
+      },2000)
+    }
   },
 };
 </script>

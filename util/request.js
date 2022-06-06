@@ -14,7 +14,7 @@ function request(config) {
   return Axios({
     ...config,
     // baseURL: 'http://139.9.231.12:9008/kt',
-    baseURL: 'https://www.kantu3d.com/api/kt/',
+    baseURL: 'https://www.kantu3d.com/new-api/kt/',
 
     transformResponse(data) {
       data = JSON.parse(data)

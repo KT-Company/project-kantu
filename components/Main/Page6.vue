@@ -5,7 +5,7 @@
         <div class="fadeInUp" style="width: 60vh; height: 80vh">
           <div class="text-3xl">合作伙伴</div>
           <div
-            class="color-subtext h-20 fadeInUp2"
+            class="color-subtext h-20 fadeInUp2 line-height-1-5"
             style="
               margin-top: 49px;
               font-size: 16px;

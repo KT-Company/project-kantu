@@ -72,63 +72,63 @@
 .mian-data {
   width: 35.9375rem;
   height: 18.75rem;
-  border: 1px solid #999999;
   padding: 29px 24px;
   position: relative;
   overflow: hidden;
-  transition: all ease 0.6s;
+  transition: all ease 0.3s;
   img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-      transition: all ease 0.6s;
+    opacity: 1;
+      transition: all ease 0.3s;
     z-index: -1;
   }
 }
 .mian-mian:hover .mian-data {
   border: 0;
   // background-color: coral;
-  transform: scale(0.9);
   // background: url("~/assets/images/main/微信图片png.png") no-repeat;
 }
+.mian-mian:hover {
+  background: rgba(0,0,0,.5);
+}
 .mian-mian:hover img {
-  opacity: 1;
+  opacity: 0;
 }
 .mian-title {
   font-size: 1rem;
-  transition: all ease 0.6s;
+  transition: all ease 0.4s;
+  font-weight: bold;
+  transform: translateY(13rem);
 }
 .mian-data:hover .mian-title {
-  transform: translateY(12.5rem);
+  transform: translateY(0);
 }
 .mian-text {
   font-size: 14px;
   color: #808080;
   margin-top: 27px;
-  transition: all ease 0.5s;
+  transition: all ease 0.6s;
+  opacity: 0;
+  transform: translateY(14rem);
 }
 .mian-data:hover .mian-text {
-  transform: translateY(14rem);
-  display: none;
+  transform: translateY(0);
+  opacity: 1;
 }
 .data-time {
   width: 494px;
-  height: 28px;
   font-size: 40px;
   font-family: Mypang;
   font-weight: 400;
   color: #ffffff;
   text-align: right;
-  margin-top: 7.125rem;
-  transition: all ease 0.6s;
-}
-.mian-data:hover .data-time {
-  transform: translateY(-12.5rem);
-  // margin-top:-12.5rem;
-  display: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 // /deep/ .btn-next{
 //   display: none;
@@ -174,7 +174,7 @@ export default {
       currentPage4: 1,
       currentPage: 1, // 当前页码
       // total: 20, // 总条数
-      pageSize: 6, // 每页的数据条数
+      pageSize: 10, // 每页的数据条数
     };
   },
   components: {

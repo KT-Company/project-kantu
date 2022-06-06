@@ -39,7 +39,7 @@
         <div
           class="mian-data"
           v-show="isdata"
-          v-for="(item, index) in mianlist2.slice(
+          v-for="(item, index) in mianlist.slice(
             (currentPage - 1) * pageSize,
             currentPage * pageSize
           )"
@@ -47,13 +47,14 @@
         >
           <div class="data-left">
             <div class="left-title">{{ item.title }}</div>
-            <div class="left-text">
+            <div class="left-text line-height-1-5">
               {{ item.content }}
             </div>
             <div class="xian"></div>
             <!-- <div class="left-more">MORE</div> -->
             <a
               :href="item.projectAddress"
+              v-if="item.projectAddress"
               target="_blank"
               rel="noopener noreferrer"
               class="left-more"
@@ -75,9 +76,8 @@
             </div>
           </div>
         </div>
-        <div class="bottom">
+        <div class="bottom" v-show="isdata">
           <el-pagination
-            v-show="isdata"
             background
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
@@ -85,35 +85,21 @@
             :page-sizes="[1, 2, 3, 4]"
             :page-size="pageSize"
             layout="pager"
-            :total="mianlist2.length"
+            :total="mianlist.length"
             style="margin-left: -18px"
           >
           </el-pagination>
         </div>
-        <div
-          class="main-data"
-          v-show="!isdata"
-          v-for="(item, index) in mianlist3.slice(
-            (currentPage - 1) * pageSize2,
-            currentPage * pageSize2
-          )"
-          :key="index"
-        >
-          <div class="video_wrapper-two">
-            <video
-              class="video-two"
-              ref="video-two"
-              controls
-              :src="item.spurl"
-              @play="handlePlay(index)"
-              style="width: 100%; height: 100%; object-fit: fill"
-            ></video>
-          </div>
-          <div class="title-two">{{ item.title }}</div>
+        <div class="mian-data2" v-show="!isdata" style="margin-left: -80px;">
+          <kt-video class="video_wrapper-two"
+            v-for="(item, index) in mianlist2.slice(
+              (currentPage - 1) * pageSize2,
+              currentPage * pageSize2
+            )"
+            :key="index" :data="item"></kt-video>
         </div>
-        <div class="bottom">
+        <div class="bottom" v-show="!isdata">
           <el-pagination
-            v-show="!isdata"
             background
             @size-change="handleSizeChange2"
             @current-change="handleCurrentChange"
@@ -121,7 +107,7 @@
             :page-sizes="[1, 2, 3, 4]"
             :page-size="pageSize2"
             layout="pager"
-            :total="mianlist3.length"
+            :total="mianlist2.length"
             style="margin-left: -18px"
           >
           </el-pagination>
@@ -228,48 +214,9 @@
     }
   }
 }
-.main {
-  width: 1251px;
-  margin: auto;
-  margin-top: 7.625rem;
-  background-color: transparent;
-  overflow: auto;
-
-  // display: flex;
-  // justify-content: space-between;
-  // flex-wrap: wrap;
-  .main-data {
-    display: inline-block;
-    width: 210px;
-    height: 200px;
-    border-radius: 10px;
-    margin-right: 50px;
-    margin-bottom: 17px;
-    .video_wrapper-two {
-      width: 210px;
-      height: 168px;
-    }
-    .title-two {
-      line-height: 32px;
-      padding-left: 6px;
-      font-size: 16px;
-      font-family: Source Han Sans SC;
-      font-weight: 400;
-      color: #ffffff;
-    }
-  }
-  .main-data:nth-child(6n) {
-    margin-right: 0;
-  }
-  // &::after {
-  //   content: "";
-  //   width: 300px; /*伪元素的宽度与子元素的宽度一致*/
-  // }
-}
 .mian {
   width: 1251px;
   margin: auto;
-  margin-top: 7.625rem;
   background-color: transparent;
   overflow: auto;
   .mian-data {
@@ -278,6 +225,7 @@
     height: 335px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background-color: transparent;
     transition: width 1s height 1s;
@@ -354,6 +302,16 @@
     transform: translateY(15px);
   }
 }
+  .mian-data2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+    .video_wrapper-two {
+      margin-left: 80px;
+      margin-top: 50px;
+    }
+  } 
 .bottom {
   margin: auto;
   margin-top: 7.5rem;
@@ -410,12 +368,14 @@ import Page1 from "@/components/Main/Page1.vue";
 import Card from "@/components/base/Card.vue";
 import animateMix from "@/mixin/animateMix.js";
 import request from "@/util/request";
+import KtVideo from "../../components/KtVideo.vue";
 export default {
   name: "Cases",
   mixins: [animateMix],
   components: {
     Page1,
     Card,
+    KtVideo
   },
   data() {
     return {
@@ -424,7 +384,6 @@ export default {
       isPlay: false,
       mianlist: [],
       mianlist2: [],
-      mianlist3: [],
       navli: 0,
       videoElement: [], // 创建视频数组
       currentPage4: 1,
@@ -460,22 +419,10 @@ export default {
 
     handlenav(index) {
       this.navli = index;
-      this.mianlist2 = [];
-      this.mianlist3 = [];
-      if (index == 0) {
-        this.isdata = true;
-        this.mianlist.forEach((item) => {
-          if (item.type == 1) {
-            this.mianlist2.push(item);
-          }
-        });
-      } else if (index == 1) {
-        this.isdata = false;
-        this.mianlist.forEach((item) => {
-          if (item.type == 6) {
-            this.mianlist3.push(item);
-          }
-        });
+      if(index == 1) {
+        this.isdata = false
+      }else {
+        this.isdata = true
       }
     },
     handleSizeChange(val) {
@@ -493,18 +440,15 @@ export default {
       console.log(`当前页: ${val}`);
       this.currentPage = val;
     },
-    async getdemolist() {
-      let data = await request.get({
+    getdemolist() {
+      Promise.all([request.get({
         url: "/getDyal",
-      });
-      // console.log(data.data.data);
-      data.data.data.forEach((item) => {
-        if (item.type == 1) {
-          this.mianlist2.push(item);
-        }
-      });
-      console.log(this.mianlist2);
-      this.mianlist = data.data.data;
+      }),request.get({
+        url: "/getQtal",
+      })]).then(([data1,data2]) => {
+        this.mianlist = data1.data.data
+        this.mianlist2 = data2.data.data
+      })
     },
   },
 };

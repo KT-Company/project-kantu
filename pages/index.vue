@@ -22,9 +22,9 @@ export default {
     Card
   },
   mounted() {
-    this.$router.push({
-      path: `home/main`,
-    });
+    // this.$router.push({
+    //   path: `home/main`,
+    // });
   },
 };
 </script>
