@@ -27,7 +27,7 @@
         <ul>
           <li
             v-for="(item, index) in navlist"
-            :key="index"
+            :key="item.title"
             :class="navli === index ? 'active' : ''"
             @click="handlenav(index)"
           >
@@ -96,7 +96,7 @@
               (currentPage - 1) * pageSize2,
               currentPage * pageSize2
             )"
-            :key="index" :data="item"></kt-video>
+            :key="item.title" :data="item"></kt-video>
         </div>
         <div class="bottom" v-show="!isdata">
           <el-pagination
