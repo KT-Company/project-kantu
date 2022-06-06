@@ -258,7 +258,6 @@ export default {
     Timeline,
   },
   mounted() {
-    setTimeout(this.textk,3000);
   },
   methods: {
     overnum(index) {
@@ -272,8 +271,6 @@ export default {
     },
     outnum() {
       this.listnum = "";
-    },
-    textk() {
     },
   },
 };

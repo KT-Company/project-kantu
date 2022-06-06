@@ -57,7 +57,7 @@
   /* background-color: #fff; */
 }
 .flex1 {
-  width: 60rem;
+  width: 55rem;
   height: 50vh;
   background: url("@/assets/images/main/图.png") no-repeat;
 }

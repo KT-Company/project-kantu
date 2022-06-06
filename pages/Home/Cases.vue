@@ -63,14 +63,15 @@
           </div>
           <div class="data-right">
             <div class="video_wrapper">
-              <video
+              <!-- <video
                 class="video"
                 ref="video"
                 controls
                 :src="item.spurl"
                 @play="handlePlay(index)"
                 style="width: 100%; height: 100%; object-fit: fill"
-              ></video>
+              ></video> -->
+              <img :src="item.img" alt="">
             </div>
           </div>
         </div>
@@ -379,6 +380,10 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 2;
+  }
+  img{
+    width: 100%;
+    height: 100%;
   }
 }
 /deep/ .number {

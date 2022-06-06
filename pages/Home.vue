@@ -40,6 +40,7 @@ export default {
     };
   },
   created() {
+    // debugger
     this.$router.push("/home/main")
   },
   mounted() {

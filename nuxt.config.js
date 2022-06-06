@@ -1,7 +1,7 @@
 import { resolve } from "path";
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
+  target: "server",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -27,6 +27,7 @@ export default {
   ],
   server: {
     host: '0.0.0.0', // default: localhost,
+    port:8000,
     timing: false
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -74,6 +75,11 @@ export default {
   ],
   axios: {
     proxy: true,
+  },
+  router: {
+    routes: [
+      { name: 'index', path: '/', component: 'pages/Home/Main.vue' }
+    ]
   },
   proxy: {
     '/api': {

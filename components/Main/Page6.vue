@@ -111,6 +111,9 @@
       vertical-align: middle;
     }
   }
+  .images:hover{
+    background-color: rgba(77, 77, 77, 0.3);
+  }
 }
 .imgs-bottom {
   margin-top: 146px;
@@ -132,6 +135,10 @@
     img {
       vertical-align: middle;
     }
+
+  }
+    .images:hover{
+    background-color: rgba(77, 77, 77, 0.3);
   }
 }
 </style>
@@ -143,20 +150,20 @@ export default {
   data() {
     return {
       imgs: [
-        require("@/assets/images/main/下載.png"),
-        require("@/assets/images/main/下載 (2).png"),
-        require("@/assets/images/main/下載 (3).png"),
-        require("@/assets/images/main/下載 (4).png"),
-        require("@/assets/images/main/下載 (5).png"),
-        require("@/assets/images/main/下載 (6).png"),
+        require("@/assets/images/main/1.png"),
+        require("@/assets/images/main/2.png"),
+        require("@/assets/images/main/3.png"),
+        require("@/assets/images/main/4.png"),
+        require("@/assets/images/main/5.png"),
+        require("@/assets/images/main/6.png"),
       ],
       imgs2: [
-        require("@/assets/images/main/下載 (7).png"),
-        require("@/assets/images/main/下載 (8).png"),
-        require("@/assets/images/main/下載 (9).png"),
-        require("@/assets/images/main/下載 (10).png"),
-        require("@/assets/images/main/下載 (11).png"),
-        require("@/assets/images/main/下載 (12).png"),
+        require("@/assets/images/main/7.png"),
+        require("@/assets/images/main/8.png"),
+        require("@/assets/images/main/9.png"),
+        require("@/assets/images/main/10.png"),
+        require("@/assets/images/main/11.png"),
+        require("@/assets/images/main/12.png"),
       ],
     };
   },
