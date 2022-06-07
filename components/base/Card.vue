@@ -5,8 +5,10 @@
 </template>
 <style>
 .card {
-  padding: 4rem 8rem;
-  /* height: 100vh; */
+  width: 104rem;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 </style>
 <script>

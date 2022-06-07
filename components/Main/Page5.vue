@@ -1,37 +1,35 @@
 <template>
-  <Card>
-    <div class="flex justify-between">
-      <div>
-        <div class="fadeInUp" style="width: 60vh; height: 80vh">
-          <div class="text-3xl md:h-40 sm:h-20">数据可视化</div>
-          <div class="h-20">
-            <span class="color-subtext line-height-1-5">
-              根据项目可视化数据展示：<br />
-              园区管理后台系统(OA、ERP、 MIS、
-              IBMS等）、综合态势、综合安防、便捷通行、资产管理、能效管理、设施管理、环境空间、智能预警等数据。
-              以及项目中的设备后台系统（ems、数据采集等）提供设备数据来源，以多时态、多维度、多层面的方式展示。
-            </span>
+  <Card class="flex items-center">
+    <div class="flex justify-between" style="flex: 1;">
+      <div class="fadeInUp">
+        <div class="text-3xl md:h-40 sm:h-20">数据可视化</div>
+        <div class="h-20">
+          <span class="color-subtext line-height-1-5">
+            根据项目可视化数据展示：<br />
+            园区管理后台系统(OA、ERP、 MIS、
+            IBMS等）、综合态势、综合安防、便捷通行、资产管理、能效管理、设施管理、环境空间、智能预警等数据。
+            以及项目中的设备后台系统（ems、数据采集等）提供设备数据来源，以多时态、多维度、多层面的方式展示。
+          </span>
+        </div>
+        <div class="text-two">
+          <div>
+            <i class="el-icon-arrow-right"></i>
+            <i class="el-icon-arrow-right" style="margin-left: -0.75rem"></i>
+            <i class="el-icon-arrow-right" style="margin-left: -0.75rem"></i>
           </div>
-          <div class="text-two">
-            <div>
-              <i class="el-icon-arrow-right"></i>
-              <i class="el-icon-arrow-right" style="margin-left: -12px"></i>
-              <i class="el-icon-arrow-right" style="margin-left: -12px"></i>
-            </div>
-            <div class="mb-2">大数据图表可视化</div>
-            <div class="mb-2">图形分析化能力</div>
-            <div class="mb-2">交互式观察数据改变</div>
-            <div class="mb-2">一键集成方便部署</div>
-          </div>
+          <div class="mb-2">大数据图表可视化</div>
+          <div class="mb-2">图形分析化能力</div>
+          <div class="mb-2">交互式观察数据改变</div>
+          <div class="mb-2">一键集成方便部署</div>
         </div>
       </div>
       <div class="echarts fadeInUp">
         <!-- <div class="echart fadeInUp2" v-for="item in 9" :key="item">Echart</div> -->
-        <Chart height="256px" :chartOption="option()" class="echart"></Chart>
-        <Chart height="256px" :chartOption="option2()" class="echart2"></Chart>
-        <Chart height="256px" :chartOption="option3()" class="echart"></Chart>
-        <Chart height="256px" :chartOption="option4()" class="echart2"></Chart>
-        <!-- <Chart height="256px" :chartOption="option5()" class="echart3"></Chart> -->
+        <Chart height="16rem" :chartOption="option()" class="echart"></Chart>
+        <Chart height="16rem" :chartOption="option2()" class="echart2"></Chart>
+        <Chart height="16rem" :chartOption="option3()" class="echart"></Chart>
+        <Chart height="16rem" :chartOption="option4()" class="echart2"></Chart>
+        <!-- <Chart height="16rem" :chartOption="option5()" class="echart3"></Chart> -->
         <div class="echart2"></div>
         <div class="echart"></div>
         <div class="echart2"></div>
@@ -71,8 +69,8 @@
   grid-template-rows: repeat(3, 33.33%);
 }
 .echarts {
-  width: 950px;
-  height: 806px;
+  flex: 0 0 59.375rem;
+  height: 50.375rem;
   display: flex;
   flex-wrap: wrap;
   /* background-color: #fff; */
@@ -81,23 +79,23 @@
   align-items: stretch;
 }
 .echart {
-  width: 304px;
-  height: 256px;
-  margin-top: 100px;
+  width: 19rem;
+  height: 16rem;
+  margin-top: 6.25rem;
   /* background-color: #4d4d4d; */
 }
 .echart2 {
-  width: 620px;
-  height: 256px;
-  margin-top: 100px;
+  width: 38.75rem;
+  height: 16rem;
+  margin-top: 6.25rem;
   /* background-color: #4d4d4d; */
   color: #1a1a1a;
-  font-size: 30px;
+  font-size: 1.875rem;
   text-align: center;
-  line-height: 256px;
+  line-height: 16rem;
 }
 .text-two {
-  margin-top: 250px;
+  margin-top: 15.625rem;
 }
 </style>
 
@@ -292,7 +290,7 @@ export default {
               show: true,
               lineStyle: {
                 color: "rgba(0,0,0,0)",
-                padding: "20px",
+                padding: "1.25rem",
               },
             },
             boundaryGap: false,

@@ -83,15 +83,15 @@
   padding: 0;
 }
 .link {
-  width: 5.75rem;
-  height: 3.75rem;
+  width: 92px;
+  height: 60px;
   text-align: center;
   /* height: ; */
   /* color: red; */
 }
 .header {
-  height: 3.75rem;
-  padding: 0 9.375rem 0 6.375rem;
+  height: 60px;
+  padding: 0 150px 0 102px;
 }
 /deep/ el-menu-item:hover {
   background-color: transparent;

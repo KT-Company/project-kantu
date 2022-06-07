@@ -5,7 +5,7 @@ body {
 .canvas {
   height: 80vh;
   width: 100vh;
-  // padding: 4rem;
+  // padding: 64px;
   // background: rgba(255, 255, 255, 0.1);
 }
 .canvasBox {
@@ -32,10 +32,10 @@ body {
     .swiper-button-prev,
     .swiper-button-next {
       &:after {
-        font-size: 0.6rem;
+        font-size: 9.6px;
         color: #fff;
         background: #4d4d4d;
-        padding: 2rem;
+        padding: 32px;
       }
       &.swiper-button-disabled:after {
         background: transparent;
@@ -49,7 +49,7 @@ body {
   }
   &.swiper-container-vertical > .swiper-pagination-bullets {
     right: auto;
-    left: 2rem;
+    left: 32px;
     .swiper-pagination-bullet {
       background: #fff;
       width: 4px;
@@ -64,7 +64,10 @@ body {
     }
   }
   .back-card {
-    padding: 4rem 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 64px;
     background: url(../images/background.png) no-repeat;
     // background-position: 10% 10%;
     // background-size: 80% 80%;

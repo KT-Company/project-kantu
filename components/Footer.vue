@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer>
-      <div class="text-5xl">contact</div>
+      <div class="text-5xl co-tit"><span>C</span>ontact</div>
       <div class="coll">联 系 我 们</div>
       <div class="mian">
         <div class="mian-left">
@@ -59,36 +59,40 @@
 </template>
 <style lang="less" scoped>
 footer {
-  // width: 1920px;
+  // width: 120rem;
   width: 100%;
-  height: 30.625rem;
-  padding: 4.875rem 9.375rem 0 9.375rem;
+  padding-top: 4.875rem;
   background: #1a1a1a;
-  border-top: 2px solid #262626;
-  border-bottom: 2px solid #262626;
+  border-top: .125rem solid #262626;
+  border-bottom: .125rem solid #262626;
+  .co-tit {
+    width: 101.375rem;
+    margin: 0 auto;
+    font-family: Mypang;
+  }
   .coll {
-    font-size: 30px;
+    width: 101.375rem;
+    font-size: 1.875rem;
     font-family: Source Han Sans SC;
     font-weight: 400;
     color: #666666;
-    line-height: 23px;
-    margin-top: 1.8125rem;
+    margin: 1.8125rem auto 0;
   }
   .mian {
     width: 101.375rem;
-    height: 14.5rem;
+    margin: 3.75rem auto 0;
+    padding-bottom: 2.5rem;
     // background-color: skyblue;
-    margin-top: 3.75rem;
     display: flex;
     justify-content: space-between;
     .mian-left {
       width: 12.5rem;
       .left-title {
-        font-size: 20px;
+        font-size: 1.25rem;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #d9d9d9;
-        line-height: 23px;
+        line-height: 1.4375rem;
       }
       .qr-code {
         width: 12.5rem;
@@ -97,8 +101,8 @@ footer {
         justify-content: space-between;
         text-align: center;
         .code-img {
-          width: 80px;
-          height: 80px;
+          width: 5rem;
+          height: 5rem;
           // background: #4d4d4d;
           img {
             width: 100%;
@@ -106,26 +110,25 @@ footer {
           }
         }
         .code-title {
-          font-size: 16px;
+          font-size: 1rem;
           font-family: Source Han Sans SC;
           font-weight: 400;
           color: #999999;
-          line-height: 30px;
-          margin-top: 0.9375rem;
+          line-height: 1.875rem;
+          margin-top: .9375rem;
         }
       }
     }
     .mian-conter {
       width: 30rem;
-      font-size: 16px;
+      font-size: 1rem;
       font-family: Source Han Sans SC;
       font-weight: 400;
       color: #999999;
-      line-height: 30px;
+      line-height: 1.875rem;
     }
     .mian-right {
       width: 41.875rem;
-      height: 7.8125rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -138,21 +141,21 @@ footer {
   height: 6.25rem;
   text-align: center;
   line-height: 6.25rem;
-  font-size: 14px;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: 300;
   color: #cccccc;
 }
 .button {
-  width: 210px;
-  height: 50px;
+  width: 13.125rem;
+  height: 3.125rem;
   background: #1a1a1a;
   color: #fff;
   text-align: center;
-  line-height: 50px;
-  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
-  border-radius: 10px;
-  font-size: 14px;
+  line-height: 3.125rem;
+  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
+  border-radius: .625rem;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
@@ -168,11 +171,16 @@ footer {
   /* box-shadow:none; */
   transform: translateY(-0.3125rem);
 }
+/deep/ .el-form--inline .el-form-item {
+  margin-right: .625rem;
+  float: left;
+}
 /deep/.el-input__inner {
   width: 13.125rem;
   background-color: transparent;
+  border-radius: 0;
   border: transparent;
-  border-bottom: 1px solid #262626;
+  border-bottom: .0625rem solid #262626;
 }
 </style>
 <script>

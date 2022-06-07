@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="nav">
-        <div style="color: #808080; font-size: 13px">
+        <div style="color: #808080; font-size: .8125rem">
           你的位置：首页 > <span style="color: #fff">多元案例</span>
         </div>
         <ul>
@@ -86,11 +86,11 @@
             :page-size="pageSize"
             layout="pager"
             :total="mianlist.length"
-            style="margin-left: -18px"
+            style="margin-left: -1.125rem"
           >
           </el-pagination>
         </div>
-        <div class="mian-data2" v-show="!isdata" style="margin-left: -80px;">
+        <div class="mian-data2" v-show="!isdata" style="margin-left: -5rem;">
           <kt-video class="video_wrapper-two"
             v-for="(item, index) in mianlist2.slice(
               (currentPage - 1) * pageSize2,
@@ -108,7 +108,7 @@
             :page-size="pageSize2"
             layout="pager"
             :total="mianlist2.length"
-            style="margin-left: -18px"
+            style="margin-left: -1.125rem"
           >
           </el-pagination>
         </div>
@@ -127,51 +127,51 @@
   background-color: #1a1a1a;
   margin: auto;
   margin-top: 7.25rem;
-  // border: 1px solid #cccccc;
-  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  // border: .0625rem solid #cccccc;
+  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
   display: flex;
   justify-content: space-around;
   align-items: center;
   .top1 {
-    width: 94px;
-    // height: 81px;
+    width: 5.875rem;
+    // height: 5.0625rem;
     text-align: center;
     position: relative;
   }
   .top2 {
-    width: 1px;
-    height: 70px;
+    width: .0625rem;
+    height: 4.375rem;
     background: #4d4d4d;
   }
   .top3 {
-    width: 165px;
+    width: 10.3125rem;
     text-align: center;
-    // height: 81px;
+    // height: 5.0625rem;
     position: relative;
   }
   .top5 {
-    width: 94px;
+    width: 5.875rem;
     text-align: center;
-    // height: 81px;
+    // height: 5.0625rem;
     position: relative;
   }
 }
 .top-num {
-  font-size: 50px;
+  font-size: 3.125rem;
   font-family: Source Han Sans SC;
   font-weight: 800;
   color: #ffffff;
 }
 .top-text {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #b3b3b3;
 }
 .topjia {
-  width: 16px;
-  height: 16px;
-  font-size: 30px;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1.875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   color: #ffffff;
@@ -180,9 +180,9 @@
   right: 0;
 }
 .topjia2 {
-  width: 16px;
-  height: 16px;
-  font-size: 30px;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1.875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   color: #ffffff;
@@ -191,20 +191,20 @@
   right: 1.0625rem;
 }
 .nav {
-  width: 1251px;
-  height: 15px;
+  width: 78.1875rem;
+  height: .9375rem;
   margin: auto;
   margin-top: 9.25rem;
   display: flex;
   justify-content: space-between;
   ul {
-    width: 120px;
-    height: 14px;
-    font-size: 13px;
+    width: 7.5rem;
+    height: .875rem;
+    font-size: .8125rem;
     font-family: Source Han Sans SC;
     font-weight: 500;
     color: #808080;
-    line-height: 23px;
+    line-height: 1.4375rem;
     display: flex;
     justify-content: space-between;
     // justify-content: flex-end;
@@ -215,14 +215,14 @@
   }
 }
 .mian {
-  width: 1251px;
+  width: 100%;
   margin: auto;
   background-color: transparent;
   overflow: auto;
   .mian-data {
-    margin-top: 120px;
-    width: 1251px;
-    height: 335px;
+    margin-top: 7.5rem;
+    width: 100%;
+    height: 20.9375rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -230,27 +230,28 @@
     background-color: transparent;
     transition: width 1s height 1s;
     .data-left {
-      width: 383px;
-      height: 241px;
+      flex: 1;
+      margin-right: 8rem;
+      width: 23.9375rem;
       text-align: left;
       .left-title {
-        font-size: 30px;
+        font-size: 1.875rem;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #ffffff;
         transition: all 0.36s;
       }
       .left-text {
-        font-size: 14px;
+        font-size: .875rem;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #b2b2b2;
-        margin-top: 19px;
+        margin-top: 1.1875rem;
         transition: all 0.36s;
       }
       .xian {
-        width: 0px;
-        height: 0.125rem;
+        width: 0;
+        height: .125rem;
         background-color: #fff;
         margin-left: 0;
         margin-top: 2.375rem;
@@ -277,8 +278,8 @@
       }
     }
     .data-right {
-      width: 600px;
-      height: 335px;
+      width: 37.5rem;
+      height: 20.9375rem;
       // background: #4d4d4d;
       transition: all 0.36s;
       position: relative;
@@ -288,28 +289,27 @@
     width: 38.75rem;
   }
   .mian-data:hover .data-right {
-    width: 561px;
-    height: 313px;
+    transform: scale(.9);
     // background: #4d4d4d;
   }
   .mian-data:hover .left-title {
-    transform: translateY(5px);
+    transform: translateY(.3125rem);
   }
   .mian-data:hover .left-text {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem);
   }
   .mian-data:hover .left-more {
-    transform: translateY(15px);
+    transform: translateY(.9375rem);
   }
 }
   .mian-data2 {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     align-items: center;
     .video_wrapper-two {
-      margin-left: 80px;
-      margin-top: 50px;
+      margin-left: 5rem;
+      margin-top: 3.125rem;
     }
   } 
 .bottom {
@@ -330,8 +330,8 @@
   height: 100%;
   // background: #0a3e6d;
   .play_video {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     left: 50%;
     top: 50%;

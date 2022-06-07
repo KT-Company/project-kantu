@@ -1,16 +1,12 @@
 <template>
-  <Card>
-    <div class="flex justify-between">
-      <div style="position: relative;">
-        <swiper :options="swiperOptionP1" style="width: 70vh; height: 80vh;" >
+  <Card  class="flex items-center">
+    <div class="flex justify-between" style="width: 100%; height: 100%; flex: 1;" >
+      <div style="position: relative;width: 42.375rem; height: 80%;">
+        <swiper :options="swiperOptionP1" style="width: 100%; height: 100%;" >
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
             <div class="display-box fadeInUp fast">
-              <div style="color: rgba(153, 153, 153, 1)">
-                {{ item.slogenEn }}
-              </div>
-              <div class="text-4xl h-60 title">
-                {{ item.slogen }}
-              </div>
+              <div style="color: rgba(153, 153, 153, 1)">{{ item.slogenEn }}</div>
+              <div class="title">{{ item.slogen }}</div>
               <div class="text line-height-1-5">{{ item.detail }}</div>
             </div>
           </swiper-slide>
@@ -24,11 +20,12 @@
           ></div>
         </swiper>
           <div class="absolute bottom-16 ye">
-            <span>{{ swiperIndex + 1 }}</span> / {{swiperDataP1.length < 10 ? '0' + swiperDataP1.length : swiperDataP1.length}}
+            <span>{{ swiperIndex + 1 < 10 ? '0' + (swiperIndex + 1) : swiperIndex + 1 }}</span> / {{swiperDataP1.length < 10 ? '0' + swiperDataP1.length : swiperDataP1.length}}
           </div>
       </div>
       <div class="canvas">
-        <canvas id="view1" ref="view1" class="canvasBox"></canvas>
+        <img class="img" src="@/assets/images/main/3333.png" alt="">
+        <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
       </div>
     </div>
   </Card>
@@ -40,20 +37,20 @@
 }
 .title {
   font-family: Mypang;
-  font-size: 72px;
-  line-height: 72px;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
 }
 .text {
   margin-top: 9.9375rem;
 }
 .ye {
-  font-size: 15px;
+  font-size: .9375rem;
   font-family: Mypang;
   font-weight: 400;
   color: #b3b3b3;
-  line-height: 30px;
+  line-height: 1.875rem;
   span {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-family: Mypang;
     font-weight: 400;
     color: #fffefe;
@@ -61,6 +58,9 @@
 }
 .canvas {
   flex: 1;
+  .img {
+    width: 100%;
+  }
 }
 </style>
 <script>
@@ -136,7 +136,7 @@ export default {
     // pageOnload(view1, () => {
     //   console.log("done");
     // });
-    this.getmx();
+    // this.getmx();
   },
   created() {},
   methods: {
@@ -145,7 +145,7 @@ export default {
         lock: true, //lock的修改符--默认是false
         text: "模型加载中", //显示在加载图标下方的加载文案
         spinner: "el-icon-loading", //自定义加载图标类名
-        background: "rgba(0, 0, 0, 0.1)", //遮罩层颜色
+        background: "rgba(0, 0, 0, 0)", //遮罩层颜色
         target: document.querySelector(".canvas"), //loadin覆盖的dom元素节点
       });
       let view1 = document.getElementById("view1");

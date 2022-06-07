@@ -3,26 +3,22 @@
   <div class="canvas flex1" style="height: calc(80vh - 4rem)">
     <img src="" alt="">
   </div> -->
-  <Card>
-    <div class="flex justify-between">
-      <div class="canvas flex1" style="height: calc(70vh - 4rem);">
-        <img class="img" src="@/assets/images/main/图.jpg" alt="" />
+  <Card class="flex justify-between items-center">
+    <img class="img" src="@/assets/images/main/图.jpg" alt="" />
+    <div class="fadeInUp main3" style="margin-left: 2%;width: 60%;">
+      <div class="text-3xl h-40">
+        GIS <i class="el-icon-location-outline"></i>
       </div>
-      <div class="fadeInUp main3" style="width: 60vh; height: 80vh">
-        <div class="text-3xl h-40">
-          GIS <i class="el-icon-location-outline"></i>
-        </div>
-        <div class="h-20">
-          <span class="text-2xl">GIS - 地理信息系统</span>
-        </div>
-        <div class="color-subtext h-60 fadeInUp2 line-height-1-5">
-          GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
-        </div>
-        <div>
-          <!-- <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button> -->
-          <div class="button-right" @click="handlemore">
-            <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
-          </div>
+      <div class="h-20">
+        <span class="text-2xl">GIS - 地理信息系统</span>
+      </div>
+      <div class="color-subtext h-60 fadeInUp2 line-height-1-5">
+        GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
+      </div>
+      <div>
+        <!-- <el-button class="btn-normal"><i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景</el-button> -->
+        <div class="button-right" @click="handlemore">
+          <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
         </div>
       </div>
     </div>
@@ -30,20 +26,20 @@
 </template>
 <style>
 .button-right {
-  width: 210px;
-  height: 50px;
+  width: 13.125rem;
+  height: 3.125rem;
   background: #1a1a1a;
   color: #fff;
   text-align: center;
-  line-height: 50px;
-  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
-  border-radius: 10px;
-  font-size: 14px;
+  line-height: 3.125rem;
+  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
+  border-radius: .625rem;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
   cursor: pointer;
-  margin-left: 350px;
+  display: inline-block;
 }
 .button-right:hover {
   background-color: #fff;
@@ -53,25 +49,14 @@
 }
 .main3 {
   text-align: right;
-  padding-top: 150px;
+  /* padding-top: 9.375rem; */
   /* background-color: #fff; */
 }
-.flex1 {
-  width: 55rem;
-  height: 50vh;
-  overflow: hidden;
-  border-radius: 10px;
-  position: relative;
-}
 
-.flex1 .img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  max-width: none;
-  height: 100%;
+.img {
+  width: 55rem;
   display: block;
-  border-radius: 10px;
+  border-radius: .625rem;
   }
 </style>
 <script>

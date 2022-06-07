@@ -15,6 +15,9 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
+    script: [
+      { src:'/flexible.js', type: 'text/javascript', charset: 'utf-8'}
+    ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 

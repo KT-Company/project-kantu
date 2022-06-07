@@ -58,13 +58,13 @@ iframe {
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
-  margin-top: 3rem;
+  margin-top: 48px;
 }
 .button:hover {
   background-color: #fff;
   color: #1a1a1a;
   /* box-shadow:none; */
-  transform: translateY(-0.3125rem);
+  transform: translateY(-5px);
 }
 .mian {
   width: 100%;
@@ -108,19 +108,19 @@ iframe {
     line-height: 35px;
   }
   .data {
-    width: 22.5rem;
+    width: 360px;
     flex: 1;
     padding: 10px;
     box-sizing: content-box;
     // background-color: cornflowerblue;
-    margin-top: 3rem;
+    margin-top: 48px;
     overflow: auto;
     position: relative;
     .data-mian {
       width: 100%;
-      height: 15.625rem;
+      height: 250px;
       // background-color: #fff;
-      margin-bottom: 3rem;
+      margin-bottom: 48px;
       cursor: pointer;
       .data-img {
         width: 360px;

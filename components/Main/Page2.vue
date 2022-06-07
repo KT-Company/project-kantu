@@ -1,8 +1,8 @@
 <template>
-  <Card>
-    <div class="flex justify-between flexmain">
-      <div>
-        <div style="width: 60vh">
+  <Card class="flex items-center">
+    <div class="flex justify-between flexmain" style="flex: 1;">
+      <div style="width: 40%;margin-right: 2%">
+        <div>
           <div class="text-3xl sm:h-20 md:h-40 fadeInUp">数字孪生</div>
           <div class="h-20 fadeInUp">
             <span class="text-2xl">四要素</span>
@@ -30,7 +30,8 @@
         </div>
       </div>
       <div class="canvas">
-        <canvas id="view2" class="canvasBox"></canvas>
+        <img class="img" src="@/assets/images/main/1111.png" alt="">
+        <!-- <canvas id="view2" class="canvasBox"></canvas> -->
       </div>
     </div>
   </Card>
@@ -53,7 +54,7 @@
       background-position: bottom center;
       img {
         display: inline-block;
-        margin-top: 30px;
+        margin-top: 1.875rem;
       }
     }
     .title {
@@ -64,12 +65,12 @@
       display: none;
       width: 100%;
       color: #999999;
-      padding-bottom: 5px;
+      padding-bottom: .3125rem;
 
       &::after {
         content: "";
         width: 100%;
-        height: 1px;
+        height: .0625rem;
         display: none;
         position: absolute;
         bottom: 0;
@@ -100,6 +101,9 @@
 }
 .canvas {
   flex: 1;
+  .img {
+    width: 100%;
+  }
 }
 </style>
 <script>
@@ -141,9 +145,9 @@ export default {
   },
   mounted() {
     let view2 = document.getElementById("view2");
-    pageOnloadOil(view2, () => {
-      console.log("done");
-    });
+    // pageOnloadOil(view2, () => {
+    //   console.log("done");
+    // });
   },
   methods: {},
 };

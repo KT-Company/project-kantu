@@ -1,12 +1,12 @@
 <template>
-  <Card>
-    <div>
-      <div style="color: #808080; font-size: 13px; margin-top: 52px">
+  <Card class="flex items-center">
+    <div style="flex: 1">
+      <div style="color: #808080; font-size: .8125rem; margin-top: 3.25rem">
         你的位置：首页 > <span style="color: #fff">产品业务</span>
       </div>
       <div class="flex justify-between main">
         <div class="mian-left fadeInUp">
-          <div class="title">瞰图编辑器<span>(方便，快捷，高效)</span></div>
+          <div class="title">瞰图编辑器<span style="margin-left: 5px;">(方便，快捷，高效)</span></div>
           <ul>
             <li>支持三维场景中修改设备点位、属性数据等信息。</li>
             <li>支持数据看板层面，根据数据类型选择各形态的图表展示。</li>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="mian-right fadeInUp">
-          <el-carousel indicator-position="outside" height="610px">
+          <el-carousel indicator-position="outside" height="38.125rem">
             <el-carousel-item>
               <img src="@/assets/images/main/bjq1.jpg" alt=""  class="bjq"/>
             </el-carousel-item>
@@ -47,7 +47,7 @@
   margin-top: 5rem;
 }
 .title {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-family: Source Han Sans SC;
   font-weight: 500;
   color: #ffffff;
@@ -58,8 +58,8 @@
 }
 ul {
   margin-top: 3.125rem;
-  line-height: 30px;
-  font-size: 14px;
+  line-height: 1.875rem;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #b3b3b3;
@@ -73,30 +73,30 @@ ul {
   align-items: stretch;
   flex-wrap: wrap;
   div {
-    width: 140px;
-    height: 44px;
+    width: 8.75rem;
+    height: 2.75rem;
     background: #4d4d4d;
-    border-radius: 22px;
+    border-radius: 1.375rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 .9375rem;
     img{
-      width: 19px;
-      height: 23px;
+      width: 1.1875rem;
+      height: 1.4375rem;
     }
   }
 }
 .button {
   width: 10rem;
-  height: 50px;
+  height: 3.125rem;
   background: #1a1a1a;
   color: #fff;
   text-align: center;
-  line-height: 50px;
-  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
-  border-radius: 10px;
-  font-size: 14px;
+  line-height: 3.125rem;
+  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
+  border-radius: .625rem;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
@@ -109,26 +109,21 @@ ul {
   transform: translateY(-0.3125rem);
 }
 .mian-right {
-  width: 1020px;
-height: 610px;
+width: 63.75rem;
+height: 38.125rem;
 background: #4D4D4D;
-border-radius: 20px;
-  // width: 683px;
-  // height: 472px;
-  // background: #4d4d4d;
-  // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
-  // margin-top: 9.125rem;
+border-radius: 1.25rem;
 }
 .bjq{
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 .el-carousel__item h3 {
   color: #475669;
-  font-size: 18px;
+  font-size: 1.125rem;
   opacity: 0.75;
-  line-height: 300px;
+  line-height: 18.75rem;
   margin: 0;
 }
 </style>

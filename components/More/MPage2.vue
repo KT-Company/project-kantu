@@ -1,5 +1,5 @@
 <template>
-  <Card>
+  <Card class="flex items-center">
     <div class="flex justify-between main fadeInUp">
       <div class="swiper-box">
         <swiper class="wrapper" :options="swiperOption" ref="swiper1" @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart">
@@ -18,7 +18,7 @@
           <swiper-slide>
             <div class="main-data" ref="data">
               <div class="data-title">
-                智慧园区<span
+                智慧园区<span style="margin-left: 5px;"
                   >(运用大数据、物联网、信息管理等技术，打造智慧互联的园区。)</span
                 >
               </div>
@@ -55,7 +55,7 @@
           <swiper-slide>
             <div class="main-data">
               <div class="data-title">
-                工业制造<span>(监测工厂产线，展示mes信息； 提高产能效益)</span>
+                工业制造<span style="margin-left: 5px;">(监测工厂产线，展示mes信息； 提高产能效益)</span>
               </div>
               <div class="data-text line-height-1-5">
                 工业制造是现代工厂信息化发展晋级的阶段性成果，是建立在数字化工厂的基础上的升级，利用物联网和设备监控等技术加强信息管理和服务能力，集智能化设备、技术、系统为一体，实现高效、高控生产，减少人工干预，合理规划/优化生产进度等环节，构建智能高效、节能环保的智慧工厂
@@ -78,7 +78,7 @@
           <swiper-slide>
             <div class="main-data">
               <div class="data-title">
-                智慧工地<span>(协同工地建设管理，集成物联网技术监管)</span>
+                智慧工地<span style="margin-left: 5px;">(协同工地建设管理，集成物联网技术监管)</span>
               </div>
               <div class="data-text line-height-1-5">
                 以工地大模型 、工地大数据 、工地大协同
@@ -102,7 +102,7 @@
           <swiper-slide>
             <div class="main-data">
               <div class="data-title">
-                智慧能源<span>(从原料到成品全链展示，提升 各环节安全系数)</span>
+                智慧能源<span style="margin-left: 5px;">(从原料到成品全链展示，提升 各环节安全系数)</span>
               </div>
               <div class="data-text line-height-1-5">
                 智慧能源基于云计算、移动互联网、大数据等先进技术,通过采集各类能耗监测点的用能数据,经过专业的数据分析处理形成对能耗的分类、分项、分时、分区域的统计分析,并通过三维可视化技术,让企业实现对能源使用的全面数字化和可视化,直观发现用能改进优化点,进而帮助企业优化能源使用,降低企业综合能耗,达到节能增效的目的。
@@ -136,7 +136,7 @@
           <swiper-slide>
             <div class="main-data">
               <div class="data-title">
-                航天航空<span>(同步机场业态信息，有序管控 航班流量)</span>
+                航天航空<span style="margin-left: 5px;">(同步机场业态信息，有序管控 航班流量)</span>
               </div>
               <div class="data-text line-height-1-5">
                 通过数字孪生还原机场业态，虚拟规划、仿真航班出入境流量状态。通过IOT设备查看实时工作画面，指挥中心高效、有序管理。
@@ -217,23 +217,24 @@ export default {
 <style lang="less" scoped>
 // .swiper {
 //   width: 100%;
-//   height: 604px;
+//   height: 37.75rem;
 //   background-color: tomato;
-//   border-radius: 20px;
+//   border-radius: 1.25rem;
 //   display: none;
 // }
 .main {
-  margin-top: 108px;
+  margin-top: 6.75rem;
+  flex: 1;
 }
 .mian {
-  margin-top: 58px;
+  margin-top: 3.625rem;
 }
 .wrapper {
   position: relative;
   width: 100%;
-  height: 567px;
-  border-radius: 20px;
-  padding-bottom: 48px;
+  height: 35.4375rem;
+  border-radius: 1.25rem;
+  padding-bottom: 3rem;
 }
 .slider {
   position: absolute;
@@ -241,46 +242,46 @@ export default {
   width: 100%;
   background: #4d4d4d;
   transition: all 1s ease;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   text-align: center;
-  line-height: 636px;
+  line-height: 39.75rem;
   img {
     width: 100%;
     height: 100%;
   }
 }
 /deep/ .my-bullet {
-  width: 12px;
-  height: 12px;
+  width: .75rem;
+  height: .75rem;
   background: #ffffff;
   box-sizing: border-box;
   border-radius: 50%;
   display: inline-block;
-  margin: 0 3px;
+  margin: 0 .1875rem;
 }
  /deep/ .my-bullet-active {
   background-color: #1a1a1a;
-  border: 2px solid #ffffff;
+  border: .125rem solid #ffffff;
 }
 .swiper-title {
-  width: 141px;
-  height: 48px;
-  font-size: 25px;
+  width: 8.8125rem;
+  height: 3rem;
+  font-size: 1.5625rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   color: #808080;
-  padding-bottom: 10px;
+  padding-bottom: .625rem;
   text-align: center;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 1.875rem;
   transition: all 0.01s ease-in;
-  // border-bottom: 2px solid #808080;
+  // border-bottom: .125rem solid #808080;
 }
 .el-carousel__item h3 {
   color: #475669;
-  font-size: 18px;
+  font-size: 1.125rem;
   opacity: 0.75;
-  line-height: 300px;
+  line-height: 18.75rem;
   margin: 0;
 }
 
@@ -292,19 +293,18 @@ export default {
 //   background-color: #d3dce6;
 // }
 .flex {
-  height: 100vh;
-  align-items: flex-start;
+  // align-items: flex-start;
 }
 .swiper-box {
-  width: 922px;
-  height: 636px;
+  width: 57.625rem;
+  height: 39.75rem;
   // background: #4d4d4d;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   // overflow: auto;
 }
 .swiper-main {
   width: 35.875rem;
-  height: 636px;
+  height: 39.75rem;
   // background-color: brown;
   transition: all 0.25s ease-in;
 }
@@ -315,20 +315,19 @@ export default {
   text-align: left;
   transition: all 0.25s ease-in;
   .data-title {
-    margin-top: 58px;
-    font-size: 30px;
+    margin-top: 3.625rem;
+    font-size: 1.875rem;
     font-family: Source Han Sans SC;
     font-weight: 400;
     color: #ffffff;
     span {
       color: #b3b3b3;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
   .data-text {
-    width: 574px;
-    height: 63px;
-    font-size: 14px;
+    width: 35.875rem;
+    font-size: .875rem;
     font-family: Source Han Sans SC;
     font-weight: 400;
     color: #ffffff;
@@ -342,63 +341,63 @@ export default {
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    // margin-left: 266px;;
+    // margin-left: 16.625rem;;
 
     .div1,
     .div2 {
-      // width: 150px;
-      height: 44px;
+      // width: 9.375rem;
+      height: 2.75rem;
       background: #4d4d4d;
-      border-radius: 22px;
+      border-radius: 1.375rem;
       text-align: center;
       line-height: 2.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-weight: bold;
-      padding: 0 15px;
-      font-size: 14px;
+      padding: 0 .9375rem;
+      font-size: .875rem;
       img {
-        width: 19px;
-        height: 23px;
-        margin-right: 15px;
+        width: 1.1875rem;
+        height: 1.4375rem;
+        margin-right: .9375rem;
       }
     }
     .div3 {
-      // width: 308px;
-      height: 44px;
+      // width: 19.25rem;
+      height: 2.75rem;
       background: #4d4d4d;
-      border-radius: 22px;
-      font-size: 14px;
+      border-radius: 1.375rem;
+      font-size: .875rem;
       font-family: Source Han Sans SC;
       font-weight: bold;
       color: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 15px;
+      padding: 0 .9375rem;
       img {
-        width: 19px;
-        height: 23px;
-        margin-right: 15px;
+        width: 1.1875rem;
+        height: 1.4375rem;
+        margin-right: .9375rem;
       }
     }
   }
   .button {
-    width: 190px;
-    height: 50px;
+    width: 11.875rem;
+    height: 3.125rem;
     background: #1a1a1a;
     color: #fff;
     text-align: center;
-    line-height: 50px;
-    box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
-    border-radius: 10px;
-    font-size: 14px;
+    line-height: 3.125rem;
+    box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
+    border-radius: .625rem;
+    font-size: .875rem;
     font-family: Source Han Sans SC;
     font-weight: bold;
     transition: all 0.36s;
     margin-top: 5.5rem;
-    margin-left: 18px;
+    margin-left: 1.125rem;
   }
   .button:hover {
     background-color: #fff;

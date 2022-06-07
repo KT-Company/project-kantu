@@ -53,11 +53,11 @@
   background: url("@/assets/images/main/背景.png") 100% no-repeat;
 }
 .mian {
-  width: 78.125rem;
-  // height: 68.75rem;
+  width: 1250px;
+  // height: 1100px;
   // background-color: azure;
   margin: auto;
-  margin-top: 7.4375rem;
+  margin-top: 119px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -65,13 +65,13 @@
   //  align-self: flex-end;
 }
 .mian-mian {
-  width: 35.9375rem;
-  height: 18.75rem;
+  width: 575px;
+  height: 300px;
   // transition: all 0.36s;
 }
 .mian-data {
-  width: 35.9375rem;
-  height: 18.75rem;
+  width: 575px;
+  height: 300px;
   padding: 29px 24px;
   position: relative;
   overflow: hidden;
@@ -99,10 +99,10 @@
   opacity: 0;
 }
 .mian-title {
-  font-size: 1rem;
+  font-size: 16px;
   transition: all ease 0.4s;
   font-weight: bold;
-  transform: translateY(13rem);
+  transform: translateY(208px);
 }
 .mian-data:hover .mian-title {
   transform: translateY(0);
@@ -113,7 +113,7 @@
   margin-top: 27px;
   transition: all ease 0.6s;
   opacity: 0;
-  transform: translateY(14rem);
+  transform: translateY(224px);
 }
 .mian-data:hover .mian-text {
   transform: translateY(0);
@@ -138,14 +138,14 @@
 // }
 .bottom {
   margin: auto;
-  margin-top: 7.5rem;
-  width: 78.125rem;
+  margin-top: 120px;
+  width: 1250px;
 }
 
 /deep/ .number {
-  width: 3.125rem;
-  height: 3.125rem;
-  line-height: 3.125rem;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 0;
   background-color: #333333;
 }

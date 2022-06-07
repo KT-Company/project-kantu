@@ -7,10 +7,10 @@
           @swiper="onSwiper"
           @slideChange="onSlideChange"
           @transitionEnd="transitionEnd"
-          :style="{ height: pageHeight + 'px' }"
+          style="height: 100vh;"
           ref="swiper-main"
         >
-          <swiper-slide v-for="(item, index) in swiperPages" :key="index">
+          <swiper-slide v-for="(item, index) in swiperPages" :key="index" style="width: 100%;height: 100%;">
             <div class="back-card">
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
@@ -25,6 +25,7 @@
 .home {
   flex: 1;
   height: 100%;
+  font-size: 14px;
 }
 </style>
 <script>
@@ -41,7 +42,6 @@ export default {
       idx: 0,
       swiperOptionMain: {
         speed: 1000,
-        height: 1080,
         direction: "vertical",
         origin: "left bottom",
         // // 设置分页器

@@ -1,8 +1,8 @@
 <template>
-  <Card>
-    <div class="flex flex-col justify-between">
+  <Card class="flex items-center">
+    <div class="flex flex-col justify-between" style="flex: 1;">
       <div>
-        <div class="fadeInUp" style="height: 80vh">
+        <div class="fadeInUp" style="padding-bottom: 9.9375rem;">
           <div class="text-3xl h-40">三维可视化</div>
           <div class="flex">
             <img
@@ -16,7 +16,7 @@
                 class="rounded-xl p-4 mb-20 tiao"
                 style="
                   background: #262626;
-                  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+                  box-shadow: .25rem .25rem .625rem rgba(255, 255, 255, 0.1);
                 "
               >
                 <span>数据模型采集 </span>
@@ -36,7 +36,7 @@
               </div>
             </div>
           </div>
-          <ul class="mt-20 xian">
+          <ul class="mt-10 xian">
             <li
               :class="['item',listnum == index ? 'hover' : '']"
               v-for="(item, index) in activelist"
@@ -73,20 +73,20 @@
 </template>
 <style lang="less" scoped>
 .tiao {
-  width: 846px;
-  height: 58px;
+  width: 52.875rem;
+  height: 3.625rem;
   padding: 0;
-  padding-left: 15px;
+  padding-left: .9375rem;
   background: #262626;
-  border-radius: 10px;
-  font-size: 25px;
-  line-height: 58px;
+  border-radius: .625rem;
+  font-size: 1.5625rem;
+  line-height: 3.625rem;
 }
 .xian {
-  width: 1350px;
-  height: 10px;
+  width: 84.375rem;
+  height: .625rem;
   background: linear-gradient(#4d4d4d 0%, #4d4d4d 100%) center
-    center/calc(100% - 20px) 1px no-repeat;
+    center/calc(100% - 1.25rem) .0625rem no-repeat;
   margin: auto;
   margin-top: 12.5rem;
   display: flex;
@@ -96,21 +96,21 @@
   .num {
     position: absolute;
     left: 46.4%;
-    font-size: 80px;
+    font-size: 5rem;
     font-family: Source Han Sans SC;
     font-weight: 800;
     color: #4d4d4d;
-    line-height: 76px;
+    line-height: 4.75rem;
     opacity: 0.8;
   }
 }
 .item {
   box-sizing: content-box;
   position: relative;
-  height: 10px;
-  width: 10px;
-  padding: 10px;
-  border-radius: 100px;
+  height: .625rem;
+  width: .625rem;
+  padding: .625rem;
+  border-radius: 6.25rem;
   background-color: #4d4d4d;
   background-clip: content-box;
   cursor: pointer;
@@ -126,7 +126,7 @@
   left: 50%;
   top: 50%;
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: .0625rem solid transparent;
   opacity: 0;
   width: 0;
   height: 0;
@@ -134,10 +134,10 @@
   transform: translate(-50%, -50%);
 }
 .item.hover:after {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   opacity: 1;
-  border: 1px solid #fff;
+  border: .0625rem solid #fff;
 }
 
 .item.hover > .message-dialog-wrapper {
@@ -149,33 +149,33 @@
   pointer-events: none;
   position: absolute;
   left: 50%;
-  width: 229px;
-  height: 159px;
+  width: 14.3125rem;
+  height: 9.9375rem;
   transform: translate(-50%, -100%);
   transition: all 0.25s ease-in;
-  background: url("@/assets/images/main/dialog.png") no-repeat;
-  padding: 24px;
+  background: url("@/assets/images/main/dialog.png") no-repeat center / 100%;
+  padding: 1.5rem;
   text-align: center;
 }
 .m-d-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   color: #ffffff;
 }
 .m-d-content {
-  font-size: 14px;
+  font-size: .875rem;
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #cccccc;
-  line-height: 20px;
-  margin-top: 18px;
+  line-height: 1.25rem;
+  margin-top: 1.125rem;
 }
 .item:nth-child(even) > .message-dialog-wrapper {
   background: red;
-  transform: translate(-50%, 10px);
-  background: url("@/assets/images/main/dialog2.png") no-repeat;
-  padding: 58px 17px 0 17px;
+  transform: translate(-50%, .625rem);
+  background: url("@/assets/images/main/dialog2.png") no-repeat center / 100%;
+  padding: 3.625rem 1.0625rem 0 1.0625rem;
 }
 </style>
 <script>

@@ -8,7 +8,7 @@
           @slideChange="onSlideChange"
           @reachEnd="reachEnd"
           @transitionEnd="transitionEnd"
-          :style="{ height: pageHeight + 'px' }"
+          style="height: 100vh;"
           ref="swiper-main"
           @wheel.stop
         >
@@ -48,7 +48,6 @@ export default {
       idx: 0,
       swiperOptionMain: {
         speed: 1500,
-        height: 1080,
         direction: "vertical",
         origin: "left bottom",
         // // 设置分页器
@@ -88,7 +87,6 @@ export default {
       fadeUpIn: null,
       fadeUpIn2: null,
       swiperPages: ["MPage1", "MPage2"],
-      pageHeight: 1080,
     };
   },
   components: { Card, MPage1, MPage2, Footer },
