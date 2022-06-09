@@ -27,17 +27,12 @@
                 数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。
               </div>
               <div class="fc">
-                <a
-                  href="https://www.kantu3d.com/preview/sichuanPark/index.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="div1"
-                >
+                <div class="div1" @click="showToast">
                   <img
                     src="@/assets/images/main/连接.png"
                     alt=""
-                  />绵阳新兴投资控股智慧园区
-                </a>
+                  />某投资控股智慧园区
+                </div>
                 <a
                   href="https://www.kantu3d.com/demo/2205/tuowei/dist/"
                   target="_blank"
@@ -47,7 +42,7 @@
                   <img
                     src="@/assets/images/main/连接.png"
                     alt=""
-                  />拓维园区大数据平台
+                  />某园区大数据平台
                 </a>
               </div>
             </div>
@@ -61,17 +56,19 @@
                 工业制造是现代工厂信息化发展晋级的阶段性成果，是建立在数字化工厂的基础上的升级，利用物联网和设备监控等技术加强信息管理和服务能力，集智能化设备、技术、系统为一体，实现高效、高控生产，减少人工干预，合理规划/优化生产进度等环节，构建智能高效、节能环保的智慧工厂
               </div>
               <div class="fc">
-                <a
+                <div class="div1" @click="showToast">
+                  <img
+                    src="@/assets/images/main/连接.png"
+                    alt=""
+                  />某迪产线数据可视化中心
+                </div>
+                <!-- <a
                   href="https://www.kantu3d.com/demo/2205/BYD/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="div1"
                 >
-                  <img
-                    src="@/assets/images/main/连接.png"
-                    alt=""
-                  />比亚迪产线数据可视化中心
-                </a>
+                </a> -->
               </div>
             </div>
           </swiper-slide>
@@ -85,17 +82,14 @@
                 、应用碎片化为标准，积极布局钢筋翻样、精细管理、材料管理等成熟领域，开拓三维工地、模架产品、劳务验收、云资料等孵化产品，并延伸到智能安全帽、工地平板等施工业务硬件领域。实现工地联合监管。
               </div>
               <div class="fc">
-                <a
-                  href="https://www.kantu3d.com/preview/cisdiScreen/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="div3"
+                <div
+                  class="div1" @click="showToast"
                 >
                   <img
                     src="@/assets/images/main/连接.png"
                     alt=""
                   />中科院·科学中心一期工程
-                </a>
+                </div>
               </div>
             </div>
           </swiper-slide>
@@ -164,9 +158,10 @@
 
 <script>
 import Card from "@/components/base/Card.vue";
+import toast from "@/mixin/toast";
 // import animateMix from "@/mixin/animateMix.js";
 export default {
-  // mixins: [animateMix],
+  mixins: [toast],
   components: {
     Card,
   },
@@ -357,6 +352,7 @@ export default {
       font-weight: bold;
       padding: 0 .9375rem;
       font-size: .875rem;
+      cursor: pointer;
       img {
         width: 1.1875rem;
         height: 1.4375rem;

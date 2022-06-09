@@ -23,7 +23,11 @@
           </div>
         </div>
         <div class="mian-right">
-          <canvas id="view3" class="canvasBox"></canvas>
+          <div class="img_box">
+            <img class="light" src="@/assets/images/main/BOX.png" alt="">
+            <img class="img" src="@/assets/images/main/5555.png" alt="">
+          </div>
+          <!-- <canvas id="view3" class="canvasBox"></canvas> -->
         </div>
       </div>
       <div class="mian-bottom fadeInUp">
@@ -103,7 +107,7 @@
               <img src="@/assets/images/main/二维码.png" alt="" />
             </div>
             <div class="data-phone">
-              电话(微信同号)：158 2628 9334 <br />
+              电话：023-86154556<br/>手机(微信同号)：158 2628 9334<br/>
               <!-- 微信：158 2628 9334 <br /> -->
               重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707
             </div>
@@ -173,8 +177,26 @@ iframe {
 .mian-right {
   flex: 1;
   // width: 47.8125rem;
-  height: 100%;
+  height: 43.4375rem;
   // // background-color: #4d4d4d;
+  text-align: center;
+  .img_box {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    .light {
+      position: absolute;
+      top: 0;
+      height: 13.85rem;
+      right: 4.8rem;
+      animation: lightAnimate 5s linear infinite alternate;
+      opacity: .5;
+    }
+    .img {
+      height: 100%;
+      border: none;
+    }
+  }
 }
 .mian-bottom {
   width: 101.25rem;
@@ -225,8 +247,11 @@ iframe {
   width: 43.4375rem;
   border: .3125rem solid #4d4d4d;
   border-radius: 0;
+  overflow: hidden;
   img{
-    height: 100%;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }
 .img-data {
@@ -260,6 +285,14 @@ iframe {
     font-size: .875rem;
   }
 }
+@keyframes lightAnimate {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 58%
+  }
+}
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
@@ -275,7 +308,7 @@ export default {
   mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     console.log(document.documentElement.scrollTop);
-    this.getmx(); 
+    // this.getmx(); 
   },
   methods: {
     handlemore() {

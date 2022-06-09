@@ -15,13 +15,13 @@ export default {
     //   this.wowContainer.init();
     // }
     this.fadeUpIn = gsap.from(".fadeInUp", {
-      marginTop: 200,
-      duration: 1,
+      transform: 'translateY(200px)',
+      duration: .8,
       opacity: 0,
     });
     this.fadeUpIn2 = gsap.from(".fadeInUp2", {
-      marginTop: 200,
-      duration: 1,
+      transform: 'translateY(200px)',
+      duration: .8,
       opacity: 0,
       delay: 1.2,
     });

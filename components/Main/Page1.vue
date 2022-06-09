@@ -1,7 +1,7 @@
 <template>
-  <Card  class="flex items-center">
-    <div class="flex justify-between" style="width: 100%; height: 100%; flex: 1;" >
-      <div style="position: relative;width: 42.375rem; height: 80%;">
+  <Card class="flex items-center">
+    <div class="flex justify-between items-center" style="width: 100%; height: 100%; flex: 1;" >
+      <div style="position: relative;width: 50%; height: 80%;">
         <swiper :options="swiperOptionP1" style="width: 100%; height: 100%;" >
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
             <div class="display-box fadeInUp fast">
@@ -24,7 +24,7 @@
           </div>
       </div>
       <div class="canvas">
-        <img class="img" src="@/assets/images/main/3333.png" alt="">
+        <img class="img" src="@/assets/images/main/fdj.gif" alt="">
         <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
       </div>
     </div>
@@ -58,8 +58,11 @@
 }
 .canvas {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .img {
-    width: 100%;
+    width: 855px;
   }
 }
 </style>

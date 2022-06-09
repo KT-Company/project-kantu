@@ -215,8 +215,8 @@
   }
 }
 .mian {
-  width: 100%;
-  margin: auto;
+  width: 78.1875rem;
+  margin: 0 auto;
   background-color: transparent;
   overflow: auto;
   .mian-data {

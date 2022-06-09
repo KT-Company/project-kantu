@@ -1,7 +1,7 @@
 <template>
   <Card class="flex items-center">
     <div class="flex justify-between flexmain" style="flex: 1;">
-      <div style="width: 40%;margin-right: 2%">
+      <div style="width: 45%;margin-right: 5%">
         <div>
           <div class="text-3xl sm:h-20 md:h-40 fadeInUp">数字孪生</div>
           <div class="h-20 fadeInUp">
@@ -31,6 +31,7 @@
       </div>
       <div class="canvas">
         <img class="img" src="@/assets/images/main/1111.png" alt="">
+        <img class="img1" src="@/assets/images/main/11111.png" alt="">
         <!-- <canvas id="view2" class="canvasBox"></canvas> -->
       </div>
     </div>
@@ -101,8 +102,27 @@
 }
 .canvas {
   flex: 1;
+  position: relative;
   .img {
     width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .img1 {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: imgAnimetion 3s linear infinite alternate;
+  }
+}
+@keyframes imgAnimetion {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-20px);
   }
 }
 </style>
