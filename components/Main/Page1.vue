@@ -10,6 +10,7 @@
               <div class="text line-height-1-5">{{ item.detail }}</div>
             </div>
           </swiper-slide>
+          <div class="swiper-pagination swiper-pagination-p1 before" slot="pagination"></div>
           <div
             class="swiper-button-prev swiper-button-p1"
             slot="button-prev"
@@ -19,12 +20,9 @@
             slot="button-next"
           ></div>
         </swiper>
-          <div class="absolute bottom-16 ye">
-            <span>{{ swiperIndex + 1 < 10 ? '0' + (swiperIndex + 1) : swiperIndex + 1 }}</span> / {{swiperDataP1.length < 10 ? '0' + swiperDataP1.length : swiperDataP1.length}}
-          </div>
       </div>
       <div class="canvas">
-        <img class="img" src="@/assets/images/main/fdj.gif" alt="">
+        <img class="img" src="@/assets/images/main/fdj_apng.png" alt="">
         <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
       </div>
     </div>
@@ -43,18 +41,29 @@
 .text {
   margin-top: 9.9375rem;
 }
-.ye {
+.swiper-pagination {
   font-size: .9375rem;
   font-family: Mypang;
   font-weight: 400;
   color: #b3b3b3;
   line-height: 1.875rem;
-  span {
+  text-align: left;
+  bottom: 60px;
+   /deep/ .swiper-pagination-current {
     font-size: 1.875rem;
     font-family: Mypang;
     font-weight: 400;
     color: #fffefe;
+   }
+  /deep/ &.before > *::before {
+    content: '0';
   }
+}
+.swiper-container.swiper-container-horizontal .swiper-button-prev:after, .swiper-container.swiper-container-horizontal .swiper-button-next:after {
+  background: transparent;
+}
+.swiper-container.swiper-container-horizontal .swiper-button-prev:hover::after, .swiper-container.swiper-container-horizontal .swiper-button-next:hover::after {
+  background: #4d4d4d;
 }
 .canvas {
   flex: 1;
@@ -105,28 +114,23 @@ export default {
           time: "01/04",
         },
       ],
-      swiperOptionP1: (() => {
-        const _this = this;
-        return {
+      swiperOptionP1: {
         // 设置分页器
         pagination: {
-          el: ".swiper-pagination.swiper-pagination-p1",
+          el: ".swiper-pagination.swiper-pagination-p1.before",
+          type: 'fraction',
           // 设置点击可切换
-          clickable: true,
+          clickable: true, 
         },
+        autoplay: true,
+        loop: true,
         allowTouchMove: true,
         // 设置前进后退按钮
         navigation: {
           nextEl: ".swiper-button-next.swiper-button-p1",
           prevEl: ".swiper-button-prev.swiper-button-p1",
-        },
-        on: {
-          slideChangeTransitionStart() {
-            _this.swiperIndex = this.activeIndex;
-          }
         }
-      }
-      })(),
+      },
       swiperIndex: 0, // 当前选中index
       loading: true,
     };

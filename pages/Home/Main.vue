@@ -15,7 +15,7 @@
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
           </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-pagination main" slot="pagination"></div>
         </swiper>
       </article>
     </main>
@@ -46,7 +46,7 @@ export default {
         origin: "left bottom",
         // // 设置分页器
         pagination: {
-          el: ".swiper-pagination",
+          el: ".swiper-pagination.main",
           // 设置点击可切换
           clickable: true,
         },
