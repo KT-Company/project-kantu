@@ -1,4 +1,15 @@
 import { resolve } from "path";
+// const LRU = require('lru-cache')
+// module.exports = {
+//   render: {
+//     bundleRenderer: {
+//       cache: new LRU({
+//         max: 1000, // 缓存队列长度
+//         maxAge: 1000 * 60 // 缓存1分钟
+//       })
+//     }
+//   }
+// };
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "server",
@@ -16,7 +27,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     script: [
-      { src:'/flexible.js', type: 'text/javascript', charset: 'utf-8'}
+      { src: '/flexible.js', type: 'text/javascript', charset: 'utf-8' }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
@@ -30,7 +41,7 @@ export default {
   ],
   server: {
     host: '0.0.0.0', // default: localhost,
-    port:8000,
+    port: 8000,
     timing: false
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -91,5 +102,5 @@ export default {
         '^/api': '/'
       }
     }
-  }
+  },
 };

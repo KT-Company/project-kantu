@@ -183,6 +183,8 @@ import animateMix from "@/mixin/animateMix.js";
 import request from "@/util/request";
 export default {
   name: "News",
+  props: ['type'],
+  serverCacheKey: props => props.type,
   mixins: [animateMix],
   data() {
     return {
