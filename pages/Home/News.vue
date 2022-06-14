@@ -101,7 +101,7 @@
   font-size: 16px;
   transition: all ease 0.4s;
   font-weight: bold;
-  transform: translateY(208px);
+  transform: translateY(232px);
   position: relative;
   z-index: 11111111;
 }
