@@ -26,7 +26,7 @@
       <div class="bg-wrap">
 
         <div class="canvas bg-ywy">
-          <img class="img" src="@/static/2d/image/ywy.png" alt="">
+          <img class="img" src="@/static/2d/image/ywy.gif" alt="">
           <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
         </div>
         <div class="bg-box">
@@ -183,10 +183,10 @@
 
     .bg-ywy {
       position: absolute;
-      width: 48rem;
-      height: 43rem;
-      right: -10rem;
-      top: -1rem;
+      width: 34rem;
+      height: 24rem;
+      right: 5rem;
+      top: 5rem;
     }
 
     .bg-box {
