@@ -41,27 +41,35 @@
 .flexmain {
   align-items: flex-start;
 }
+
 .box-page2-display {
   display: flex;
+
   .item {
     text-align: center;
     flex: 1;
+
     .icon-box {
       display: inline-block;
       width: 8rem;
       height: 12rem;
-      background: url("@/assets/images/main/icon-back.png") no-repeat;
-      background-size: contain;
-      background-position: bottom center;
+      // background: url("@/assets/images/main/icon-back.png") no-repeat;
+      // background-size: contain;
+      // background-position: bottom center;
+
       img {
         display: inline-block;
-        margin-top: 1.875rem;
+        margin-top: 3.875rem;
+        width: 5rem;
+        height: 7rem;
       }
     }
+
     .title {
       color: #999999;
       margin-bottom: 1.25rem;
     }
+
     .detail {
       display: none;
       width: 100%;
@@ -81,6 +89,7 @@
         -webkit-animation: showWidth 1s;
       }
     }
+
     &:hover {
       .detail {
         display: block;
@@ -88,27 +97,32 @@
         position: relative;
         animation: fadeIn .3s;
         -webkit-animation: fadeIn .3s;
+
         &::after {
           display: inline-block;
         }
       }
-      .icon-box {
-        background: url("~/assets/images/main/icon-back-hover.png") no-repeat;
-        background-size: contain;
-        background-position: bottom center;
-      }
+
+      // .icon-box {
+      //   background: url("~/assets/images/main/icon-back-hover.png") no-repeat;
+      //   background-size: contain;
+      //   background-position: bottom center;
+      // }
     }
   }
 }
+
 .canvas {
   flex: 1;
   position: relative;
+
   .img {
     width: 100%;
     position: absolute;
     left: 0;
     top: 0;
   }
+
   .img1 {
     width: 100%;
     position: absolute;
@@ -117,10 +131,12 @@
     animation: imgAnimetion 3s linear infinite alternate;
   }
 }
+
 @keyframes imgAnimetion {
   0% {
     transform: translateY(5px);
   }
+
   100% {
     transform: translateY(-20px);
   }
@@ -137,23 +153,23 @@ export default {
     return {
       dataDisplay: [
         {
-          iconUrl: require("assets/images/main/icon-design.png"),
+          iconUrl: require("assets/images/main/sj-elements.png"),
           title: "设计",
           detail: "拥有完善的产品设计",
         },
         {
-          iconUrl: require("assets/images/main/icon-modal.png"),
+          iconUrl: require("assets/images/main/mx-elements.png"),
           title: "模型",
           detail: "多精度的模型标准",
         },
 
         {
-          iconUrl: require("assets/images/main/icon-interactive.png"),
+          iconUrl: require("assets/images/main/xh-elements.png"),
           title: "交互",
           detail: "个性化的交互效果",
         },
         {
-          iconUrl: require("assets/images/main/icon-data.png"),
+          iconUrl: require("assets/images/main/data-elements.png"),
           title: "数据",
           detail: "精准的数据引入",
         },

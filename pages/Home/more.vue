@@ -2,26 +2,13 @@
   <div class="home" @wheel="homeWheel">
     <main>
       <article>
-        <swiper
-          :options="swiperOptionMain"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
-          @reachEnd="reachEnd"
-          @transitionEnd="transitionEnd"
-          style="height: 100vh;"
-          ref="swiper-main"
-          @wheel.stop
-        >
+        <swiper :options="swiperOptionMain" @swiper="onSwiper" @slideChange="onSlideChange" @reachEnd="reachEnd"
+          @transitionEnd="transitionEnd" style="height: 100vh;" ref="swiper-main" @wheel.stop>
           <swiper-slide v-for="(item, index) in swiperPages" :key="index">
             <div class="back-card">
               <component :is="swiperPages[index]" ref="child"></component>
             </div>
           </swiper-slide>
-          <!-- <swiper-slide>
-            <div class="back-card">
-              <Footer />
-            </div>
-          </swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </article>
@@ -131,7 +118,7 @@ export default {
     // }
   },
   methods: {
-    onSwiper() {},
+    onSwiper() { },
     onSlideChange() {
       let index = this.$refs["swiper-main"].$swiper.activeIndex;
       console.log(index)
@@ -146,7 +133,7 @@ export default {
     testChange(e) {
       return e;
     },
-    reachEnd() {},
+    reachEnd() { },
     transitionEnd(...args) {
       if (this.idx === 1) {
         this.isPageEnd = true;

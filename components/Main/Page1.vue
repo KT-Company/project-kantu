@@ -1,46 +1,63 @@
 <template>
-  <Card class="flex items-center">
-    <div class="flex justify-between items-center" style="width: 100%; height: 100%; flex: 1;" >
-      <div style="position: relative;width: 50%; height: 80%;">
-        <swiper :options="swiperOptionP1" style="width: 100%; height: 100%;" >
+  <!-- <Card class="flex items-center">
+    <div class="flex justify-between items-center" style="width: 100%; height: 100%; flex: 1;"> -->
+  <div>
+
+    <div class="wrap">
+      <div class="white-square">
+        <div class="big"></div>
+        <div class="min"></div>
+      </div>
+      <div class="swiper-box">
+        <swiper :options="swiperOptionP1" style="width: 100%; height: 100%;">
           <swiper-slide v-for="item in swiperDataP1" :key="item.index">
             <div class="display-box fadeInUp fast">
-              <div style="color: rgba(153, 153, 153, 1)">{{ item.slogenEn }}</div>
+              <!-- <div style="color: rgba(153, 153, 153, 1)">{{ item.slogenEn }}</div> -->
               <div class="title">{{ item.slogen }}</div>
+              <div class="title title-next">{{ item.slogenNext }}</div>
               <div class="text line-height-1-5">{{ item.detail }}</div>
             </div>
           </swiper-slide>
           <div class="swiper-pagination swiper-pagination-p1 before" slot="pagination"></div>
-          <div
-            class="swiper-button-prev swiper-button-p1"
-            slot="button-prev"
-          ></div>
-          <div
-            class="swiper-button-next swiper-button-p1"
-            slot="button-next"
-          ></div>
+          <div class="swiper-button-prev swiper-button-p1" slot="button-prev"></div>
+          <div class="swiper-button-next swiper-button-p1" slot="button-next"></div>
         </swiper>
       </div>
-      <div class="canvas">
-        <img class="img" src="@/assets/images/main/fdj_apng.png" alt="">
-        <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
+      <div class="bg-wrap">
+
+        <div class="canvas bg-ywy">
+          <img class="img" src="@/assets/images/main/3333.png" alt="">
+          <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
+        </div>
+        <div class="bg-box">
+          <img class="img" src="@/assets/images/main/rectangular.png" alt="">
+        </div>
+        <span class="bottom-data">{{ bottomData.toUpperCase() }}</span>
+
       </div>
     </div>
-  </Card>
+  </div>
+
+  <!-- </div>
+  </Card> -->
 </template>
 <style lang="less" scoped>
 @font-face {
   font-family: Mypang;
   src: url(@/assets/style/font/庞门正道标题体2.0增强版_0.TTF);
 }
-.title {
-  font-family: Mypang;
-  font-size: 4.5rem;
-  line-height: 4.5rem;
-}
-.text {
-  margin-top: 9.9375rem;
-}
+
+
+// .title {
+//   font-family: Mypang;
+//   font-size: 4.5rem;
+//   line-height: 4.5rem;
+// }
+
+// .text {
+//   margin-top: 9.9375rem;
+// }
+
 .swiper-pagination {
   font-size: .9375rem;
   font-family: Mypang;
@@ -49,36 +66,153 @@
   line-height: 1.875rem;
   text-align: left;
   bottom: 60px;
-   /deep/ .swiper-pagination-current {
+
+  /deep/ .swiper-pagination-current {
     font-size: 1.875rem;
     font-family: Mypang;
     font-weight: 400;
     color: #fffefe;
-   }
-  /deep/ &.before > *::before {
+  }
+
+  /deep/ &.before>*::before {
     content: '0';
   }
 }
-.swiper-container.swiper-container-horizontal .swiper-button-prev:after, .swiper-container.swiper-container-horizontal .swiper-button-next:after {
+
+.swiper-container.swiper-container-horizontal .swiper-button-prev:after,
+.swiper-container.swiper-container-horizontal .swiper-button-next:after {
   background: transparent;
 }
-.swiper-container.swiper-container-horizontal .swiper-button-prev:hover::after, .swiper-container.swiper-container-horizontal .swiper-button-next:hover::after {
+
+.swiper-container.swiper-container-horizontal .swiper-button-prev:hover::after,
+.swiper-container.swiper-container-horizontal .swiper-button-next:hover::after {
   background: #4d4d4d;
 }
-.canvas {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .img {
-    width: 855px;
+
+.swiper-container.swiper-container-horizontal .swiper-button-prev {
+  left: calc(22% - 40px);
+}
+
+.swiper-container.swiper-container-horizontal .swiper-button-next {
+  left: calc(20% + 40px);
+}
+
+// .canvas {
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   .img {
+//     width: 855px;
+//   }
+// }
+
+
+
+.wrap {
+  width: 95rem;
+  height: 35rem;
+  margin: 7rem auto;
+
+  // 两白框
+  .white-square {
+    position: absolute;
+    bottom: 16rem;
+    left: 17rem;
+
+    .big {
+      width: 3rem;
+      height: 3rem;
+      background-color: #fffefe;
+      position: relative;
+      left: 1.5rem;
+    }
+
+    .min {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fffefe;
+
+    }
+  }
+
+  // swiper
+  .swiper-box {
+    position: absolute;
+    width: 50%;
+    height: 80%;
+
+    .display-box {
+      position: absolute;
+      height: 16rem;
+      margin-top: 10rem;
+      width: 100%;
+
+      .title {
+        font-family: DigitalThick;
+        font-size: 4.5rem;
+      }
+
+      .title-next {
+        font-family: DigitalThick;
+        padding-left: 12rem;
+      }
+
+      .text {
+        padding-left: 12rem;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        position: absolute;
+        bottom: 0;
+      }
+
+    }
+  }
+
+  // 图片背景盒子
+  .bg-wrap {
+    position: relative;
+    width: 83rem;
+    height: 100%;
+    float: right;
+
+    .bg-ywy {
+      position: absolute;
+      width: 50rem;
+      height: 43rem;
+      right: -13rem;
+      top: -7rem;
+    }
+
+    .bg-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .bottom-data {
+      position: absolute;
+      bottom: 41px;
+      left: 41px;
+      letter-spacing: 2px;
+    }
   }
 }
 </style>
 <script>
 import Card from "@/components/base/Card.vue";
 import { pageOnload } from "../../3d/index.js";
-
+import '../../assets/style/font/font.css'
 export default {
   name: "Page1",
   data() {
@@ -86,13 +220,16 @@ export default {
       swiperDataP1: [
         {
           index: "01",
-          slogen: "科技改变生活\n数字成就未来",
+          slogen: "科技改变生活",
+          slogenNext: '数字成就未来',
           slogenEn: "Technology changes life\nDigital makes the future",
-          detail: "数字孪生平台公司\n致力于可视化系统设计、三维虚拟仿真开发等",
+          detail: "数字孪生平台公司，致力于可视化系统设计、三维虚拟仿真开发等",
         },
         {
           index: "02",
-          slogen: "瞰图科技\n3D可视化平台开发",
+          slogen: "瞰图科技",
+          slogenNext: '3D可视化平台开发',
+
           slogenEn: "Technology changes life\nDigital makes the future",
           detail:
             "可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。",
@@ -101,6 +238,8 @@ export default {
         {
           index: "03",
           slogen: "自主研发编辑器",
+          slogenNext: '',
+
           slogenEn: "Technology changes life\nDigital makes the future",
           detail:
             "基于自研引擎的数字孪生可视化编辑器；数据看板可方便、快捷自定义，支持多格式三维模型文件导入，并编辑模型等",
@@ -109,18 +248,21 @@ export default {
         {
           index: "04",
           slogen: "项目主要涉及领域",
+          slogenNext: '',
+
           slogenEn: "Technology changes life\nDigital makes the future",
           detail: "工业制造、智慧园区、智慧工地、智慧能源、航空航天等。",
           time: "01/04",
         },
       ],
+
       swiperOptionP1: {
         // 设置分页器
         pagination: {
           el: ".swiper-pagination.swiper-pagination-p1.before",
           type: 'fraction',
           // 设置点击可切换
-          clickable: true, 
+          clickable: true,
         },
         autoplay: true,
         loop: true,
@@ -129,10 +271,15 @@ export default {
         navigation: {
           nextEl: ".swiper-button-next.swiper-button-p1",
           prevEl: ".swiper-button-prev.swiper-button-p1",
-        }
+        },
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
       },
       swiperIndex: 0, // 当前选中index
       loading: true,
+      bottomData: 'Technology changes life Digital makes the future'
     };
   },
   components: {
@@ -145,7 +292,7 @@ export default {
     // });
     // this.getmx();
   },
-  created() {},
+  created() { },
   methods: {
     getmx() {
       const loading = this.$loading({

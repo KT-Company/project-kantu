@@ -15,7 +15,7 @@
           <div class="fc">
             <div><img src="@/assets/images/main/格式.png" alt=""> 多格式导入</div>
             <div><img src="@/assets/images/main/图层 647.png" alt="">多图表选择</div>
-            <div><img src="@/assets/images/main/基础样式.png" alt="">多样式修改  </div>
+            <div><img src="@/assets/images/main/基础样式.png" alt="">多样式修改 </div>
           </div>
           <div class="button" @click="handlemore">
             <i class="el-icon-d-arrow-left mr-6"></i>
@@ -25,13 +25,13 @@
         <div class="mian-right fadeInUp">
           <el-carousel indicator-position="outside" height="38.125rem">
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq1.jpg" alt=""  class="bjq"/>
+              <img src="@/assets/images/main/bjq1.jpg" alt="" class="bjq" />
             </el-carousel-item>
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq2.jpg" alt="" class="bjq"/>
+              <img src="@/assets/images/main/bjq2.jpg" alt="" class="bjq" />
             </el-carousel-item>
             <el-carousel-item>
-              <img src="@/assets/images/main/bjq3.jpg" alt="" class="bjq"/>
+              <img src="@/assets/images/main/bjq3.jpg" alt="" class="bjq" />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -40,22 +40,26 @@
   </Card>
 </template>
 <style lang="less" scoped>
-.main{
+.main {
   align-items: center;
 }
+
 .mian-left {
   margin-top: 5rem;
 }
+
 .title {
   font-size: 2.5rem;
   font-family: Source Han Sans SC;
   font-weight: 500;
   color: #ffffff;
+
   span {
     font-size: 1.125rem;
     color: #b3b3b3;
   }
 }
+
 ul {
   margin-top: 3.125rem;
   line-height: 1.875rem;
@@ -64,29 +68,35 @@ ul {
   font-weight: 400;
   color: #b3b3b3;
 }
+
 .fc {
-  width: 18.75rem;
-  height: 6.75rem;
+  width: 320px;
   margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
+
   div {
-    width: 8.75rem;
-    height: 2.75rem;
+    width: 140px;
+    height: 44px;
     background: #4d4d4d;
-    border-radius: 1.375rem;
+    border-radius: 21.88px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 .9375rem;
-    img{
-      width: 1.1875rem;
-      height: 1.4375rem;
+    margin-right: 20px;
+    margin-bottom: 19px;
+    font-size: 0.9rem;
+
+    img {
+      width: 19px;
+      height: 23px;
+      margin-right: 16px;
+      margin-left: 15px;
     }
   }
 }
+
 .button {
   width: 10rem;
   height: 3.125rem;
@@ -102,23 +112,27 @@ ul {
   transition: all 0.36s;
   margin-top: 5rem;
 }
+
 .button:hover {
   background-color: #fff;
   color: #1a1a1a;
   /* box-shadow:none; */
   transform: translateY(-0.3125rem);
 }
+
 .mian-right {
-width: 63.75rem;
-height: 38.125rem;
-background: #4D4D4D;
-border-radius: 1.25rem;
+  width: 63.75rem;
+  height: 38.125rem;
+  background: #4D4D4D;
+  border-radius: 1.25rem;
 }
-.bjq{
+
+.bjq {
   width: 100%;
   height: 100%;
   border-radius: 1.25rem;
 }
+
 .el-carousel__item h3 {
   color: #475669;
   font-size: 1.125rem;
@@ -141,7 +155,7 @@ export default {
   },
   methods: {
     handlemore() {
-      document.documentElement.scrollTop =document.body.clientHeight
+      document.documentElement.scrollTop = document.body.clientHeight
     }
   },
 };
