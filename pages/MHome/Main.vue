@@ -1,121 +1,427 @@
 <template>
-  <Card class="flex items-center">
-    <div class="flex justify-between" style="flex: 1;">
-      <div class="fadeInUp">
-        <div class="text-3xl md:h-40 sm:h-20">数据可视化</div>
-        <div class="h-20">
-          <span class="color-subtext line-height-1-5">
-            根据项目可视化数据展示：<br />
-            园区管理后台系统(OA、ERP、 MIS、
-            IBMS等）、综合态势、综合安防、便捷通行、资产管理、能效管理、设施管理、环境空间、智能预警等数据。
-            以及项目中的设备后台系统（ems、数据采集等）提供设备数据来源，以多时态、多维度、多层面的方式展示。
-          </span>
+  <div class="home" @wheel="homeWheel">
+    <main>
+      <article>
+        <div style="position: relative">
+          <component :is="'MPage1'"></component>
         </div>
-        <div class="text-two">
-          <div>
-            <i class="el-icon-arrow-right"></i>
-            <i class="el-icon-arrow-right" style="margin-left: -0.75rem"></i>
-            <i class="el-icon-arrow-right" style="margin-left: -0.75rem"></i>
+        <MCard title="数字孪生">
+          <div class="h-20 fadeInUp text-center">
+            <span class="text-2xl">四要素</span>
+            <span class="color-subtext text-sm">(设计、模型、交互、数据)</span>
           </div>
-          <div class="mb-2">大数据图表可视化</div>
-          <div class="mb-2">图形分析化能力</div>
-          <div class="mb-2">交互式观察数据改变</div>
-          <div class="mb-2">一键集成方便部署</div>
-        </div>
-      </div>
-      <div class="echarts fadeInUp">
-        <!-- <div class="echart fadeInUp2" v-for="item in 9" :key="item">Echart</div> -->
-        <Chart height="16rem" :chartOption="option()" class="echart"></Chart>
-        <Chart height="16rem" :chartOption="option2()" class="echart2"></Chart>
-        <Chart height="16rem" :chartOption="option3()" class="echart"></Chart>
-        <Chart height="16rem" :chartOption="option4()" class="echart2"></Chart>
-        <!-- <Chart height="16rem" :chartOption="option5()" class="echart3"></Chart> -->
-        <div class="echart2"></div>
-        <div class="echart"></div>
-        <div class="echart2"></div>
-        <!-- <div class="echart">Echart</div>
-        <div class="echart">Echart</div>
-        <div class="echart">Echart</div> -->
-      </div>
-      <!-- <div class="canvas grid grid-flow-row auto-rows-max">
-        <div class="grid grid-flow-col auto-cols-max">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-        <div class="grid grid-flow-col auto-cols-max">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-        <div class="grid grid-flow-col auto-cols-max">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-      </div> -->
-      <!-- <div class="grid-container">
-        <div><div>1</div><div>1</div><div>1</div></div>
-        <div><p>2</p></div>
-        <div><p>3</p></div>
-      </div> -->
-    </div>
-  </Card>
+          <div class="box-page2-display mt-20">
+            <div class="item" v-for="(item, index) in dataDisplay" :key="index">
+              <div class="icon-box">
+                <img v-if="item.iconUrl" :src="item.iconUrl" alt="" srcset="" />
+              </div>
+              <div class="title">{{ item.title }}</div>
+              <div class="detail">{{ item.detail }}</div>
+            </div>
+          </div>
+          <div class="relative" style="padding: 0 10%">
+            <img class="img" src="@/assets/images/main/1111.png" alt="" />
+          </div>
+        </MCard>
+        <MCard title="GIS - 地理信息系统">
+          <div class="text-center">
+            <div style="padding: 0 9rem; margin-bottom: 9rem">
+              <span class="color-subtext text-sm">
+                GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
+              </span>
+            </div>
+            <div class="relative">
+              <img class="img" src="@/assets/images/main/图.jpg" alt="" />
+              <div class="button-right" @click="handlemore">
+                <i class="el-icon-d-arrow-left mr-6"></i>体验GIS底图场景
+              </div>
+            </div>
+          </div>
+        </MCard>
+        <MCard title="三维可视化">
+          <div
+            class="flex justify-between rounded-xl p-4 mb-20"
+            style="
+              background: #262626;
+              box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 255, 0.1);
+            "
+          >
+            <span>数据模型采集 </span>
+            <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
+            <span>模型制作</span>
+            <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
+            <span>三维可视化功能</span>
+            <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
+            <span>大数据集成</span>
+          </div>
+        </MCard>
+        <MCard title="数据可视化">
+          <div
+            class="justify-between rounded-xl p-6 mb-20"
+            style="
+              background: rgba(26, 26, 26, 0.5);
+              color: rgba(179, 179, 179, 1);
+              font-size: 2rem;
+              box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);
+            "
+          >
+            <p>根据项目可视化数据展示：</p>
+            <p>
+              园区管理后台系统(OA、ERP、MIS、IBMS等）、综合态势、综合安防、便捷通行、资产管理、能效管理、设施管理、环境空间、智能预警等数据。
+            </p>
+            <p>
+              以及项目中的设备后台系统（ems、数据采集等）提供设备数据来源，以多时态、多维度、多层面的方式展示。
+            </p>
+          </div>
+          <div class="echarts fadeInUp">
+            <Chart height="16rem" :chartOption="option()" class="echart"></Chart>
+            <Chart height="16rem" :chartOption="option2()" class="echart2"></Chart>
+          </div>
+          <div class="echarts fadeInUp">
+            <Chart height="16rem" :chartOption="option3()" class="echart"></Chart>
+            <Chart height="16rem" :chartOption="option4()" class="echart2"></Chart>
+          </div>
+        </MCard>
+        <MCard title="合作伙伴">
+          <div class="imgs">
+            <div class="imgs-top fadeInUp">
+              <div class="images" v-for="(item, index) in imgs" :key="index">
+                <img :src="item" alt="" />
+              </div>
+            </div>
+            <div class="imgs-bottom fadeInUp2">
+              <div class="images" v-for="(item, index) in imgs2" :key="index">
+                <img :src="item" alt="" />
+              </div>
+            </div>
+          </div>
+        </MCard>
+      </article>
+    </main>
+  </div>
 </template>
-<style scoped>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 33.33%);
-  grid-template-rows: repeat(3, 33.33%);
+<style lang="less" scoped>
+.home {
+  flex: 1;
+  height: 100%;
+  font-size: 14px;
 }
+.box-page2-display {
+  display: flex;
+
+  .item {
+    text-align: center;
+    flex: 1;
+
+    .icon-box {
+      display: inline-block;
+      // width: 8rem;
+      // height: 12rem;
+      // background: url("@/assets/images/main/icon-back.png") no-repeat;
+      // background-size: contain;
+      // background-position: bottom center;
+
+      img {
+        display: inline-block;
+        margin-top: 3.875rem;
+        // width: 5rem;
+        height: 18rem;
+      }
+    }
+
+    .title {
+      color: #999999;
+      margin-top: 6.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .detail {
+      display: none;
+      width: 100%;
+      color: #999999;
+      padding-bottom: 0.3125rem;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 0.0625rem;
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #999999;
+        animation: showWidth 1s;
+        -webkit-animation: showWidth 1s;
+      }
+    }
+
+    &:hover {
+      .detail {
+        display: block;
+        // line-height: 1rem;
+        position: relative;
+        animation: fadeIn 0.3s;
+        -webkit-animation: fadeIn 0.3s;
+
+        &::after {
+          display: inline-block;
+        }
+      }
+
+      // .icon-box {
+      //   background: url("~/assets/images/main/icon-back-hover.png") no-repeat;
+      //   background-size: contain;
+      //   background-position: bottom center;
+      // }
+    }
+  }
+}
+.button-right {
+  // width:21rem;
+  padding: 3rem 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-family: Source Han Sans SC;
+  font-weight: bold;
+  transition: all 0.36s;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.button-right:hover {
+  background-color: #fff;
+  color: #1a1a1a;
+  /* box-shadow:none; */
+  // transform: translateY(-0.3125rem);
+}
+
 .echarts {
-  flex: 0 0 59.375rem;
-  height: 50.375rem;
+  // flex: 0 0 59.375rem;
+  // height: 50.375rem;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: #fff; */
-  /* justify-content: space-between; */
   justify-content: space-around;
   align-items: stretch;
+  .echart {
+    width: 40rem;
+    height: 30rem;
+    margin-top: 6.25rem;
+    /* background-color: #4d4d4d; */
+  }
+  .echart2 {
+    width: 60rem;
+    height: 30rem;
+    margin-top: 6.25rem;
+    /* background-color: #4d4d4d; */
+    color: #1a1a1a;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 16rem;
+  }
 }
-.echart {
-  width: 19rem;
-  height: 16rem;
-  margin-top: 6.25rem;
-  /* background-color: #4d4d4d; */
-}
-.echart2 {
-  width: 38.75rem;
-  height: 16rem;
-  margin-top: 6.25rem;
-  /* background-color: #4d4d4d; */
-  color: #1a1a1a;
-  font-size: 1.875rem;
-  text-align: center;
-  line-height: 16rem;
-}
-.text-two {
-  margin-top: 15.625rem;
+.imgs{
+  padding: 0 10%;
+  .imgs-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .images {
+      width: 22rem;
+      height: 9rem;
+      background-color: #fff;
+      // background-color: rgba(77, 77, 77, 0.1);
+      border-radius: 0.625rem;
+      border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      img {
+        vertical-align: middle;
+      }
+    }
+    .images:hover{
+      background-color: rgba(77, 77, 77, 0.3);
+    }
+  }
+  .imgs-bottom {
+    margin-top: 14rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .images {
+      width: 22rem;
+      height: 9rem;
+      background-color: #fff;
+      border-radius: 0.625rem;
+      border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      img {
+        vertical-align: middle;
+      }
+    }
+    .images:hover {
+      background-color: rgba(77, 77, 77, 0.3);
+    }
+  }
 }
 </style>
-
 <script>
-import Card from "@/components/base/Card.vue";
-// import * as echart from "@/components/echarts/echart.vue";
+import MCard from "@/components/base/MCard.vue";
+import { MPage1, Page2, Page3, Page4, Page5, Page6 } from "@/components/Main";
+import Footer from "@/components/Footer.vue";
+import animateMix from "@/mixin/animateMix.js";
 import Chart from "@/components/Charts.vue";
 import * as echarts from "echarts";
-export default {
-  name: "Page5",
 
+export default {
+  name: "Main",
+  mixins: [animateMix],
   data() {
-    return {};
+    return {
+      isPageEnd: false,
+      idx: 0,
+      swiperOptionMain: {
+        speed: 1000,
+        direction: "vertical",
+        origin: "left bottom",
+        // // 设置分页器
+        pagination: {
+          el: ".swiper-pagination.main",
+          // 设置点击可切换
+          clickable: true,
+        },
+        // // 设置前进后退按钮
+        // navigation: {
+        //   nextEl: ".swiper-button-main.swiper-button-next",
+        //   prevEl: ".swiper-button-main.swiper-button-prev",
+        // },
+        // 切换特效
+        effect: "coverflow",
+        coverflowEffect: {
+          rotate: 0,
+          // modifier: 0,
+        },
+        // 设置自动轮播
+        // autoplay: {
+        //   delay: 5000, // 5秒切换一次
+        // },
+        // 设置轮播可循环
+        // loop: true,
+        allowTouchMove: false,
+        mousewheel: {
+          //   invert: true,
+          releaseOnEdges: true,
+        },
+        on: {
+          slideChangeTransitionEnd: () => {
+            this.activeIndex;
+          },
+        },
+      },
+      fadeUpIn: null,
+      fadeUpIn2: null,
+      swiperPages: ["MPage1", "Page2", "Page3", "Page4", "Page5", "Page6"],
+      pageHeight: 1080,
+      dataDisplay: [
+        {
+          iconUrl: require("assets/images/main/sj-elements.png"),
+          title: "设计",
+          detail: "拥有完善的产品设计",
+        },
+        {
+          iconUrl: require("assets/images/main/mx-elements.png"),
+          title: "模型",
+          detail: "多精度的模型标准",
+        },
+
+        {
+          iconUrl: require("assets/images/main/xh-elements.png"),
+          title: "交互",
+          detail: "个性化的交互效果",
+        },
+        {
+          iconUrl: require("assets/images/main/data-elements.png"),
+          title: "数据",
+          detail: "精准的数据引入",
+        },
+      ],
+      imgs: [
+        require("@/assets/images/main/1.png"),
+        require("@/assets/images/main/2.png"),
+        require("@/assets/images/main/3.png"),
+        require("@/assets/images/main/4.png"),
+        require("@/assets/images/main/5.png"),
+        require("@/assets/images/main/6.png"),
+      ],
+      imgs2: [
+        require("@/assets/images/main/7.png"),
+        require("@/assets/images/main/8.png"),
+        require("@/assets/images/main/9.png"),
+        require("@/assets/images/main/10.png"),
+        require("@/assets/images/main/11.png"),
+        require("@/assets/images/main/12.png"),
+      ],
+    };
   },
-  components: {
-    Card,
-    Chart,
+  components: { Chart, MCard, MPage1, Page2, Page3, Page4, Page5, Page6, Footer },
+  created() {},
+  watch: {
+    idx(newValue, oldValue) {
+      console.log(newValue);
+      if (newValue < 5) {
+        this.isPageEnd = false;
+        console.log(this.isPageEnd);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+      }
+    },
   },
-  mounted() {},
+  mounted() {
+    if (this.idx < 5) {
+      this.isPageEnd = false;
+      console.log(this.isPageEnd);
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+  },
   methods: {
+    onSwiper() {},
+    onSlideChange(...args) {
+      console.log("change args: ", args);
+      let index = this.$refs["swiper-main"].$swiper.activeIndex;
+      this.idx = index;
+      this.$nextTick(() => {
+        if (this.$refs.child[index]?.handleSlideChange)
+          this.$refs.child[index].handleSlideChange();
+        this.fadeUpIn.restart().delay(1);
+        this.fadeUpIn2.restart().delay(2.2);
+      });
+    },
+    transitionEnd(...args) {
+      if (this.idx === 5) {
+        this.isPageEnd = true;
+        console.log("transitionend args: ", args);
+      }
+    },
+    homeWheel(ev) {
+      if (!this.isPageEnd) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+    },
+    handlemore() {
+      document.documentElement.scrollTop = document.body.clientHeight;
+    },
     option() {
       let option = {
         title: [
@@ -125,7 +431,7 @@ export default {
             top: "55%",
             textStyle: {
               color: "rgba(225,225,225,0.3)",
-              fontSize: 16,
+              fontSize: 9,
               fontWeight: "100",
             },
           },
@@ -134,7 +440,7 @@ export default {
             x: "center",
             y: "center",
             textStyle: {
-              fontSize: "30",
+              fontSize: "16",
               color: "rgba(225,225,225,0.3)",
               fontFamily: "DINAlternate-Bold, DINAlternate",
               foontWeight: "600",
@@ -265,9 +571,9 @@ export default {
         },
         grid: {
           top: "10%",
-          left: "10%",
+          left: 30,
           right: "10%",
-          bottom: "10%",
+          bottom: 20,
           // containLabel: true
         },
         xAxis: [
@@ -284,6 +590,7 @@ export default {
               },
             },
             axisLabel: {
+              fontSize: 9,
               color: "rgba(225,225,225,0.3)",
             },
             splitLine: {
@@ -320,13 +627,14 @@ export default {
             splitLine: {
               show: true,
               lineStyle: {
-                color: 'rgba(66, 66, 66, .3)'
+                color: "rgba(66, 66, 66, .3)",
               },
             },
             axisLine: {
               show: true,
             },
             axisLabel: {
+              fontSize: 9,
               color: "rgba(225,225,225,0.3)",
             },
             axisTick: {
@@ -397,8 +705,18 @@ export default {
               },
             },
             data: [
-              281.55, 398.35, 214.02, 179.55, 289.57, 356.14, 281.55, 398.35,
-              214.02, 179.55, 289.57, 356.14,
+              281.55,
+              398.35,
+              214.02,
+              179.55,
+              289.57,
+              356.14,
+              281.55,
+              398.35,
+              214.02,
+              179.55,
+              289.57,
+              356.14,
             ],
           },
         ],
@@ -454,12 +772,12 @@ export default {
                 lineHeight: 20,
               },
               b: {
-                color:"rgba(225,225,225,0.3)",
+                color: "rgba(225,225,225,0.3)",
                 fontSize: 12,
                 align: "right",
               },
               d: {
-                color:"rgba(225,225,225,0.3)",
+                color: "rgba(225,225,225,0.3)",
                 fontSize: 12,
                 align: "right",
               },
@@ -658,9 +976,9 @@ export default {
           },
         },
         grid: {
-          left: 78,
-          right: 50,
-          bottom: 70,
+          left: 30,
+          right: 0,
+          bottom: 20,
           top: 20,
           // containLabel: true,
         },
@@ -684,7 +1002,7 @@ export default {
           },
           axisLabel: {
             show: true,
-            fontSize: 12,
+            fontSize: 9,
           },
         },
         yAxis: {
@@ -710,7 +1028,7 @@ export default {
           },
           axisLabel: {
             show: true,
-            fontSize: 12,
+            fontSize: 9,
           },
           boundaryGap: ["20%", "20%"],
         },

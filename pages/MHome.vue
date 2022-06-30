@@ -1,24 +1,27 @@
 <template>
   <div class="mian">
-    <Header v-if="showHeader" :class="['header', ba === false ? '' : 'hdactive']" />
+    <MHeader
+      :class="['header', ba === false ? '' : 'hdactive']"
+      :fixed="ba ? false : true"
+    />
     <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
-    <Footer v-if="showHeader" />
+    <MFooter />
   </div>
 </template>
-<style>
+<style scoped>
 .mian {
   overflow: hidden;
   /* background: url("@/assets/images/main/背景.png") 100% no-repeat;  */
 }
 
 .header {
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 9;
-  /* background-color: #fff; */
 }
 
 .hdactive {
+  position: fixed;
   background-color: #1a1a1a;
   box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
 }
@@ -40,11 +43,7 @@ export default {
       ba: false,
     };
   },
-  created() {
-    console.log(111)
-    // debugger
-    // this.$router.push("/home/main")
-  },
+  created() {},
   mounted() {
     window.addEventListener("scroll", this.rollingheight, true);
   },

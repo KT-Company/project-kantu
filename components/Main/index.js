@@ -4,4 +4,5 @@ export { default as Page3 } from "./Page3";
 export { default as Page4 } from "./Page4";
 export { default as Page5 } from "./Page5";
 export { default as Page6 } from "./Page6";
+export { default as MPage1 } from "./MPage1";
 export default {};

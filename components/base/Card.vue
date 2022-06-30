@@ -3,7 +3,7 @@
     <slot />
   </div>
 </template>
-<style>
+<style scoped>
 .card {
   width: 104rem;
   height: 100%;

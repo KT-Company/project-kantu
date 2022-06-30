@@ -63,7 +63,7 @@
     </div>
   </Card>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 .flex {
   align-items: center;
 }

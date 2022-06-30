@@ -12,7 +12,8 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
+      { name: "keywords", content: "瞰图科技,webgl,canvas,瞰图,数字孪生,3d可视化,三维可视化,3维可视化,threejs,大数据可视化,web3d,瞰图科技官网" },
+      { hid: "description", name: "description", content: "重庆瞰图科技有限公司是一家数字孪生平台公司，致力于可视化系统设计、三维虚拟仿真开发。本公司坚持以人才和技术为核心，以质量和服务为准则，以开发专业、优质、客户满意的产品为己任。重庆瞰图科技有限公司涉及可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。其中，代表案例有智慧园区、工业制造、智慧能源、航空航天。数据可视化，webgl" },
       { name: "format-detection", content: "telephone=no" },
     ],
     script: [

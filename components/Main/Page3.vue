@@ -24,7 +24,7 @@
     </div>
   </Card>
 </template>
-<style>
+<style scoped>
 .button-right {
   width: 13.125rem;
   height: 3.125rem;
