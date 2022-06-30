@@ -1,9 +1,12 @@
 <template>
   <div class="">
-    <div class="video-img" @click="visual = true">
+    <div class="video-img" @click="visual = true" v-if="!isFirst">
       <img class="thumb" :src="data.img" alt="">
-      <img class="player" src="@/assets/images/main/播放.png" alt="">
+      <!-- <img class="player" src="@/assets/images/main/播放.png" alt=""> -->
     </div>
+    <a class="video-img" target="_blank" :href="data.projectAddress" v-else>
+      <img class="thumb" :src="data.img" alt="">
+    </a>
     <div class="title-two">{{data.title}}</div>
     <video-player :src="data.spurl" :visual="visual" @close="visual = false"></video-player>
   </div>
@@ -16,7 +19,11 @@ export default {
     videoPlayer
   },
   props: {
-    data: Object
+    data: Object,
+    isFirst: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -35,6 +42,7 @@ export default {
   height: 173px;
   position: relative;
   cursor: pointer;
+  display: block;
   .thumb {
     width: 100%;
     height: 100%;
