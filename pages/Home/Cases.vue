@@ -96,6 +96,7 @@
               (currentPage - 1) * pageSize2,
               currentPage * pageSize2
             )"
+            :isFirst="index == 0 && currentPage == 1"
             :key="item.title" :data="item"></kt-video>
         </div>
         <div class="bottom" v-show="!isdata">
