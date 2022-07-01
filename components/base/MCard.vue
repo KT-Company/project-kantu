@@ -7,6 +7,9 @@
 <style lang="less" scoped>
 .card {
   padding: 7rem;
+  background: url("@/assets/images/background.png") no-repeat;
+  background-position: top -20rem center;
+  background-size: 100% auto;
   &>.title {
     text-align: center;
     font-size: 4.5rem;

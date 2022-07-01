@@ -40,9 +40,10 @@
         </MCard>
         <MCard title="三维可视化">
           <div
-            class="flex justify-between rounded-xl p-4 mb-20"
+            class="flex justify-between rounded-xl p-4"
             style="
               background: #262626;
+              margin-bottom:9rem;
               box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 255, 0.1);
             "
           >
@@ -54,6 +55,7 @@
             <i class="el-icon-d-arrow-right ml-6 mr-6"></i>
             <span>大数据集成</span>
           </div>
+          <MTimeline/>
         </MCard>
         <MCard title="数据可视化">
           <div
@@ -235,8 +237,8 @@
     .images {
       width: 22rem;
       height: 9rem;
-      background-color: #fff;
-      // background-color: rgba(77, 77, 77, 0.1);
+      // background-color: #fff;
+      background-color: rgba(77, 77, 77, 0.1);
       border-radius: 0.625rem;
       border: 0.0625rem solid rgba(255, 255, 255, 0.1);
       display: flex;
@@ -260,7 +262,8 @@
     .images {
       width: 22rem;
       height: 9rem;
-      background-color: #fff;
+      // background-color: #fff;
+      background-color: rgba(77, 77, 77, 0.1);
       border-radius: 0.625rem;
       border: 0.0625rem solid rgba(255, 255, 255, 0.1);
       display: flex;
@@ -284,6 +287,7 @@ import Footer from "@/components/Footer.vue";
 import animateMix from "@/mixin/animateMix.js";
 import Chart from "@/components/Charts.vue";
 import * as echarts from "echarts";
+import MTimeline from "@/components/base/MTimeline.vue";
 
 export default {
   name: "Main",
@@ -375,7 +379,7 @@ export default {
       ],
     };
   },
-  components: { Chart, MCard, MPage1, Page2, Page3, Page4, Page5, Page6, Footer },
+  components: { Chart, MCard, MPage1, Page2, Page3, Page4, Page5, Page6, Footer, MTimeline },
   created() {},
   watch: {
     idx(newValue, oldValue) {
