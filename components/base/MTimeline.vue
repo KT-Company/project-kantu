@@ -168,6 +168,10 @@ export default {
     height: 100%;
     background: rgba(77, 77, 77, 1);
   }
+   @keyframes shining {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
   .active-pointer {
     width: 6px;
     height: 6px;
@@ -175,6 +179,8 @@ export default {
     border-radius: 50%;
     position: absolute;
     transition: all 0.25s ease-in;
+    // animation: shining ease-in 2s infinite;
+       
     &::after {
       content: "";
       display: inline-block;
