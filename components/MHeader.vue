@@ -32,7 +32,7 @@
             <nuxt-link to="/mhome/about"><div class="link">了解瞰图</div></nuxt-link>
           </el-menu-item>
           <div class="demo">
-            <a href="/mdemos" target="_blank" rel="noopener noreferrer"
+            <a href="/demos" target="_blank" rel="noopener noreferrer"
               ><img src="@/assets/images/main/demo.png" alt=""
             /></a>
           </div>
