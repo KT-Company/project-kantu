@@ -35,10 +35,10 @@
           </li>
         </ul>
       </div>
-      <div :class="['mian', isdata ? '' : 'main']" ref="mian">
+      <div :class="['mian', isClassic ? '' : 'main']" ref="mian">
         <div
           class="mian-data"
-          v-show="isdata"
+          v-show="isClassic"
           v-for="(item, index) in mianlist.slice(
             (currentPage - 1) * pageSize,
             currentPage * pageSize
@@ -76,12 +76,12 @@
             </div>
           </div>
         </div>
-        <div class="bottom" v-show="isdata">
+        <div class="bottom" v-show="isClassic">
           <el-pagination
             background
             @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
-            :current-page="currentPage4"
+            :current-page="currentPage"
             :page-sizes="[1, 2, 3, 4]"
             :page-size="pageSize"
             layout="pager"
@@ -90,21 +90,21 @@
           >
           </el-pagination>
         </div>
-        <div class="mian-data2" v-show="!isdata" style="margin-left: -5rem;">
+        <div class="mian-data2" v-show="!isClassic" style="margin-left: -5rem;">
           <kt-video class="video_wrapper-two"
             v-for="(item, index) in mianlist2.slice(
-              (currentPage - 1) * pageSize2,
-              currentPage * pageSize2
+              (currentPage2 - 1) * pageSize2,
+              currentPage2 * pageSize2
             )"
-            :isFirst="index == 0 && currentPage == 1"
+            :isFirst="index == 0 && currentPage2 == 1"
             :key="item.title" :data="item"></kt-video>
         </div>
-        <div class="bottom" v-show="!isdata">
+        <div class="bottom" v-show="!isClassic">
           <el-pagination
             background
             @size-change="handleSizeChange2"
-            @current-change="handleCurrentChange"
-            :current-page="currentPage4"
+            @current-change="handleCurrentChange2"
+            :current-page="currentPage2"
             :page-sizes="[1, 2, 3, 4]"
             :page-size="pageSize2"
             layout="pager"
@@ -381,14 +381,14 @@ export default {
   data() {
     return {
       navlist: ["经典案例", "更多"],
-      isdata: true,
+      isClassic: true, //是否为经典案例
       isPlay: false,
       mianlist: [],
       mianlist2: [],
       navli: 0,
       videoElement: [], // 创建视频数组
-      currentPage4: 1,
       currentPage: 1, // 当前页码
+      currentPage2: 1,
       // total: 20, // 总条数
       pageSize: 4, // 每页的数据条数
       pageSize2: 20, // 每页的数据条数
@@ -421,9 +421,9 @@ export default {
     handlenav(index) {
       this.navli = index;
       if(index == 1) {
-        this.isdata = false
+        this.isClassic = false
       }else {
-        this.isdata = true
+        this.isClassic = true
       }
     },
     handleSizeChange(val) {
@@ -440,6 +440,10 @@ export default {
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
       this.currentPage = val;
+    },
+    handleCurrentChange2(val) {
+      console.log(`当前页: ${val}`);
+      this.currentPage2 = val;
     },
     getdemolist() {
       Promise.all([request.get({
