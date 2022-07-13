@@ -1,99 +1,91 @@
 <template>
   <div class="box">
-      <div class="site">
-        你的位置：首页 > <span style="color: #fff">了解瞰图</span>
-      </div>
-      <div class="mian fadeInUp">
-        <div class="mian-left">
-          <div class="font-bold" style="font-size: 5.375rem">About</div>
-          <div style="font-size: 1.875rem">重庆瞰图科技有限公司</div>
-          <div class="text line-height-1-5" style="font-size: .875rem">
-            <div>
-              重庆瞰图科技有限公司是一家数字孪生平台公司，国产自主研发三维引擎的技术领先者；致力于可视化系统设计、三维虚拟仿真开发，完善国产化自主研发三维引擎，打破国外3A工业设计软件的垄断。
-            </div>
-            <div>
-              公司坚持以人才和技术为核心；以质量重庆瞰图科技有限公司涉及可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。
-            </div>
-            <div>
-              其中，代表案例有智慧园区、工业制造、智慧能源、航空航天等。公司坚持以人才和技术为核心；以质量和服务为准则；为客户开发专业、优质、满意、适用的互联网产品。
-            </div>
+    <div class="site">你的位置：首页 > <span style="color: #fff">了解瞰图</span></div>
+    <div class="mian fadeInUp">
+      <div class="mian-left">
+        <div class="font-bold" style="font-size: 5.375rem">About</div>
+        <div style="font-size: 1.875rem">重庆瞰图科技有限公司</div>
+        <div class="text line-height-1-5" style="font-size: 0.875rem">
+          <div>
+            重庆瞰图科技有限公司是一家数字孪生平台公司，国产自主研发三维引擎的技术领先者；致力于可视化系统设计、三维虚拟仿真开发，完善国产化自主研发三维引擎，打破国外3A工业设计软件的垄断。
           </div>
-          <div style="padding: 0 5rem;margin-top:5rem">
-            <img src="@/static/2d/image/about-back.png" alt="" srcset="">
+          <div>
+            公司坚持以人才和技术为核心；以质量重庆瞰图科技有限公司涉及可视化技术、数字孪生技术、可视化运行平台、数字孪生、三维场景管理、UI界面组件、3D产品展示、3D创意设计等多项技术。
+          </div>
+          <div>
+            其中，代表案例有智慧园区、工业制造、智慧能源、航空航天等。公司坚持以人才和技术为核心；以质量和服务为准则；为客户开发专业、优质、满意、适用的互联网产品。
+          </div>
+        </div>
+        <div style="padding: 0 5rem; margin-top: 5rem">
+          <img src="@/static/2d/image/about-back.png" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
+    <div class="mian-bottom fadeInUp">
+      <div>
+        <div style="font-size: 3.125rem">使命愿景</div>
+        <div style="font-size: 1.5625rem; color: #808080">
+          致力可视化系统设计 三维虚拟仿真开发
+        </div>
+      </div>
+      <div class="split-line"></div>
+      <div class="mian-data">
+        <div class="data">
+          <div class="data-icon">
+            <img src="@/assets/images/main/企业愿景.png" alt="" />
+          </div>
+          <div class="data-text">
+            <div style="font-size: 1.875rem; color: #ffffff">企业愿景</div>
+            <div style="font-size: 0.875rem; color: #4d4d4d">Enterprise vision</div>
+            <div style="margin-top: 2.125rem">运用专业的可视化系统</div>
+            <div>为人们实现传统拍摄无法实现</div>
+            <div>的相应场景和事件</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon">
+            <img src="@/assets/images/main/企业使命.png" alt="" />
+          </div>
+          <div class="data-text">
+            <div style="font-size: 1.875rem; color: #ffffff">企业使命</div>
+            <div style="font-size: 0.875rem; color: #4d4d4d">Enterprise mission</div>
+            <div style="margin-top: 2.125rem">以技术实力为支撑</div>
+            <div>以用户需求为导向</div>
+            <div>以技术创新为根本</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon">
+            <img src="@/assets/images/main/核心.png" alt="" />
+          </div>
+          <div class="data-text">
+            <div style="font-size: 1.875rem; color: #ffffff">核心价值</div>
+            <div style="font-size: 0.875rem; color: #4d4d4d">Core value</div>
+            <div style="margin-top: 2.875rem">做正直守信的人</div>
+            <div>做对社会有价值的事</div>
+          </div>
+        </div>
+        <div class="data">
+          <div class="data-icon">
+            <img src="@/assets/images/main/定位.png" alt="" />
+          </div>
+          <div class="data-text">
+            <div style="font-size: 1.875rem; color: #ffffff">战略定位</div>
+            <div style="font-size: 0.875rem; color: #4d4d4d">Strategic positioning</div>
+            <div style="margin-top: 2.875rem">致力可视化系统设计</div>
+            <div>三维虚拟仿真开发</div>
           </div>
         </div>
       </div>
-      <div class="mian-bottom fadeInUp">
-        <div>
-          <div style="font-size: 3.125rem">使命愿景</div>
-          <div style="font-size: 1.5625rem; color: #808080">
-            致力可视化系统设计 三维虚拟仿真开发
-          </div>
-        </div>
-        <div class="mian-data">
-          <div class="data">
-            <div class="data-icon">
-              <img src="@/assets/images/main/企业愿景.png" alt="" />
-            </div>
-            <div class="data-text">
-              <div style="font-size: 1.875rem; color: #ffffff">企业愿景</div>
-              <div style="font-size: .875rem; color: #4d4d4d">
-                Enterprise vision
-              </div>
-              <div style="margin-top: 2.125rem">运用专业的可视化系统</div>
-              <div>为人们实现传统拍摄无法实现</div>
-              <div>的相应场景和事件</div>
-            </div>
-          </div>
-          <div class="data">
-            <div class="data-icon">
-              <img src="@/assets/images/main/企业使命.png" alt="" />
-            </div>
-            <div class="data-text">
-              <div style="font-size: 1.875rem; color: #ffffff">企业使命</div>
-              <div style="font-size: .875rem; color: #4d4d4d">
-                Enterprise mission
-              </div>
-              <div style="margin-top: 2.125rem">以技术实力为支撑</div>
-              <div>以用户需求为导向</div>
-              <div>以技术创新为根本</div>
-            </div>
-          </div>
-          <div class="data">
-            <div class="data-icon">
-              <img src="@/assets/images/main/核心.png" alt="" />
-            </div>
-            <div class="data-text">
-              <div style="font-size: 1.875rem; color: #ffffff">核心价值</div>
-              <div style="font-size: .875rem; color: #4d4d4d">Core value</div>
-              <div style="margin-top: 2.875rem">做正直守信的人</div>
-              <div>做对社会有价值的事</div>
-            </div>
-          </div>
-          <div class="data">
-            <div class="data-icon">
-              <img src="@/assets/images/main/定位.png" alt="" />
-            </div>
-            <div class="data-text">
-              <div style="font-size: 1.875rem; color: #ffffff">战略定位</div>
-              <div style="font-size: .875rem; color: #4d4d4d">
-                Strategic positioning
-              </div>
-              <div style="margin-top: 2.875rem">致力可视化系统设计</div>
-              <div>三维虚拟仿真开发</div>
-            </div>
-          </div>
-        </div>
-    
-      </div>
+    </div>
   </div>
 </template>
 <style scoped lang="less">
 .site {
   width: 101.25rem;
   margin: 0 auto;
-  color: #808080; 
-  font-size: .8125rem;
+  color: #808080;
+  font-size: 0.8125rem;
   margin-top: 7.25rem;
 }
 // .box {
@@ -111,9 +103,9 @@ iframe {
   color: #fff;
   text-align: center;
   line-height: 3.125rem;
-  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
-  border-radius: .625rem;
-  font-size: .875rem;
+  box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
@@ -162,7 +154,7 @@ iframe {
       height: 13.85rem;
       right: 4.8rem;
       animation: lightAnimate 5s linear infinite alternate;
-      opacity: .5;
+      opacity: 0.5;
     }
     .img {
       height: 100%;
@@ -176,6 +168,11 @@ iframe {
   margin: auto;
   margin-top: 6.5625rem;
   text-align: center;
+  .split-line {
+    height: 1px;
+    margin: 5rem;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+  }
 }
 .mian-data {
   /* background-color: seagreen; */
@@ -216,10 +213,10 @@ iframe {
 .img {
   height: 26.9375rem;
   width: 43.4375rem;
-  border: .3125rem solid #4d4d4d;
+  border: 0.3125rem solid #4d4d4d;
   border-radius: 0;
   overflow: hidden;
-  img{
+  img {
     width: 100%;
     display: block;
     margin: 0 auto;
@@ -229,7 +226,7 @@ iframe {
   width: 43.4375rem;
   height: 26.9375rem;
   background: #262626;
-  border: .3125rem solid #4d4d4d;
+  border: 0.3125rem solid #4d4d4d;
   padding: 2.5rem;
   text-align: left;
   .data-title {
@@ -253,7 +250,7 @@ iframe {
     margin-top: 3.125rem;
     line-height: 1.875rem;
     color: #808080;
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }
 @keyframes lightAnimate {
@@ -261,7 +258,7 @@ iframe {
     top: 0;
   }
   100% {
-    top: 58%
+    top: 58%;
   }
 }
 </style>
@@ -279,7 +276,7 @@ export default {
   mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     console.log(document.documentElement.scrollTop);
-    // this.getmx(); 
+    // this.getmx();
   },
   methods: {
     handlemore() {
