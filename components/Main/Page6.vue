@@ -30,7 +30,7 @@
             武钢股份拥有当今世界先进水平的炼铁、炼钢、轧钢等完整的钢铁生产工艺流程，钢材产品共计7大类、500多个品种。与我司合作了武钢铁产线、武钢热轧产厂等项目。
           </div>
           <!-- <el-button class="btn-normal" style="margin-top:3.5rem"><i class="el-icon-d-arrow-right mr-6"></i>联系我们获取案例</el-button> -->
-          <div class="button" @click="handlemore">
+          <div class="button" style="margin-top:3.5rem" @click="handlemore">
             <i class="el-icon-d-arrow-left mr-6"></i>联系我们获取案例
           </div>
         </div>

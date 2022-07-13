@@ -76,12 +76,12 @@
             </p>
           </div>
           <div class="echarts fadeInUp">
-            <Chart height="16rem" :chartOption="option()" class="echart"></Chart>
-            <Chart height="16rem" :chartOption="option2()" class="echart2"></Chart>
+            <Chart height="18rem" :chartOption="option()" class="echart"></Chart>
+            <Chart height="18rem" :chartOption="option2()" class="echart2"></Chart>
           </div>
           <div class="echarts fadeInUp">
-            <Chart height="16rem" :chartOption="option3()" class="echart"></Chart>
-            <Chart height="16rem" :chartOption="option4()" class="echart2"></Chart>
+            <Chart height="18rem" :chartOption="option3()" class="echart"></Chart>
+            <Chart height="18rem" :chartOption="option4()" class="echart2"></Chart>
           </div>
         </MCard>
         <MCard title="合作伙伴">
@@ -767,24 +767,24 @@ export default {
         color: ["rgba(225,225,225,0.3)"],
         radar: {
           center: ["50%", "50%"],
-          radius: "60%",
+          radius: "65%",
           triggerEvent: true,
           splitNumber: 6,
           name: {
             rich: {
               a: {
                 color: "rgba(225,225,225,0.3)",
-                fontSize: 12,
-                lineHeight: 20,
+                fontSize: 10,
+                lineHeight: 16,
               },
               b: {
                 color: "rgba(225,225,225,0.3)",
-                fontSize: 12,
+                fontSize: 10,
                 align: "right",
               },
               d: {
                 color: "rgba(225,225,225,0.3)",
-                fontSize: 12,
+                fontSize: 10,
                 align: "right",
               },
               triggerEvent: true,
@@ -909,7 +909,7 @@ export default {
           y: 0,
         },
         buildPath: function (ctx, shape) {
-          const uwidth = 13
+          const uwidth = 8
           // 会canvas的应该都能看得懂，shape是从custom传入的
           const xAxisPoint = shape.xAxisPoint;
           const c0 = [shape.x, shape.y];
@@ -934,8 +934,8 @@ export default {
           const xAxisPoint = shape.xAxisPoint;
           const c1 = [shape.x, shape.y];
           const c2 = [xAxisPoint[0], xAxisPoint[1]];
-          const c3 = [xAxisPoint[0] + 18, xAxisPoint[1] - 9];
-          const c4 = [shape.x + 18, shape.y - 9];
+          const c3 = [xAxisPoint[0] + 13, xAxisPoint[1] - 4];
+          const c4 = [shape.x + 13, shape.y - 4];
           ctx
             .moveTo(c1[0], c1[1])
             .lineTo(c2[0], c2[1])
@@ -951,11 +951,11 @@ export default {
           y: 0,
         },
         buildPath: function (ctx, shape) {
-          const uwidth = 13
+          const uwidth = 8
           const c1 = [shape.x, shape.y];
-          const c2 = [shape.x + 18, shape.y - 9];
-          const c3 = [shape.x + 5, shape.y - 22];
-          const c4 = [shape.x - 13, shape.y - 13];
+          const c2 = [shape.x + 13, shape.y - 4];
+          const c3 = [shape.x + 4, shape.y - 12];
+          const c4 = [shape.x - uwidth, shape.y - uwidth];
           ctx
             .moveTo(c1[0], c1[1])
             .lineTo(c2[0], c2[1])
@@ -986,7 +986,7 @@ export default {
         grid: {
           left: 30,
           right: 0,
-          bottom: 20,
+          bottom: 10,
           top: 20,
           // containLabel: true,
         },
