@@ -12,7 +12,7 @@
   background-size: 100% auto;
   &>.title {
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 6.9rem;
     font-family: Source Han Sans SC;
     font-weight: 500;
     margin-bottom: 4rem;

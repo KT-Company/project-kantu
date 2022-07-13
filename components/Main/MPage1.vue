@@ -43,7 +43,7 @@
 }
 
 .swiper-pagination {
-  font-size: 0.9375rem;
+  font-size: 3.6rem;
   font-family: Mypang;
   font-weight: 400;
   color: #b3b3b3;
@@ -148,7 +148,7 @@
 
       .title {
         font-family: DigitalThick;
-        font-size: 4.5rem;
+        font-size: 6rem;
       }
 
       .title-next {
@@ -200,7 +200,7 @@
       position: absolute;
       bottom: 3rem;
       left: 4rem;
-      font-size: 0.6rem;
+      font-size: 2.4rem;
       letter-spacing: 2px;
       color: rgba(153, 153, 153, 1);
     }

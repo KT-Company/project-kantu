@@ -7,8 +7,8 @@
         </div>
         <MCard title="数字孪生">
           <div class="h-20 fadeInUp text-center">
-            <span class="text-2xl">四要素</span>
-            <span class="color-subtext text-sm">(设计、模型、交互、数据)</span>
+            <span style="font-size: 6rem">四要素</span>
+            <span class="color-subtext" style="font-size: 5rem">(设计、模型、交互、数据)</span>
           </div>
           <div class="box-page2-display mt-20">
             <div class="item" v-for="(item, index) in dataDisplay" :key="index">
@@ -26,7 +26,7 @@
         <MCard title="GIS - 地理信息系统">
           <div class="text-center">
             <div style="padding: 0 9rem; margin-bottom: 9rem">
-              <span class="color-subtext text-sm">
+              <span class="color-subtext"  style="font-size: 5rem">
                 GIS(地理信息系统):广泛运用于物联网、智慧城市等，与位置相关的应用关联。通过WebGIS的方式呈现地理信息，地图可视化便是GIS与web前端技术相结合的重要方向。瞰图科技充分运用GIS技术，在工业制造、智慧园区、智慧工地、智慧能源、航空航天等项目中作为开发基础。
               </span>
             </div>
@@ -63,7 +63,7 @@
             style="
               background: rgba(26, 26, 26, 0.5);
               color: rgba(179, 179, 179, 1);
-              font-size: 2rem;
+              font-size: 5rem;
               box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);
             "
           >
@@ -235,8 +235,9 @@
     flex-wrap: wrap;
     align-items: stretch;
     .images {
-      width: 22rem;
+      width: 26rem;
       height: 9rem;
+      padding: 0 2rem;
       // background-color: #fff;
       background-color: rgba(77, 77, 77, 0.1);
       border-radius: 0.625rem;
@@ -260,8 +261,9 @@
     flex-wrap: wrap;
     align-items: stretch;
     .images {
-      width: 22rem;
+      width: 26rem;
       height: 9rem;
+      padding: 0 2rem;
       // background-color: #fff;
       background-color: rgba(77, 77, 77, 0.1);
       border-radius: 0.625rem;
@@ -478,7 +480,7 @@ export default {
             name: "",
             type: "bar",
             roundCap: true,
-            barWidth: 30,
+            barWidth: 20,
             showBackground: true,
             backgroundStyle: {
               color: "rgba(66, 66, 66, .3)",
@@ -907,11 +909,12 @@ export default {
           y: 0,
         },
         buildPath: function (ctx, shape) {
+          const uwidth = 13
           // 会canvas的应该都能看得懂，shape是从custom传入的
           const xAxisPoint = shape.xAxisPoint;
           const c0 = [shape.x, shape.y];
-          const c1 = [shape.x - 13, shape.y - 13];
-          const c2 = [xAxisPoint[0] - 13, xAxisPoint[1] - 13];
+          const c1 = [shape.x - uwidth, shape.y - uwidth];
+          const c2 = [xAxisPoint[0] - uwidth, xAxisPoint[1] - uwidth];
           const c3 = [xAxisPoint[0], xAxisPoint[1]];
           ctx
             .moveTo(c0[0], c0[1])
@@ -948,6 +951,7 @@ export default {
           y: 0,
         },
         buildPath: function (ctx, shape) {
+          const uwidth = 13
           const c1 = [shape.x, shape.y];
           const c2 = [shape.x + 18, shape.y - 9];
           const c3 = [shape.x + 5, shape.y - 22];

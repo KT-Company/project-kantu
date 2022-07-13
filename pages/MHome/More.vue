@@ -1,7 +1,7 @@
 <template>
   <Card class="flex items-center">
     <div style="flex: 1">
-      <div style="color: #808080; font-size: 0.8125rem; margin: 9rem 0 6rem 0">
+      <div style="color: #808080; font-size: 4.6rem; margin: 9rem 0 6rem 0">
         你的位置：首页 > <span style="color: #fff">产品业务</span>
       </div>
       <div class="flex justify-center main">
@@ -54,20 +54,20 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 5.3rem;
   font-family: Source Han Sans SC;
   font-weight: 500;
   color: #ffffff;
 
   span {
-    font-size: 1.125rem;
+    font-size: 3rem;
     color: #b3b3b3;
   }
 }
 
 ul {
   margin-top: 3.125rem;
-  font-size: 0.875rem;
+  font-size: 3rem;
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #b3b3b3;
@@ -86,14 +86,14 @@ ul {
     border-radius: 21.88px;
     display: flex;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 3rem;
     margin-bottom: 19px;
-    & + div{
+    & + div {
       margin-left: 1rem;
     }
     img {
-      width: 19px;
-      height: 23px;
+      width: 4rem;
+      height: 4rem;
       margin-right: 2rem;
     }
   }
@@ -122,7 +122,7 @@ ul {
   text-align: center;
   box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
   border-radius: 1rem;
-  font-size: 0.875rem;
+  font-size: 3rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;

@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="nav">
-        <div style="color: #808080; font-size: 0.8125rem">
+        <div style="color: #808080; font-size: 4.6rem">
           你的位置：首页 > <span style="color: #fff">多元案例</span>
         </div>
         <!-- <ul>
@@ -129,7 +129,7 @@
 .top {
   // width: 78.125rem;
   // height: 12.5rem;
-  padding: 1rem 0;
+  padding: 2rem 0;
   background-color: #1a1a1a;
   margin: auto;
   margin-top: 7.25rem;
@@ -143,14 +143,13 @@
     position: relative;
     flex: 1;
     .top-num {
-      display: inline-block;
-      font-size: 3.5rem;
+      font-size: 8rem;
       font-family: Source Han Sans SC;
       font-weight: 800;
       color: #ffffff;
       position: relative;
       .topjia {
-        font-size: 0.5rem;
+        font-size: 3rem;
         display: inline;
         vertical-align: top;
         // position: absolute;
@@ -159,7 +158,7 @@
       }
     }
     .top-text {
-      font-size: 1.125rem;
+      font-size: 3rem;
       font-family: Source Han Sans SC;
       font-weight: 400;
       color: #b3b3b3;
@@ -217,7 +216,7 @@
       flex: 1;
       text-align: center;
       .left-title {
-        font-size: 1.88rem;
+        font-size: 4.6rem;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #ffffff;
@@ -260,8 +259,8 @@
       }
     }
     .data-right {
-      width: 80rem;
-      height: 45rem;
+      width: 96rem;
+      height: 54rem;
       // background: #4d4d4d;
       transition: all 0.36s;
       position: relative;
@@ -327,9 +326,9 @@
   }
 }
 /deep/ .number {
-  width: 3.125rem;
-  height: 3.125rem;
-  line-height: 3.125rem;
+  width: 10rem;
+  height: 10rem;
+  line-height: 10rem;
   border-radius: 0;
   background-color: #333333;
 }

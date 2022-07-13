@@ -1,11 +1,13 @@
 <template>
   <div class="box">
-    <div class="site">你的位置：首页 > <span style="color: #fff">了解瞰图</span></div>
+    <div class="site" style="font-size: 4.6rem">
+      你的位置：首页 > <span style="color: #fff">了解瞰图</span>
+    </div>
     <div class="mian fadeInUp">
       <div class="mian-left">
-        <div class="font-bold" style="font-size: 5.375rem">About</div>
-        <div style="font-size: 1.875rem">重庆瞰图科技有限公司</div>
-        <div class="text line-height-1-5" style="font-size: 0.875rem">
+        <div class="font-bold" style="font-size: 8rem">About</div>
+        <div style="font-size: 4.45rem">重庆瞰图科技有限公司</div>
+        <div class="text line-height-1-5" style="font-size: 3rem">
           <div>
             重庆瞰图科技有限公司是一家数字孪生平台公司，国产自主研发三维引擎的技术领先者；致力于可视化系统设计、三维虚拟仿真开发，完善国产化自主研发三维引擎，打破国外3A工业设计软件的垄断。
           </div>
@@ -23,8 +25,8 @@
     </div>
     <div class="mian-bottom fadeInUp">
       <div>
-        <div style="font-size: 3.125rem">使命愿景</div>
-        <div style="font-size: 1.5625rem; color: #808080">
+        <div style="font-size: 7.7rem">使命愿景</div>
+        <div style="font-size: 4.6rem; color: #808080">
           致力可视化系统设计 三维虚拟仿真开发
         </div>
       </div>
@@ -35,9 +37,9 @@
             <img src="@/assets/images/main/企业愿景.png" alt="" />
           </div>
           <div class="data-text">
-            <div style="font-size: 1.875rem; color: #ffffff">企业愿景</div>
-            <div style="font-size: 0.875rem; color: #4d4d4d">Enterprise vision</div>
-            <div style="margin-top: 2.125rem">运用专业的可视化系统</div>
+            <div style="font-size: 4rem; color: #ffffff">企业愿景</div>
+            <div style="font-size: 3rem; color: #4d4d4d">Enterprise vision</div>
+            <div style="margin-top: 3rem">运用专业的可视化系统</div>
             <div>为人们实现传统拍摄无法实现</div>
             <div>的相应场景和事件</div>
           </div>
@@ -47,8 +49,8 @@
             <img src="@/assets/images/main/企业使命.png" alt="" />
           </div>
           <div class="data-text">
-            <div style="font-size: 1.875rem; color: #ffffff">企业使命</div>
-            <div style="font-size: 0.875rem; color: #4d4d4d">Enterprise mission</div>
+            <div style="font-size: 4rem; color: #ffffff">企业使命</div>
+            <div style="font-size: 3rem; color: #4d4d4d">Enterprise mission</div>
             <div style="margin-top: 2.125rem">以技术实力为支撑</div>
             <div>以用户需求为导向</div>
             <div>以技术创新为根本</div>
@@ -59,8 +61,8 @@
             <img src="@/assets/images/main/核心.png" alt="" />
           </div>
           <div class="data-text">
-            <div style="font-size: 1.875rem; color: #ffffff">核心价值</div>
-            <div style="font-size: 0.875rem; color: #4d4d4d">Core value</div>
+            <div style="font-size: 4rem; color: #ffffff">核心价值</div>
+            <div style="font-size: 3rem; color: #4d4d4d">Core value</div>
             <div style="margin-top: 2.875rem">做正直守信的人</div>
             <div>做对社会有价值的事</div>
           </div>
@@ -70,8 +72,8 @@
             <img src="@/assets/images/main/定位.png" alt="" />
           </div>
           <div class="data-text">
-            <div style="font-size: 1.875rem; color: #ffffff">战略定位</div>
-            <div style="font-size: 0.875rem; color: #4d4d4d">Strategic positioning</div>
+            <div style="font-size: 4rem; color: #ffffff">战略定位</div>
+            <div style="font-size: 3rem; color: #4d4d4d">Strategic positioning</div>
             <div style="margin-top: 2.875rem">致力可视化系统设计</div>
             <div>三维虚拟仿真开发</div>
           </div>
@@ -85,7 +87,7 @@
   width: 101.25rem;
   margin: 0 auto;
   color: #808080;
-  font-size: 0.8125rem;
+  font-size: 3rem;
   margin-top: 7.25rem;
 }
 // .box {
@@ -105,7 +107,7 @@ iframe {
   line-height: 3.125rem;
   box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
   border-radius: 0.625rem;
-  font-size: 0.875rem;
+  font-size: 3rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
@@ -188,8 +190,8 @@ iframe {
   }
 }
 .data-icon {
-  width: 4.0625rem;
-  height: 4.0625rem;
+  width: 12rem;
+  height: 12rem;
   // background-color: #4d4d4d;
   margin: auto;
   img {
@@ -198,8 +200,8 @@ iframe {
   }
 }
 .data-text {
-  margin-top: 1.25rem;
-  font-size: 1.125rem;
+  margin-top: 3rem;
+  font-size: 3rem;
   color: #808080;
 }
 .mian-img {
@@ -230,7 +232,7 @@ iframe {
   padding: 2.5rem;
   text-align: left;
   .data-title {
-    font-size: 1.875rem;
+    font-size: 3rem;
     font-family: Source Han Sans SC;
     font-weight: bold;
     color: #fff;

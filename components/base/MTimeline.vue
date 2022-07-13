@@ -22,7 +22,7 @@
       <div
         class="active-pointer"
         :style="{
-          left: 'calc(50% - 0.2rem)',
+          left: 'calc(50% - 3px)',
           top: Math.floor(activeIndex / 2) * 17 + 8.5 + 'rem',
         }"
       ></div>
