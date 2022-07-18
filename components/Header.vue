@@ -109,7 +109,7 @@ export default {
   created() {
     console.log(this.$route)
     switch(this.$route.path) {
-      case '/mhome/main':
+      case '/home/main':
         this.activeIndex = "1";
         break;
       case '/home/more':

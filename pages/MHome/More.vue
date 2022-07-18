@@ -4,6 +4,92 @@
       <div style="color: #808080; font-size: 4.6rem; margin: 9rem 0 6rem 0">
         你的位置：首页 > <span style="color: #fff">产品业务</span>
       </div>
+      <div class="MorePageItem">
+        <div class="flex justify-center main">
+          <div class="fadeInUp text-center">
+            <div class="title">智慧园区<span style="margin-left: 5px"></span></div>
+            <ul>
+              <li class="mb-8">
+                (运用大数据、物联网、信息管理等技术，打造智慧互联的园区。)
+              </li>
+              <li>重庆瞰图科技有限公司</li>
+              <li>
+                数字孪生园区平台，为泛园区行业提供数字化转型新动力，覆盖初期规划、营销展示、建设监管、物业运营的园区全生命周期。
+              </li>
+              <li>支持模型、看板数据业务绑定。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16">
+          <img src="@/assets/images/main/zhyq.jpg" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="MorePageItem">
+        <div class="flex justify-center main">
+          <div class="fadeInUp text-center">
+            <div class="title">工业制造</div>
+            <ul>
+              <li class="mb-8">(监测工厂产线，展示mes信息； 提高产能效益)</li>
+              <li>
+                工业制造是现代工厂信息化发展晋级的阶段性成果，是建立在数字化工厂的基础上的升级，利用物联网和设备监控等技术加强信息管理和服务能力，集智能化设备、技术、系统为一体，实现高效、高控生产，减少人工干预，合理规划/优化生产进度等环节，构建智能高效、节能环保的智慧工厂
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16">
+          <img src="@/assets/images/main/gyzz.jpg" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="MorePageItem">
+        <div class="flex justify-center main">
+          <div class="fadeInUp text-center">
+            <div class="title">智慧工地</div>
+            <ul>
+              <li class="mb-8">(协同工地建设管理，集成物联网技术监管)</li>
+              <li>
+                以工地大模型
+                、工地大数据、工地大协同、应用碎片化为标准，积极布局钢筋翻样、精细管理、材料管理等成熟领域，开拓三维工地、模架产品、劳务验收、云资料等孵化产品，并延伸到智能安全帽、工地平板等施工业务硬件领域。实现工地联合监管。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16">
+          <img src="@/assets/images/main/zhgd.jpg" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="MorePageItem">
+        <div class="flex justify-center main">
+          <div class="fadeInUp text-center">
+            <div class="title">智慧能源</div>
+            <ul>
+              <li class="mb-8">(从原料到成品全链展示，提升 各环节安全系数)</li>
+              <li>
+                智慧能源基于云计算、移动互联网、大数据等先进技术,通过采集各类能耗监测点的用能数据,经过专业的数据分析处理形成对能耗的分类、分项、分时、分区域的统计分析,并通过三维可视化技术,让企业实现对能源使用的全面数字化和可视化,直观发现用能改进优化点,进而帮助企业优化能源使用,降低企业综合能耗,达到节能增效的目的。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16">
+          <img src="@/assets/images/main/zhny.jpg" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="MorePageItem">
+        <div class="flex justify-center main">
+          <div class="fadeInUp text-center">
+            <div class="title">航天航空</div>
+            <ul>
+              <li class="mb-8">(同步机场业态信息，有序管控 航班流量)</li>
+              <li>
+                通过数字孪生还原机场业态，虚拟规划、仿真航班出入境流量状态。
+                通过IOT设备查看实时工作画面，指挥中心高效、有序管理。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16">
+          <img src="@/assets/images/main/hthk.jpg" alt="" srcset="" />
+        </div>
+      </div>
       <div class="flex justify-center main">
         <div class="fadeInUp text-center">
           <div class="title">
@@ -155,6 +241,9 @@ ul {
   opacity: 0.75;
   line-height: 18.75rem;
   margin: 0;
+}
+.MorePageItem {
+  margin-bottom: 12rem;
 }
 </style>
 <script>

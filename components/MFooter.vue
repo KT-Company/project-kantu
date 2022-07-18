@@ -1,41 +1,47 @@
 <template>
   <div>
-    <footer>
-      <div>
-        <div class="text-10xl co-tit"><span>C</span>ontact</div>
-        <div class="flex justify-between">
-          <div>
-            <div class="coll">联 系 我 们</div>
-            <div class="mian">
-              <div class="mian-left">
-                <div class="mian-conter">
-                  电话：023-86154556<br />
-                  手机(微信同号)：158 2628 9334
+    <div v-if="!fixed">
+      <footer>
+        <div>
+          <div class="text-10xl co-tit"><span>C</span>ontact</div>
+          <div class="flex justify-between">
+            <div>
+              <div class="coll">联 系 我 们</div>
+              <div class="mian">
+                <div class="mian-left">
+                  <div class="mian-conter">
+                    电话：023-86154556<br />
+                    手机(微信同号)：158 2628 9334
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="qr-code">
-        <div class="code-right">
-          <div class="code-img">
-            <img src="@/assets/images/main/二维码.png" alt="" />
+        <div class="qr-code">
+          <div class="code-right">
+            <div class="code-img">
+              <img src="@/assets/images/main/二维码.png" alt="" />
+            </div>
           </div>
         </div>
+      </footer>
+      <div class="beian">
+        重庆瞰图科技有限公司 © 版权所有 kantu3d.com
+        <span class="ml-10"> All Rights Reserved </span>
+        <a
+          href="https://beian.miit.gov.cn/#/Integrated/index"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          工信部备案：渝ICP 备 2021009290 号</a
+        >
       </div>
-    </footer>
-    <div class="beian">
-      重庆瞰图科技有限公司 © 版权所有 kantu3d.com
-      <span class="ml-10"> All Rights Reserved </span>
-      <a
-        href="https://beian.miit.gov.cn/#/Integrated/index"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        工信部备案：渝ICP 备 2021009290 号</a
-      >
     </div>
+      <div v-else class="footer-fixed flex justify-around" style="font-size：4rem">
+        <span>联系我们</span>
+        <span>手机(微信同号)：158 2628 9334</span>
+      </div>
   </div>
 </template>
 <style lang="less" scoped>
@@ -150,6 +156,12 @@ footer {
   border: transparent;
   border-bottom: 0.0625rem solid #262626;
 }
+.footer-fixed {
+  padding: 0 5rem;
+  & > span {
+    font-size: 4rem;
+  }
+}
 </style>
 <script>
 import request from "@/util/request";
@@ -182,6 +194,12 @@ export default {
         ],
       },
     };
+  },
+  props: {
+    fixed: {
+      typeo: Boolean,
+      default: false,
+    },
   },
   created() {},
   methods: {
