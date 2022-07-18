@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="nav">
-        <div style="color: #808080; font-size: .8125rem">
+        <div style="color: #808080; font-size: 0.8125rem">
           你的位置：首页 > <span style="color: #fff">多元案例</span>
         </div>
         <ul>
@@ -72,7 +72,7 @@
                 @play="handlePlay(index)"
                 style="width: 100%; height: 100%; object-fit: fill"
               ></video> -->
-              <img :src="item.img" alt="">
+              <img :src="item.img" alt="" />
             </div>
           </div>
         </div>
@@ -90,14 +90,17 @@
           >
           </el-pagination>
         </div>
-        <div class="mian-data2" v-show="!isClassic" style="margin-left: -5rem;">
-          <kt-video class="video_wrapper-two"
+        <div class="mian-data2" v-show="!isClassic" style="margin-left: -5rem">
+          <kt-video
+            class="video_wrapper-two"
             v-for="(item, index) in mianlist2.slice(
               (currentPage2 - 1) * pageSize2,
               currentPage2 * pageSize2
             )"
             :isFirst="index == 0 && currentPage2 == 1"
-            :key="item.title" :data="item"></kt-video>
+            :key="item.title"
+            :data="item"
+          ></kt-video>
         </div>
         <div class="bottom" v-show="!isClassic">
           <el-pagination
@@ -129,7 +132,7 @@
   margin: auto;
   margin-top: 7.25rem;
   // border: .0625rem solid #cccccc;
-  box-shadow: 0rem 0rem 1.1875rem .0625rem rgba(255, 255, 255, 0.38);
+  box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -140,7 +143,7 @@
     position: relative;
   }
   .top2 {
-    width: .0625rem;
+    width: 0.0625rem;
     height: 4.375rem;
     background: #4d4d4d;
   }
@@ -193,23 +196,32 @@
 }
 .nav {
   width: 78.1875rem;
-  height: .9375rem;
+  height: 0.9375rem;
   margin: auto;
   margin-top: 9.25rem;
   display: flex;
   justify-content: space-between;
   ul {
-    width: 7.5rem;
-    height: .875rem;
-    font-size: .8125rem;
+    // width: 7.5rem;
+    height: 2rem;
+    font-size: 0.8125rem;
     font-family: Source Han Sans SC;
     font-weight: 500;
     color: #808080;
-    line-height: 1.4375rem;
+    // line-height: 1.4375rem;
     display: flex;
     justify-content: space-between;
     // justify-content: flex-end;
-    cursor: pointer;
+    li {
+      cursor: pointer;
+    // width: 7.5rem;
+      display: inline-block;
+      background: #1a1a1a;
+      // color: #fff;
+      text-align: center;
+      padding: 0.5rem 1rem ;
+      box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
+    }
     .active {
       color: #fff;
     }
@@ -243,7 +255,7 @@
         transition: all 0.36s;
       }
       .left-text {
-        font-size: .875rem;
+        font-size: 0.875rem;
         font-family: Source Han Sans SC;
         font-weight: 400;
         color: #b2b2b2;
@@ -252,7 +264,7 @@
       }
       .xian {
         width: 0;
-        height: .125rem;
+        height: 0.125rem;
         background-color: #fff;
         margin-left: 0;
         margin-top: 2.375rem;
@@ -290,29 +302,29 @@
     width: 38.75rem;
   }
   .mian-data:hover .data-right {
-    transform: scale(.9);
+    transform: scale(0.9);
     // background: #4d4d4d;
   }
   .mian-data:hover .left-title {
-    transform: translateY(.3125rem);
+    transform: translateY(0.3125rem);
   }
   .mian-data:hover .left-text {
     transform: translateY(-0.3125rem);
   }
   .mian-data:hover .left-more {
-    transform: translateY(.9375rem);
+    transform: translateY(0.9375rem);
   }
 }
-  .mian-data2 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 1.25rem;
-    align-items: center;
-    .video_wrapper-two {
-      margin-left: 5rem;
-      margin-top: 3.125rem;
-    }
-  } 
+.mian-data2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  align-items: center;
+  .video_wrapper-two {
+    margin-left: 5rem;
+    margin-top: 3.125rem;
+  }
+}
 .bottom {
   margin: auto;
   margin-top: 7.5rem;
@@ -340,7 +352,7 @@
     cursor: pointer;
     z-index: 2;
   }
-  img{
+  img {
     width: 100%;
     height: 100%;
   }
@@ -376,7 +388,7 @@ export default {
   components: {
     Page1,
     Card,
-    KtVideo
+    KtVideo,
   },
   data() {
     return {
@@ -420,10 +432,10 @@ export default {
 
     handlenav(index) {
       this.navli = index;
-      if(index == 1) {
-        this.isClassic = false
-      }else {
-        this.isClassic = true
+      if (index == 1) {
+        this.isClassic = false;
+      } else {
+        this.isClassic = true;
       }
     },
     handleSizeChange(val) {
@@ -446,14 +458,17 @@ export default {
       this.currentPage2 = val;
     },
     getdemolist() {
-      Promise.all([request.get({
-        url: "/getDyal",
-      }),request.get({
-        url: "/getQtal",
-      })]).then(([data1,data2]) => {
-        this.mianlist = data1.data.data
-        this.mianlist2 = data2.data.data
-      })
+      Promise.all([
+        request.get({
+          url: "/getDyal",
+        }),
+        request.get({
+          url: "/getQtal",
+        }),
+      ]).then(([data1, data2]) => {
+        this.mianlist = data1.data.data;
+        this.mianlist2 = data2.data.data;
+      });
     },
   },
 };

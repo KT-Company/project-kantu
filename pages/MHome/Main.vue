@@ -186,7 +186,7 @@
   text-align: center;
   box-shadow: 0rem 0rem 1.1875rem 0.0625rem rgba(255, 255, 255, 0.38);
   border-radius: 1rem;
-  font-size: 0.875rem;
+  font-size: 3rem;
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
