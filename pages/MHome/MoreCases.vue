@@ -326,7 +326,7 @@ export default {
       currentPage: 1, // 当前页码
       // total: 20, // 总条数
       pageSize: 4, // 每页的数据条数
-      pageSize2: 6, // 每页的数据条数
+      pageSize2: 8, // 每页的数据条数
     };
   },
   created() {

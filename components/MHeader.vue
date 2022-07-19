@@ -9,6 +9,7 @@
       <nav class="nav flex-1 flex justify-between">
         <el-menu
           class="flex-1 flex justify-around"
+          id="nav-bar"
           :default-active="activeIndex"
           mode="horizontal"
           @select="handleSelect"
@@ -28,7 +29,9 @@
               <nuxt-link to="/mhome/cases"><div class="link">多元案例</div></nuxt-link>
             </el-menu-item>
             <el-menu-item index="4">
-              <nuxt-link to="/mhome/morecases"><div class="link">更多案例</div></nuxt-link>
+              <nuxt-link to="/mhome/morecases">
+                <div class="link">更多案例</div>
+              </nuxt-link>
             </el-menu-item>
           </el-submenu>
           <!-- <el-menu-item index="4">
@@ -114,9 +117,9 @@
 }
 </style>
 <style>
-.el-menu{
+.el-menu {
   min-width: 36rem;
-  background: rgb(26,26,26) !important;
+  background: rgb(26, 26, 26) !important;
 }
 </style>
 <script>
@@ -145,6 +148,9 @@ export default {
       case "/mhome/cases":
         this.activeIndex = "3";
         break;
+      case "/mhome/morecases":
+        this.activeIndex = "3";
+        break;
       case "/mhome/news":
         this.activeIndex = "4";
         break;
@@ -154,7 +160,9 @@ export default {
     }
   },
   methods: {
-    handleSelect(key, keyPath) {},
+    handleSelect(key, keyPath) {
+      // 移动端选择后不会自动关闭下拉框的问题
+    },
   },
   mounted() {
     // console.log(window.scrollY)
