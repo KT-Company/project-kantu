@@ -22,9 +22,15 @@
           <el-menu-item index="2">
             <nuxt-link to="/mhome/more"><div class="link">产品业务</div></nuxt-link>
           </el-menu-item>
-          <el-menu-item index="3">
-            <nuxt-link to="/mhome/cases"><div class="link">多元案例</div></nuxt-link>
-          </el-menu-item>
+          <el-submenu index="2">
+            <template slot="title">案例展示</template>
+            <el-menu-item index="3">
+              <nuxt-link to="/mhome/cases"><div class="link">多元案例</div></nuxt-link>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <nuxt-link to="/mhome/morecases"><div class="link">更多案例</div></nuxt-link>
+            </el-menu-item>
+          </el-submenu>
           <!-- <el-menu-item index="4">
             <nuxt-link to="/home/news"><div class="link">瞰图资讯</div></nuxt-link>
           </el-menu-item> -->
@@ -74,17 +80,30 @@
   padding: 0 5rem;
   // margin-right: 150px;
 }
-.el-menu-item {
-  padding: 0;
-  line-height: 1;
-  height: auto;
-}
-.link {
+.el-menu-item,
+.el-submenu {
+  height: 8rem;
+  line-height: 6rem;
   padding: 1.2rem 2.5rem;
   text-align: center;
   border-radius: 0.5rem;
-  line-height: 1;
   box-shadow: 0 0 5px #fff;
+}
+/deep/ .el-submenu {
+  padding: 0;
+  & > .el-submenu__title {
+    height: 100%;
+    line-height: 8rem;
+    border: none !important;
+    // background: transparent !important;
+  }
+}
+.link {
+  // padding: 1.2rem 2.5rem;
+  // text-align: center;
+  // border-radius: 0.5rem;
+  // line-height: 1;
+  // box-shadow: 0 0 5px #fff;
 }
 .header {
   margin-bottom: 1rem;
@@ -92,6 +111,12 @@
 /deep/ el-menu-item:hover {
   background-color: transparent;
   color: #fff;
+}
+</style>
+<style>
+.el-menu{
+  min-width: 36rem;
+  background: rgb(26,26,26) !important;
 }
 </style>
 <script>

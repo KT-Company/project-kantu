@@ -64,5 +64,8 @@ export default {
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #ffffff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 </style>

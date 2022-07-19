@@ -28,7 +28,7 @@
       </div>
       <div class="nav">
         <div style="color: #808080; font-size: 4.6rem">
-          你的位置：首页 > <span style="color: #fff">多元案例</span>
+          你的位置：首页 > <span style="color: #fff">更多案例</span>
         </div>
         <!-- <ul>
           <li
@@ -42,61 +42,7 @@
         </ul> -->
       </div>
       <div :class="['mian', isdata ? '' : 'main']" ref="mian">
-        <div
-          class="mian-data"
-          v-show="isdata"
-          v-for="(item, index) in mianlist.slice(
-            (currentPage - 1) * pageSize,
-            currentPage * pageSize
-          )"
-          :key="index"
-        >
-          <div class="data-left">
-            <div class="left-title">{{ item.title }}</div>
-            <!-- <div class="left-text line-height-1-5">
-              {{ item.content }}
-            </div> -->
-            <div class="xian"></div>
-            <!-- <div class="left-more">MORE</div> -->
-          </div>
-          <div class="mt-4 mb-8 pl-8 pr-8 text-center" style="font-size: 3rem;color:#b3b3b3">{{ item.content }}</div>
-          <div class="data-right">
-            <a
-              :href="item.projectAddress"
-              v-if="item.projectAddress"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="left-more"
-            >
-              <div class="video_wrapper">
-                <!-- <video
-                class="video"
-                ref="video"
-                controls
-                :src="item.spurl"
-                @play="handlePlay(index)"
-                style="width: 100%; height: 100%; object-fit: fill"
-              ></video> -->
-                <img :src="item.img" alt="" />
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="bottom" v-show="isdata">
-          <el-pagination
-            background
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page="currentPage4"
-            :page-sizes="[1, 2, 3, 4]"
-            :page-size="pageSize"
-            layout="pager"
-            :total="mianlist.length"
-            style="margin-left: -1.125rem"
-          >
-          </el-pagination>
-        </div>
-        <!-- <div class="mian-data2" v-show="!isdata" style="margin-left: -5rem">
+        <div class="mian-data2" v-show="isdata">
           <kt-video
             class="video_wrapper-two"
             v-for="(item, index) in mianlist2.slice(
@@ -108,7 +54,7 @@
             :data="item"
           ></kt-video>
         </div>
-        <div class="bottom" v-show="!isdata">
+        <div class="bottom" v-show="isdata">
           <el-pagination
             background
             @size-change="handleSizeChange2"
@@ -121,7 +67,7 @@
             style="margin-left: -1.125rem"
           >
           </el-pagination>
-        </div> -->
+        </div>
       </div>
     </Card>
   </div>
@@ -164,7 +110,7 @@
       font-weight: 400;
       color: #b3b3b3;
     }
-    .line{
+    .line {
       display: inline-block;
       width: 1px;
       height: 60%;
@@ -287,11 +233,18 @@
 .mian-data2 {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1.25rem;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  gap: 3rem;
   .video_wrapper-two {
-    margin-left: 5rem;
-    margin-top: 3.125rem;
+    width: 50rem;
+    /deep/ .video-img {
+      width: 100%;
+      height: 36rem;
+    }
+    // margin-left: 5rem;
+    // margin-top: 3.125rem;
   }
 }
 .bottom {
@@ -326,6 +279,7 @@
     height: 100%;
   }
 }
+
 /deep/ .number {
   width: 10rem;
   height: 10rem;
@@ -372,7 +326,7 @@ export default {
       currentPage: 1, // 当前页码
       // total: 20, // 总条数
       pageSize: 4, // 每页的数据条数
-      pageSize2: 20, // 每页的数据条数
+      pageSize2: 6, // 每页的数据条数
     };
   },
   created() {

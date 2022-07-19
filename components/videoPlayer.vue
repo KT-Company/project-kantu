@@ -3,7 +3,7 @@
     <el-dialog
       class="video-layer"
       :title="''"
-      width="60%"
+      width="75%"
       center
       :modal-append-to-body="false"
       :visible.sync="centerDialogVisible"
