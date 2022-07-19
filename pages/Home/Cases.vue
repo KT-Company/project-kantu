@@ -36,35 +36,35 @@
         </ul>
       </div>
       <div :class="['mian', isClassic ? '' : 'main']" ref="mian">
-        <div
-          class="mian-data"
-          v-show="isClassic"
-          v-for="(item, index) in mianlist.slice(
-            (currentPage - 1) * pageSize,
-            currentPage * pageSize
-          )"
-          :key="index"
-        >
-          <div class="data-left">
-            <div class="left-title">{{ item.title }}</div>
-            <div class="left-text line-height-1-5">
-              {{ item.content }}
+        <div v-show="isClassic">
+          <div
+            class="mian-data"
+            v-for="(item, index) in mianlist.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )"
+            :key="item.id"
+          >
+            <div class="data-left">
+              <div class="left-title">{{ item.title }}</div>
+              <div class="left-text line-height-1-5">
+                {{ item.content }}
+              </div>
+              <div class="xian"></div>
+              <!-- <div class="left-more">MORE</div> -->
+              <a
+                :href="item.projectAddress"
+                v-if="item.projectAddress"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="left-more"
+              >
+                <img src="@/assets/images/main/连接.png" alt="" />查看项目</a
+              >
             </div>
-            <div class="xian"></div>
-            <!-- <div class="left-more">MORE</div> -->
-            <a
-              :href="item.projectAddress"
-              v-if="item.projectAddress"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="left-more"
-            >
-              <img src="@/assets/images/main/连接.png" alt="" />查看项目</a
-            >
-          </div>
-          <div class="data-right">
-            <div class="video_wrapper">
-              <!-- <video
+            <div class="data-right">
+              <div class="video_wrapper">
+                <!-- <video
                 class="video"
                 ref="video"
                 controls
@@ -72,49 +72,49 @@
                 @play="handlePlay(index)"
                 style="width: 100%; height: 100%; object-fit: fill"
               ></video> -->
-              <img :src="item.img" alt="" />
+                <img :src="item.img" alt="" />
+              </div>
             </div>
           </div>
+          <div class="bottom">
+            <el-pagination
+              background
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage"
+              :page-sizes="[1, 2, 3, 4]"
+              :page-size="pageSize"
+              layout="pager"
+              :total="mianlist.length"
+              style="margin-left: -1.125rem"
+            >
+            </el-pagination>
+          </div>
         </div>
-        <div class="bottom" v-show="isClassic">
-          <el-pagination
-            background
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page="currentPage"
-            :page-sizes="[1, 2, 3, 4]"
-            :page-size="pageSize"
-            layout="pager"
-            :total="mianlist.length"
-            style="margin-left: -1.125rem"
-          >
-          </el-pagination>
-        </div>
-        <div class="mian-data2" v-show="!isClassic" style="margin-left: -5rem">
-          <kt-video
-            class="video_wrapper-two"
-            v-for="(item, index) in mianlist2.slice(
-              (currentPage2 - 1) * pageSize2,
-              currentPage2 * pageSize2
-            )"
-            :isFirst="index == 0 && currentPage2 == 1"
-            :key="item.title"
-            :data="item"
-          ></kt-video>
-        </div>
-        <div class="bottom" v-show="!isClassic">
-          <el-pagination
-            background
-            @size-change="handleSizeChange2"
-            @current-change="handleCurrentChange2"
-            :current-page="currentPage2"
-            :page-sizes="[1, 2, 3, 4]"
-            :page-size="pageSize2"
-            layout="pager"
-            :total="mianlist2.length"
-            style="margin-left: -1.125rem"
-          >
-          </el-pagination>
+        <div v-show="!isClassic">
+          <div class="mian-data2" style="margin-left: -5rem">
+            <kt-video
+              class="video_wrapper-two"
+              v-for="(item, index) in videoList"
+              :isFirst="index == 0 && currentPage2 == 1"
+              :key="item.id"
+              :data="item"
+            ></kt-video>
+          </div>
+          <div class="bottom">
+            <el-pagination
+              background
+              @size-change="handleSizeChange2"
+              @current-change="handleCurrentChange2"
+              :current-page="currentPage2"
+              :page-sizes="[1, 2, 3, 4]"
+              :page-size="pageSize2"
+              layout="pager"
+              :total="mianlist2.length"
+              style="margin-left: -1.125rem"
+            >
+            </el-pagination>
+          </div>
         </div>
       </div>
     </Card>
@@ -214,12 +214,12 @@
     // justify-content: flex-end;
     li {
       cursor: pointer;
-    // width: 7.5rem;
+      // width: 7.5rem;
       display: inline-block;
       background: #1a1a1a;
       // color: #fff;
       text-align: center;
-      padding: 0.5rem 1rem ;
+      padding: 0.5rem 1rem;
       box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
     }
     .active {
@@ -406,13 +406,18 @@ export default {
       pageSize2: 20, // 每页的数据条数
     };
   },
+  computed: {
+    videoList() {
+      let list = this.mianlist2.slice((this.currentPage2 - 1) * this.pageSize2, this.currentPage2 * this.pageSize2)
+      return list;
+    },
+  },
   created() {
     // this.handlenav(this.navli);
     this.getdemolist();
   },
   mounted() {
     this.videoElement = document.getElementsByTagName("video"); // 获取页面上所有的video对象
-
     console.log(this.mianlist2);
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   },

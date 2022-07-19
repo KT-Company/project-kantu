@@ -17,7 +17,7 @@
           text-color="#808080"
         >
           <el-menu-item index="1">
-            <nuxt-link to="/mhome/main"><div class="link">首页</div></nuxt-link>
+            <nuxt-link to="/"><div class="link">首页</div></nuxt-link>
           </el-menu-item>
           <el-menu-item index="2">
             <nuxt-link to="/mhome/more"><div class="link">产品业务</div></nuxt-link>
