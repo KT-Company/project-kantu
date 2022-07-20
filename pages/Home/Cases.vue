@@ -219,8 +219,14 @@
       background: #1a1a1a;
       // color: #fff;
       text-align: center;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 2rem;
+      margin: 0 0.5rem;
       box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
+      &:hover{
+        background: #fff;
+        color: #1a1a1a;
+        transition:  all 0.5s ease-in;
+      }
     }
     .active {
       color: #fff;
@@ -392,7 +398,7 @@ export default {
   },
   data() {
     return {
-      navlist: ["经典案例", "更多"],
+      navlist: ["经典案例", "更多案例"],
       isClassic: true, //是否为经典案例
       isPlay: false,
       mianlist: [],

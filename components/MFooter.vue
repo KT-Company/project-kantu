@@ -38,10 +38,14 @@
         >
       </div>
     </div>
-      <div v-else class="footer-fixed flex justify-around" style="font-size：4rem">
-        <span>联系我们</span>
-        <span>手机(微信同号)：158 2628 9334</span>
-      </div>
+    <div v-else class="footer-fixed">
+      <a href="tel:15826289334">
+        <div class="flex justify-around pt-2 pb-2">
+          <span style="font-size: 4rem">联系我们</span>
+          <span style="font-size: 4rem">手机(微信同号)：158 2628 9334</span>
+        </div>
+      </a>
+    </div>
   </div>
 </template>
 <style lang="less" scoped>
