@@ -216,20 +216,23 @@
       cursor: pointer;
       // width: 7.5rem;
       display: inline-block;
-      background: #1a1a1a;
-      // color: #fff;
+      background-color: rgb(252, 127, 21);
+      // background: #1a1a1a;
+      color: #fff;
       text-align: center;
       padding: 0.5rem 2rem;
       margin: 0 0.5rem;
       box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
-      &:hover{
+      &:hover:not(.active){
         background: #fff;
         color: #1a1a1a;
         transition:  all 0.5s ease-in;
       }
     }
     .active {
-      color: #fff;
+      color: #808080;
+      cursor: default;
+      background-color: #1a1a1a;
     }
   }
 }

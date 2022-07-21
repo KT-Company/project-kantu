@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="mian-conter">
-          地址：重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707<br />电话：023-86154556<br/>手机(微信同号)：158 2628 9334
+          地址：重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707<br />电话：023-86154556<br/>手机(微信同号)：158 2608 9334
         </div>
         <div class="mian-right">
           <el-form
@@ -120,8 +120,8 @@ footer {
       }
     }
     .mian-conter {
-      width: 30rem;
-      font-size: 1rem;
+      width: 34rem;
+      font-size: 1.25rem;
       font-family: Source Han Sans SC;
       font-weight: 400;
       color: #999999;

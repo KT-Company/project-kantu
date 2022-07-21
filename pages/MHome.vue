@@ -8,7 +8,7 @@
       <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
     </div>
     <MFooter
-      :class="['', footerFixed === true ? 'ftactive' : '']"
+      
       :fixed="footerFixed ? true : false"
     />
   </div>
@@ -28,17 +28,32 @@
 .hdactive {
   position: fixed;
   background-color: #1a1a1a;
-  box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
+  box-shadow: 0px 0px 19px 1px rgba(235,209,87, 0.38);
 }
-.ftactive {
+@keyframes shining{
+  0% {
+    /* opacity: 0.75; */
+    box-shadow: 0px 0px 10px 1px rgba(235,209,87, 0.38);
+  }
+  50%{
+    /* opacity: 1; */
+    box-shadow: 0px 0px 19px 1px rgba(235,209,87, 0.38);
+  }
+  100% {
+    /* opacity: 0.75; */
+    box-shadow: 0px 0px 10px 1px rgba(235,209,87, 0.38);
+  }
+}
+/* .ftactive {
   position: fixed;
-  bottom: 0;
+  bottom: 0rem;
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: #1a1a1a;
+  background-color: rgb(252,127,21);
   box-shadow: 0px 0px 19px 1px rgba(255, 255, 255, 0.38);
-}
+  animation: shining 2s infinite;
+} */
 
 * {
   -ms-overflow-style: none;
@@ -70,12 +85,11 @@ export default {
       } else if (window.pageYOffset < 80) {
         this.ba = false;
       }
-      // console.log(window.innerHeight,window.pageYOffset,document.body.scrollHeight)
-      if (window.innerHeight + window.pageYOffset + 300 > document.body.scrollHeight) {
-        this.footerFixed = false;
-      } else {
-        this.footerFixed = true;
-      }
+      // if (window.innerHeight + window.pageYOffset + 300 > document.body.scrollHeight) {
+      //   this.footerFixed = false;
+      // } else {
+      //   this.footerFixed = true;
+      // }
     },
   },
 };

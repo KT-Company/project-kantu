@@ -107,8 +107,8 @@
               <img src="@/assets/images/main/二维码.png" alt="" />
             </div>
             <div class="data-phone">
-              电话：023-86154556<br/>手机(微信同号)：158 2628 9334<br/>
-              <!-- 微信：158 2628 9334 <br /> -->
+              电话：023-86154556<br/>手机(微信同号)：158 2608 9334<br/>
+              <!-- 微信：158 2608 9334 <br /> -->
               重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707
             </div>
           </div>
@@ -135,7 +135,8 @@ iframe {
 .button {
   width: 13.125rem;
   height: 3.125rem;
-  background: #1a1a1a;
+  background-color: rgb(252, 127, 21);
+  // background: #1a1a1a;
   color: #fff;
   text-align: center;
   line-height: 3.125rem;
@@ -145,8 +146,8 @@ iframe {
   font-family: Source Han Sans SC;
   font-weight: bold;
   transition: all 0.36s;
-  // margin-top: 6rem;
-  margin-left: 1.25rem;
+  margin-top: 4rem;
+  margin-left: 1rem;
 }
 .button:hover {
   background-color: #fff;
