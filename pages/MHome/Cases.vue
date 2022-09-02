@@ -59,7 +59,12 @@
             <div class="xian"></div>
             <!-- <div class="left-more">MORE</div> -->
           </div>
-          <div class="mt-4 mb-8 pl-8 pr-8 text-center" style="font-size: 3rem;color:#b3b3b3">{{ item.content }}</div>
+          <div
+            class="mt-4 mb-8 pl-8 pr-8 text-center"
+            style="font-size: 3rem; color: #b3b3b3"
+          >
+            {{ item.content }}
+          </div>
           <div class="data-right">
             <a
               :href="item.projectAddress"
@@ -164,7 +169,7 @@
       font-weight: 400;
       color: #b3b3b3;
     }
-    .line{
+    .line {
       display: inline-block;
       width: 1px;
       height: 60%;
@@ -423,17 +428,17 @@ export default {
       this.currentPage = val;
     },
     getdemolist() {
-      Promise.all([
-        request.get({
-          url: "/getDyal",
-        }),
-        request.get({
-          url: "/getQtal",
-        }),
-      ]).then(([data1, data2]) => {
-        this.mianlist = data1.data.data;
-        this.mianlist2 = data2.data.data;
-      });
+      // Promise.all([
+      //   request.get({
+      //     url: "/getDyal",
+      //   }),
+      //   request.get({
+      //     url: "/getQtal",
+      //   }),
+      // ]).then(([data1, data2]) => {
+      //   this.mianlist = data1.data.data;
+      //   this.mianlist2 = data2.data.data;
+      // });
     },
   },
 };

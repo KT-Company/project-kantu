@@ -1,16 +1,18 @@
- 
 <template>
   <div class="box">
     <Card>
-
       <div style="color: #808080; font-size: 13px; margin-top: 116px">
         你的位置：首页 > <span style="color: #fff">瞰图资讯</span>
       </div>
       <div class="mian fadeInUp">
-        <div class="mian-mian" v-for="(item, index) in mainlist.slice(
-          (currentPage - 1) * pageSize,
-          currentPage * pageSize
-        )" :key="index">
+        <div
+          class="mian-mian"
+          v-for="(item, index) in mainlist.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )"
+          :key="index"
+        >
           <div class="mian-data">
             <div class="mian-title">
               {{ item.title }}
@@ -18,18 +20,27 @@
             <div class="mian-text">
               {{ item.content }}
             </div>
-            <img :src="item.imgurl" alt="" />
-            <div><span class="data-time">{{ item.ctime }}</span></div>
+            <img v-lazy="item.imgurl" :key="item.imgurl" />
+            <div>
+              <span class="data-time">{{ item.ctime }}</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="bottom">
-        <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
-          :current-page="currentPage4" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize" layout="pager"
-          :total="mainlist.length" style="margin-left: -18px">
+        <el-pagination
+          background
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage4"
+          :page-sizes="[1, 2, 3, 4]"
+          :page-size="pageSize"
+          layout="pager"
+          :total="mainlist.length"
+          style="margin-left: -18px"
+        >
         </el-pagination>
       </div>
-
     </Card>
   </div>
 </template>
@@ -90,7 +101,7 @@
 }
 
 .mian-mian:hover {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .mian-mian:hover img {
@@ -180,7 +191,9 @@
 <script>
 import Card from "@/components/base/Card.vue";
 import animateMix from "@/mixin/animateMix.js";
+import bus from "@/plugins/lazyloa.js";
 import request from "@/util/request";
+
 export default {
   name: "News",
   mixins: [animateMix],
@@ -196,8 +209,10 @@ export default {
   components: {
     Card,
   },
-  mounted() {
+  created() {
     this.getzxlist();
+  },
+  mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   },
   methods: {
@@ -216,8 +231,30 @@ export default {
         url: "/getZx ",
       });
       this.mainlist = data.data.data;
+
+      //异步执行
+      this.mainlist.forEach((item) => {
+        var img = document.createElement("img");
+        img.src = item.imgurl; //此处自己替换本地图片的地址
+        img.crossOrigin = "anonymous";
+        img.onload = function () {
+          var data = this.getBase64Image(img);
+          item.imgurl = data;
+        };
+      });
+
       console.log(data.data.data);
+    },
+    getBase64Image(img) {
+      var canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      var dataURL = canvas.toDataURL("image/png");
+      return dataURL;
+      // return dataURL.replace("data:image/png;base64,", "");
     },
   },
 };
-</script> 
+</script>

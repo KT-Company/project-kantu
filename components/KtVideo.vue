@@ -1,39 +1,43 @@
 <template>
   <div class="">
     <div class="video-img" @click="visual = true" v-if="!isFirst">
-      <img class="thumb" :src="data.img" alt="">
+      <img class="thumb" :src="data.img" alt="" />
       <!-- <img class="player" src="@/assets/images/main/播放.png" alt=""> -->
     </div>
     <a class="video-img" target="_blank" :href="data.projectAddress" v-else>
-      <img class="thumb" :src="data.img" alt="">
+      <img class="thumb" :src="data.img" alt="" />
     </a>
-    <div class="title-two">{{data.title}}</div>
-    <video-player :src="data.spurl" :visual="visual" @close="visual = false"></video-player>
+    <div class="title-two">{{ data.title }}</div>
+    <video-player
+      :src="data.spurl"
+      :visual="visual"
+      @close="visual = false"
+    ></video-player>
   </div>
 </template>
 
 <script>
-import videoPlayer from './videoPlayer.vue';
+import videoPlayer from "./videoPlayer.vue";
 export default {
   components: {
-    videoPlayer
+    videoPlayer,
   },
   props: {
     data: Object,
     isFirst: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      visual: false
-    }
+      visual: false,
+    };
   },
   mounted() {
     // console.log(this.data)
-  }
-}
+  },
+};
 </script>
 
 <style lang="less" scoped>

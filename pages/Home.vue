@@ -1,6 +1,9 @@
 <template>
   <div class="mian">
-    <Header v-if="showHeader" :class="['header', ba === false ? '' : 'hdactive']" />
+    <Header
+      v-if="showHeader"
+      :class="['header', ba === false ? '' : 'hdactive']"
+    />
     <nuxt-child keep-alive :keep-alive-props="{ exclude: ['modal'] }" />
     <Footer v-if="showHeader" />
   </div>
@@ -38,10 +41,11 @@ export default {
     return {
       showHeader: true,
       ba: false,
+      mainlist: [],
     };
   },
   created() {
-    console.log(111)
+    console.log(111);
     // debugger
     // this.$router.push("/home/main")
   },

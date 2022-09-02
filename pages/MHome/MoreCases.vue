@@ -377,17 +377,17 @@ export default {
       this.currentPage = val;
     },
     getdemolist() {
-      Promise.all([
-        request.get({
-          url: "/getDyal",
-        }),
-        request.get({
-          url: "/getQtal",
-        }),
-      ]).then(([data1, data2]) => {
-        this.mianlist = data1.data.data;
-        this.mianlist2 = data2.data.data;
-      });
+      // Promise.all([
+      //   request.get({
+      //     url: "/getDyal",
+      //   }),
+      //   request.get({
+      //     url: "/getQtal",
+      //   }),
+      // ]).then(([data1, data2]) => {
+      //   this.mianlist = data1.data.data;
+      //   this.mianlist2 = data2.data.data;
+      // });
     },
   },
 };

@@ -39,7 +39,7 @@
         <div v-show="isClassic">
           <div
             class="mian-data"
-            v-for="(item, index) in mianlist.slice(
+            v-for="item in mianlist.slice(
               (currentPage - 1) * pageSize,
               currentPage * pageSize
             )"
@@ -223,10 +223,10 @@
       padding: 0.5rem 2rem;
       margin: 0 0.5rem;
       box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
-      &:hover:not(.active){
+      &:hover:not(.active) {
         background: #fff;
         color: #1a1a1a;
-        transition:  all 0.5s ease-in;
+        transition: all 0.5s ease-in;
       }
     }
     .active {
@@ -417,7 +417,10 @@ export default {
   },
   computed: {
     videoList() {
-      let list = this.mianlist2.slice((this.currentPage2 - 1) * this.pageSize2, this.currentPage2 * this.pageSize2)
+      let list = this.mianlist2.slice(
+        (this.currentPage2 - 1) * this.pageSize2,
+        this.currentPage2 * this.pageSize2
+      );
       return list;
     },
   },
@@ -471,18 +474,39 @@ export default {
       console.log(`当前页: ${val}`);
       this.currentPage2 = val;
     },
+    //  getdemolist() {
+    // Promise.all([
+    //   request.get({
+    //     url: "/getDyal",
+    //   }),
+    //   request.get({
+    //     url: "/getQtal",
+    //   }),
+    // ]).then(([data1, data2]) => {
+    //   this.mianlist = data1.data.data;
+    //   this.mianlist2 = data2.data.data;
+    // });
+    // },
     getdemolist() {
       Promise.all([
         request.get({
           url: "/getDyal",
         }),
-        request.get({
-          url: "/getQtal",
-        }),
-      ]).then(([data1, data2]) => {
+      ]).then(([data1]) => {
+        console.log(data1);
+        console.log("data1-----------------------------**************");
         this.mianlist = data1.data.data;
-        this.mianlist2 = data2.data.data;
       });
+
+      setTimeout(() => {
+        Promise.all([
+          request.get({
+            url: "/getQtal",
+          }),
+        ]).then(([data2]) => {
+          this.mianlist2 = data2.data.data;
+        });
+      }, 1000);
     },
   },
 };
