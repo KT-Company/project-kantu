@@ -89,6 +89,9 @@ export default {
   proxy: {
     '/api': {
       target: 'https://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
+      ws:true, //如果要代理 websockets，配置这个参数
+      secure:false,     //如果是https接口，需要配置这个参数
+      changeOrigin:true, //是否跨域
       pathRewrite: {
         '^/api': '/'
       }

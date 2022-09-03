@@ -234,26 +234,42 @@ export default {
 
       //异步执行
       this.mainlist.forEach((item) => {
-        var img = document.createElement("img");
-        img.src = item.imgurl; //此处自己替换本地图片的地址
-        img.crossOrigin = "anonymous";
-        img.onload = function () {
-          var data = this.getBase64Image(img);
-          item.imgurl = data;
+        let that = this;
+        let image = new Image();
+        image.crossOrigin = "Anonymous";
+        console.log(item.imgurl);
+        image.src =
+          "http://www.kantu3d.com/prod-api/profile/upload/2022/06/07/%E5%90%88%E4%BD%9C_20220607164414A029.jpg";
+        console.log(image.src);
+
+        console.log("image--------------/////////************************");
+        image.onload = function () {
+          let base64 = that.getBase64Image(image);
+          console.log(base64);
         };
+
+        // var image = new Image();
+        // image.setAttribute("crossOrigin", "anonymous"); //解决跨域
+        // image.crossOrigin = "";
+        // image.src = item.imgurl; //此处自己替换本地图片的地址
+        // // image.crossOrigin = "anonymous";
+        // image.onload = function () {
+        //   var data = this.getBase64Image(image);
+        //   item.imgurl = data;
+        // };
       });
 
       console.log(data.data.data);
     },
     getBase64Image(img) {
-      var canvas = document.createElement("canvas");
+      let canvas = document.createElement("canvas");
       canvas.width = img.width;
       canvas.height = img.height;
-      var ctx = canvas.getContext("2d");
+      let ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, 0, img.width, img.height);
-      var dataURL = canvas.toDataURL("image/png");
+      let ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+      let dataURL = canvas.toDataURL("image/" + ext);
       return dataURL;
-      // return dataURL.replace("data:image/png;base64,", "");
     },
   },
 };
