@@ -17,7 +17,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     script: [
-      { src:'/flexible.js', type: 'text/javascript', charset: 'utf-8'}
+      { src: '/flexible.js', type: 'text/javascript', charset: 'utf-8' }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
@@ -31,7 +31,7 @@ export default {
   ],
   server: {
     host: '0.0.0.0', // default: localhost,
-    port:8000,
+    port: 8000,
     timing: false
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -81,6 +81,9 @@ export default {
   axios: {
     proxy: true,
   },
+  loaders: {
+    imgUrl: { limit: 1000 * 10 }
+  },
   router: {
     routes: [
       { name: 'index', path: '/', component: 'pages/Home/Main.vue' }
@@ -89,9 +92,9 @@ export default {
   proxy: {
     '/api': {
       target: 'https://kantu3d.com/api', // 你的接口服务器地址，以我自己的项目
-      ws:true, //如果要代理 websockets，配置这个参数
-      secure:false,     //如果是https接口，需要配置这个参数
-      changeOrigin:true, //是否跨域
+      ws: true, //如果要代理 websockets，配置这个参数
+      secure: false,     //如果是https接口，需要配置这个参数
+      changeOrigin: true, //是否跨域
       pathRewrite: {
         '^/api': '/'
       }
