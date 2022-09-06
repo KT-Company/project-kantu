@@ -80,8 +80,10 @@ export default {
   axios: {
     proxy: true,
   },
-  loaders: {
-    imgUrl: { limit: 1000 * 10 }
+  build:{
+    loaders: {
+      imgUrl: { limit: 1000 * 10 }
+    },
   },
   router: {
     routes: [

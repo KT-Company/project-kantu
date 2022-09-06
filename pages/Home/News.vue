@@ -17,9 +17,12 @@
               {{ item.content }}
             </div>
             <el-image class="img" style="width: 100%; height: 100%;" :src="item.imgurl" lazy>
-              <template #placeholder>
+              <div slot="placeholder" class="image-slot">
+                加载中<span class="dot">...</span>
+              </div>
+              <!-- <template #placeholder>
                 <div class="image-slot">加载中<span class="dot">...</span></div>
-              </template>
+              </template> -->
             </el-image>
             <div>
               <span class="data-time">{{ item.ctime }}</span>
@@ -85,12 +88,13 @@
     z-index: -1;
 
     .image-slot {
+      padding-bottom: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
-      background: #808080;
+      background: #000000;
       color: #ffffff;
       font-size: 14px;
     }
