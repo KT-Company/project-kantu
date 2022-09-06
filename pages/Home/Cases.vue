@@ -476,19 +476,6 @@ export default {
       console.log(`当前页: ${val}`);
       this.currentPage2 = val;
     },
-    //  getdemolist() {
-    // Promise.all([
-    //   request.get({
-    //     url: "/getDyal",
-    //   }),
-    //   request.get({
-    //     url: "/getQtal",
-    //   }),
-    // ]).then(([data1, data2]) => {
-    //   this.mianlist = data1.data.data;
-    //   this.mianlist2 = data2.data.data;
-    // });
-    // },
     getdemolist() {
       Promise.all([
         request.get({

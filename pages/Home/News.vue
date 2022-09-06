@@ -16,7 +16,11 @@
             <div class="mian-text">
               {{ item.content }}
             </div>
-            <img :src="item.imgurl" :key="item.imgurl" />
+            <el-image class="img" style="width: 100%; height: 100%;" :src="item.imgurl" lazy>
+              <template #placeholder>
+                <div class="image-slot">加载中<span class="dot">...</span></div>
+              </template>
+            </el-image>
             <div>
               <span class="data-time">{{ item.ctime }}</span>
             </div>
@@ -70,7 +74,7 @@
   overflow: hidden;
   transition: all ease 0.3s;
 
-  img {
+  .img {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,6 +83,22 @@
     opacity: 1;
     transition: all ease 0.3s;
     z-index: -1;
+
+    .image-slot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: #808080;
+      color: #ffffff;
+      font-size: 14px;
+    }
+
+    .dot {
+      animation: dot 2s infinite steps(3, start);
+      overflow: hidden;
+    }
   }
 }
 
