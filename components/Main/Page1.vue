@@ -25,7 +25,7 @@
       </div>
       <div class="bg-wrap">
 
-        <div class="canvas bg-ywy">
+        <div v-if="load40MGif" class="canvas bg-ywy">
           <img class="img" src="@/static/2d/image/ywy.gif" alt="">
           <!-- <canvas id="view1" ref="view1" class="canvasBox"></canvas> -->
         </div>
@@ -280,13 +280,15 @@ export default {
       },
       swiperIndex: 0, // 当前选中index
       loading: true,
-      bottomData: 'Technology changes life Digital makes the future'
+      bottomData: 'Technology changes life Digital makes the future',
+      load40MGif: false
     };
   },
   components: {
     Card,
   },
   mounted() {
+    this.load40MGif = true
     // let view1 = document.getElementById("view1");
     // pageOnload(view1, () => {
     //   console.log("done");
