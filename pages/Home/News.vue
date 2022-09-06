@@ -16,7 +16,7 @@
             <div class="mian-text">
               {{ item.content }}
             </div>
-            <img v-lazy="item.imgurl" :key="item.imgurl" />
+            <img :src="item.imgurl" :key="item.imgurl" />
             <div>
               <span class="data-time">{{ item.ctime }}</span>
             </div>
@@ -179,7 +179,6 @@
 <script>
 import Card from "@/components/base/Card.vue";
 import animateMix from "@/mixin/animateMix.js";
-import bus from "@/plugins/lazyloa.js";
 import request from "@/util/request";
 
 export default {

@@ -39,7 +39,6 @@ export default {
     { src: "~/plugins/element-ui.js", ssr: true },
     // { src: '~/plugins/wow.js', ssr: false },
     { src: "~/plugins/swiper.js", ssr: true },
-    { src: "~/plugins/lazyloa.js", ssr: true },
     { src: "~/plugins/common.js", ssr: false },
   ],
 
