@@ -84,6 +84,9 @@ export default {
     loaders: {
       imgUrl: { limit: 1000 * 10 }
     },
+    babel: {
+      compact: false
+    }
   },
   router: {
     routes: [
