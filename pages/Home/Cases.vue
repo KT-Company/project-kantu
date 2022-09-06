@@ -25,26 +25,18 @@
           你的位置：首页 > <span style="color: #fff">多元案例</span>
         </div>
         <ul>
-          <li
-            v-for="(item, index) in navlist"
-            :key="item.title"
-            :class="navli === index ? 'active' : ''"
-            @click="handlenav(index)"
-          >
+          <li v-for="(item, index) in navlist" :key="item.title" :class="navli === index ? 'active' : ''"
+            @click="handlenav(index)">
             {{ item }}
           </li>
         </ul>
       </div>
       <div :class="['mian', isClassic ? '' : 'main']" ref="mian">
         <div v-show="isClassic">
-          <div
-            class="mian-data"
-            v-for="item in mianlist.slice(
-              (currentPage - 1) * pageSize,
-              currentPage * pageSize
-            )"
-            :key="item.id"
-          >
+          <div class="mian-data" v-for="item in mianlist.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )" :key="item.id">
             <div class="data-left">
               <div class="left-title">{{ item.title }}</div>
               <div class="left-text line-height-1-5">
@@ -52,15 +44,9 @@
               </div>
               <div class="xian"></div>
               <!-- <div class="left-more">MORE</div> -->
-              <a
-                :href="item.projectAddress"
-                v-if="item.projectAddress"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="left-more"
-              >
-                <img src="@/assets/images/main/连接.png" alt="" />查看项目</a
-              >
+              <a :href="item.projectAddress" v-if="item.projectAddress" target="_blank" rel="noopener noreferrer"
+                class="left-more">
+                <img src="@/assets/images/main/连接.png" alt="" />查看项目</a>
             </div>
             <div class="data-right">
               <div class="video_wrapper">
@@ -77,42 +63,21 @@
             </div>
           </div>
           <div class="bottom">
-            <el-pagination
-              background
-              @size-change="handleSizeChange"
-              @current-change="handleCurrentChange"
-              :current-page="currentPage"
-              :page-sizes="[1, 2, 3, 4]"
-              :page-size="pageSize"
-              layout="pager"
-              :total="mianlist.length"
-              style="margin-left: -1.125rem"
-            >
+            <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
+              :current-page="currentPage" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize" layout="pager"
+              :total="mianlist.length" style="margin-left: -1.125rem">
             </el-pagination>
           </div>
         </div>
         <div v-show="!isClassic">
           <div class="mian-data2" style="margin-left: -5rem">
-            <kt-video
-              class="video_wrapper-two"
-              v-for="(item, index) in videoList"
-              :isFirst="index == 0 && currentPage2 == 1"
-              :key="item.id"
-              :data="item"
-            ></kt-video>
+            <kt-video class="video_wrapper-two" v-for="(item, index) in videoList"
+              :isFirst="index == 0 && currentPage2 == 1" :key="item.id" :data="item"></kt-video>
           </div>
           <div class="bottom">
-            <el-pagination
-              background
-              @size-change="handleSizeChange2"
-              @current-change="handleCurrentChange2"
-              :current-page="currentPage2"
-              :page-sizes="[1, 2, 3, 4]"
-              :page-size="pageSize2"
-              layout="pager"
-              :total="mianlist2.length"
-              style="margin-left: -1.125rem"
-            >
+            <el-pagination background @size-change="handleSizeChange2" @current-change="handleCurrentChange2"
+              :current-page="currentPage2" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize2" layout="pager"
+              :total="mianlist2.length" style="margin-left: -1.125rem">
             </el-pagination>
           </div>
         </div>
@@ -125,6 +90,7 @@
   width: 100vw;
   background: url("@/assets/images/main/背景.png") 100%;
 }
+
 .top {
   width: 78.125rem;
   height: 12.5rem;
@@ -136,23 +102,27 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   .top1 {
     width: 5.875rem;
     // height: 5.0625rem;
     text-align: center;
     position: relative;
   }
+
   .top2 {
     width: 0.0625rem;
     height: 4.375rem;
     background: #4d4d4d;
   }
+
   .top3 {
     width: 10.3125rem;
     text-align: center;
     // height: 5.0625rem;
     position: relative;
   }
+
   .top5 {
     width: 5.875rem;
     text-align: center;
@@ -160,18 +130,21 @@
     position: relative;
   }
 }
+
 .top-num {
   font-size: 3.125rem;
   font-family: Source Han Sans SC;
   font-weight: 800;
   color: #ffffff;
 }
+
 .top-text {
   font-size: 1.125rem;
   font-family: Source Han Sans SC;
   font-weight: 400;
   color: #b3b3b3;
 }
+
 .topjia {
   width: 1rem;
   height: 1rem;
@@ -183,6 +156,7 @@
   top: -0.625rem;
   right: 0;
 }
+
 .topjia2 {
   width: 1rem;
   height: 1rem;
@@ -194,6 +168,7 @@
   top: -0.625rem;
   right: 1.0625rem;
 }
+
 .nav {
   width: 78.1875rem;
   height: 0.9375rem;
@@ -201,6 +176,7 @@
   margin-top: 9.25rem;
   display: flex;
   justify-content: space-between;
+
   ul {
     // width: 7.5rem;
     height: 2rem;
@@ -211,6 +187,7 @@
     // line-height: 1.4375rem;
     display: flex;
     justify-content: space-between;
+
     // justify-content: flex-end;
     li {
       cursor: pointer;
@@ -223,12 +200,14 @@
       padding: 0.5rem 2rem;
       margin: 0 0.5rem;
       box-shadow: 0rem 0rem 0.4rem 0.0625rem rgba(255, 255, 255, 0.38);
+
       &:hover:not(.active) {
         background: #fff;
         color: #1a1a1a;
         transition: all 0.5s ease-in;
       }
     }
+
     .active {
       color: #808080;
       cursor: default;
@@ -236,11 +215,13 @@
     }
   }
 }
+
 .mian {
   width: 78.1875rem;
   margin: 0 auto;
   background-color: transparent;
   overflow: auto;
+
   .mian-data {
     margin-top: 7.5rem;
     width: 100%;
@@ -251,11 +232,13 @@
     align-items: center;
     background-color: transparent;
     transition: width 1s height 1s;
+
     .data-left {
       flex: 1;
       margin-right: 8rem;
       width: 23.9375rem;
       text-align: left;
+
       .left-title {
         font-size: 1.875rem;
         font-family: Source Han Sans SC;
@@ -263,6 +246,7 @@
         color: #ffffff;
         transition: all 0.36s;
       }
+
       .left-text {
         font-size: 0.875rem;
         font-family: Source Han Sans SC;
@@ -271,6 +255,7 @@
         margin-top: 1.1875rem;
         transition: all 0.36s;
       }
+
       .xian {
         width: 0;
         height: 0.125rem;
@@ -279,6 +264,7 @@
         margin-top: 2.375rem;
         transition: width 0.36s ease;
       }
+
       .left-more {
         display: flex;
         width: 100px;
@@ -294,11 +280,13 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 15px;
+
         img {
           height: 60%;
         }
       }
     }
+
     .data-right {
       width: 37.5rem;
       height: 20.9375rem;
@@ -307,39 +295,48 @@
       position: relative;
     }
   }
+
   .mian-data:hover .xian {
     width: 38.75rem;
   }
+
   .mian-data:hover .data-right {
     transform: scale(0.9);
     // background: #4d4d4d;
   }
+
   .mian-data:hover .left-title {
     transform: translateY(0.3125rem);
   }
+
   .mian-data:hover .left-text {
     transform: translateY(-0.3125rem);
   }
+
   .mian-data:hover .left-more {
     transform: translateY(0.9375rem);
   }
 }
+
 .mian-data2 {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1.25rem;
   align-items: center;
+
   .video_wrapper-two {
     margin-left: 5rem;
     margin-top: 3.125rem;
   }
 }
+
 .bottom {
   margin: auto;
   margin-top: 7.5rem;
   margin-left: 1rem;
   width: 78.125rem;
 }
+
 .video_wrapper {
   position: absolute;
   z-index: 2;
@@ -350,6 +347,7 @@
   // height: 2.2625rem;
   width: 100%;
   height: 100%;
+
   // background: #0a3e6d;
   .play_video {
     width: 2rem;
@@ -361,11 +359,13 @@
     cursor: pointer;
     z-index: 2;
   }
+
   img {
     width: 100%;
     height: 100%;
   }
 }
+
 /deep/ .number {
   width: 3.125rem;
   height: 3.125rem;
@@ -373,12 +373,14 @@
   border-radius: 0;
   background-color: #333333;
 }
+
 ::v-deep {
   .el-pagination.is-background .el-pager li:not(.disabled) {
     background-color: #333333; // 进行修改未选中背景和字体
     border-radius: 0;
     // color: #fff;
   }
+
   .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #4d4d4d; // 进行修改选中项背景和字体
     color: #fff;
@@ -493,8 +495,6 @@ export default {
           url: "/getDyal",
         }),
       ]).then(([data1]) => {
-        console.log(data1);
-        console.log("data1-----------------------------**************");
         this.mianlist = data1.data.data;
       });
 

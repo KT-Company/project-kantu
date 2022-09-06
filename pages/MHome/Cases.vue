@@ -42,15 +42,10 @@
         </ul> -->
       </div>
       <div :class="['mian', isdata ? '' : 'main']" ref="mian">
-        <div
-          class="mian-data"
-          v-show="isdata"
-          v-for="(item, index) in mianlist.slice(
-            (currentPage - 1) * pageSize,
-            currentPage * pageSize
-          )"
-          :key="index"
-        >
+        <div class="mian-data" v-show="isdata" v-for="(item, index) in mianlist.slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        )" :key="index">
           <div class="data-left">
             <div class="left-title">{{ item.title }}</div>
             <!-- <div class="left-text line-height-1-5">
@@ -59,20 +54,12 @@
             <div class="xian"></div>
             <!-- <div class="left-more">MORE</div> -->
           </div>
-          <div
-            class="mt-4 mb-8 pl-8 pr-8 text-center"
-            style="font-size: 3rem; color: #b3b3b3"
-          >
+          <div class="mt-4 mb-8 pl-8 pr-8 text-center" style="font-size: 3rem; color: #b3b3b3">
             {{ item.content }}
           </div>
           <div class="data-right">
-            <a
-              :href="item.projectAddress"
-              v-if="item.projectAddress"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="left-more"
-            >
+            <a :href="item.projectAddress" v-if="item.projectAddress" target="_blank" rel="noopener noreferrer"
+              class="left-more">
               <div class="video_wrapper">
                 <!-- <video
                 class="video"
@@ -88,17 +75,9 @@
           </div>
         </div>
         <div class="bottom" v-show="isdata">
-          <el-pagination
-            background
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page="currentPage4"
-            :page-sizes="[1, 2, 3, 4]"
-            :page-size="pageSize"
-            layout="pager"
-            :total="mianlist.length"
-            style="margin-left: -1.125rem"
-          >
+          <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
+            :current-page="currentPage4" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize" layout="pager"
+            :total="mianlist.length" style="margin-left: -1.125rem">
           </el-pagination>
         </div>
         <!-- <div class="mian-data2" v-show="!isdata" style="margin-left: -5rem">
@@ -145,15 +124,18 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
+
   .item {
     position: relative;
     flex: 1;
+
     .top-num {
       font-size: 8rem;
       font-family: Source Han Sans SC;
       font-weight: 800;
       color: #ffffff;
       position: relative;
+
       .topjia {
         font-size: 3rem;
         display: inline;
@@ -163,12 +145,14 @@
         // top: -1rem;
       }
     }
+
     .top-text {
       font-size: 3rem;
       font-family: Source Han Sans SC;
       font-weight: 400;
       color: #b3b3b3;
     }
+
     .line {
       display: inline-block;
       width: 1px;
@@ -186,6 +170,7 @@
   margin-top: 9.25rem;
   display: flex;
   justify-content: space-between;
+
   ul {
     width: 7.5rem;
     height: 0.875rem;
@@ -198,15 +183,18 @@
     justify-content: space-between;
     // justify-content: flex-end;
     cursor: pointer;
+
     .active {
       color: #fff;
     }
   }
 }
+
 .mian {
   margin: 0 auto;
   background-color: transparent;
   overflow: auto;
+
   .mian-data {
     margin-top: 7.5rem;
     width: 100%;
@@ -218,9 +206,11 @@
     align-items: center;
     background-color: transparent;
     transition: width 1s height 1s;
+
     .data-left {
       flex: 1;
       text-align: center;
+
       .left-title {
         font-size: 4.6rem;
         font-family: Source Han Sans SC;
@@ -228,6 +218,7 @@
         color: #ffffff;
         transition: all 0.36s;
       }
+
       .left-text {
         font-size: 0.875rem;
         font-family: Source Han Sans SC;
@@ -236,6 +227,7 @@
         margin-top: 1.1875rem;
         transition: all 0.36s;
       }
+
       .xian {
         width: 0;
         height: 0.125rem;
@@ -244,6 +236,7 @@
         margin: 2.375rem 0;
         transition: width 0.36s ease;
       }
+
       .left-more {
         display: flex;
         width: 100px;
@@ -259,11 +252,13 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 15px;
+
         img {
           height: 60%;
         }
       }
     }
+
     .data-right {
       width: 96rem;
       height: 54rem;
@@ -272,39 +267,48 @@
       position: relative;
     }
   }
+
   .mian-data:hover .xian {
     width: 38.75rem;
   }
+
   .mian-data:hover .data-right {
     // transform: scale(0.9);
     // background: #4d4d4d;
   }
+
   .mian-data:hover .left-title {
     transform: translateY(0.3125rem);
   }
+
   .mian-data:hover .left-text {
     transform: translateY(-0.3125rem);
   }
+
   .mian-data:hover .left-more {
     transform: translateY(0.9375rem);
   }
 }
+
 .mian-data2 {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1.25rem;
   align-items: center;
+
   .video_wrapper-two {
     margin-left: 5rem;
     margin-top: 3.125rem;
   }
 }
+
 .bottom {
   margin: auto;
   margin-top: 7.5rem;
   margin-left: 1rem;
   width: 78.125rem;
 }
+
 .video_wrapper {
   position: absolute;
   z-index: 2;
@@ -315,6 +319,7 @@
   // height: 2.2625rem;
   width: 100%;
   height: 100%;
+
   // background: #0a3e6d;
   .play_video {
     width: 2rem;
@@ -326,11 +331,13 @@
     cursor: pointer;
     z-index: 2;
   }
+
   img {
     width: 100%;
     height: 100%;
   }
 }
+
 /deep/ .number {
   width: 10rem;
   height: 10rem;
@@ -338,12 +345,14 @@
   border-radius: 0;
   background-color: #333333;
 }
+
 ::v-deep {
   .el-pagination.is-background .el-pager li:not(.disabled) {
     background-color: #333333; // 进行修改未选中背景和字体
     border-radius: 0;
     // color: #fff;
   }
+
   .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #4d4d4d; // 进行修改选中项背景和字体
     color: #fff;
@@ -428,17 +437,17 @@ export default {
       this.currentPage = val;
     },
     getdemolist() {
-      // Promise.all([
-      //   request.get({
-      //     url: "/getDyal",
-      //   }),
-      //   request.get({
-      //     url: "/getQtal",
-      //   }),
-      // ]).then(([data1, data2]) => {
-      //   this.mianlist = data1.data.data;
-      //   this.mianlist2 = data2.data.data;
-      // });
+      Promise.all([
+        request.get({
+          url: "/getDyal",
+        }),
+        request.get({
+          url: "/getQtal",
+        }),
+      ]).then(([data1, data2]) => {
+        this.mianlist = data1.data.data;
+        this.mianlist2 = data2.data.data;
+      });
     },
   },
 };
