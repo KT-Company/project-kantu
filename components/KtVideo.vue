@@ -1,6 +1,12 @@
 <template>
   <div class="">
-    <div class="video-img" @click="visual = true" v-if="!isFirst">
+    <div
+      class="video-img"
+      @click="visual = true"
+      v-if="!isFirst"
+      ref="imgAnim"
+      :data-url="data.slimg"
+    >
       <img class="thumb" :src="data.img" alt="" />
       <!-- <img class="player" src="@/assets/images/main/播放.png" alt=""> -->
     </div>
@@ -17,6 +23,7 @@
 </template>
 
 <script>
+import DynamicGraph from "@/util/graph.js";
 import videoPlayer from "./videoPlayer.vue";
 export default {
   components: {
@@ -35,6 +42,25 @@ export default {
     };
   },
   mounted() {
+    // debugger
+    this.$nextTick(() => {
+      setTimeout(() => {
+        console.log(DynamicGraph);
+        let el = this.$refs.imgAnim;
+        new DynamicGraph(el, {
+          onchange(ev) {
+            console.log(ev);
+          },
+          onbegin() {
+            console.log("begin");
+          },
+          onend() {
+            console.log("end");
+          },
+        });
+        console.log(el);
+      }, 500);
+    });
     // console.log(this.data)
   },
 };
