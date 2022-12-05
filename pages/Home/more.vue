@@ -73,7 +73,7 @@ export default {
       },
       fadeUpIn: null,
       fadeUpIn2: null,
-      swiperPages: ["MPage1", "MPage2"],
+      swiperPages: ["MPage2", "MPage1"],
     };
   },
   components: { Card, MPage1, MPage2, Footer },

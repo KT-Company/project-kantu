@@ -20,31 +20,23 @@
           <div class="topjia">+</div>
         </div>
       </div>
-      <div class="nav">
+      <!-- <div class="nav">
         <div style="color: #808080; font-size: 0.8125rem">
           你的位置：首页 > <span style="color: #fff">多元案例</span>
         </div>
         <ul>
-          <li
-            v-for="(item, index) in navlist"
-            :key="item.title"
-            :class="navli === index ? 'active' : ''"
-            @click="handlenav(index)"
-          >
+          <li v-for="(item, index) in navlist" :key="item.title" :class="navli === index ? 'active' : ''"
+            @click="handlenav(index)">
             {{ item }}
           </li>
         </ul>
-      </div>
+      </div> -->
       <div :class="['mian', isClassic ? '' : 'main']" ref="mian">
         <div v-show="isClassic">
-          <div
-            class="mian-data"
-            v-for="item in mianlist.slice(
-              (currentPage - 1) * pageSize,
-              currentPage * pageSize
-            )"
-            :key="item.id"
-          >
+          <div class="mian-data" v-for="item in mianlist.slice(
+            (currentPage - 1) * pageSize,
+            currentPage * pageSize
+          )" :key="item.id">
             <div class="data-left">
               <div class="left-title">{{ item.title }}</div>
               <div class="left-text line-height-1-5">
@@ -52,15 +44,9 @@
               </div>
               <div class="xian"></div>
               <!-- <div class="left-more">MORE</div> -->
-              <a
-                :href="item.projectAddress"
-                v-if="item.projectAddress"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="left-more"
-              >
-                <img src="@/assets/images/main/连接.png" alt="" />查看项目</a
-              >
+              <a :href="item.projectAddress" v-if="item.projectAddress" target="_blank" rel="noopener noreferrer"
+                class="left-more">
+                <img src="@/assets/images/main/连接.png" alt="" />查看项目</a>
             </div>
             <div class="data-right">
               <div class="video_wrapper">
@@ -77,42 +63,21 @@
             </div>
           </div>
           <div class="bottom">
-            <el-pagination
-              background
-              @size-change="handleSizeChange"
-              @current-change="handleCurrentChange"
-              :current-page="currentPage"
-              :page-sizes="[1, 2, 3, 4]"
-              :page-size="pageSize"
-              layout="pager"
-              :total="mianlist.length"
-              style="margin-left: -1.125rem"
-            >
+            <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
+              :current-page="currentPage" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize" layout="pager"
+              :total="mianlist.length" style="margin-left: -1.125rem">
             </el-pagination>
           </div>
         </div>
         <div v-show="!isClassic">
           <div class="mian-data2" style="margin-left: -5rem">
-            <kt-video
-              class="video_wrapper-two"
-              v-for="(item, index) in videoList"
-              :isFirst="index == 0 && currentPage2 == 1"
-              :key="item.id"
-              :data="item"
-            ></kt-video>
+            <kt-video class="video_wrapper-two" v-for="(item, index) in videoList"
+              :isFirst="index == 0 && currentPage2 == 1" :key="item.id" :data="item"></kt-video>
           </div>
           <div class="bottom">
-            <el-pagination
-              background
-              @size-change="handleSizeChange2"
-              @current-change="handleCurrentChange2"
-              :current-page="currentPage2"
-              :page-sizes="[1, 2, 3, 4]"
-              :page-size="pageSize2"
-              layout="pager"
-              :total="mianlist2.length"
-              style="margin-left: -1.125rem"
-            >
+            <el-pagination background @size-change="handleSizeChange2" @current-change="handleCurrentChange2"
+              :current-page="currentPage2" :page-sizes="[1, 2, 3, 4]" :page-size="pageSize2" layout="pager"
+              :total="mianlist2.length" style="margin-left: -1.125rem">
             </el-pagination>
           </div>
         </div>
@@ -138,6 +103,7 @@
   justify-content: space-around;
   align-items: center;
   transform: translate(0px, 0) !important;
+
   .top1 {
     width: 5.875rem;
     // height: 5.0625rem;
@@ -440,7 +406,7 @@ export default {
   data() {
     return {
       navlist: ["经典案例", "更多案例"],
-      isClassic: true, //是否为经典案例
+      isClassic: false, //是否为经典案例
       isPlay: false,
       mianlist: [],
       mianlist2: [],
