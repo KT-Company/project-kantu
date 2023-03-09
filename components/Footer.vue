@@ -9,7 +9,7 @@
           <div class="qr-code">
             <div class="code-left">
               <div class="code-img">
-                <img src="@/assets/images/main/二维码.png" alt="" />
+                <img src="@/assets/images/main/xl.png" alt="" />
               </div>
               <div class="code-title">工程师帮助</div>
             </div>
@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="mian-conter">
-          地址：重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707<br />电话：023-86154556<br/>手机(微信同号)：158 2608 9334
+          地址：重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707<br />电话：023-86154556<br/>手机(微信同号)：152 2372 0158
         </div>
         <div class="mian-right">
           <el-form

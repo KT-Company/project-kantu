@@ -12,7 +12,7 @@
                   <div class="mian-left">
                     <div class="mian-conter">
                       电话：023-86154556<br />
-                      手机(微信同号)：158 2608 9334
+                      手机(微信同号)：152 2372 0158
                     </div>
                   </div>
                 </div>
@@ -23,7 +23,7 @@
         <div class="qr-code">
           <div class="code-right">
             <div class="code-img">
-              <img src="@/assets/images/main/二维码.png" alt="" />
+              <img src="@/assets/images/main/xl.png" alt="" />
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
       <a href="tel:15826089334">
         <div class="flex justify-around pt-4 pb-4">
           <span style="font-size: 5rem">联系我们</span>
-          <span style="font-size: 5rem">手机(微信同号)：158 2608 9334</span>
+          <span style="font-size: 5rem">手机(微信同号)：152 2372 0158</span>
         </div>
       </a>
     </div>

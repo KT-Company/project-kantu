@@ -104,10 +104,10 @@
           <div class="img-data">
             <div class="data-title">欢迎咨询我们</div>
             <div class="data-2wm">
-              <img src="@/assets/images/main/二维码.png" alt="" />
+              <img src="@/assets/images/main/xl.png" alt="" />
             </div>
             <div class="data-phone">
-              电话：023-86154556<br/>手机(微信同号)：158 2608 9334<br/>
+              电话：023-86154556<br/>手机(微信同号)：152 2372 0158<br/>
               <!-- 微信：158 2608 9334 <br /> -->
               重庆市九龙坡区石桥铺渝高大厦F座17楼1706-1707
             </div>
@@ -120,7 +120,7 @@
 .site {
   width: 101.25rem;
   margin: 0 auto;
-  color: #808080; 
+  color: #808080;
   font-size: .8125rem;
   margin-top: 7.25rem;
 }
@@ -309,7 +309,7 @@ export default {
   mounted() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     console.log(document.documentElement.scrollTop);
-    // this.getmx(); 
+    // this.getmx();
   },
   methods: {
     handlemore() {

@@ -1,6 +1,6 @@
 <template>
   <Card class="flex items-center">
-    <div class="flex justify-between main fadeInUp">
+    <div class="flex justify-between main fadeInUp" v-if="isShow">
       <div class="swiper-box">
         <swiper class="wrapper" :options="swiperOption" ref="swiper1"
           @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart">
@@ -134,10 +134,14 @@ export default {
       ],
       titlelist: ["智慧园区", "工业制造", "智慧工地", "智慧能源", "航天航空"],
       swiperOption: {
-        autoplay: true,
+        autoplay: {//启动自动切换，具体选项如下：
+          delay: 3000,//自动切换的时间间隔，单位ms
+          stopOnLastSlide: false,//如果设置为true，当切换到最后一个slide时停止自动切换。（loop模式下无效）。
+          disableOnInteraction: false,//用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+        },
         effect: 'fade',
         pagination: {
-          el: '.swiper-pagination.swiper-pagination-wrapper',
+          el: '.swiper-pagination',//自动隐藏
           clickable: true,
           bulletClass: 'my-bullet',//需设置.my-bullet样式
           bulletActiveClass: 'my-bullet-active',
@@ -147,8 +151,14 @@ export default {
         direction: 'vertical',
         mousewheel: true,
       },
-      controlledSwiper: null
+      controlledSwiper: null,
+      isShow: false
     };
+  },
+  mounted() {
+
+    this.isShow = true
+
   },
   methods: {
     getCss(el, css) {

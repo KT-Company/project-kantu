@@ -34,7 +34,7 @@
 
         <div class="wrap-btn">
           <div @click="changeDiv(1)" :class="wrapbtnID==1?'changeDiv':'noDiv'">
-            <router-link to='/'>
+            <router-link to='/home/main'>
               <div class="link">首页</div>
             </router-link>
 
@@ -68,18 +68,19 @@
 <style lang="less" scoped>
 .wrap-btn {
   display: flex;
+  font-size: 1rem;
 
   .noDiv {
     border: 1px solid #fff;
     background-color: #fff;
-    height: 4rem;
-    width: 8rem;
-    border-radius: .8rem;
+    height: 2.5rem;
+    width: 5.5rem;
+    border-radius: .3rem;
     box-shadow: 0px 0px 7px 2px #fff;
     color: #000;
-    line-height: 4rem;
+    line-height: 2.5rem;
     text-align: center;
-    margin: 1.2rem;
+    margin: 1rem .6rem;
 
 
   }
@@ -87,14 +88,14 @@
   .noDivOrange {
     border: 1px solid #fc7f15;
     background-color: #fc7f15;
-    height: 4rem;
-    width: 8rem;
-    border-radius: .8rem;
+    height: 2.5rem;
+    width: 5.5rem;
+    border-radius: .3rem;
     box-shadow: 0px 0px 7px 2px #fff;
     color: #fff;
-    line-height: 4rem;
+    line-height: 2.5rem;
     text-align: center;
-    margin: 1.2rem;
+    margin: 1rem .6rem;
 
 
   }
@@ -102,14 +103,14 @@
   .changeDiv {
     border: 1px solid #1a1a1a;
     background-color: #1a1a1a;
-    height: 4rem;
-    width: 8rem;
-    border-radius: .8rem;
+    height: 2.5rem;
+    width: 5.5rem;
+    border-radius: .3rem;
     box-shadow: 0px 0px 5px 1px #fff;
     color: #fff;
-    line-height: 4rem;
+    line-height: 2.5rem;
     text-align: center;
-    margin: 1.2rem;
+    margin: 1rem .6rem;
   }
 }
 
@@ -202,29 +203,30 @@ export default {
     switch (this.$route.path) {
       case "/home/main":
         this.activeIndex = "1";
+        this.wrapbtnID = 1
         break;
       case "/home/more":
         this.activeIndex = "2";
+        this.wrapbtnID = 2
         break;
       case "/home/cases":
         this.activeIndex = "3";
+        this.wrapbtnID = 3
         break;
       case "/home/news":
         this.activeIndex = "4";
         break;
       case "/home/about":
         this.activeIndex = "5";
+        this.wrapbtnID = 4
         break;
     }
   },
+
   methods: {
-    handleSelect(key, keyPath) { },
     changeDiv(id) {
       this.wrapbtnID = id
-    }
-  },
-  mounted() {
-    // console.log(window.scrollY)
+    },
   },
 };
 </script>
