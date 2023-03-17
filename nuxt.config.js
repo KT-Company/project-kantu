@@ -26,6 +26,7 @@ export default {
   css: [
     { src: "~assets/style/theme.less", lang: "less" },
     { src: "~assets/style/animate.css", lang: "css" },
+    '~/assets/style/tailwind.css',
     // { src: 'wowjs/css/libs/animate.css', lang: 'css' },
     "element-ui/lib/theme-chalk/index.css",
   ],
@@ -48,16 +49,12 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
+    // "@nuxtjs/tailwindcss",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    transpile: ["gsap"],
-  },
   vender: ["element-ui"],
   alias: {
     "@": resolve(__dirname, "./"),
@@ -75,18 +72,27 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    // '@nuxtjs/tailwindcss'
   ],
   axios: {
     proxy: true,
   },
-  build:{
+  build: {
     loaders: {
       imgUrl: { limit: 1000 * 10 }
     },
     babel: {
       compact: false
-    }
+    },
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
   },
   router: {
     routes: [
